@@ -2,16 +2,14 @@
     {{>header}}
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-2">
-                {{>Template.dynamic template=sidebar_left}}
-            </div>
-            <div class="col-md-8">
+            <div class="col-sm-8 col-sm-push-2">
                 {{>Template.dynamic template=main}}
             </div>
-            <div class="col-md-2">
-                {{#if currentUser}}
+            <div class="col-sm-2 col-sm-pull-8">
+                {{>Template.dynamic template=sidebar_left}}
+            </div>
+            <div class="col-sm-2">
                 {{>Template.dynamic template=sidebar_right}}
-                {{/if}}
             </div>
         </div>
     </div>

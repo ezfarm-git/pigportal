@@ -20,7 +20,7 @@ FlowRouter.route(['/', '/home'], {
 
 FlowRouter.route('/news', {
     action: function() {
-        BlazeLayout.render('layout', {sidebar_left:'', main:'news', sidebar_right:''});
+        BlazeLayout.render('layout', {sidebar_left:'news_category', main:'news', sidebar_right:'widget_1'});
     }
 });
 
