@@ -1,11 +1,33 @@
 Template.news_admin.helpers({
     newsList: function() {
         return News.find();
+    },
+    tableSetting: function() {
+        return {
+            collection: News,
+            rowsPerPage: 10,
+            showFilter: true,
+            showRowCount: true,
+            showColumnToggles: true,
+            multiColumnSort: false,
+            showNavigationRowsPerPage: false,
+            // enableRegex: true,
+            fields: ['date', 'title', 'url', 'category'],
+            filters: ['title', 'category']
+        };
     }
 });
 
 Template.news_admin.events({
-    'click .doc-edit': function(evt,tmpl) {
+    // 'click .doc-edit': function(evt,tmpl) {
+    //     $('#newsId').val(this._id);
+    //     $('#date').val(this.date);
+    //     $('#title').val(this.title);
+    //     $('#url').val(this.url);
+    //     $('#category').val(this.category);
+    //     $('.addNews').text('Update News').removeClass('addNews').addClass('updateNews');
+    // },
+    'click .reactive-table tbody tr': function(evt,tmpl) {
         $('#newsId').val(this._id);
         $('#date').val(this.date);
         $('#title').val(this.title);

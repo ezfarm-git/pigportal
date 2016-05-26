@@ -16,7 +16,8 @@
         {{/autoForm}}
     </div>
     <div class="col-sm-6">
-        <table id="newsTable" class="table table-striped table-bordered table-responsive table-hover">
+        {{>reactiveTable settings=tableSetting}}
+        <!-- <table id="newsTable" class="table table-striped table-bordered table-responsive table-hover">
             <thead>
                 <tr>
                     <th>Title</th>
@@ -37,6 +38,6 @@
                 </tr>
                 {{/each}}
             </tbody>
-        </table>
+        </table> -->
     </div>
 </template>
