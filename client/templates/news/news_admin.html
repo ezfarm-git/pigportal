@@ -1,0 +1,42 @@
+<template name="news_admin">
+    <div class="col-sm-6">
+        <!-- {{>quickForm collection="News" id="insertNews" type="insert"}} -->
+        {{#autoForm id="NewsForm" type="insert" collection="News"}}
+            <input type="hidden" id="newsId">
+            {{> afQuickField name="date" id="date"}}
+            {{> afQuickField name="title" id="title"}}
+            {{> afQuickField name="url" id="url"}}
+            {{> afQuickField name="category" id="category"}}
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary addNews">Submit</button>
+            <button type="button" class="btn btn-danger removeNews">Remove</button>
+            <button type="reset" class="btn btn-warning">Reset</button>
+            <button type="button" class="btn btn-default return">Return</button>
+        </div>
+        {{/autoForm}}
+    </div>
+    <div class="col-sm-6">
+        <table id="newsTable" class="table table-striped table-bordered table-responsive table-hover">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>URL</th>
+                    <th>Category</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each newsList}}
+                <tr id="{{_id}}" class="doc-edit">
+                    <td>{{title}}</td>
+                    <td>{{url}}</td>
+                    <td>{{category}}</td>
+                </tr>
+                {{else}}
+                <tr>
+                    <td colspan="3">아직 게시물이 없습니다.</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</template>

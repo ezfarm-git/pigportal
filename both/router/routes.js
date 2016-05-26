@@ -1,3 +1,11 @@
+var adminRoutes = FlowRouter.group({
+    prefix: '/admin',
+    name: 'admin'
+    // triggersEnter: [function(context, redirect) {
+    //     console.log('running group triggers');
+    // }]
+});
+
 FlowRouter.route(['/', '/home'], {
     subscriptions: function() {
         this.register('categorieslist', Meteor.subscribe('category'));
@@ -6,9 +14,26 @@ FlowRouter.route(['/', '/home'], {
     },
     action: function() {
         console.log("Running Action to render templates into layouts");
-        BlazeLayout.render('layout', {sidebar:'sidebar', main:'home', cart:'cart'});
+        BlazeLayout.render('layout', {sidebar_left:'sidebar', main:'home', sidebar_right:''});
     }
 });
+
+FlowRouter.route('/news', {
+    action: function() {
+        BlazeLayout.render('layout', {sidebar_left:'', main:'news', sidebar_right:''});
+    }
+});
+
+adminRoutes.route('/news', {
+    subscriptions: function() {
+        this.register('newsList', Meteor.subscribe('newsList'));
+    },
+    action: function() {
+        BlazeLayout.render('layout_admin', {main:'news_admin'});
+    }
+});
+
+
 FlowRouter.route('/admin', {
     subscriptions: function() {
         this.register('categorieslist', Meteor.subscribe('category'));
@@ -16,25 +41,25 @@ FlowRouter.route('/admin', {
     },
     action: function() {
         if(Roles.userIsInRole(Meteor.userId(), 'admin')) {
-            BlazeLayout.render('layout', {sidebar:'', main:'admin', cart:''});
+            BlazeLayout.render('layout', {sidebar_left:'', main:'admin', sidebar_right:''});
         } else {
-            BlazeLayout.render('layout', {sidebar:'', main:'unauthorized', cart:''});
+            BlazeLayout.render('layout', {sidebar_left:'', main:'unauthorized', sidebar_right:''});
         }
     }
 });
 FlowRouter.route('/register', {
     action: function() {
-        BlazeLayout.render('layout', {sidebar:'', main:'register', cart:''});
+        BlazeLayout.render('layout', {sidebar_left:'', main:'register', sidebar_right:''});
     }
 });
 FlowRouter.route('/profile', {
     action: function() {
-        BlazeLayout.render('layout', {sidebar:'', main:'profile', cart:''});
+        BlazeLayout.render('layout', {sidebar_left:'', main:'profile', sidebar_right:''});
     }
 });
 FlowRouter.route('/signin', {
     action: function() {
-        BlazeLayout.render('layout', {sidebar:'', main:'signin', cart:''});
+        BlazeLayout.render('layout', {sidebar_left:'', main:'signin', sidebar_right:''});
     }
 });
 FlowRouter.route('/signout', {
@@ -48,7 +73,7 @@ FlowRouter.route('/signout', {
 });
 FlowRouter.route('/checkout', {
     action: function() {
-        BlazeLayout.render('layout', {sidebar:'', main:'checkout', cart:''});
+        BlazeLayout.render('layout', {sidebar_left:'', main:'checkout', sidebar_right:''});
     }
 });
 FlowRouter.route('/category/:categoryName', {
@@ -65,6 +90,6 @@ FlowRouter.route('/category/:categoryName', {
     },
     action: function() {
         console.log("Running Action to render templates into layouts")
-        BlazeLayout.render('layout', {sidebar:'sidebar', main:'category', cart:'cart'});
+        BlazeLayout.render('layout', {sidebar_left:'sidebar', main:'category', sidebar_right:''});
     }
 });

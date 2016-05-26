@@ -31,6 +31,8 @@ cfs:gridfs
 
 aldeed:collection2
 aldeed:autoform
+aldeed:autoform-bs-datepicker
+rajit:bootstrap3-datepicker
 matb33:collection-hooks
 dburles:collection-helpers
 
@@ -39,4 +41,4 @@ kadira:blaze-layout
 
 twbs:bootstrap
 fortawesome:fontawesome
-
+aldeed:tabular

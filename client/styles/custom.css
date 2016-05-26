@@ -1,3 +1,12 @@
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+@import url(http://fonts.googleapis.com/earlyaccess/jejumyeongjo.css);
+@import url(http://fonts.googleapis.com/earlyaccess/kopubbatang.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+@import url(http://fonts.googleapis.com/earlyaccess/kopubbatang.css);
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+
 ol, ul, li, form, label {
     margin: 0;
     padding: 0;
@@ -17,4 +26,130 @@ body {
 
 .saveProfileBtn {
   margin-top: 25px;
+}
+
+/*copied*/
+
+div.jumbotron#mainTop {
+  position: relative;
+  background: #000 url("/images/mainBackground2.jpg") center center;
+  opacity: 0.85;
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  overflow: hidden;
+}
+
+div.jumbotron#mainBottom {
+  position: relative;
+  background: #000 url("/images/mainBackground1.jpg") center center;
+  opacity: 0.85;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  overflow: hidden;
+  margin-top: 60px;
+  padding-top: 30px;
+  padding-bottom: 45px;
+  padding-left: 5vw;
+  padding-right: 10vw;
+}
+
+/*MainPage Setting*/
+
+div.indexPanelTitle {
+  font-family: 'Jeju Gothic', serif;
+}
+
+a.mainList {
+  color: SteelBlue;
+}
+
+ul.main_ul {
+  list-style-position: outside;
+  padding-left: 12px;
+}
+
+li.main_li {
+  font-family: 'Nanum Gothic', serif;
+  margin-bottom: 5px;
+}
+
+/*News Setting*/
+
+ul.news_ul {
+  list-style-position: outside;
+  padding-left: 20px;
+}
+
+li.news_li {
+  font-family: 'Nanum Gothic', serif;
+  font-size: 1.3em;
+  margin-bottom: 15px;
+}
+
+/*Pages Setting*/
+
+div.page-header {
+  margin-bottom: 0px;
+}
+
+h3#listHeader {
+  margin-top: 0px;
+  font-family: 'Jeju Gothic', serif;
+}
+
+h4.media-heading {
+  font-family: 'Nanum Gothic', serif;
+}
+
+a.contentsList {
+  color: #585858;
+}
+
+/*Navbar Setting*/
+
+li.dropdown {
+  font-family: 'Nanum Gothic', serif;
+}
+
+ul.dropdown-menu {
+  padding-top: 8px;
+  padding-bottom: 0px;
+}
+
+ul.dropdown-menu li {
+  margin-bottom: 10px;
+}
+
+/*fancybox*/
+
+a.fancybox-prev span {
+  left: -25px;
+}
+
+a.fancybox-next span {
+  right: -25px;
+}
+
+/*pagination*/
+
+ul.pagination li a {
+  color: black;
+  padding: 5px 10px;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+  margin: 0 4px;
+  background-color: white;
+  font-size: 12px;
+}
+
+ul.pagination li.disabled a {
+  border: 1px solid #ddd;
+  background-color: transparent;
+}
+
+ul.pagination li.disabled a:hover {
+  border: 1px solid #ddd;
+  background-color: transparent;
 }

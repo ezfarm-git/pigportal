@@ -3,14 +3,14 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-2">
-                {{>Template.dynamic template=sidebar}}
+                {{>Template.dynamic template=sidebar_left}}
             </div>
-            <div class="col-md-7">
+            <div class="col-md-8">
                 {{>Template.dynamic template=main}}
             </div>
-            <div class="col-md-3">
+            <div class="col-md-2">
                 {{#if currentUser}}
-                {{>Template.dynamic template=cart}}
+                {{>Template.dynamic template=sidebar_right}}
                 {{/if}}
             </div>
         </div>
