@@ -1,3 +1,10 @@
 <template name="news">
     <h1>News List</h1>
+    <div>
+        <ul class="news_ul">
+        {{#each newsList}}
+            <li class="news_li"><a href="{{url}}" class="news_link" target="_blank">{{title}}</a></li>
+        {{/each}}
+        </ul>
+    </div>
 </template>

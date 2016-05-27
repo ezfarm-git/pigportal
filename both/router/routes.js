@@ -1,9 +1,6 @@
 var adminRoutes = FlowRouter.group({
     prefix: '/admin',
     name: 'admin'
-    // triggersEnter: [function(context, redirect) {
-    //     console.log('running group triggers');
-    // }]
 });
 
 FlowRouter.route(['/', '/home'], {
@@ -19,7 +16,19 @@ FlowRouter.route(['/', '/home'], {
 });
 
 FlowRouter.route('/news', {
+    subscriptions: function() {
+        this.register('newsList', Meteor.subscribe('newsList'));
+    },
     action: function() {
+        BlazeLayout.render('layout', {sidebar_left:'news_category', main:'news', sidebar_right:'widget_1'});
+    }
+});
+
+FlowRouter.route('/news/:newsCategory', {
+    subscriptions: function(params) {
+        this.register('categoryNewsList', Meteor.subscribe('categoryNewsList', params.newsCategory));
+    },
+    action: function(params) {
         BlazeLayout.render('layout', {sidebar_left:'news_category', main:'news', sidebar_right:'widget_1'});
     }
 });
