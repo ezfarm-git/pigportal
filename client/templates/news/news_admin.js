@@ -1,6 +1,6 @@
 Template.news_admin.helpers({
     newsList: function() {
-        return News.find();
+        return News.find({}, {sort: {date: -1}});
     },
     tableSetting: function() {
         return {
@@ -12,8 +12,8 @@ Template.news_admin.helpers({
             multiColumnSort: false,
             showNavigationRowsPerPage: false,
             // enableRegex: true,
-            fields: ['date', 'title', 'url', 'category'],
-            filters: ['title', 'category']
+            fields: ['date', 'title', 'url', 'category']
+            // filters: ['date', 'category']
         };
     }
 });

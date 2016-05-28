@@ -42,6 +42,6 @@ kadira:blaze-layout
 twbs:bootstrap
 fortawesome:fontawesome
 aslagle:reactive-table
-alethes:pages
-percolate:paginated-subscription
-mrt:pagination
+
+tmeasday:publish-counts
+miguelalarcos:flow-router-pagination

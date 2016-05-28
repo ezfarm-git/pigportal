@@ -16,8 +16,12 @@ FlowRouter.route(['/', '/home'], {
 });
 
 FlowRouter.route('/news', {
-    subscriptions: function() {
-        this.register('newsList', Meteor.subscribe('newsList'));
+    subscriptions: function(params, queryParams) {
+        var limit, offset, page;
+        page = parseInt(queryParams.page) || 0;
+        limit = 10;
+        offset = page * limit;
+        return this.register('newsList', Meteor.subscribe('newsList', offset, limit));
     },
     action: function() {
         BlazeLayout.render('layout', {sidebar_left:'news_category', main:'news', sidebar_right:'widget_1'});
@@ -25,8 +29,12 @@ FlowRouter.route('/news', {
 });
 
 FlowRouter.route('/news/:newsCategory', {
-    subscriptions: function(params) {
-        this.register('categoryNewsList', Meteor.subscribe('categoryNewsList', params.newsCategory));
+    subscriptions: function(params, queryParams) {
+        var limit, offset, page;
+        page = parseInt(queryParams.page) || 0;
+        limit = 10;
+        offset = page * limit;
+        return this.register('categoryNewsList', Meteor.subscribe('categoryNewsList', params.newsCategory, offset, limit));
     },
     action: function(params) {
         BlazeLayout.render('layout', {sidebar_left:'news_category', main:'news', sidebar_right:'widget_1'});
@@ -35,13 +43,12 @@ FlowRouter.route('/news/:newsCategory', {
 
 adminRoutes.route('/news', {
     subscriptions: function() {
-        this.register('newsList', Meteor.subscribe('newsList'));
+        this.register('newsListAdmin', Meteor.subscribe('newsListAdmin'));
     },
     action: function() {
         BlazeLayout.render('layout_admin', {main:'news_admin'});
     }
 });
-
 
 FlowRouter.route('/admin', {
     subscriptions: function() {
