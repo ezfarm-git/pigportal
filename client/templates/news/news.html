@@ -3,7 +3,10 @@
     <div>
         <ul class="news_ul">
         {{#each newsList}}
-            <li class="news_li"><a href="{{url}}" class="news_link" target="_blank">{{title}}, {{date}}</a></li>
+            <li class="news_li">
+                <a href="{{url}}" class="news_link" target="_blank">{{title}}</a>&nbsp;&nbsp;
+                <span style="font-size: 80%">{{prettyDate date}}</span>
+            </li>
         {{/each}}
         </ul>
         {{> paginationBar itemsPerPage=3 window=5 count='total_posts'}}

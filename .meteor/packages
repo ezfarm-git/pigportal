@@ -45,3 +45,5 @@ aslagle:reactive-table
 
 tmeasday:publish-counts
 miguelalarcos:flow-router-pagination
+
+momentjs:moment
