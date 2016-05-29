@@ -6,7 +6,7 @@
             {{> afQuickField name="title" id="title"}}
             {{> afQuickField name="summary" id="summary"}}
             {{> afQuickField name="content" id="content"}}
-            {{> afQuickField name="image" id="image"}}
+            {{> afQuickField name="image" id="image" type="cfs-file" collection="images"}}
             {{> afQuickField name="category" id="category"}}
         <div class="form-group">
             <button type="submit" class="btn btn-primary addPost">Add Post</button>
@@ -15,6 +15,11 @@
             <button type="button" class="btn btn-default return">Return</button>
         </div>
         {{/autoForm}}
+        <div>
+            {{#with FS.GetFile "images" selectedImageId}}
+                <img src="{{this.url store='thumbnails'}}" alt="">
+            {{/with}}
+        </div>
     </div>
     <div class="col-sm-6">
         {{>reactiveTable settings=tableSetting}}

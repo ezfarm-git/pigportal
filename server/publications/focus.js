@@ -22,9 +22,9 @@ Meteor.publish("focusList", function(skip, limit) {
     return Focus.find({}, options);
 });
 
-Meteor.publish("categoryFocusList", function(focusCategory, skip, limit) {
+Meteor.publish("categoryFocusList", function(category, skip, limit) {
     var options;
-    Counts.publish(this, 'total_posts', Focus.find({category: focusCategory}));
+    Counts.publish(this, 'total_posts', Focus.find({category:category}));
     if (skip < 0) {
         skip = 0;
     }
@@ -37,5 +37,9 @@ Meteor.publish("categoryFocusList", function(focusCategory, skip, limit) {
     options.sort = {
         date: -1
     };
-    return Focus.find({category: focusCategory}, options);
+    return Focus.find({category:category}, options);
+});
+
+Meteor.publish("focusPost", function(postId) {
+    return Focus.find({_id:postId});
 });

@@ -33,6 +33,9 @@ aldeed:collection2
 aldeed:autoform
 aldeed:autoform-bs-datepicker
 rajit:bootstrap3-datepicker
+mpowaga:autoform-summernote
+cfs:autoform
+cfs:ui
 matb33:collection-hooks
 dburles:collection-helpers
 

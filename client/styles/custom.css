@@ -77,12 +77,12 @@ li.main_li {
 
 /*News Setting*/
 
-ul.news_ul {
+ul.posts_ul {
   list-style-position: outside;
   padding-left: 20px;
 }
 
-li.news_li {
+li.posts_li {
   font-family: 'Nanum Gothic', serif;
   font-size: 1.3em;
   margin-bottom: 15px;

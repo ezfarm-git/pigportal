@@ -1,14 +1,14 @@
-<template name="news">
+<template name="focus">
     {{#if postsCategory}}
-    <h1 class="postHeading"><i class="fa fa-newspaper-o"></i>&nbsp; {{newsCategory}}</h1>
+    <h1 class="postHeading"><i class="fa fa-eye"></i>&nbsp; {{focusCategory}}</h1>
     {{else}}
-    <h1 class="postHeading"><i class="fa fa-newspaper-o"></i>&nbsp; 양돈 뉴스</h1>
+    <h1 class="postHeading"><i class="fa fa-eye"></i>&nbsp; 양돈 포커스</h1>
     {{/if}}
     <div>
         <ul class="posts_ul">
         {{#each postsList}}
             <li class="posts_li">
-                <a href="{{url}}" class="posts_link" target="_blank">{{title}}</a>&nbsp;&nbsp;
+                <a href="/focus/post/{{_id}}" class="posts_link">{{title}}</a>&nbsp;&nbsp;
                 <span style="font-size: 80%">{{prettyDate date}}</span>
             </li>
         {{/each}}

@@ -22,9 +22,9 @@ Meteor.publish("newsList", function(skip, limit) {
     return News.find({}, options);
 });
 
-Meteor.publish("categoryNewsList", function(newsCategory, skip, limit) {
+Meteor.publish("categoryNewsList", function(category, skip, limit) {
     var options;
-    Counts.publish(this, 'total_posts', News.find({category: newsCategory}));
+    Counts.publish(this, 'total_posts', News.find({category:category}));
     if (skip < 0) {
         skip = 0;
     }
@@ -37,5 +37,5 @@ Meteor.publish("categoryNewsList", function(newsCategory, skip, limit) {
     options.sort = {
         date: -1
     };
-    return News.find({category: newsCategory}, options);
+    return News.find({category:category}, options);
 });

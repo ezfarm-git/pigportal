@@ -20,11 +20,25 @@ Focus.attachSchema(new SimpleSchema({
     },
     content: {
         type: String,
-        label: 'Content'
+        label: 'Content',
+        autoform: {
+            afFieldInput: {
+                type: 'summernote',
+                class: 'editor'
+            }
+        }
     },
     image: {
         type: String,
-        label: 'Image'
+        label: 'Image',
+        autoform: {
+            afFieldInput: {
+                type: 'cfs-file',
+                collection: 'images',
+                accept: 'image/*'
+            }
+        },
+        optional: true
     },
     category: {
         type: String,
@@ -39,9 +53,3 @@ Focus.attachSchema(new SimpleSchema({
         }
     }
 }));
-
-// Foucs.helpers({
-//     list: function() {
-//         return Focus.find({category: this.category});
-//     }
-// });

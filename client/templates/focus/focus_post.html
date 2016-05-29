@@ -1,0 +1,19 @@
+<template name="focus_post">
+    <div>
+        {{#each doc}}
+        <article>
+            <header>
+                <h1>{{title}}</h1>
+            </header>
+            <div>
+                <p class="text-muted text-small">{{prettyDate date}}&nbsp;&nbsp;
+                    <a href="/focus/{{category}}">{{category}}</a>
+                </p>
+                <br>
+
+            </div>
+            {{{content}}}
+        </article>
+        {{/each}}
+    </div>
+</template>

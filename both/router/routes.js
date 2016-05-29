@@ -30,13 +30,13 @@ FlowRouter.route('/news', {
     }
 });
 
-FlowRouter.route('/news/:newsCategory', {
+FlowRouter.route('/news/:category', {
     subscriptions: function(params, queryParams) {
         var limit, offset, page;
         page = parseInt(queryParams.page) || 0;
         limit = 10;
         offset = page * limit;
-        return this.register('categoryNewsList', Meteor.subscribe('categoryNewsList', params.newsCategory, offset, limit));
+        return this.register('categoryNewsList', Meteor.subscribe('categoryNewsList', params.category, offset, limit));
     },
     action: function(params) {
         BlazeLayout.render('layout', {sidebar_left:'news_category', main:'news', sidebar_right:'widget_1'});
@@ -54,14 +54,52 @@ adminRoutes.route('/news', {
 
 // Focus
 
+FlowRouter.route('/focus', {
+    subscriptions: function(params, queryParams) {
+        var limit, offset, page;
+        page = parseInt(queryParams.page) || 0;
+        limit = 10;
+        offset = page * limit;
+        return this.register('focusList', Meteor.subscribe('focusList', offset, limit));
+    },
+    action: function() {
+        BlazeLayout.render('layout', {sidebar_left:'focus_category', main:'focus', sidebar_right:'widget_1'});
+    }
+});
+
+FlowRouter.route('/focus/:category', {
+    subscriptions: function(params, queryParams) {
+        var limit, offset, page;
+        page = parseInt(queryParams.page) || 0;
+        limit = 10;
+        offset = page * limit;
+        return this.register('categoryFocusList', Meteor.subscribe('categoryFocusList', params.category, offset, limit));
+    },
+    action: function(params) {
+        BlazeLayout.render('layout', {sidebar_left:'focus_category', main:'focus', sidebar_right:'widget_1'});
+    }
+});
+
+FlowRouter.route('/focus/post/:postId', {
+    subscriptions: function(params) {
+        return this.register('focusPost', Meteor.subscribe('focusPost', params.postId));
+    },
+    action: function(params) {
+        BlazeLayout.render('layout', {sidebar_left:'focus_category', main:'focus_post', sidebar_right:'widget_1'});
+    }
+});
+
 adminRoutes.route('/focus', {
     subscriptions: function() {
         this.register('focusListAdmin', Meteor.subscribe('focusListAdmin'));
+        this.register('images', Meteor.subscribe('images'));
     },
     action: function() {
         BlazeLayout.render('layout_admin', {main:'focus_admin'});
     }
 });
+
+//
 
 FlowRouter.route('/admin', {
     subscriptions: function() {

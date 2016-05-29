@@ -9,9 +9,12 @@ Template.focus_admin.helpers({
             multiColumnSort: false,
             showNavigationRowsPerPage: false,
             // enableRegex: true,
-            fields: ['date', 'title', 'summary', 'content', 'image', 'category']
+            fields: ['date', 'title', 'summary', 'category']
             // filters: ['date', 'category']
         };
+    },
+    image: function() {
+        return Images.findOne();
     }
 });
 
