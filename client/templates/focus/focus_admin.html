@@ -1,6 +1,6 @@
 <template name="focus_admin">
     <div class="col-sm-6">
-        {{#autoForm id="PostForm" type="insert" collection="Focus"}}
+        {{#autoForm id="FocusForm" type="insert" collection="Focus"}}
             <input type="hidden" id="postId">
             {{> afQuickField name="date" id="date"}}
             {{> afQuickField name="title" id="title"}}
@@ -8,6 +8,7 @@
             {{> afQuickField name="content" id="content"}}
             {{> afQuickField name="image" id="image" type="cfs-file" collection="images"}}
             {{> afQuickField name="category" id="category"}}
+            <!-- <input type="file" name="image" class="imageFileInput" id="image"> -->
         <div class="form-group">
             <button type="submit" class="btn btn-primary addPost">Add Post</button>
             <button type="button" class="btn btn-danger removePost">Remove</button>
@@ -16,9 +17,6 @@
         </div>
         {{/autoForm}}
         <div>
-            {{#with FS.GetFile "images" selectedImageId}}
-                <img src="{{this.url store='thumbnails'}}" alt="">
-            {{/with}}
         </div>
     </div>
     <div class="col-sm-6">

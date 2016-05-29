@@ -43,3 +43,8 @@ Meteor.publish("categoryFocusList", function(category, skip, limit) {
 Meteor.publish("focusPost", function(postId) {
     return Focus.find({_id:postId});
 });
+
+Meteor.publish("focusImage", function(postId) {
+    var imageId = Images.findOne({_id: postId})._id;
+    return Images.find({_id: imageId});
+});

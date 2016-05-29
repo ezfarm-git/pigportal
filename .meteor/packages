@@ -28,6 +28,8 @@ alanning:roles
 
 cfs:standard-packages
 cfs:gridfs
+#cfs:filesystem
+#cfs:graphicsmagick
 
 aldeed:collection2
 aldeed:autoform
@@ -38,6 +40,8 @@ cfs:autoform
 cfs:ui
 matb33:collection-hooks
 dburles:collection-helpers
+
+rzymek:fullcalendar
 
 kadira:flow-router
 kadira:blaze-layout

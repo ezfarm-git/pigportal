@@ -83,6 +83,8 @@ FlowRouter.route('/focus/:category', {
 FlowRouter.route('/focus/post/:postId', {
     subscriptions: function(params) {
         return this.register('focusPost', Meteor.subscribe('focusPost', params.postId));
+        return this.register('focusImage', Meteor.subscribe('focusImage', params.postId));
+        return this.register('images', Meteor.subscribe('images'));
     },
     action: function(params) {
         BlazeLayout.render('layout', {sidebar_left:'focus_category', main:'focus_post', sidebar_right:'widget_1'});
@@ -96,6 +98,14 @@ adminRoutes.route('/focus', {
     },
     action: function() {
         BlazeLayout.render('layout_admin', {main:'focus_admin'});
+    }
+});
+
+// Calendar
+
+FlowRouter.route('/calendar', {
+    action: function() {
+        BlazeLayout.render('layout', {sidebar_left:'', main:'calendar', sidebar_right:''});
     }
 });
 
