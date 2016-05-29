@@ -15,6 +15,8 @@ FlowRouter.route(['/', '/home'], {
     }
 });
 
+// News
+
 FlowRouter.route('/news', {
     subscriptions: function(params, queryParams) {
         var limit, offset, page;
@@ -47,6 +49,17 @@ adminRoutes.route('/news', {
     },
     action: function() {
         BlazeLayout.render('layout_admin', {main:'news_admin'});
+    }
+});
+
+// Focus
+
+adminRoutes.route('/focus', {
+    subscriptions: function() {
+        this.register('focusListAdmin', Meteor.subscribe('focusListAdmin'));
+    },
+    action: function() {
+        BlazeLayout.render('layout_admin', {main:'focus_admin'});
     }
 });
 
