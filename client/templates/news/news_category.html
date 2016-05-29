@@ -1,13 +1,12 @@
 <template name="news_category">
-    <h1>News Category</h1>
-    <div class="row">
-        <div class="col-md-12 hidden-sm hidden-xs">
-            <ul class="news_ul list-unstyled side-nav tree" id="tree1">
-            <!-- {{#each categories}} -->
-                <li class="news_li"><a href="/news/A">A</a></li>
-                <li class="news_li"><a href="/news/B">B</a></li>
-                <li class="news_li"><a href="/news/C">C</a></li>
-            <!-- {{/each}} -->
+    <div class="panel panel-default categoryPanel">
+        <div class="panel-heading categoryPanelHeading">&nbsp;&nbsp;&nbsp;뉴스 카테고리</div>
+        <div class="panel-body categoryPanelBody">
+            <ul class="nav nav-pills nav-stacked category_ul">
+                <li class="category_li"><a href="/news">전체 뉴스</a></li>
+                <li class="category_li"><a href="/news/A">&nbsp;&nbsp;<i class="fa fa-angle-double-right" aria-hidden="true">&nbsp;&nbsp;A</i></a></li>
+                <li class="category_li"><a href="/news/B">&nbsp;&nbsp;<i class="fa fa-angle-double-right" aria-hidden="true">&nbsp;&nbsp;B</i></a></li>
+                <li class="category_li"><a href="/news/C">&nbsp;&nbsp;<i class="fa fa-angle-double-right" aria-hidden="true">&nbsp;&nbsp;C</i></a></li>
             </ul>
         </div>
     </div>

@@ -88,6 +88,28 @@ li.news_li {
   margin-bottom: 15px;
 }
 
+.postHeading {
+    margin-bottom: 25px;
+}
+
+.categoryPanel {
+    margin-top: 15px;
+}
+
+.categoryPanelHeading {
+    font-size: 130%;
+}
+
+.categoryPanelBody {
+    padding-top: 5px;
+    padding-bottom: 7px;
+}
+
+.category_ul {
+    list-style: none;
+    font-size: 120%;
+}
+
 /*Pages Setting*/
 
 div.page-header {

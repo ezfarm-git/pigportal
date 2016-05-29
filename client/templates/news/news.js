@@ -6,5 +6,10 @@ Template.news.helpers({
         } else {
             return News.find({}, {sort: {date: -1}});
         };
+    },
+    newsCategory: function() {
+        if(FlowRouter.getParam('newsCategory')) {
+            return FlowRouter.getParam('newsCategory');
+        }
     }
 });
