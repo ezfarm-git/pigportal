@@ -69,6 +69,7 @@ jquery@1.11.8
 kadira:blaze-layout@2.3.0
 kadira:flow-router@2.12.1
 launch-screen@1.0.11
+less@2.6.0
 livedata@1.0.18
 localstorage@1.0.9
 logging@1.0.12
@@ -89,6 +90,8 @@ mongo@1.1.7
 mongo-id@1.0.4
 mongo-livedata@1.0.12
 mpowaga:autoform-summernote@0.4.3
+mpowaga:jquery-fileupload@9.11.2
+mpowaga:jquery-ui-widget@1.11.4
 npm-bcrypt@0.8.5
 npm-mongo@1.4.43
 observe-sequence@1.0.11
@@ -124,3 +127,4 @@ underscore@1.0.8
 url@1.0.9
 webapp@1.2.8
 webapp-hashing@1.0.9
+yogiben:autoform-file@0.4.2

@@ -28,6 +28,7 @@ alanning:roles
 
 cfs:standard-packages
 cfs:gridfs
+yogiben:autoform-file
 #cfs:filesystem
 #cfs:graphicsmagick
 

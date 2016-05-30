@@ -30,16 +30,28 @@ Focus.attachSchema(new SimpleSchema({
     },
     image: {
         type: String,
-        label: 'Image',
         autoform: {
             afFieldInput: {
-                type: 'cfs-file',
-                collection: 'images',
-                accept: 'image/*'
+                type: 'fileUpload',
+                collection: 'Images',
+                accept: 'image/*',
+                label: 'Choose Test File'
             }
         },
         optional: true
     },
+    // image: {
+    //     type: String,
+    //     label: 'Image',
+    //     autoform: {
+    //         afFieldInput: {
+    //             type: 'cfs-file',
+    //             collection: 'images',
+    //             accept: 'image/*'
+    //         }
+    //     },
+    //     optional: true
+    // },
     category: {
         type: String,
         label: 'Category',

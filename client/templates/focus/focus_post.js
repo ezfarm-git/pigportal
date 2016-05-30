@@ -8,7 +8,7 @@ Template.focus_post.helpers({
     },
     image: function(postId) {
         var imageId = Images.findOne({_id: postId})._id;
-        return Images.find({_id: imageId});
+        return Images.find({_id:imageId});
     },
     images: function() {
         return Images.find();
