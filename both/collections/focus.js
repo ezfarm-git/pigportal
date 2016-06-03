@@ -35,10 +35,23 @@ Focus.attachSchema(new SimpleSchema({
                 type: 'fileUpload',
                 collection: 'Images',
                 accept: 'image/*',
-                label: 'Choose Test File'
+                label: '파일 찾기'
+                // onAfterInsert: function() {
+                //     return function(err, fileObj) {
+                //         if (err) {
+                //             return console.log ('Error');
+                //         } else {
+                //             return console.log (fileObj._id);
+                //             Session.set("temp_imageId", fileObj._id);
+                //             return console.log (Session.get("temp_imageId"));
+                //             // var id = this._id;
+                //             // Meteor.call('Focus.imageUpdate', id, fileObj._id);
+                //         }
+                //     };
+                // }
             }
         },
-        optional: true
+        optional: false
     },
     // image: {
     //     type: String,

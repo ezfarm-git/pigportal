@@ -22,6 +22,7 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 http
 session
+#frozeman:template-var
 
 accounts-password
 alanning:roles
@@ -29,6 +30,7 @@ alanning:roles
 cfs:standard-packages
 cfs:gridfs
 yogiben:autoform-file
+
 #cfs:filesystem
 #cfs:graphicsmagick
 
