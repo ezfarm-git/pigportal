@@ -10,16 +10,7 @@ Router.route('/', function() {
 
 // News
 
-Router.route('/news/:page', function() {
-    this.layout('layout_app');
-    this.render('news_category', {to: 'sidebar_left'});
-    this.render('news', {to: 'main'});
-    this.render('widget_1', {to: 'sidebar_right'});
-    }, {
-        name: 'news'
-});
-
-Router.route('/news/category/:category/:page?', function() {
+Router.route('/news/:category/:page', function() {
     this.layout('layout_app');
     this.render('news_category', {to: 'sidebar_left'});
     this.render('news', {
@@ -29,7 +20,8 @@ Router.route('/news/category/:category/:page?', function() {
         }
     });
     this.render('widget_1', {to: 'sidebar_right'});
-    this.wait(Meteor.subscribe('categoryNewsList'));
+}, {
+    name: 'news'
 });
 
 
