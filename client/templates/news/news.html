@@ -1,9 +1,5 @@
 <template name="news">
-    {{#if postsCategory}}
-    <h1 class="postHeading"><i class="fa fa-newspaper-o"></i>&nbsp; {{newsCategory}}</h1>
-    {{else}}
-    <h1 class="postHeading"><i class="fa fa-newspaper-o"></i>&nbsp; 양돈 뉴스</h1>
-    {{/if}}
+    <h1 class="postHeading"><i class="fa fa-newspaper-o"></i>&nbsp; 양돈 뉴스 ({{postsCategory}})</h1>
     <div>
         <ul class="posts_ul">
         {{#each postsList}}
@@ -13,6 +9,7 @@
             </li>
         {{/each}}
         </ul>
-        {{> paginationBar itemsPerPage=3 window=5 count='total_posts'}}
+        <!-- {{> pages}}
+        {{> pagesNav}} -->
     </div>
 </template>

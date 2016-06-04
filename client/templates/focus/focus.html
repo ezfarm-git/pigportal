@@ -1,9 +1,5 @@
 <template name="focus">
-    {{#if postsCategory}}
-    <h1 class="postHeading"><i class="fa fa-eye"></i>&nbsp; {{focusCategory}}</h1>
-    {{else}}
-    <h1 class="postHeading"><i class="fa fa-eye"></i>&nbsp; 양돈 포커스</h1>
-    {{/if}}
+    <h1 class="postHeading"><i class="fa fa-eye"></i>&nbsp; 양돈 포커스 ({{postsCategory}})</h1>
     <div>
         <ul class="posts_ul">
         {{#each postsList}}
@@ -13,6 +9,5 @@
             </li>
         {{/each}}
         </ul>
-        {{> paginationBar itemsPerPage=3 window=5 count='total_posts'}}
     </div>
 </template>

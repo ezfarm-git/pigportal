@@ -1,15 +1,16 @@
 Template.focus.helpers({
     postsList: function() {
-        if(FlowRouter.getParam('category')) {
-            var categoryName = FlowRouter.getParam('category');
-            return Focus.find({category: categoryName}, {sort: {date: -1}});
+        if (this.categoryName) {
+            return Focus.find({category: this.categoryName}, {sort: {date: -1}});
         } else {
             return Focus.find({}, {sort: {date: -1}});
         };
     },
     postsCategory: function() {
-        if(FlowRouter.getParam('catgegory')) {
-            return FlowRouter.getParam('category');
+        if (this.categoryName) {
+            return this.categoryName;
+        } else {
+            return "전체";
         }
     }
 });

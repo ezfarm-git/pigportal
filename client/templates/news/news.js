@@ -1,15 +1,16 @@
 Template.news.helpers({
     postsList: function() {
-        if(FlowRouter.getParam('category')) {
-            var categoryName = FlowRouter.getParam('category');
-            return News.find({category: categoryName}, {sort: {date: -1}});
+        if (this.categoryName) {
+            return News.find({category: this.categoryName}, {sort: {date: -1}});
         } else {
             return News.find({}, {sort: {date: -1}});
         };
     },
     postsCategory: function() {
-        if(FlowRouter.getParam('category')) {
-            return FlowRouter.getParam('category');
+        if (this.categoryName) {
+            return this.categoryName;
+        } else {
+            return "전체";
         }
     }
 });

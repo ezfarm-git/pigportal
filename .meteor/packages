@@ -22,38 +22,40 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 http
 session
-#frozeman:template-var
+check
+
+iron:router
+iron:layout
 
 accounts-password
 alanning:roles
 
 cfs:standard-packages
 cfs:gridfs
-yogiben:autoform-file
-
-#cfs:filesystem
+cfs:filesystem
+cfs:autoform
+cfs:ui
 #cfs:graphicsmagick
 
 aldeed:collection2
 aldeed:autoform
 aldeed:autoform-bs-datepicker
-rajit:bootstrap3-datepicker
-mpowaga:autoform-summernote
-cfs:autoform
-cfs:ui
+
+yogiben:autoform-file
+
 matb33:collection-hooks
 dburles:collection-helpers
 
-rzymek:fullcalendar
-
-kadira:flow-router
-kadira:blaze-layout
+chrismbeckett:toastr
+msavin:mongol
+sacha:spin
 
 twbs:bootstrap
 fortawesome:fontawesome
 aslagle:reactive-table
-
-tmeasday:publish-counts
-miguelalarcos:flow-router-pagination
-
+rajit:bootstrap3-datepicker
+mpowaga:autoform-summernote
+rzymek:fullcalendar
 momentjs:moment
+tmeasday:publish-counts
+alethes:pages

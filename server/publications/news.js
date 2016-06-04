@@ -4,38 +4,10 @@ Meteor.publish("newsListAdmin", function() {
 });
 
 // for Viewer
-Meteor.publish("newsList", function(skip, limit) {
-    var options;
-    Counts.publish(this, 'total_posts', News.find());
-    if (skip < 0) {
-        skip = 0;
-    }
-    options = {};
-    options.skip = skip;
-    options.limit = limit;
-    if (options.limit > 10) {
-        options.limit = 10;
-    }
-    options.sort = {
-        date: -1
-    };
-    return News.find({}, options);
+Meteor.publish("newsList", function() {
+    return News.find();
 });
 
-Meteor.publish("categoryNewsList", function(category, skip, limit) {
-    var options;
-    Counts.publish(this, 'total_posts', News.find({category:category}));
-    if (skip < 0) {
-        skip = 0;
-    }
-    options = {};
-    options.skip = skip;
-    options.limit = limit;
-    if (options.limit > 10) {
-        options.limit = 10;
-    }
-    options.sort = {
-        date: -1
-    };
-    return News.find({category:category}, options);
+Meteor.publish("categoryNewsList", function() {
+    return News.find();
 });
