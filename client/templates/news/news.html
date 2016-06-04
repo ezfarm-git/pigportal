@@ -2,14 +2,25 @@
     <h1 class="postHeading"><i class="fa fa-newspaper-o"></i>&nbsp; 양돈 뉴스 ({{postsCategory}})</h1>
     <div>
         <ul class="posts_ul">
-        {{#each postsList}}
+            {{#each postsList}}
             <li class="posts_li">
                 <a href="{{url}}" class="posts_link" target="_blank">{{title}}</a>&nbsp;&nbsp;
                 <span style="font-size: 80%">{{prettyDate date}}</span>
             </li>
-        {{/each}}
+            {{/each}}
+            <nav>
+                <ul class="pager">
+                    <li class="{{prevPageClass}}">
+                        <a id="prevPage" href="{{prevPage}}">
+                            <span aria-hidden="true">&larr;</span> 이전
+                        </a>
+                    </li>
+                    <li class="{{nextPageClass}}">
+                        <a id="nextPage" href="{{nextPage}}"> 다음 <span aria-hidden="true">&rarr;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </ul>
-        <!-- {{> pages}}
-        {{> pagesNav}} -->
     </div>
 </template>

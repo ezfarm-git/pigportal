@@ -10,15 +10,16 @@ Router.route('/', function() {
 
 // News
 
-Router.route('/news', function() {
+Router.route('/news/:page', function() {
     this.layout('layout_app');
     this.render('news_category', {to: 'sidebar_left'});
     this.render('news', {to: 'main'});
     this.render('widget_1', {to: 'sidebar_right'});
-    this.wait(Meteor.subscribe('newsList'));
+    }, {
+        name: 'news'
 });
 
-Router.route('/news/:category', function() {
+Router.route('/news/category/:category/:page?', function() {
     this.layout('layout_app');
     this.render('news_category', {to: 'sidebar_left'});
     this.render('news', {
