@@ -34,6 +34,10 @@ Meteor.publish("focusList", function(category, skipCount) {
     }
 });
 
-Meteor.publish("categoryFocusList", function() {
-    return Focus.find();
+Meteor.publish("focusPost", function(postId) {
+    return Focus.find({_id: postId});
 });
+
+// Meteor.publish("categoryFocusList", function() {
+//     return Focus.find();
+// });

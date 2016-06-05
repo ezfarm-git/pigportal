@@ -4,7 +4,7 @@
         <ul class="posts_ul">
             {{#each postsList}}
             <li class="posts_li">
-                <a href="{{url}}" class="posts_link" target="_blank">{{title}}</a>&nbsp;&nbsp;
+                <a href="/focus_post/{{_id}}" class="posts_link">{{title}}</a>&nbsp;&nbsp;
                 <span style="font-size: 80%">{{prettyDate date}}</span>
             </li>
             {{/each}}

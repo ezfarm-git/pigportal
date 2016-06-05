@@ -1,14 +1,17 @@
 <template name="focus_post">
     <div>
-        {{#each doc}}
+        {{#with post}}
         <article>
             <header>
                 <h1>{{title}}</h1>
+                <p class="text-muted text-small">{{prettyDate date}}&nbsp;&nbsp;
+                    <a href="/focus/{{category}}/1">{{category}}</a>
+                </p>
             </header>
-            <p class="text-muted text-small">{{prettyDate date}}&nbsp;&nbsp;
-                <a href="/focus/{{category}}">{{category}}</a></p>
-            {{{content}}}
+            <div>
+                {{{content}}}
+            </div>
         </article>
-        {{/each}}
+        {{/with}}
     </div>
 </template>

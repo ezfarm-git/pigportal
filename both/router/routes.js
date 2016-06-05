@@ -41,14 +41,17 @@ Router.route('/focus/:category/:page', function() {
     name: 'focus'
 });
 
-Router.route('/focus/post/:postId', function() {
+Router.route('/focus_post/:postId', function() {
     this.layout('layout_app');
     this.render('focus_category', {to: 'sidebar_left'});
-    this.render('focus_post', {to: 'main'});
+    this.render('focus_post', {
+        to: 'main',
+        data: {
+            postId: this.params.postId
+        }
+    });
     this.render('widget_1', {to: 'sidebar_right'});
-    this.wait(Meteor.subscribe('focusPost'));
-    this.wait(Meteor.subscribe('focusImage'));
-    this.wait(Meteor.subscribe('images'));
+    this.wait(Meteor.subscribe('focusPost', this.params.postId));
 });
 
 
