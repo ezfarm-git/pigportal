@@ -27,15 +27,7 @@ Router.route('/news/:category/:page', function() {
 
 // Focus
 
-Router.route('/focus', function() {
-    this.layout('layout_app');
-    this.render('focus_category', {to: 'sidebar_left'});
-    this.render('focus', {to: 'main'});
-    this.render('widget_1', {to: 'sidebar_right'});
-    this.wait(Meteor.subscribe('focusList'));
-});
-
-Router.route('/focus/:category', function() {
+Router.route('/focus/:category/:page', function() {
     this.layout('layout_app');
     this.render('focus_category', {to: 'sidebar_left'});
     this.render('focus', {
@@ -45,7 +37,8 @@ Router.route('/focus/:category', function() {
         }
     });
     this.render('widget_1', {to: 'sidebar_right'});
-    this.wait(Meteor.subscribe('categoryFocusList'));
+}, {
+    name: 'focus'
 });
 
 Router.route('/focus/post/:postId', function() {

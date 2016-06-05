@@ -1,6 +1,6 @@
 <template name="news_admin">
     <div class="col-sm-6">
-        {{#autoForm id="NewsForm" type="insert" collection="News"}}
+        {{#autoForm id="Form" type="insert" collection="News"}}
             <input type="hidden" id="postId">
             {{> afQuickField name="date" id="date"}}
             {{> afQuickField name="title" id="title"}}

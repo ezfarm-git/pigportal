@@ -1,27 +1,40 @@
 <template name="focus_admin">
     <div class="col-sm-6">
-        {{#autoForm id="PostForm" type="insert" collection="Focus"}}
-            <input type="hidden" id="postId">
-            <input type="hidden" id="imageId">
+        {{#autoForm id="Form" type=formType collection="Focus" doc=selectedDoc}}
+            <input type="" id="postId">
+            <input type="" id="imageId">
             {{> afQuickField name="date" id="date"}}
             {{> afQuickField name="title" id="title"}}
             {{> afQuickField name="summary" id="summary"}}
             {{> afQuickField name="content" id="content"}}
-            {{#with FS.GetFile "images" FocusImageId }}
+            {{> afQuickField name="image" type="cfs-file" collection="Images" id="image"}}
+            {{#with FS.GetFile "Images" selectedImage }}
                 <img src="{{this.url store='images'}}" alt="" width="300px">
-                <!-- <div>
-                    {{> FS.DeleteButton class="btn btn-danger btn-xs"}} {{this.name}}, {{this._id}}
-                </div> -->
+                <div>
+                    {{> FS.DeleteButton class="btn btn-danger btn-xs deleteImage"}} {{this.name}}, {{this._id}}
+                </div>
             {{/with}}
-            {{> afQuickField name="image" id="image"}}
+            <!-- {{> afQuickField name="image" id="image"}} -->
             {{> afQuickField name="category" id="category"}}
             <div class="form-group">
-                <button type="submit" class="btn btn-primary addPost">Add Post</button>
-                <button type="button" class="btn btn-danger removePost">Remove</button>
-                <button type="reset" class="btn btn-warning reset">Reset</button>
-                <button type="button" class="btn btn-default return">Return</button>
+                <button type="submit" class="btn btn-primary submit-btn">Submit</button>
+                <button type="button" class="btn btn-danger remove-btn">Remove</button>
+                <button type="reset" class="btn btn-warning reset-btn">Reset</button>
+                <!-- <button type="button" class="btn btn-default return">Return</button> -->
             </div>
         {{/autoForm}}
+        <!-- {{#autoForm id="updateForm" type=formType collection="Focus" doc=selectedDoc}}
+            {{> afQuickField name="date"}}
+            {{> afQuickField name="title"}}
+            {{> afQuickField name="summary"}}
+            {{> afQuickField name="content"}}
+            {{> afQuickField name="image"}}
+            {{> afQuickField name="category"}}
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary" >Submit</button>
+                <button type="reset" class="btn btn-default" >Reset Form</button>
+             </div>
+        {{/autoForm}} -->
     </div>
     <div class="col-sm-6">
         {{>reactiveTable settings=tableSetting}}

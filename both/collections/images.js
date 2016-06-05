@@ -1,3 +1,12 @@
-Images = new FS.Collection("images", {
-    stores: [new FS.Store.GridFS("images")]
+var imageStore = new FS.Store.FileSystem("images", {
+    path: process.env.PWD + "/public/images"
+});
+
+Images = new FS.Collection("Images", {
+    stores: [imageStore],
+    filter: {
+        allow: {
+            contentTypes: ['image/*']
+        }
+    }
 });

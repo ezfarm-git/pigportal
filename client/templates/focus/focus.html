@@ -1,13 +1,30 @@
 <template name="focus">
-    <h1 class="postHeading"><i class="fa fa-eye"></i>&nbsp; 양돈 포커스 ({{postsCategory}})</h1>
+    <h1 class="postHeading"><i class="fa fa-newspaper-o"></i>&nbsp; 양돈 포커스 ({{postsCategory}})</h1>
     <div>
         <ul class="posts_ul">
-        {{#each postsList}}
+            {{#each postsList}}
             <li class="posts_li">
-                <a href="/focus/post/{{_id}}" class="posts_link">{{title}}</a>&nbsp;&nbsp;
+                <a href="{{url}}" class="posts_link" target="_blank">{{title}}</a>&nbsp;&nbsp;
                 <span style="font-size: 80%">{{prettyDate date}}</span>
             </li>
-        {{/each}}
+            {{/each}}
+            <nav>
+                <ul class="pager">
+                    <li class="{{prevPageClass}}">
+                        <a id="prevPage" href="{{prevPage}}">
+                            <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+                            &nbsp;이전
+                        </a>
+                    </li>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <li class="{{nextPageClass}}">
+                        <a id="nextPage" href="{{nextPage}}">
+                            다음&nbsp;
+                            <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </ul>
     </div>
 </template>

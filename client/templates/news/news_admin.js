@@ -40,6 +40,6 @@ Template.news_admin.events({
     },
     'click .return': function(evt, tmpl) {
         $('.updatePost').text('Add Post').removeClass('updatePost').addClass('addPost');
-        document.getElementById('PostForm').reset();
+        document.getElementById('Form').reset();
     }
 });
