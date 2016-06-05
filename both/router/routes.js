@@ -55,6 +55,23 @@ Router.route('/focus_post/:postId', function() {
 });
 
 
+// Infographic
+
+Router.route('/infographic/:category/:page', function() {
+    this.layout('layout_app');
+    this.render('infographic_category', {to: 'sidebar_left'});
+    this.render('infographic', {
+        to: 'main',
+        data: {
+            categoryName: this.params.category
+        }
+    });
+    this.render('widget_1', {to: 'sidebar_right'});
+}, {
+    name: 'infographic'
+});
+
+
 // Calendar
 
 Router.route('/calendar', function() {

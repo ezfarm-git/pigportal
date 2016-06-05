@@ -1,0 +1,50 @@
+<template name="infographic">
+    <!-- {{#with FS.GetFile "Images" "dvQZEqewApzqgkqWK" }} -->
+        <img src="{{images.url store='images'}}" alt="" width="300px">
+    <!-- {{/with}} -->
+    <h1 class="postHeading"><i class="fa fa-newspaper-o"></i>&nbsp; 인포그래픽 ({{postsCategory}})</h1>
+    {{#each postsList}}
+    <!-- image info -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="image-info">
+                Posted on: {{prettyDate date}}
+                / Category: {{category}}
+            </div>
+        </div>
+    </div>
+
+    <!-- the image -->
+    <div class="row">
+        <div class="col-md-12">
+            <img src="/images/{{image}}.key" alt="">
+        <!-- {{#with FS.GetFile "Images" "uss8baRdXLhB6vca2" }} -->
+            <!-- <img src="{{image.url store='images'}}" alt="" width="300px"> -->
+        <!-- {{/with}} -->
+            <!-- <a href="{{url}}" target="_blank" class="thumbnail">
+                <img src="{{url}}"/>
+            </a> -->
+        </div>
+    </div>
+    {{/each}}
+    {{#with FS.GetFile "Images" "uss8baRdXLhB6vca2" }}
+        <img src="{{this.url store='images'}}" alt="" width="300px">
+    {{/with}}
+    <nav>
+        <ul class="pager">
+            <li class="{{prevPageClass}}">
+                <a id="prevPage" href="{{prevPage}}">
+                    <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+                    &nbsp;이전
+                </a>
+            </li>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <li class="{{nextPageClass}}">
+                <a id="nextPage" href="{{nextPage}}">
+                    다음&nbsp;
+                    <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</template>

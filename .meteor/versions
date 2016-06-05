@@ -96,6 +96,7 @@ mongo@1.1.7
 mongo-id@1.0.4
 mongo-livedata@1.0.12
 mpowaga:autoform-summernote@0.4.3
+mrt:fancybox@0.5.0
 msavin:mongol@2.0.1
 npm-bcrypt@0.8.5
 npm-mongo@1.4.43

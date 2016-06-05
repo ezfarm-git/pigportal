@@ -1,6 +1,6 @@
-Focus = new Mongo.Collection('focus');
+Infographic = new Mongo.Collection('infographic');
 
-Focus.attachSchema(new SimpleSchema({
+Infographic.attachSchema(new SimpleSchema({
     date: {
         type: Date,
         label: 'Date',
@@ -18,16 +18,6 @@ Focus.attachSchema(new SimpleSchema({
         type: String,
         label: 'Summary'
     },
-    content: {
-        type: String,
-        label: 'Content',
-        autoform: {
-            afFieldInput: {
-                type: 'summernote',
-                class: 'editor'
-            }
-        }
-    },
     image: {
         type: String,
         autoform: {
@@ -41,12 +31,12 @@ Focus.attachSchema(new SimpleSchema({
     category: {
         type: String,
         label: 'Category',
-        allowedValues: ['가', '나', '다'],
+        allowedValues: ['인포1', '인포2', '인포3'],
         autoform: {
             options: [
-                {label: "가", value: "가"},
-                {label: "나", value: "나"},
-                {label: "다", value: "다"},
+                {label: "인포1", value: "인포1"},
+                {label: "인포2", value: "인포2"},
+                {label: "인포3", value: "인포3"},
             ]
         }
     }

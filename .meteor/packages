@@ -20,16 +20,20 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 #autopublish             # Publish all data to the clients (for prototyping)
 #insecure                # Allow all DB writes from clients (for prototyping)
 
+# Session
 http
 session
 check
 
+# Router
 iron:router
 iron:layout
 
+# Auth
 accounts-password
 alanning:roles
 
+# CFS
 cfs:standard-packages
 cfs:gridfs
 cfs:filesystem
@@ -37,6 +41,7 @@ cfs:autoform
 cfs:ui
 #cfs:graphicsmagick
 
+# Autoform
 aldeed:collection2
 aldeed:autoform
 aldeed:autoform-bs-datepicker
@@ -48,6 +53,7 @@ chrismbeckett:toastr
 msavin:mongol
 sacha:spin
 
+# Design
 twbs:bootstrap
 fortawesome:fontawesome
 aslagle:reactive-table
@@ -56,3 +62,4 @@ mpowaga:autoform-summernote
 rzymek:fullcalendar
 momentjs:moment
 tmeasday:publish-counts
+mrt:fancybox
