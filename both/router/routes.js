@@ -67,6 +67,7 @@ Router.route('/infographic/:category/:page', function() {
         }
     });
     this.render('widget_1', {to: 'sidebar_right'});
+    this.wait(Meteor.subscribe('images'));
 }, {
     name: 'infographic'
 });

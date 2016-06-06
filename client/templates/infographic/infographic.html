@@ -1,7 +1,4 @@
 <template name="infographic">
-    <!-- {{#with FS.GetFile "Images" "dvQZEqewApzqgkqWK" }} -->
-        <img src="{{images.url store='images'}}" alt="" width="300px">
-    <!-- {{/with}} -->
     <h1 class="postHeading"><i class="fa fa-newspaper-o"></i>&nbsp; 인포그래픽 ({{postsCategory}})</h1>
     {{#each postsList}}
     <!-- image info -->
@@ -10,6 +7,7 @@
             <div class="image-info">
                 Posted on: {{prettyDate date}}
                 / Category: {{category}}
+                / {{image}}
             </div>
         </div>
     </div>
@@ -17,19 +15,12 @@
     <!-- the image -->
     <div class="row">
         <div class="col-md-12">
-            <img src="/images/{{image}}.key" alt="">
-        <!-- {{#with FS.GetFile "Images" "uss8baRdXLhB6vca2" }} -->
-            <!-- <img src="{{image.url store='images'}}" alt="" width="300px"> -->
-        <!-- {{/with}} -->
-            <!-- <a href="{{url}}" target="_blank" class="thumbnail">
-                <img src="{{url}}"/>
-            </a> -->
+            {{#with FS.GetFile "Images" image }}
+                <img src="{{this.url store='images'}}" alt="" width="300px">
+            {{/with}}
         </div>
     </div>
     {{/each}}
-    {{#with FS.GetFile "Images" "uss8baRdXLhB6vca2" }}
-        <img src="{{this.url store='images'}}" alt="" width="300px">
-    {{/with}}
     <nav>
         <ul class="pager">
             <li class="{{prevPageClass}}">

@@ -23,9 +23,6 @@ Template.infographic.helpers({
             return Infographic.find({category: this.categoryName}, {sort: {date: -1}});
         }
     },
-    images: function() {
-        return Images.findOne({_id: this.image});
-    },
     prevPage: function() {
         var currnetCategory = Router.current().params.category || "total";
         var currentPage = parseInt(Router.current().params.page) || 1;
