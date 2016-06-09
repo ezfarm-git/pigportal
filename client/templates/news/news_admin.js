@@ -1,3 +1,14 @@
+Template.news_admin.onCreated(function() {
+    this.selectedDoc = new ReactiveVar("");
+    this.formType = new ReactiveVar("insert");
+});
+
+Template.news_admin.onDestroyed(function() {
+    document.getElementById('Form').reset();
+    this.selectedDoc.set(null);
+    this.formType.set(null);
+});
+
 Template.news_admin.helpers({
     tableSetting: function() {
         return {
@@ -15,34 +26,35 @@ Template.news_admin.helpers({
                 { key: 'category', label: '분류' }
             ]
         };
+    },
+    selectedDoc: function() {
+        return News.findOne(Template.instance().selectedDoc.get());
+    },
+    formType: function() {
+        return Template.instance().formType.get();
     }
 });
 
 Template.news_admin.events({
-    'click .reactive-table tbody tr': function(evt,tmpl) {
+    'click .reactive-table tbody tr': function(evt, tmpl) {
         $('#postId').val(this._id);
-        $('#date').val(this.date);
-        $('#title').val(this.title);
-        $('#url').val(this.url);
-        $('#category').val(this.category);
-        $('.addPost').text('Update Post').removeClass('addPost').addClass('updatePost');
-    },
-    'click .updatePost': function(evt, tmpl) {
         evt.preventDefault();
-        var id = tmpl.find('#postId').value;
-        var date = tmpl.find('#date').value;
-        var title = tmpl.find('#title').value;
-        var url = tmpl.find('#url').value;
-        var category = tmpl.find('#category').value;
-        Meteor.call('News.update', id, date, title, url, category);
+        tmpl.selectedDoc.set(this._id);
+        tmpl.formType.set("update");
+        // $('.submit-btn').text('Edit').removeClass('submit-btn').addClass('edit-btn');
     },
-    'click .removePost': function(evt, tmpl) {
+    'click .remove-btn': function(evt, tmpl) {
         evt.preventDefault();
-        var id = tmpl.find('#postId').value;
-        Meteor.call('News.remove', id);
-    },
-    'click .return': function(evt, tmpl) {
-        $('.updatePost').text('Add Post').removeClass('updatePost').addClass('addPost');
+        var postId = tmpl.selectedDoc.get();
+        Meteor.call('News.remove', postId);
         document.getElementById('Form').reset();
+        tmpl.selectedDoc.set("");
+        tmpl.formType.set("insert");
+    },
+    'click .reset-btn': function(evt, tmpl) {
+        evt.preventDefault();
+        document.getElementById('Form').reset();
+        tmpl.selectedDoc.set("");
+        tmpl.formType.set("insert");
     }
 });

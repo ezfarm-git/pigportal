@@ -1,16 +1,15 @@
 <template name="news_admin">
     <div class="col-sm-6">
-        {{#autoForm id="Form" type="insert" collection="News"}}
+        {{#autoForm id="Form" type=formType collection="News" doc=selectedDoc}}
             <input type="hidden" id="postId">
             {{> afQuickField name="date" id="date"}}
             {{> afQuickField name="title" id="title"}}
             {{> afQuickField name="url" id="url"}}
             {{> afQuickField name="category" id="category"}}
         <div class="form-group">
-            <button type="submit" class="btn btn-primary addPost">Add Post</button>
-            <button type="button" class="btn btn-danger removePost">Remove</button>
-            <button type="reset" class="btn btn-warning">Reset</button>
-            <button type="button" class="btn btn-default return">Return</button>
+            <button type="submit" class="btn btn-primary submit-btn">Submit</button>
+            <button type="button" class="btn btn-danger remove-btn">Remove</button>
+            <button type="reset" class="btn btn-warning reset-btn">Reset</button>
         </div>
         {{/autoForm}}
     </div>
