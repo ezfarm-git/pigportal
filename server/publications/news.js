@@ -24,12 +24,14 @@ Meteor.publish("newsList", function(category, skipCount) {
     if (category === "total") {
         return News.find({}, {
             limit: 10, // records to show per page
-            skip: skipCount
+            skip: skipCount,
+            sort: {date: -1}
         });
     } else {
         return News.find({category: category}, {
             limit: 10,
-            skip: skipCount
+            skip: skipCount,
+            sort: {date: -1}
         });
     }
 });

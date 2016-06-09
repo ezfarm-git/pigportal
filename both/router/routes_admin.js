@@ -1,6 +1,6 @@
 // News
 
-Router.route('admin/news', function() {
+Router.route('/admin/news', function() {
     this.layout('layout_admin');
     this.render('news_admin', {to: 'main'});
     this.wait(Meteor.subscribe('newsListAdmin'));

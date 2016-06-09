@@ -10,7 +10,7 @@ Template.news.onCreated(function() {
 
 Template.news.helpers({
     postsCategory: function() {
-        if (this.categoryName) {
+        if (this.categoryName !== "total") {
             return this.categoryName;
         } else {
             return "전체";

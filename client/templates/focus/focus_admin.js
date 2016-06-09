@@ -21,7 +21,12 @@ Template.focus_admin.helpers({
             showColumnToggles: true,
             multiColumnSort: false,
             showNavigationRowsPerPage: false,
-            fields: ['date', 'title', 'summary', 'category']
+            fields: [
+                { key: 'date', label: '일자', sortOrder: 0, sortDirection: 'descending' },
+                { key: 'title', label: '제목' },
+                { key: 'summary', label: '요약' },
+                { key: 'category', label: '분류' }
+            ]
         };
     },
     selectedDoc: function() {

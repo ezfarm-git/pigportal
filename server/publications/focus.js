@@ -24,12 +24,14 @@ Meteor.publish("focusList", function(category, skipCount) {
     if (category === "total") {
         return Focus.find({}, {
             limit: 10, // records to show per page
-            skip: skipCount
+            skip: skipCount,
+            sort: {date: -1}
         });
     } else {
         return Focus.find({category: category}, {
             limit: 10,
-            skip: skipCount
+            skip: skipCount,
+            sort: {date: -1}
         });
     }
 });

@@ -8,9 +8,12 @@ Template.news_admin.helpers({
             showColumnToggles: true,
             multiColumnSort: false,
             showNavigationRowsPerPage: false,
-            // enableRegex: true,
-            fields: ['date', 'title', 'url', 'category']
-            // filters: ['date', 'category']
+            fields: [
+                { key: 'date', label: '일자', sortOrder: 0, sortDirection: 'descending' },
+                { key: 'title', label: '제목' },
+                { key: 'url', label: 'URL' },
+                { key: 'category', label: '분류' }
+            ]
         };
     }
 });
