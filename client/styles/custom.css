@@ -33,6 +33,42 @@ article {
     padding-right: 12px;
 }
 
+/*image posts*/
+
+.image-post-container {
+    margin-bottom: 15px;
+    border-style: solid;
+    border-width: 1px;
+    border-top-left-radius: 0.3em;
+    border-top-right-radius: 0.3em;
+    border-color: #e0e0eb;
+}
+
+.image-info {
+    border-bottom: solid 1px #e0e0eb;
+    padding: 12px;
+}
+
+.image-title {
+    margin-bottom: 5px;
+    padding-left: 3px;
+    font-family: 'Jeju Gothic', serif;
+    font-size: 19px;
+    color: #00004d;
+
+}
+
+.image-summary {
+    margin-bottom: 3px;
+    padding-left: 9px;
+    text-indent: 9px;
+}
+
+.image-date {
+    padding-right: 5px;
+    text-align: right;
+}
+
 /*copied*/
 
 div.jumbotron#mainTop {

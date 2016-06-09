@@ -3,14 +3,20 @@ Template.infographic.onCreated(function() {
     self.autorun(function() {
         var category = Router.current().params.category;
         var currentPage = parseInt(Router.current().params.page) || 1;
-        var skipCount = (currentPage - 1) * 10; // 10 records per page
+        var skipCount = (currentPage - 1) * 5; // 10 records per page
         self.subscribe('infographicList', category, skipCount);
     });
 });
 
+Template.infographic.onRendered(function() {
+    $('.fancybox').fancybox(
+
+    );
+})
+
 Template.infographic.helpers({
     postsCategory: function() {
-        if (this.categoryName) {
+        if (this.categoryName !== 'total') {
             return this.categoryName;
         } else {
             return "전체";
@@ -40,5 +46,11 @@ Template.infographic.helpers({
 var hasMorePages = function() {
     var currentPage = parseInt(Router.current().params.page) || 1;
     var totalPosts = Counts.get('postsCount');
-    return currentPage * 10 < totalPosts;
+    return currentPage * 5 < totalPosts;
 }
+
+Template.infographic.events({
+    'click .fancybox': function(evt) {
+        evt.preventDefault();
+    }
+});

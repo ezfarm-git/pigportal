@@ -23,13 +23,15 @@ Meteor.publish("infographicList", function(category, skipCount) {
 
     if (category === "total") {
         return Infographic.find({}, {
-            limit: 10, // records to show per page
-            skip: skipCount
+            limit: 5, // records to show per page
+            skip: skipCount,
+            sort: {date: -1}
         });
     } else {
         return Infographic.find({category: category}, {
-            limit: 10,
-            skip: skipCount
+            limit: 5,
+            skip: skipCount,
+            sort: {date: -1}
         });
     }
 });
