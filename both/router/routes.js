@@ -57,6 +57,19 @@ Router.route('/focus_post/:postId', function() {
 
 // Favorites
 
+Router.route('/favorites', function() {
+    this.layout('layout_app');
+    this.render('favorites_category', {to: 'sidebar_left'});
+    this.render('favorites_summary', {
+        to: 'main',
+        data: {
+            categoryName: this.params.category
+        }
+    });
+    this.render('widget_1', {to: 'sidebar_right'});
+    this.wait(Meteor.subscribe('favoritesSummary'));
+});
+
 Router.route('/favorites/:category', function() {
     this.layout('layout_app');
     this.render('favorites_category', {to: 'sidebar_left'});
@@ -68,6 +81,7 @@ Router.route('/favorites/:category', function() {
     });
     this.render('widget_1', {to: 'sidebar_right'});
     this.wait(Meteor.subscribe('favoritesList', this.params.category));
+    this.wait(Meteor.subscribe('images'));
 });
 
 

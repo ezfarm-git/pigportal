@@ -1,5 +1,9 @@
 <template name="infographic">
-    <h1 class="postHeading"><i class="fa fa-newspaper-o"></i>&nbsp; 인포그래픽 ({{postsCategory}})</h1>
+    <h1 class="postHeading">
+        <i class="fa fa-picture-o"></i>&nbsp;
+            인포그래픽&nbsp;
+            <span class="text-muted postsCategory">{{postsCategory}}</span>
+    </h1>
     {{#each postsList}}
     <div class="image-post-container">
         <!-- image info -->
@@ -14,7 +18,7 @@
                         {{summary}}
                     </div>
                     <div class="image-date">
-                        {{prettyDate date}}
+                        <p class="text-muted">{{prettyDate date}}</p>
                     </div>
                 </div>
             </div>
@@ -32,7 +36,7 @@
         </div>
     </div>
     {{/each}}
-    <nav>
+    <nav class="pager-nav">
         <ul class="pager">
             <li class="{{prevPageClass}}">
                 <a id="prevPage" href="{{prevPage}}">

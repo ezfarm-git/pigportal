@@ -11,3 +11,7 @@ Meteor.publish("favoritesList", function(category) {
         return Favorites.find({category: category}, {sort: {date: -1}});
     }
 });
+
+Meteor.publish("favoritesSummary", function() {
+    return Favorites.find();
+});

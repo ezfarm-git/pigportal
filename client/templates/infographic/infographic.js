@@ -19,7 +19,7 @@ Template.infographic.helpers({
         if (this.categoryName !== 'total') {
             return this.categoryName;
         } else {
-            return "전체";
+            return null;
         }
     },
     postsList: function() {
