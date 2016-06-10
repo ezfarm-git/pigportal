@@ -17,6 +17,15 @@ Router.route('/admin/focus', function() {
 });
 
 
+// Favorites
+
+Router.route('/admin/favorites', function() {
+    this.layout('layout_admin');
+    this.render('favorites_admin', {to: 'main'});
+    this.wait(Meteor.subscribe('favoritesListAdmin'));
+    this.wait(Meteor.subscribe('images'));
+});
+
 // Infographic
 
 Router.route('/admin/infographic', function() {

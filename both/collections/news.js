@@ -3,7 +3,7 @@ News = new Mongo.Collection('news');
 News.attachSchema(new SimpleSchema({
     date: {
         type: Date,
-        label: 'Date',
+        label: '일자',
         autoform: {
             afFieldInput: {
                 type: "bootstrap-datepicker"
@@ -12,7 +12,7 @@ News.attachSchema(new SimpleSchema({
     },
     title: {
         type: String,
-        label: 'Title'
+        label: '제목'
     },
     url: {
         type: String,
@@ -20,7 +20,7 @@ News.attachSchema(new SimpleSchema({
     },
     category: {
         type: String,
-        label: 'Category',
+        label: '카테고리',
         allowedValues: ['A', 'B', 'C'],
         autoform: {
             options: [

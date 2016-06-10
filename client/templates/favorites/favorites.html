@@ -1,0 +1,13 @@
+<template name="favorites">
+    <h1 class="postHeading"><i class="fa fa-share"></i>&nbsp; 관련 사이트 ({{postsCategory}})</h1>
+    <div>
+        <ul class="posts_ul">
+            {{#each postsList}}
+            <li class="posts_li">
+                <a href="{{url}}" class="posts_link" target="_blank">{{name}}</a>&nbsp;&nbsp;
+                <span style="font-size: 80%">{{prettyDate date}}</span>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</template>

@@ -55,6 +55,22 @@ Router.route('/focus_post/:postId', function() {
 });
 
 
+// Favorites
+
+Router.route('/favorites/:category', function() {
+    this.layout('layout_app');
+    this.render('favorites_category', {to: 'sidebar_left'});
+    this.render('favorites', {
+        to: 'main',
+        data: {
+            categoryName: this.params.category
+        }
+    });
+    this.render('widget_1', {to: 'sidebar_right'});
+    this.wait(Meteor.subscribe('favoritesList', this.params.category));
+});
+
+
 // Infographic
 
 Router.route('/infographic/:category/:page', function() {

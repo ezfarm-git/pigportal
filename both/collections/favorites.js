@@ -1,6 +1,6 @@
-Infographic = new Mongo.Collection('infographic');
+Favorites = new Mongo.Collection('favorites');
 
-Infographic.attachSchema(new SimpleSchema({
+Favorites.attachSchema(new SimpleSchema({
     date: {
         type: Date,
         label: '일자',
@@ -10,13 +10,13 @@ Infographic.attachSchema(new SimpleSchema({
             }
         }
     },
-    title: {
+    name: {
         type: String,
-        label: '제목'
+        label: '이름'
     },
-    summary: {
+    url: {
         type: String,
-        label: '요약'
+        label: 'URL'
     },
     image: {
         type: String,
@@ -32,12 +32,12 @@ Infographic.attachSchema(new SimpleSchema({
     category: {
         type: String,
         label: '카테고리',
-        allowedValues: ['인포1', '인포2', '인포3'],
+        allowedValues: ['A', 'B', 'C'],
         autoform: {
             options: [
-                {label: "인포1", value: "인포1"},
-                {label: "인포2", value: "인포2"},
-                {label: "인포3", value: "인포3"},
+                {label: "A", value: "A"},
+                {label: "B", value: "B"},
+                {label: "C", value: "C"},
             ]
         }
     }

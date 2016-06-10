@@ -3,7 +3,7 @@ Focus = new Mongo.Collection('focus');
 Focus.attachSchema(new SimpleSchema({
     date: {
         type: Date,
-        label: 'Date',
+        label: '일자',
         autoform: {
             afFieldInput: {
                 type: "bootstrap-datepicker"
@@ -12,15 +12,15 @@ Focus.attachSchema(new SimpleSchema({
     },
     title: {
         type: String,
-        label: 'Title'
+        label: '제목'
     },
     summary: {
         type: String,
-        label: 'Summary'
+        label: '요약'
     },
     content: {
         type: String,
-        label: 'Content',
+        label: '본문',
         autoform: {
             afFieldInput: {
                 type: 'summernote',
@@ -30,6 +30,7 @@ Focus.attachSchema(new SimpleSchema({
     },
     image: {
         type: String,
+        label: '이미지',
         autoform: {
             afFieldInput: {
                 type: "cfs-file",
@@ -40,7 +41,7 @@ Focus.attachSchema(new SimpleSchema({
     },
     category: {
         type: String,
-        label: 'Category',
+        label: '카테고리',
         allowedValues: ['가', '나', '다'],
         autoform: {
             options: [
