@@ -35,7 +35,3 @@ Meteor.publish("infographicList", function(category, skipCount) {
         });
     }
 });
-
-Meteor.publish("infographicPost", function(postId) {
-    return Infographic.find({_id: postId});
-});

@@ -7,6 +7,16 @@ Router.route('/admin/news', function() {
 });
 
 
+// Card News
+
+Router.route('/admin/cardnews', function() {
+    this.layout('layout_admin');
+    this.render('card_news_admin', {to: 'main'});
+    this.wait(Meteor.subscribe('cardNewsListAdmin'));
+    this.wait(Meteor.subscribe('images'));
+});
+
+
 // Focus
 
 Router.route('/admin/focus', function() {

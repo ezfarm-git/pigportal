@@ -24,6 +24,7 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 http
 session
 check
+#templates:array
 
 # Router
 iron:router
@@ -45,6 +46,8 @@ cfs:ui
 aldeed:collection2
 aldeed:autoform
 aldeed:autoform-bs-datepicker
+
+yogiben:autoform-file
 
 matb33:collection-hooks
 dburles:collection-helpers

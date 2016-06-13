@@ -24,6 +24,21 @@ Router.route('/news/:category/:page', function() {
     name: 'news'
 });
 
+// Card News
+
+Router.route('/cardnews/:category/:page', function() {
+    this.layout('layout_app');
+    this.render('card_news_category', {to: 'sidebar_left'});
+    this.render('card_news', {
+        to: 'main',
+        data: {
+            categoryName: this.params.category
+        }
+    });
+    this.render('widget_1', {to: 'sidebar_right'});
+}, {
+    name: 'card_news'
+});
 
 // Focus
 
