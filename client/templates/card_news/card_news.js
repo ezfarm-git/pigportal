@@ -3,10 +3,17 @@ Template.card_news.onCreated(function() {
     self.autorun(function() {
         var category = Router.current().params.category;
         var currentPage = parseInt(Router.current().params.page) || 1;
-        var skipCount = (currentPage - 1) * 10; // 10 records per page
+        var skipCount = (currentPage - 1) * 5; // 5 records per page
         self.subscribe('cardNewsList', category, skipCount);
+        self.subscribe('images');
     });
 });
+
+Template.card_news.onRendered(function() {
+    $('.fancybox').fancybox(
+
+    );
+})
 
 Template.card_news.helpers({
     postsCategory: function() {
@@ -40,5 +47,11 @@ Template.card_news.helpers({
 var hasMorePages = function() {
     var currentPage = parseInt(Router.current().params.page) || 1;
     var totalPosts = Counts.get('postsCount');
-    return currentPage * 10 < totalPosts;
+    return currentPage * 5 < totalPosts;
 }
+
+Template.card_news.events({
+    'click .fancybox': function(evt) {
+        evt.preventDefault();
+    }
+});

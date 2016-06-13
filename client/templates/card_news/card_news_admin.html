@@ -11,9 +11,6 @@
             {{#each selectedImages}}
                 {{#with FS.GetFile "Images" this}}
                     <img src="{{this.url store='images'}}" alt="" width="300px">
-                    <!-- <div>
-                        {{> FS.DeleteButton class="btn btn-danger btn-xs deleteImage"}} {{_id}}
-                    </div> -->
                 {{/with}}
             {{/each}}
             {{> afQuickField name="category" id="category"}}

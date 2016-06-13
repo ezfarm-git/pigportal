@@ -23,13 +23,13 @@ Meteor.publish("cardNewsList", function(category, skipCount) {
 
     if (category === "total") {
         return CardNews.find({}, {
-            limit: 10, // records to show per page
+            limit: 5, // records to show per page
             skip: skipCount,
             sort: {date: -1}
         });
     } else {
         return CardNews.find({category: category}, {
-            limit: 10,
+            limit: 5,
             skip: skipCount,
             sort: {date: -1}
         });
