@@ -28,7 +28,7 @@
         <div class="row">
             <div class="col-md-12">
                 {{#with FS.GetFile "Images" image }}
-                <a href="{{this.url store='images'}}" class="fancybox" title="{{title}}">
+                <a href="{{this.url store='images'}}" class="fancybox" title="{{../title}}, {{../summary}}">
                     <img src="{{this.url store='images'}}" alt="" width="100%">
                 </a>
                 {{/with}}

@@ -9,9 +9,11 @@ Template.infographic.onCreated(function() {
 });
 
 Template.infographic.onRendered(function() {
-    $('.fancybox').fancybox(
-
-    );
+    $('.fancybox').fancybox({
+        helpers: {
+            title: {type: 'inside'}
+        }
+    });
 })
 
 Template.infographic.helpers({

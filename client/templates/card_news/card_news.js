@@ -10,9 +10,11 @@ Template.card_news.onCreated(function() {
 });
 
 Template.card_news.onRendered(function() {
-    $('.fancybox').fancybox(
-
-    );
+    $('.fancybox').fancybox({
+        helpers: {
+            title: {type: 'inside'}
+        }
+    });
 })
 
 Template.card_news.helpers({
@@ -51,7 +53,7 @@ var hasMorePages = function() {
 }
 
 Template.card_news.events({
-    'click .fancybox': function(evt) {
+    'click .fancybox': function(evt, tmpl) {
         evt.preventDefault();
     }
 });
