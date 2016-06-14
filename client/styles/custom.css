@@ -20,17 +20,17 @@ body {
   margin-top: 70px;
 }
 
-.avatar-upload {
-  margin-top: 5px;
-}
-
-.saveProfileBtn {
-  margin-top: 25px;
-}
-
 article {
     padding-left: 12px;
     padding-right: 12px;
+}
+
+a.underline-none:hover {
+    text-decoration:none;
+}
+
+.reactive-table tbody tr:hover {
+    cursor: pointer;
 }
 
 /*footer*/
@@ -56,8 +56,50 @@ article {
     margin-top: 40px;
 }
 
+/*news*/
+
+.news-link {
+    color: #262673;
+    /*color: rgb(52,152,219);*/
+}
+
+/*focus*/
+.focus-list-container {
+    clear: both;
+    min-height: 101px;
+    padding: 0px;
+    margin-bottom: 15px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #e0e0eb;
+}
+
+.focus-image {
+    width: 100px;
+    float: left;
+}
+
+.focus-info {
+    margin-left: 110px;
+    padding: 10px 15px 0px 0px;
+}
+
+.focus-title {
+    margin-bottom: 5px;
+    padding-left: 3px;
+    font-family: 'Jeju Gothic', serif;
+    font-size: 19px;
+    color: #00004d;
+
+}
+
+.focus-summary {
+    padding-left: 12px;
+    text-indent: 3px;
+}
+
 /*favorites*/
-.favorites-link {
+.post-list-link {
     color: #00004d;
 }
 
@@ -80,9 +122,9 @@ article {
     margin-bottom: 15px;
     border-style: solid;
     border-width: 1px;
+    border-color: #e0e0eb;
     border-top-left-radius: 0.3em;
     border-top-right-radius: 0.3em;
-    border-color: #e0e0eb;
 }
 
 .image-info {

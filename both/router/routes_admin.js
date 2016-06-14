@@ -17,6 +17,16 @@ Router.route('/admin/cardnews', function() {
 });
 
 
+// Corps
+
+Router.route('/admin/corps', function() {
+    this.layout('layout_admin');
+    this.render('corps_admin', {to: 'main'});
+    this.wait(Meteor.subscribe('corpsListAdmin'));
+    this.wait(Meteor.subscribe('images'));
+});
+
+
 // Focus
 
 Router.route('/admin/focus', function() {

@@ -24,6 +24,7 @@ Router.route('/news/:category/:page', function() {
     name: 'news'
 });
 
+
 // Card News
 
 Router.route('/cardnews/:category/:page', function() {
@@ -39,6 +40,37 @@ Router.route('/cardnews/:category/:page', function() {
 }, {
     name: 'card_news'
 });
+
+
+// Corps
+
+Router.route('/corps/:category/:page', function() {
+    this.layout('layout_app');
+    this.render('corps_category', {to: 'sidebar_left'});
+    this.render('corps', {
+        to: 'main',
+        data: {
+            categoryName: this.params.category
+        }
+    });
+    this.render('widget_1', {to: 'sidebar_right'});
+}, {
+    name: 'corps'
+});
+
+Router.route('/corps_post/:postId', function() {
+    this.layout('layout_app');
+    this.render('corps_category', {to: 'sidebar_left'});
+    this.render('corps_post', {
+        to: 'main',
+        data: {
+            postId: this.params.postId
+        }
+    });
+    this.render('widget_1', {to: 'sidebar_right'});
+    this.wait(Meteor.subscribe('corpsPost', this.params.postId));
+});
+
 
 // Focus
 
