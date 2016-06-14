@@ -11,19 +11,19 @@
             <span style="font-size: 80%">{{prettyDate date}}</span>
         </li> -->
         <a href="/focus_post/{{_id}}" class="post-list-link">
-            <div class="focus-list-container col-md-12">
-                <div class="focus-image">
+            <div class="list-container col-md-12">
+                <div class="list-image">
                     {{#with FS.GetFile "Images" image}}
                         <img src="{{this.url store='images'}}" alt="" width="100px" height="100px">
                     {{/with}}
                 </div>
-                <div class="focus-info">
-                    <div class="focus-title">
+                <div class="list-info">
+                    <div class="list-title">
                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                         {{title}}
                         <span class="text-muted small">{{prettyDate date}}</span>
                     </div>
-                    <div class="focus-summary">
+                    <div class="list-summary">
                         {{truncate summary 100}}
                     </div>
                 </div>

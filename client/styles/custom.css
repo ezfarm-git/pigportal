@@ -64,7 +64,7 @@ a.underline-none:hover {
 }
 
 /*focus*/
-.focus-list-container {
+.list-container {
     clear: both;
     min-height: 101px;
     padding: 0px;
@@ -74,17 +74,17 @@ a.underline-none:hover {
     border-color: #e0e0eb;
 }
 
-.focus-image {
+.list-image {
     width: 100px;
     float: left;
 }
 
-.focus-info {
+.list-info {
     margin-left: 110px;
     padding: 10px 15px 0px 0px;
 }
 
-.focus-title {
+.list-title {
     margin-bottom: 5px;
     padding-left: 3px;
     font-family: 'Jeju Gothic', serif;
@@ -93,7 +93,7 @@ a.underline-none:hover {
 
 }
 
-.focus-summary {
+.list-summary {
     padding-left: 12px;
     text-indent: 3px;
 }

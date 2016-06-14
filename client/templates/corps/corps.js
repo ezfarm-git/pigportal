@@ -5,6 +5,7 @@ Template.corps.onCreated(function() {
         var currentPage = parseInt(Router.current().params.page) || 1;
         var skipCount = (currentPage - 1) * 10; // 10 records per page
         self.subscribe('corpsList', category, skipCount);
+        self.subscribe('images');
     });
 });
 
