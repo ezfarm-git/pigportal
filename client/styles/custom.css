@@ -56,14 +56,21 @@ a.underline-none:hover {
     margin-top: 40px;
 }
 
-/*news*/
+/*News*/
 
 .news-link {
     color: #262673;
     /*color: rgb(52,152,219);*/
 }
 
-/*focus*/
+/*Corps*/
+
+.events-container {
+    margin-top: 15px;
+}
+
+/*Focus, Corps*/
+
 .list-container {
     clear: both;
     min-height: 101px;
