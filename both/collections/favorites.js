@@ -1,15 +1,6 @@
 Favorites = new Mongo.Collection('favorites');
 
 Favorites.attachSchema(new SimpleSchema({
-    date: {
-        type: Date,
-        label: '일자',
-        autoform: {
-            afFieldInput: {
-                type: "bootstrap-datepicker"
-            }
-        }
-    },
     name: {
         type: String,
         label: '이름'

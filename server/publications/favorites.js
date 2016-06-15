@@ -6,9 +6,9 @@ Meteor.publish("favoritesListAdmin", function() {
 // for Viewer
 Meteor.publish("favoritesList", function(category) {
     if (category === "total") {
-        return Favorites.find({}, {sort: {date: -1}});
+        return Favorites.find({}, {sort: {name: 1}});
     } else {
-        return Favorites.find({category: category}, {sort: {date: -1}});
+        return Favorites.find({category: category}, {sort: {name: 1}});
     }
 });
 

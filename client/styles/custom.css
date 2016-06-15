@@ -86,10 +86,10 @@ a.underline-none:hover {
 }
 .list-info {
     margin-left: 110px;
-    padding: 10px 15px 0px 0px;
+    padding: 7px 15px 0px 0px;
 }
 .list-title {
-    margin-bottom: 5px;
+    margin-bottom: 2px;
     padding-left: 3px;
     font-family: 'Jeju Gothic', serif;
     font-size: 19px;
@@ -256,25 +256,26 @@ ul.dropdown-menu li {
 
 /*fancybox*/
 
-
-/*a.fancybox-prev span {
-left: -25px;
+a.fancybox-prev span {
+left: -15px;
 }
 
 a.fancybox-next span {
-right: -25px;
-}*/
+right: -15px;
+}
 
 
 /*fullcalendar*/
 
-/*.fc-event-container {
-    padding: 5px !important;
-}*/
 .fc-event {
-    padding: 5px 10px;
-    border-color: #ddd;
-    background: #fff !important;
+    border-color: #9191ba;
+    background: #efeff5;
+    text-align: center;
+    padding: 2px;
+    margin-bottom: 2px;
+}
+.fc-event:hover {
+    cursor: pointer;
 }
 .event-title {
     color: blue;
@@ -292,5 +293,11 @@ right: -25px;
     color: blue;
 }
 .category-D {
-    color: yellow;
+    color: purple;
+}
+.fc-sat {
+    color:blue;
+}
+.fc-sun {
+    color:red;
 }

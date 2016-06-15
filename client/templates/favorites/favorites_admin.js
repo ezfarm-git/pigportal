@@ -22,10 +22,10 @@ Template.favorites_admin.helpers({
             multiColumnSort: false,
             showNavigationRowsPerPage: false,
             fields: [
-                { key: 'date', label: '일자', sortOrder: 0, sortDirection: 'descending' },
-                { key: 'name', label: '이름' },
+                // { key: 'date', label: '일자', sortOrder: 0, sortDirection: 'descending' },
+                { key: 'name', label: '이름', sortOrder: 0, sortDirection: 'ascending' },
                 { key: 'url', label: 'URL' },
-                { key: 'category', label: '분류' }
+                { key: 'category', label: '분류', sortOrder: 1, sortDirection: 'ascending' }
             ]
         };
     },

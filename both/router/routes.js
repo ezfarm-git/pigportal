@@ -156,5 +156,6 @@ Router.route('/events', function() {
     this.layout('layout_app');
     this.render('', {to: 'sidebar_left'});
     this.render('events', {to: 'main'});
-    this.render('', {to: 'sidebar_right'});
+    this.render('widget_1', {to: 'sidebar_right'});
+    this.wait(Meteor.subscribe('events'));
 });

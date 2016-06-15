@@ -50,21 +50,21 @@ Template.addEditEventModal.events({
         }
         Meteor.call(submitType, eventItem, function(error) {
             if (error) {
-                alert(error.reason, 'danger');
+                console.log(error.reason, 'danger');
             } else {
-                alert(`Event ${ eventModal.type }ed!`, 'success');
+                console.log(`Event ${ eventModal.type }ed!`, 'success');
                 closeModal();
             }
         });
     },
     'click .delete-event' (event, template) {
         let eventModal = Session.get('eventModal');
-        if (confirm('Are you sure? This is permanent.')) {
+        if (confirm('이 이벤트를 삭제하시겠습니까?')) {
             Meteor.call('removeEvent', eventModal.event, function(error) {
                 if (error) {
-                    alert(error.reason, 'danger');
+                    console.log(error.reason, 'danger');
                 } else {
-                    alert('Event deleted!', 'success');
+                    console.log('Event deleted!', 'success');
                     closeModal();
                 }
             });

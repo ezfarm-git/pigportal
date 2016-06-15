@@ -22,7 +22,7 @@ Router.route('/admin/cardnews', function() {
 Router.route('/admin/events', function() {
     this.layout('layout_admin');
     this.render('events_admin', {to: 'main'});
-    this.wait(Meteor.subscribe('eventsListAdmin'));
+    // this.wait(Meteor.subscribe('eventsListAdmin'));
     this.wait(Meteor.subscribe('events'));
 });
 
