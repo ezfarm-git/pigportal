@@ -159,3 +159,27 @@ Router.route('/events', function() {
     this.render('widget_1', {to: 'sidebar_right'});
     this.wait(Meteor.subscribe('events'));
 });
+
+// Case
+
+Router.route('/case/:page', function() {
+    this.layout('layout_app');
+    this.render('pigplan_category', {to: 'sidebar_left'});
+    this.render('case', {to: 'main'});
+    this.render('widget_1', {to: 'sidebar_right'});
+}, {
+    name: 'case'
+});
+
+Router.route('/case_post/:postId', function() {
+    this.layout('layout_app');
+    this.render('pigplan_category', {to: 'sidebar_left'});
+    this.render('case_post', {
+        to: 'main',
+        data: {
+            postId: this.params.postId
+        }
+    });
+    this.render('widget_1', {to: 'sidebar_right'});
+    this.wait(Meteor.subscribe('casePost', this.params.postId));
+});

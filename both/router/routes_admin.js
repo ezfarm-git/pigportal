@@ -64,3 +64,12 @@ Router.route('/admin/infographic', function() {
     this.wait(Meteor.subscribe('infographicListAdmin'));
     this.wait(Meteor.subscribe('images'));
 });
+
+// Focus
+
+Router.route('/admin/case', function() {
+    this.layout('layout_admin');
+    this.render('case_admin', {to: 'main'});
+    this.wait(Meteor.subscribe('caseListAdmin'));
+    this.wait(Meteor.subscribe('images'));
+});
