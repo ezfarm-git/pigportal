@@ -15,36 +15,35 @@ ol, ul, li, form, label {
     font: inherit;
     vertical-align: baseline;
 }
-
 body {
-  margin-top: 70px;
+    margin-top: 70px;
 }
-
 article {
     padding-left: 12px;
     padding-right: 12px;
 }
-
 a.underline-none:hover {
-    text-decoration:none;
+    text-decoration: none;
 }
-
 .reactive-table tbody tr:hover {
     cursor: pointer;
 }
 
 /*footer*/
+
 .site-footer {
     margin-top: 250px;
     margin-bottom: 50px;
 }
 
 /*postsCategory*/
+
 .postsCategory {
     font-size: 80%;
 }
 
 /*post-date*/
+
 .post-date {
     text-align: left;
     text-indent: 3px;
@@ -52,6 +51,7 @@ a.underline-none:hover {
 }
 
 /*pagination*/
+
 .pager-nav {
     margin-top: 40px;
 }
@@ -80,43 +80,37 @@ a.underline-none:hover {
     border-width: 1px;
     border-color: #e0e0eb;
 }
-
 .list-image {
     width: 100px;
     float: left;
 }
-
 .list-info {
     margin-left: 110px;
     padding: 10px 15px 0px 0px;
 }
-
 .list-title {
     margin-bottom: 5px;
     padding-left: 3px;
     font-family: 'Jeju Gothic', serif;
     font-size: 19px;
     color: #00004d;
-
 }
-
 .list-summary {
     padding-left: 12px;
     text-indent: 3px;
 }
 
 /*favorites*/
+
 .post-list-link {
     color: #00004d;
 }
-
 .favorites-container {
     margin-left: 15px;
     margin-right: 15px;
     margin-bottom: 20px;
     display: inline-block;
 }
-
 .favorites-name {
     margin-bottom: 5px;
     padding-left: 5px;
@@ -133,7 +127,6 @@ a.underline-none:hover {
     border-top-left-radius: 0.3em;
     border-top-right-radius: 0.3em;
 }
-
 .image-info {
     background-color: rgba(242, 242, 242, 0.6);
     border-bottom: solid 1px #e0e0eb;
@@ -142,22 +135,18 @@ a.underline-none:hover {
     padding-right: 12px;
     padding-bottom: 0px;
 }
-
 .image-title {
     margin-bottom: 5px;
     padding-left: 3px;
     font-family: 'Jeju Gothic', serif;
     font-size: 19px;
     color: #00004d;
-
 }
-
 .image-summary {
     margin-bottom: 3px;
     padding-left: 9px;
     text-indent: 9px;
 }
-
 .image-date {
     padding-right: 5px;
     text-align: right;
@@ -166,81 +155,71 @@ a.underline-none:hover {
 /*copied*/
 
 div.jumbotron#mainTop {
-  position: relative;
-  background: #000 url("/images/mainBackground2.jpg") center center;
-  opacity: 0.85;
-  width: 100%;
-  height: 200px;
-  background-size: cover;
-  overflow: hidden;
+    position: relative;
+    background: #000 url("/images/mainBackground2.jpg") center center;
+    opacity: 0.85;
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    overflow: hidden;
 }
-
 div.jumbotron#mainBottom {
-  position: relative;
-  background: #000 url("/images/mainBackground1.jpg") center center;
-  opacity: 0.85;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  overflow: hidden;
-  margin-top: 60px;
-  padding-top: 30px;
-  padding-bottom: 45px;
-  padding-left: 5vw;
-  padding-right: 10vw;
+    position: relative;
+    background: #000 url("/images/mainBackground1.jpg") center center;
+    opacity: 0.85;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    overflow: hidden;
+    margin-top: 60px;
+    padding-top: 30px;
+    padding-bottom: 45px;
+    padding-left: 5vw;
+    padding-right: 10vw;
 }
 
 /*MainPage Setting*/
 
 div.indexPanelTitle {
-  font-family: 'Jeju Gothic', serif;
+    font-family: 'Jeju Gothic', serif;
 }
-
 a.mainList {
-  color: SteelBlue;
+    color: SteelBlue;
 }
-
 ul.main_ul {
-  list-style-position: outside;
-  padding-left: 12px;
+    list-style-position: outside;
+    padding-left: 12px;
 }
-
 li.main_li {
-  font-family: 'Nanum Gothic', serif;
-  margin-bottom: 5px;
+    font-family: 'Nanum Gothic', serif;
+    margin-bottom: 5px;
 }
 
 /*News Setting*/
 
 ul.posts_ul {
-  list-style-position: outside;
-  padding-left: 20px;
+    list-style-position: outside;
+    padding-left: 20px;
 }
-
 li.posts_li {
-  font-family: 'Nanum Gothic', serif;
-  font-size: 1.3em;
-  margin-bottom: 15px;
+    font-family: 'Nanum Gothic', serif;
+    font-size: 1.3em;
+    margin-bottom: 15px;
 }
-
 .postHeading {
     margin-top: 15px;
     margin-bottom: 20px;
 }
-
 .categoryPanel {
     margin-top: 15px;
 }
-
 .categoryPanelHeading {
     font-size: 130%;
 }
-
 .categoryPanelBody {
     padding-top: 5px;
     padding-bottom: 7px;
 }
-
 .category_ul {
     list-style: none;
     font-size: 120%;
@@ -249,43 +228,69 @@ li.posts_li {
 /*Pages Setting*/
 
 div.page-header {
-  margin-bottom: 0px;
+    margin-bottom: 0px;
 }
-
 h3#listHeader {
-  margin-top: 0px;
-  font-family: 'Jeju Gothic', serif;
+    margin-top: 0px;
+    font-family: 'Jeju Gothic', serif;
 }
-
 h4.media-heading {
-  font-family: 'Nanum Gothic', serif;
+    font-family: 'Nanum Gothic', serif;
 }
-
 a.contentsList {
-  color: #585858;
+    color: #585858;
 }
 
 /*Navbar Setting*/
 
 li.dropdown {
-  font-family: 'Nanum Gothic', serif;
+    font-family: 'Nanum Gothic', serif;
 }
-
 ul.dropdown-menu {
-  padding-top: 8px;
-  padding-bottom: 0px;
+    padding-top: 8px;
+    padding-bottom: 0px;
 }
-
 ul.dropdown-menu li {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 /*fancybox*/
 
-a.fancybox-prev span {
-  left: -25px;
+
+/*a.fancybox-prev span {
+left: -25px;
 }
 
 a.fancybox-next span {
-  right: -25px;
+right: -25px;
+}*/
+
+
+/*fullcalendar*/
+
+/*.fc-event-container {
+    padding: 5px !important;
+}*/
+.fc-event {
+    padding: 5px 10px;
+    border-color: #ddd;
+    background: #fff !important;
+}
+.event-title {
+    color: blue;
+}
+.event-summary {
+    color: black;
+}
+.category-A {
+    color: red;
+}
+.category-B {
+    color: green;
+}
+.category-C {
+    color: blue;
+}
+.category-D {
+    color: yellow;
 }

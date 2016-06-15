@@ -20,6 +20,6 @@ Events.attachSchema(new SimpleSchema({
     'category': {
         type: String,
         label: '카테고리',
-        allowedValues: [ 'A', 'B', 'C' ]
+        allowedValues: [ 'A', 'B', 'C', 'D' ]
     }
 }))

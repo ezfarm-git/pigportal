@@ -13,6 +13,8 @@ jquery                  # Helpful client-side library
 tracker                 # Meteor's client-side reactive programming library
 
 standard-minifier-css   # CSS minifier run for production mode
+#seba:minifiers-autoprefixer
+#fourseven:scss
 standard-minifier-js    # JS minifier run for production mode
 es5-shim                # ECMAScript 5 compatibility for older browsers.
 ecmascript              # Enable ECMAScript2015+ syntax in app code
@@ -62,7 +64,9 @@ fortawesome:fontawesome
 aslagle:reactive-table
 rajit:bootstrap3-datepicker
 mpowaga:autoform-summernote
-rzymek:fullcalendar
+# rzymek:fullcalendar
+fullcalendar:fullcalendar
 momentjs:moment
 tmeasday:publish-counts
 mrt:fancybox
+# themeteorchef:bert

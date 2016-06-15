@@ -1,14 +1,6 @@
 <template name="events_admin">
     <div class="events-container">
-        <button class="addEvent">이벤트 추가</button>
-        <button class="removeEvent">이벤트 삭제</button>
-        {{> fullcalendar
-            class="events-calendar"
-            defaultView="month"
-            height="100%"
-            events=events
-            eventClick=onEventClicked
-            lang='ko'
-        }}
+        {{> addEditEventModal}}
+        <div id="events-calendar"></div>
     </div>
 </template>

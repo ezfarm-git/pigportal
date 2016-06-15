@@ -4,12 +4,7 @@ Meteor.publish("eventsListAdmin", function() {
 });
 
 Meteor.publish("events", function(start, end) {
-    return Events.find({
-        $or: [
-            {date: {$gte: start}},
-            {date: {$lte: end}}
-        ]
-    });
+    return Events.find();
 });
 
 // for Viewer
