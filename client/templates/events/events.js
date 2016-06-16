@@ -22,7 +22,8 @@ Template.events.onRendered(function() {
             });
             $('#event-modal').modal('show');
         },
-        lang: 'ko'
+        lang: 'ko',
+        height: 'auto'
     });
     Tracker.autorun(function() {
         Events.find().fetch();

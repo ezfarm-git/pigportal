@@ -6,7 +6,6 @@
 @import url(http://fonts.googleapis.com/earlyaccess/kopubbatang.css);
 @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
-
 ol, ul, li, form, label {
     margin: 0;
     padding: 0;
@@ -63,7 +62,7 @@ a.underline-none:hover {
     /*color: rgb(52,152,219);*/
 }
 
-/*Corps*/
+/*Events*/
 
 .events-container {
     margin-top: 15px;
@@ -219,6 +218,8 @@ li.posts_li {
 .categoryPanelBody {
     padding-top: 5px;
     padding-bottom: 7px;
+    padding-left: 3px;
+    padding-right: 3px;
 }
 .category_ul {
     list-style: none;
@@ -257,13 +258,11 @@ ul.dropdown-menu li {
 /*fancybox*/
 
 a.fancybox-prev span {
-left: -15px;
+    left: -15px;
 }
-
 a.fancybox-next span {
-right: -15px;
+    right: -15px;
 }
-
 
 /*fullcalendar*/
 
@@ -296,8 +295,26 @@ right: -15px;
     color: purple;
 }
 .fc-sat {
-    color:blue;
+    color: blue;
 }
 .fc-sun {
-    color:red;
+    color: red;
+}
+
+/*pigplan*/
+div.pigplan_headline {
+    background-color:
+}
+
+p.pigplan_paragraph {
+    line-height: 200%;
+}
+
+p.pigplan_paragraph::first-letter {
+    font-size: 120%;
+    color: steelblue;
+}
+
+p.pigplan_tab_paragraph {
+    line-height: 200%;
 }

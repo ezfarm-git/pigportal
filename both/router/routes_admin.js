@@ -65,9 +65,9 @@ Router.route('/admin/infographic', function() {
     this.wait(Meteor.subscribe('images'));
 });
 
-// Focus
+// Pigplan Case
 
-Router.route('/admin/case', function() {
+Router.route('/admin/pigplan/case', function() {
     this.layout('layout_admin');
     this.render('case_admin', {to: 'main'});
     this.wait(Meteor.subscribe('caseListAdmin'));

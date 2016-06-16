@@ -160,9 +160,27 @@ Router.route('/events', function() {
     this.wait(Meteor.subscribe('events'));
 });
 
-// Case
+// Pigplan Inroduction
 
-Router.route('/case/:page', function() {
+Router.route('/pigplan/intro', function() {
+    this.layout('layout_app');
+    this.render('pigplan_category', {to: 'sidebar_left'});
+    this.render('pigplan_intro', {to: 'main'});
+    this.render('widget_1', {to: 'sidebar_right'});
+});
+
+// Pigplan Feature
+
+Router.route('/pigplan/feature', function() {
+    this.layout('layout_app');
+    this.render('pigplan_category', {to: 'sidebar_left'});
+    this.render('pigplan_feature', {to: 'main'});
+    this.render('widget_1', {to: 'sidebar_right'});
+});
+
+// Pigplan Use Case
+
+Router.route('/pigplan/case/:page', function() {
     this.layout('layout_app');
     this.render('pigplan_category', {to: 'sidebar_left'});
     this.render('case', {to: 'main'});

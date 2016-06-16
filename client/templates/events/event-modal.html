@@ -1,39 +1,26 @@
 <template name="EventModal">
-  <div class="modal fade" id="event-modal" tabindex="-1" role="dialog" aria-labelledby="event-modal">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="event" style="text-align: center;">{{event.title}}</h4>
-      </div>
-      <form id="event-form">
-        <div class="modal-body" style="padding-bottom: 0px;">
-          <div class="form-group">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12">
-                  <label for="summary">&nbsp;<i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;&nbsp;개요</label>
-                  <input readonly type="text" name="summary" class="form-control" style="margin-top: 5px;" value="{{event.summary}}">
+    <div class="modal fade" id="event-modal" tabindex="-1" role="dialog" aria-labelledby="event-modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="event" style="text-align: center;">{{event.title}}</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12">
+                            <p style="color: SteelBlue"><i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;&nbsp;개요 :</p>
+                            <div style="padding-left: 5px; padding-right: 5px;">{{event.summary}}</div>
+                            <br>
+                            <p style="color: SteelBlue"><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp;&nbsp;행사 유형 :</p>
+                            <div style="padding-left: 5px; padding-right: 5px;">{{event.category}}</div>
+                            <br>
+                            <p style="color: SteelBlue"><i class="fa fa-calendar-check-o" aria-hidden="true"></i>&nbsp;&nbsp;행사 기간 :</p>
+                            <div style="padding-left: 5px; padding-right: 5px;">{{event.start}} ~ {{event.end}}</div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <br>
-            <div class="row">
-              <div class="col-xs-12 col-sm-4" style="margin-bottom: 15px;">
-                <label for="category">&nbsp;<i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp;&nbsp;행사 유형</label>
-                <input readonly type="text" name="category" class="form-control" style="margin-top: 5px;" value="{{event.category}}">
-              </div>
-              <div class="col-xs-12 col-sm-4" style="margin-bottom: 15px;">
-                <label for="start">&nbsp;<i class="fa fa-calendar-check-o" aria-hidden="true"></i>&nbsp;&nbsp;시작일</label>
-                <input readonly type="text" name="start" class="form-control" style="margin-top: 5px;" value="{{event.start}}">
-              </div>
-              <div class="col-xs-12 col-sm-4" style="margin-bottom: 15px;">
-                <label for="end">&nbsp;<i class="fa fa-calendar-times-o" aria-hidden="true"></i>&nbsp;&nbsp;종료일</label>
-                <input readonly type="text" name="end" class="form-control" style="margin-top: 5px;" value="{{#if event.end}}{{event.end}}{{else}}{{event.start}}{{/if}}">
-              </div>
-            </div>
-          </div>
         </div>
-      </form>
     </div>
-  </div>
-</div>
 </template>
