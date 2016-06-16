@@ -29,7 +29,7 @@
             <div class="col-md-12">
                 {{#each images}}
                     {{#with FS.GetFile "Images" this}}
-                        <a href="{{this.url store='images'}}" class="fancybox" rel="gallery" title="{{../../title}}, {{../../summary}}">
+                        <a href="{{this.url store='images'}}" class="fancybox" rel="gallery{{../../_id}}" title="{{../../title}}, {{../../summary}}">
                             <img src="{{this.url store='images'}}" alt="" height="120px">
                         </a>
                     {{/with}}
@@ -38,6 +38,7 @@
         </div>
     </div>
     {{/each}}
+
     <nav class="pager-nav">
         <ul class="pager">
             <li class="{{prevPageClass}}">
