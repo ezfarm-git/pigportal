@@ -1,6 +1,6 @@
 <template name="main">
     <div class="jumbotron" id="mainTop">
-        <h2>피그 포털</h2>
+        <h1 style="color: white; text-align: center; letter-spacing: 20px; text-shadow: 2px 2px black">PIG PORTAL</h1>
     </div>
 
     <div class="row">
@@ -155,9 +155,7 @@
                 <div class="panel-body">
                     <div class="">
                         {{#with mainCardNews}}
-                            <a href="/cardnews/total/1" target="_blank" class="mainList main-page-link">
-                                <p>{{title}}</p>
-                            </a>
+                            <p>{{title}}</p>
                             {{#each images}}
                                 {{#with FS.GetFile "Images" this}}
                                     <a href="{{this.url store='images'}}" class="fancybox" rel="gallery" title="{{../../title}}, {{../../summary}}">
@@ -181,9 +179,7 @@
                 <div class="panel-body">
                     <div class="">
                         {{#with mainInfographic}}
-                            <a href="/infographic/total/1" target="_blank" class="mainList main-page-link">
-                                <p>{{title}}</p>
-                            </a>
+                            <p>{{title}}</p>
                             {{#with FS.GetFile "Images" image}}
                                 <a href="{{this.url store='images'}}" class="fancybox" title="{{../title}}, {{../summary}}">
                                     <img src="{{this.url store='images'}}" alt="" width="100%">
@@ -197,15 +193,15 @@
     </div>
 
     <div class="jumbotron" id="mainBottom">
-        <h2>한국 양돈의 모든 정보</h2>
-        <p>양돈 포털 No.1</p>
+        <h2 style="color: white; text-shadow: 2px 2px black;">한국 양돈의 모든 정보</h2>
+        <p style="color: white; text-shadow: 2px 2px black;">양돈 포털 No.1</p>
         <br>
         <ul class="nav nav-pills">
             <li class="active" style="margin-right: 10px; margin-bottom: 10px;">
-                <a href="http://biz.pigplan.co.kr/biz/login/Login.do" target="_blank"> 피그플랜</a>
+                <a href="http://biz.pigplan.co.kr/biz/login/Login.do" target="_blank"><b>피그플랜</b></a>
             </li>
             <li class="active" style="margin-right: 10px; margin-bottom: 10px;">
-                <a href="http://www.ekapepia.com/home/homeIndex.do" target="_blank"> 축산유통종합정보센터</a>
+                <a href="http://www.ekapepia.com/home/homeIndex.do" target="_blank"><b>축산유통종합정보센터</b></a>
             </li>
         </ul>
     </div>

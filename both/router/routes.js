@@ -4,7 +4,7 @@ Router.route('/', function() {
     this.layout('layout_app');
     this.render('', {to: 'sidebar_left'});
     this.render('main', {to: 'main'});
-    this.render('widget_1', {to: 'sidebar_right'});
+    this.render('banner', {to: 'sidebar_right'});
     this.wait(Meteor.subscribe('mainNews_A'));
     this.wait(Meteor.subscribe('mainNews_B'));
     this.wait(Meteor.subscribe('mainNews_C'));
@@ -29,7 +29,7 @@ Router.route('/news/:category/:page', function() {
             categoryName: this.params.category
         }
     });
-    this.render('widget_1', {to: 'sidebar_right'});
+    this.render('banner', {to: 'sidebar_right'});
 }, {
     name: 'news'
 });
@@ -46,7 +46,7 @@ Router.route('/cardnews/:category/:page', function() {
             categoryName: this.params.category
         }
     });
-    this.render('widget_1', {to: 'sidebar_right'});
+    this.render('banner', {to: 'sidebar_right'});
 }, {
     name: 'card_news'
 });
@@ -63,7 +63,7 @@ Router.route('/corps/:category/:page', function() {
             categoryName: this.params.category
         }
     });
-    this.render('widget_1', {to: 'sidebar_right'});
+    this.render('banner', {to: 'sidebar_right'});
 }, {
     name: 'corps'
 });
@@ -77,7 +77,7 @@ Router.route('/corps_post/:postId', function() {
             postId: this.params.postId
         }
     });
-    this.render('widget_1', {to: 'sidebar_right'});
+    this.render('banner', {to: 'sidebar_right'});
     this.wait(Meteor.subscribe('corpsPost', this.params.postId));
 });
 
@@ -93,7 +93,7 @@ Router.route('/focus/:category/:page', function() {
             categoryName: this.params.category
         }
     });
-    this.render('widget_1', {to: 'sidebar_right'});
+    this.render('banner', {to: 'sidebar_right'});
 }, {
     name: 'focus'
 });
@@ -107,7 +107,7 @@ Router.route('/focus_post/:postId', function() {
             postId: this.params.postId
         }
     });
-    this.render('widget_1', {to: 'sidebar_right'});
+    this.render('banner', {to: 'sidebar_right'});
     this.wait(Meteor.subscribe('focusPost', this.params.postId));
 });
 
@@ -123,7 +123,7 @@ Router.route('/favorites', function() {
             categoryName: this.params.category
         }
     });
-    this.render('widget_1', {to: 'sidebar_right'});
+    this.render('banner', {to: 'sidebar_right'});
     this.wait(Meteor.subscribe('favoritesSummary'));
 });
 
@@ -136,7 +136,7 @@ Router.route('/favorites/:category', function() {
             categoryName: this.params.category
         }
     });
-    this.render('widget_1', {to: 'sidebar_right'});
+    this.render('banner', {to: 'sidebar_right'});
     this.wait(Meteor.subscribe('favoritesList', this.params.category));
     this.wait(Meteor.subscribe('images'));
 });
@@ -153,7 +153,7 @@ Router.route('/infographic/:category/:page', function() {
             categoryName: this.params.category
         }
     });
-    this.render('widget_1', {to: 'sidebar_right'});
+    this.render('banner', {to: 'sidebar_right'});
     this.wait(Meteor.subscribe('images'));
 }, {
     name: 'infographic'
@@ -166,7 +166,7 @@ Router.route('/events', function() {
     this.layout('layout_app');
     this.render('', {to: 'sidebar_left'});
     this.render('events', {to: 'main'});
-    this.render('widget_1', {to: 'sidebar_right'});
+    this.render('banner', {to: 'sidebar_right'});
     this.wait(Meteor.subscribe('events'));
 });
 
@@ -176,7 +176,7 @@ Router.route('/pigplan/intro', function() {
     this.layout('layout_app');
     this.render('pigplan_category', {to: 'sidebar_left'});
     this.render('pigplan_intro', {to: 'main'});
-    this.render('widget_1', {to: 'sidebar_right'});
+    this.render('banner', {to: 'sidebar_right'});
 });
 
 // Pigplan Feature
@@ -185,7 +185,7 @@ Router.route('/pigplan/feature', function() {
     this.layout('layout_app');
     this.render('pigplan_category', {to: 'sidebar_left'});
     this.render('pigplan_feature', {to: 'main'});
-    this.render('widget_1', {to: 'sidebar_right'});
+    this.render('banner', {to: 'sidebar_right'});
 });
 
 // Pigplan Use Case
@@ -194,7 +194,7 @@ Router.route('/pigplan/case/:page', function() {
     this.layout('layout_app');
     this.render('pigplan_category', {to: 'sidebar_left'});
     this.render('case', {to: 'main'});
-    this.render('widget_1', {to: 'sidebar_right'});
+    this.render('banner', {to: 'sidebar_right'});
 }, {
     name: 'case'
 });
@@ -208,6 +208,6 @@ Router.route('/case_post/:postId', function() {
             postId: this.params.postId
         }
     });
-    this.render('widget_1', {to: 'sidebar_right'});
+    this.render('banner', {to: 'sidebar_right'});
     this.wait(Meteor.subscribe('casePost', this.params.postId));
 });
