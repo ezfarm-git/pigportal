@@ -1,10 +1,20 @@
-// Home
+// Main
 
 Router.route('/', function() {
     this.layout('layout_app');
     this.render('', {to: 'sidebar_left'});
-    this.render('home', {to: 'main'});
-    this.render('', {to: 'sidebar_right'});
+    this.render('main', {to: 'main'});
+    this.render('widget_1', {to: 'sidebar_right'});
+    this.wait(Meteor.subscribe('mainNews_A'));
+    this.wait(Meteor.subscribe('mainNews_B'));
+    this.wait(Meteor.subscribe('mainNews_C'));
+    this.wait(Meteor.subscribe('mainFocus_A'));
+    this.wait(Meteor.subscribe('mainFocus_B'));
+    this.wait(Meteor.subscribe('mainFocus_C'));
+    this.wait(Meteor.subscribe('mainCorps'));
+    this.wait(Meteor.subscribe('mainCardNews'));
+    this.wait(Meteor.subscribe('mainInfographic'));
+    this.wait(Meteor.subscribe('images'));
 });
 
 

@@ -1,0 +1,212 @@
+<template name="main">
+    <div class="jumbotron" id="mainTop">
+        <h2>피그 포털</h2>
+    </div>
+
+    <div class="row">
+        <!-- 뉴스 A 패널 -->
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title indexPanelTitle">
+                        <a href="/news/A/1" target="_blank"><i class="fa fa-newspaper-o">&nbsp;&nbsp;양돈 뉴스 (A)</i></a>
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <ul class="main_ul">
+                        {{#each mainNews_A}}
+                        <li class="main_li">
+                            <a href="{{url}}" target="_blank" class="mainList main-page-link">{{title}}</a>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- 뉴스 B 패널 -->
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title indexPanelTitle">
+                        <a href="/news/A/1" target="_blank"><i class="fa fa-newspaper-o">&nbsp;&nbsp;양돈 뉴스 (B)</i></a>
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <ul class="main_ul">
+                        {{#each mainNews_B}}
+                        <li class="main_li">
+                            <a href="{{url}}" target="_blank" class="mainList main-page-link">{{title}}</a>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- 뉴스 C 패널 -->
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title indexPanelTitle">
+                        <a href="/news/A/1" target="_blank">
+                            <i class="fa fa-newspaper-o">&nbsp;&nbsp;양돈 뉴스 (C)</i></a>
+                        </h3>
+                </div>
+                <div class="panel-body">
+                    <ul class="main_ul">
+                        {{#each mainNews_C}}
+                        <li class="main_li">
+                            <a href="{{url}}" target="_blank" class="mainList main-page-link">{{title}}</a>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- 포커스 A 패널 -->
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title indexPanelTitle">
+                        <a href="/focus/가/1" target="_blank">
+                            <i class="fa fa-eye">&nbsp;&nbsp;양돈 포커스 (가)</i></a></h3>
+                </div>
+                <div class="panel-body">
+                    <ul class="main_ul">
+                        {{#each mainFocus_A}}
+                        <li class="main_li">
+                            <a href="/focus_post/{{_id}}" target="_blank" class="mainList main-page-link">{{title}}</a>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- 포커스 B 패널 -->
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title indexPanelTitle">
+                        <a href="/focus/나/1" target="_blank"><i class="fa fa-eye">&nbsp;&nbsp;양돈 포커스 (나)</i></a>
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <ul class="main_ul">
+                        {{#each mainFocus_B}}
+                        <li class="main_li">
+                            <a href="/focus_post/{{_id}}" target="_blank" class="mainList main-page-link">{{title}}</a>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- 포커스 C 패널 -->
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title indexPanelTitle">
+                        <a href="/focus/다/1" target="_blank"><i class="fa fa-eye">&nbsp;&nbsp;양돈 포커스 (다)</i></a>
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <ul class="main_ul">
+                        {{#each mainFocus_C}}
+                        <li class="main_li">
+                            <a href="/focus_post/{{_id}}" target="_blank" class="mainList main-page-link">{{title}}</a>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- 기업 소식 패널 -->
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title indexPanelTitle">
+                        <a href="/corps/total/1" target="_blank"><i class="fa fa-building-o">&nbsp;&nbsp;기업 소식</i></a>
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <ul class="main_ul">
+                        {{#each mainCorps}}
+                        <li class="main_li">
+                            <a href="/corps_post/{{_id}}" target="_blank" class="mainList main-page-link">{{title}}</a>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- 한 컷 뉴스 패널 -->
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title indexPanelTitle">
+                        <a href="/cardnews/total/1" target="_blank">
+                            <i class="fa fa-camera-retro">&nbsp;&nbsp;한 컷 뉴스</i></a></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="">
+                        {{#with mainCardNews}}
+                            <a href="/cardnews/total/1" target="_blank" class="mainList main-page-link">
+                                <p>{{title}}</p>
+                            </a>
+                            {{#each images}}
+                                {{#with FS.GetFile "Images" this}}
+                                    <a href="{{this.url store='images'}}" class="fancybox" rel="gallery" title="{{../../title}}, {{../../summary}}">
+                                        <img src="{{this.url store='images'}}" alt="" width="100%" height="40px;">
+                                    </a>
+                                {{/with}}
+                            {{/each}}
+                        {{/with}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 인포그래픽 패널 -->
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title indexPanelTitle">
+                        <a href="/infographic/total/1" target="_blank"><i class="fa fa-picture-o">&nbsp;&nbsp;인포그래픽</i></a>
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <div class="">
+                        {{#with mainInfographic}}
+                            <a href="/infographic/total/1" target="_blank" class="mainList main-page-link">
+                                <p>{{title}}</p>
+                            </a>
+                            {{#with FS.GetFile "Images" image}}
+                                <a href="{{this.url store='images'}}" class="fancybox" title="{{../title}}, {{../summary}}">
+                                    <img src="{{this.url store='images'}}" alt="" width="100%">
+                                </a>
+                            {{/with}}
+                        {{/with}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="jumbotron" id="mainBottom">
+        <h2>한국 양돈의 모든 정보</h2>
+        <p>양돈 포털 No.1</p>
+        <br>
+        <ul class="nav nav-pills">
+            <li class="active" style="margin-right: 10px; margin-bottom: 10px;">
+                <a href="http://biz.pigplan.co.kr/biz/login/Login.do" target="_blank"> 피그플랜</a>
+            </li>
+            <li class="active" style="margin-right: 10px; margin-bottom: 10px;">
+                <a href="http://www.ekapepia.com/home/homeIndex.do" target="_blank"> 축산유통종합정보센터</a>
+            </li>
+        </ul>
+    </div>
+</template>

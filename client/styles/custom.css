@@ -55,6 +55,14 @@ a.underline-none:hover {
     margin-top: 40px;
 }
 
+/*Main Page*/
+
+.main-page-link:hover {
+    text-decoration: none;
+    color: #3ec195;
+    cursor: pointer;
+}
+
 /*News*/
 
 .news-link {
@@ -155,22 +163,25 @@ a.underline-none:hover {
 
 div.jumbotron#mainTop {
     position: relative;
-    background: #000 url("/images/mainBackground2.jpg") center center;
+    background: #000 url("/images_main/mainBackground2.jpg") center center;
     opacity: 0.85;
     width: 100%;
     height: 200px;
     background-size: cover;
     overflow: hidden;
+    margin-top: 20px;
+    padding-left: 5vw;
+    padding-right: 5vw;
 }
 div.jumbotron#mainBottom {
     position: relative;
-    background: #000 url("/images/mainBackground1.jpg") center center;
+    background: #000 url("/images_main/mainBackground1.jpg") center center;
     opacity: 0.85;
     width: 100%;
     height: 100%;
     background-size: cover;
     overflow: hidden;
-    margin-top: 60px;
+    margin-top: 20px;
     padding-top: 30px;
     padding-bottom: 45px;
     padding-left: 5vw;
