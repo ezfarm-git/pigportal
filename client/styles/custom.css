@@ -65,6 +65,13 @@ a.underline-none:hover {
     margin-bottom: 32px;
 }
 
+/*List Thumbnail*/
+img.list-thumbnail {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
 /*Main Page*/
 
 .main-page-link:hover {
@@ -200,11 +207,18 @@ div.jumbotron#mainBottom {
 
 /*MainPage Setting*/
 
-div.indexPanelTitle {
+h3.indexPanelTitle {
     font-family: 'Jeju Gothic', serif;
+    color: white;
+}
+#main-panel-heading {
+    background-color: #26517d;
+}
+#main-panel-body {
+    background-color: #f7f7f7;
 }
 a.mainList {
-    color: SteelBlue;
+    color: #04376c;
 }
 ul.main_ul {
     list-style-position: outside;
