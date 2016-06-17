@@ -206,7 +206,9 @@ div.jumbotron#mainBottom {
 }
 
 /*MainPage Setting*/
-
+.main-panel {
+    
+}
 h3.indexPanelTitle {
     font-family: 'Jeju Gothic', serif;
     color: white;
