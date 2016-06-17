@@ -31,6 +31,7 @@ check
 # Router
 iron:router
 iron:layout
+# manuelschoebel:wait-on-lib
 
 # Auth
 accounts-password
@@ -70,3 +71,6 @@ momentjs:moment
 tmeasday:publish-counts
 mrt:fancybox
 # themeteorchef:bert
+
+# Share
+joshowens:shareit

@@ -72,6 +72,35 @@ img.list-thumbnail {
     object-fit: cover;
 }
 
+/*Share box*/
+.share-box {
+    text-align: right;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.nv-kk-share {
+    display: inline-block;
+}
+.nv-share {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.kk-share {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.share-buttons {
+    display: inline-block;
+}
+.fb-share {
+    margin-left: 2px;
+    margin-right: 4px;
+}
+.tw-share {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
 /*Main Page*/
 
 .main-page-link:hover {
@@ -206,9 +235,7 @@ div.jumbotron#mainBottom {
 }
 
 /*MainPage Setting*/
-.main-panel {
-    
-}
+
 h3.indexPanelTitle {
     font-family: 'Jeju Gothic', serif;
     color: white;
@@ -246,38 +273,28 @@ li.posts_li {
     margin-top: 15px;
     margin-bottom: 20px;
 }
-.categoryPanel {
+#categoryPanel {
     margin-top: 15px;
 }
-.categoryPanelHeading {
+#categoryPanelHeading {
+    color: white;
     font-size: 130%;
+    background-color: rgba(0,0,0,.75);
 }
-.categoryPanelBody {
+#categoryPanelBody {
     padding-top: 5px;
     padding-bottom: 7px;
     padding-left: 3px;
     padding-right: 3px;
 }
-.category_ul {
+#category_ul {
     list-style: none;
     font-size: 120%;
 }
+#category_ul a {
+    color: #04376c;
+}
 
-/*Pages Setting*/
-
-div.page-header {
-    margin-bottom: 0px;
-}
-h3#listHeader {
-    margin-top: 0px;
-    font-family: 'Jeju Gothic', serif;
-}
-h4.media-heading {
-    font-family: 'Nanum Gothic', serif;
-}
-a.contentsList {
-    color: #585858;
-}
 
 /*Navbar Setting*/
 

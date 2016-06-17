@@ -9,8 +9,8 @@ Template.favorites_summary.helpers({
             multiColumnSort: false,
             showNavigation: 'never',
             fields: [
-                { key: 'name', label: ' ◎ 사이트', sortOrder: 0, headerClass: 'success' },
-                { key: 'category', label: ' ◎ 카테고리', sortOrder: 1, headerClass: 'success' },
+                { key: 'name', label: ' ◎ 사이트', sortOrder: 0, headerClass: 'info' },
+                { key: 'category', label: ' ◎ 카테고리', sortOrder: 1, headerClass: 'info' },
                 { key: 'url', hidden: true }
             ]
         };
