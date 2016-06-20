@@ -1,3 +1,11 @@
+// Admin main
+
+Router.route('/admin', function() {
+    this.layout('layout_admin');
+    this.render('main_admin', {to: 'main'});
+});
+
+
 // News
 
 Router.route('/admin/news', function() {
