@@ -6,6 +6,13 @@ Router.route('/admin', function() {
 });
 
 
+// Admin signin
+
+Router.route('/signin', function() {
+    // this.layout('layout_admin');
+    this.render('signin', {to: 'main'});
+});
+
 // News
 
 Router.route('/admin/news', function() {

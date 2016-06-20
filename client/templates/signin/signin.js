@@ -5,7 +5,7 @@ Template.signin.events({
         var password = evt.target.password.value;
         Meteor.loginWithPassword(email, password, function(err) {
             if(!err) {
-                FlowRouter.go('/');
+                Router.go('/admin');
             }
         });
     }
