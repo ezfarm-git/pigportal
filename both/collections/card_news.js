@@ -1,17 +1,5 @@
 CardNews = new Mongo.Collection('card_news');
 
-// ImageSchema = new SimpleSchema({
-//     fileId: {
-//         type: String,
-//         autoform: {
-//             afFieldInput: {
-//                 type: 'cfs-file',
-//                 collection: 'images'
-//             }
-//         }
-//     }
-// });
-
 CardNews.attachSchema(new SimpleSchema({
     date: {
         type: Date,
