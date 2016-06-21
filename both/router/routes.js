@@ -32,13 +32,20 @@ Router.route('/data/market', {
     }
 });
 
-// Router.route('/data/market', function() {
-//     this.layout('layout_app');
-//     this.render('', {to: 'sidebar_left'});
-//     this.render('market', {to: 'main'});
-//     this.render('banner', {to: 'sidebar_right'});
-//     this.wait([IRLibLoader.load('https://cdn.plot.ly/plotly-latest.min.js')]);
-// });
+
+// Data - Market
+
+Router.route('/data/stats', {
+    layoutTemplate: 'layout_app',
+    template: 'stats',
+    yieldRegions: {
+        '': {to: 'sidebar_left'},
+        'banner': {to: 'sidebar_right'}
+    },
+    waitOn: function() {
+        return [IRLibLoader.load('https://cdn.plot.ly/plotly-latest.min.js')];
+    }
+});
 
 
 // News

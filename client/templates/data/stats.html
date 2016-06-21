@@ -1,0 +1,14 @@
+<template name="stats">
+    <h3 class="postHeading">
+        <i class="fa fa-area-chart"></i>&nbsp;양돈 통계
+    </h3>
+    <div>
+        <ul class="nav nav-pills">
+            <li data-template="stats_A" role="presentation" class="active"><a href="#">stats_A</a></li>
+            <li data-template="stats_B" role="presentation"><a href="#">stats_B</a></li>
+            <li data-template="stats_C" role="presentation"><a href="#">stats_C</a></li>
+        </ul>
+        {{> Template.dynamic template="stats_plot" data=tabData}}
+    </div>
+    <!-- <div id="market_plot" style="width:100%;height:auto;"></div> -->
+</template>
