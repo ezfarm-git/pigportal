@@ -18,6 +18,29 @@ Router.route('/', function() {
 });
 
 
+// Data - Market
+
+Router.route('/data/market', {
+    layoutTemplate: 'layout_app',
+    template: 'market',
+    yieldRegions: {
+        '': {to: 'sidebar_left'},
+        'banner': {to: 'sidebar_right'}
+    },
+    waitOn: function() {
+        return [IRLibLoader.load('https://cdn.plot.ly/plotly-latest.min.js')];
+    }
+});
+
+// Router.route('/data/market', function() {
+//     this.layout('layout_app');
+//     this.render('', {to: 'sidebar_left'});
+//     this.render('market', {to: 'main'});
+//     this.render('banner', {to: 'sidebar_right'});
+//     this.wait([IRLibLoader.load('https://cdn.plot.ly/plotly-latest.min.js')]);
+// });
+
+
 // News
 
 Router.route('/news/:category/:page', function() {

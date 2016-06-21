@@ -31,7 +31,7 @@ check
 # Router
 iron:router
 iron:layout
-# manuelschoebel:wait-on-lib
+manuelschoebel:wait-on-lib
 
 # Auth
 accounts-password
