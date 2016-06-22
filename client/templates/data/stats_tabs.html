@@ -6,6 +6,11 @@
     {{#tabContent slug="plot1"}}
         <h3>Plot1</h3>
         <div id="plot_1" style="width:100%;height:auto;"></div>
+        {{#with pig_farms_by_scale_total.[0]}}
+            {{TBL_NM}}, {{PRD_DE}}, {{DT}}
+        {{/with}}
+        <hr>
+        {{pig_farms_by_scale_total.[0].TBL_NM}}
     {{/tabContent}}
 
     {{#tabContent slug="plot2"}}

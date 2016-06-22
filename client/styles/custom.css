@@ -118,6 +118,7 @@ h3.indexPanelTitle {
 }
 #main-panel-body {
     background-color: #f7f7f7;
+    min-height: 218px;
 }
 a.mainList {
     color: #04376c;

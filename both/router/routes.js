@@ -1,3 +1,8 @@
+// Test
+Router.route('/test', function() {
+    this.render('test');
+})
+
 // Main
 
 Router.route('/', function() {
@@ -33,7 +38,7 @@ Router.route('/data/market', {
 });
 
 
-// Data - Market
+// Data - Stats
 
 Router.route('/data/stats', {
     layoutTemplate: 'layout_app',

@@ -1,3 +1,13 @@
+Template.stats_tabs.onRendered(function() {
+    Meteor.call('pig_farms_by_scale_total.get', function(error, result) {
+        if(error) {
+            console.log(error);
+        } else {
+            Session.set('pig_farms_by_scale_total', JSON.parse(result.content));
+        }
+    });
+});
+
 ReactiveTabs.createInterface({
     template: 'basicTabs',
     onChnage: function(slug, template) {
@@ -57,5 +67,8 @@ Template.stats_tabs.helpers({
 
             }
         }];
+    },
+    pig_farms_by_scale_total: function() {
+        return Session.get('pig_farms_by_scale_total');
     }
 })
