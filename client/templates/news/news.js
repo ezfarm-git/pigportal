@@ -3,7 +3,7 @@ Template.news.onCreated(function() {
     self.autorun(function() {
         var category = Router.current().params.category;
         var currentPage = parseInt(Router.current().params.page) || 1;
-        var skipCount = (currentPage - 1) * 10; // 10 records per page
+        var skipCount = (currentPage - 1) * 15; // 15 records per page
         self.subscribe('newsList', category, skipCount);
     });
 });
@@ -40,5 +40,5 @@ Template.news.helpers({
 var hasMorePages = function() {
     var currentPage = parseInt(Router.current().params.page) || 1;
     var totalPosts = Counts.get('postsCount');
-    return currentPage * 10 < totalPosts;
+    return currentPage * 15 < totalPosts;
 }

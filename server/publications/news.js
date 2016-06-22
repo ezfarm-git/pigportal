@@ -23,13 +23,13 @@ Meteor.publish("newsList", function(category, skipCount) {
 
     if (category === "total") {
         return News.find({}, {
-            limit: 10, // records to show per page
+            limit: 15, // records to show per page
             skip: skipCount,
             sort: {date: -1}
         });
     } else {
         return News.find({category: category}, {
-            limit: 10,
+            limit: 15,
             skip: skipCount,
             sort: {date: -1}
         });
