@@ -4,15 +4,31 @@
   {{#basicTabs name="" tabs=tabs}}
 
     {{#tabContent slug="plot1"}}
-        <div id="plot_1" style="width:100%;height:680px;"></div>
+        <div id="plot_1" style="width:100%;height:700px;"></div>
     {{/tabContent}}
 
     {{#tabContent slug="plot2"}}
-        <div id="plot_2" style="width:100%;height:800px;"></div>
+        <div id="plot_2" style="width:100%;height:700px;"></div>
     {{/tabContent}}
 
     {{#tabContent slug="plot3"}}
-        <div id="plot_3" style="width:100%;height:auto;"></div>
+        <div class="container">
+        <form role="form">
+            <label class="radio-inline">
+                <input type="radio" name="optradio" value="data_total" checked>전체
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="optradio" value="data_female">암
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="optradio" value="data_cast">거세
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="optradio" value="data_male">수
+            </label>
+        </form>
+        </div>
+        <div id="plot_3" style="width:100%;height:1000px;"></div>
     {{/tabContent}}
 
   {{/basicTabs}}
