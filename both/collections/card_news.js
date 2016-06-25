@@ -30,17 +30,5 @@ CardNews.attachSchema(new SimpleSchema({
                 accept: 'image/*'
             }
         }
-    },
-    category: {
-        type: String,
-        label: '카테고리',
-        allowedValues: ['a', 'b', 'c'],
-        autoform: {
-            options: [
-                {label: "a", value: "a"},
-                {label: "b", value: "b"},
-                {label: "c", value: "c"},
-            ]
-        }
     }
 }));

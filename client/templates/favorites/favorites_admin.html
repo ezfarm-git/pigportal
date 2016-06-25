@@ -6,16 +6,11 @@
     </h3>
     <div class="col-sm-6">
         {{#autoForm id="Form" type=formType collection="Favorites" doc=selectedDoc}}
-            <input type="hidden" id="postId">
-            <input type="hidden" id="imageId">
             {{> afQuickField name="name" id="name"}}
             {{> afQuickField name="url" id="url"}}
             {{> afQuickField name="image" type="cfs-file" collection="Images" id="image"}}
             {{#with FS.GetFile "Images" selectedImage }}
                 <img src="{{this.url store='images'}}" alt="" width="300px">
-                <!-- <div>
-                    {{> FS.DeleteButton class="btn btn-danger btn-xs deleteImage"}} {{this.name}}, {{this._id}}
-                </div> -->
             {{/with}}
             {{> afQuickField name="category" id="category"}}
             <div class="form-group">

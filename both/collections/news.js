@@ -31,9 +31,3 @@ News.attachSchema(new SimpleSchema({
         }
     }
 }));
-
-News.helpers({
-    list: function() {
-        return News.find({category: this.category});
-    }
-});

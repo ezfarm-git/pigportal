@@ -28,17 +28,5 @@ Infographic.attachSchema(new SimpleSchema({
                 accept: 'image/*'
             }
         }
-    },
-    category: {
-        type: String,
-        label: '카테고리',
-        allowedValues: ['인포1', '인포2', '인포3'],
-        autoform: {
-            options: [
-                {label: "인포1", value: "인포1"},
-                {label: "인포2", value: "인포2"},
-                {label: "인포3", value: "인포3"},
-            ]
-        }
     }
 }));

@@ -38,17 +38,5 @@ Corps.attachSchema(new SimpleSchema({
                 accept: 'image/*'
             }
         }
-    },
-    category: {
-        type: String,
-        label: '카테고리',
-        allowedValues: ['가', '나', '다'],
-        autoform: {
-            options: [
-                {label: "가", value: "가"},
-                {label: "나", value: "나"},
-                {label: "다", value: "다"},
-            ]
-        }
     }
 }));

@@ -5,8 +5,6 @@
     </h3>
     <div class="col-sm-6">
         {{#autoForm id="Form" type=formType collection="Case" doc=selectedDoc}}
-            <input type="hidden" id="postId">
-            <input type="hidden" id="imageId">
             {{> afQuickField name="date" id="date"}}
             {{> afQuickField name="title" id="title"}}
             {{> afQuickField name="summary" id="summary"}}

@@ -24,8 +24,7 @@ Template.infographic_admin.helpers({
             fields: [
                 { key: 'date', label: '일자', sortOrder: 0, sortDirection: 'descending' },
                 { key: 'title', label: '제목' },
-                { key: 'summary', label: '요약' },
-                { key: 'category', label: '분류' }
+                { key: 'summary', label: '요약' }
             ]
         };
     },
@@ -42,13 +41,10 @@ Template.infographic_admin.helpers({
 
 Template.infographic_admin.events({
     'click .reactive-table tbody tr': function(evt, tmpl) {
-        $('#postId').val(this._id);
-        $('#imageId').val(this.image);
         evt.preventDefault();
         tmpl.selectedDoc.set(this._id);
         tmpl.selectedImage.set(this.image);
         tmpl.formType.set("update");
-        // $('.submit-btn').text('Edit').removeClass('submit-btn').addClass('edit-btn');
     },
     'click .remove-btn': function(evt, tmpl) {
         evt.preventDefault();

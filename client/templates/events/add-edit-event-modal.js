@@ -42,7 +42,6 @@ Template.addEditEventModal.events({
                 title: template.find('[name="title"]').value,
                 start: template.find('[name="start"]').value,
                 end: template.find('[name="end"]').value,
-                category: template.find('[name="category"] option:selected').value,
                 summary: template.find('[name="summary"]').value
             };
         if (submitType === 'editEvent') {

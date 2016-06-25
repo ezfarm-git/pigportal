@@ -74,7 +74,7 @@ Router.route('/news/:category/:page', function() {
 
 Router.route('/cardnews/:category/:page', function() {
     this.layout('layout_app');
-    this.render('card_news_category', {to: 'sidebar_left'});
+    this.render('', {to: 'sidebar_left'});
     this.render('card_news', {
         to: 'main',
         data: {
@@ -91,7 +91,7 @@ Router.route('/cardnews/:category/:page', function() {
 
 Router.route('/corps/:category/:page', function() {
     this.layout('layout_app');
-    this.render('corps_category', {to: 'sidebar_left'});
+    this.render('', {to: 'sidebar_left'});
     this.render('corps', {
         to: 'main',
         data: {
@@ -105,7 +105,7 @@ Router.route('/corps/:category/:page', function() {
 
 Router.route('/corps_post/:postId', function() {
     this.layout('layout_app');
-    this.render('corps_category', {to: 'sidebar_left'});
+    this.render('', {to: 'sidebar_left'});
     this.render('corps_post', {
         to: 'main',
         data: {
@@ -181,7 +181,7 @@ Router.route('/favorites/:category', function() {
 
 Router.route('/infographic/:category/:page', function() {
     this.layout('layout_app');
-    this.render('infographic_category', {to: 'sidebar_left'});
+    this.render('', {to: 'sidebar_left'});
     this.render('infographic', {
         to: 'main',
         data: {

@@ -41,8 +41,6 @@ Template.case_admin.helpers({
 
 Template.case_admin.events({
     'click .reactive-table tbody tr': function(evt, tmpl) {
-        $('#postId').val(this._id);
-        $('#imageId').val(this.image);
         evt.preventDefault();
         tmpl.selectedDoc.set(this._id);
         tmpl.selectedImage.set(this.image);

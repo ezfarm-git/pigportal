@@ -16,10 +16,5 @@ Events.attachSchema(new SimpleSchema({
     'end': {
         type: String,
         label: '종료일'
-    },
-    'category': {
-        type: String,
-        label: '카테고리',
-        allowedValues: [ 'A', 'B', 'C', 'D' ]
     }
 }))

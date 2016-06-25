@@ -10,20 +10,11 @@
         <div class="modal-body">
           <div class="form-group">
             <div class="row">
-              <div class="col-xs-12 col-sm-4">
-                <label for="category">행사 유형</label>
-                <select name="category" class="form-control">
-                  <option selected="{{selected event.category 'A' }}" value="A">A</option>
-                  <option selected="{{selected event.category 'B' }}" value="B">B</option>
-                  <option selected="{{selected event.category 'C' }}" value="C">C</option>
-                  <option selected="{{selected event.category 'D' }}" value="D">D</option>
-                </select>
-              </div>
-              <div class="col-xs-12 col-sm-3">
+              <div class="col-xs-12 col-sm-6">
                 <label for="start">시작일</label>
                 <input type="text" name="start" class="form-control" value="{{event.start}}">
               </div>
-              <div class="col-xs-12 col-sm-3">
+              <div class="col-xs-12 col-sm-6">
                 <label for="end">종료일</label>
                 <input type="text" name="end" class="form-control" value="{{#if event.end}}{{event.end}}{{else}}{{event.start}}{{/if}}">
               </div>

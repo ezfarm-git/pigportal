@@ -38,8 +38,7 @@ Template.card_news_admin.helpers({
             fields: [
                 { key: 'date', label: '일자', sortOrder: 0, sortDirection: 'descending' },
                 { key: 'title', label: '제목' },
-                { key: 'summary', label: '요약' },
-                { key: 'category', label: '분류' }
+                { key: 'summary', label: '요약' }
             ]
         };
     },
@@ -56,13 +55,12 @@ Template.card_news_admin.helpers({
 
 Template.card_news_admin.events({
     'click .reactive-table tbody tr': function(evt, tmpl) {
-        $('#postId').val(this._id);
-        $('#imageIds').val(this.images);
+        // $('#postId').val(this._id);
+        // $('#imageIds').val(this.images);
         evt.preventDefault();
         tmpl.selectedDoc.set(this._id);
         tmpl.selectedImages.set(this.images);
         tmpl.formType.set("update");
-        // $('.submit-btn').text('Edit').removeClass('submit-btn').addClass('edit-btn');
     },
     'click .remove-btn': function(evt, tmpl) {
         evt.preventDefault();

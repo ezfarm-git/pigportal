@@ -10,7 +10,7 @@ Template.events_admin.onRendered(function() {
         },
         eventRender(event, element) {
             element.find('.fc-content').html(
-                `<div class="category-${event.category}">
+                `<div>
                     ${event.title}
                  </div>
                 `
