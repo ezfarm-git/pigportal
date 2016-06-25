@@ -1,7 +1,10 @@
 Template.header_admin.events({
-    'click .signout': function(evt) {
+    'click #signout': function() {
         event.preventDefault();
-        Meteor.logout();
-        Router.go('/signin');
+        Meteor.logout(function(err) {
+            if(!err) {
+                Router.go('/signin');
+            }
+        });
     }
 })

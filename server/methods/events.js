@@ -4,7 +4,6 @@ Meteor.methods({
             title: String,
             start: String,
             end: String,
-            category: String,
             summary: String
         });
 
@@ -20,7 +19,6 @@ Meteor.methods({
             title: Match.Optional(String),
             start: String,
             end: String,
-            category: Match.Optional(String),
             summary: Match.Optional(String)
         });
 

@@ -32,13 +32,8 @@
                     <li><a href="/admin/pigplan/case">활용 사례</a></li>
                 </ul>
                 <div class="navbar-right plain">
- +                    {{#if currentUser}}
- +                        <a style="margin-left: 20px;" href="/signin" class="btn btn-primary navbar-btn">
- +                            &nbsp;Sign Out</a>
- +                    {{else}}
- +                        <a href="/signin" class="btn btn-default navbar-btn">Sign In</a>
- +                    {{/if}}
- +                </div>
+                    <button id="signout" class="btn btn-primary navbar-btn">&nbsp;Sign Out</button>
+                </div>
             </div>
         </div>
     </nav>

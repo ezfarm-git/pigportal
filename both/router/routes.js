@@ -20,6 +20,8 @@ Router.route('/', function() {
     this.wait(Meteor.subscribe('mainCardNews'));
     this.wait(Meteor.subscribe('mainInfographic'));
     this.wait(Meteor.subscribe('images'));
+}, {
+    name: 'main'
 });
 
 
@@ -35,6 +37,8 @@ Router.route('/data/market', {
     waitOn: function() {
         return [IRLibLoader.load('https://cdn.plot.ly/plotly-latest.min.js')];
     }
+}, {
+    name: 'data_market'
 });
 
 
@@ -50,6 +54,8 @@ Router.route('/data/stats', {
     waitOn: function() {
         return [IRLibLoader.load('https://cdn.plot.ly/plotly-latest.min.js')];
     }
+}, {
+    name: 'data_stats'
 });
 
 
@@ -72,31 +78,25 @@ Router.route('/news/:category/:page', function() {
 
 // Card News
 
-Router.route('/cardnews/:category/:page', function() {
+Router.route('/cardnews/:page', function() {
     this.layout('layout_app');
     this.render('', {to: 'sidebar_left'});
     this.render('card_news', {
-        to: 'main',
-        data: {
-            categoryName: this.params.category
-        }
+        to: 'main'
     });
     this.render('banner', {to: 'sidebar_right'});
 }, {
-    name: 'card_news'
+    name: 'cardnews'
 });
 
 
 // Corps
 
-Router.route('/corps/:category/:page', function() {
+Router.route('/corps/:page', function() {
     this.layout('layout_app');
     this.render('', {to: 'sidebar_left'});
     this.render('corps', {
-        to: 'main',
-        data: {
-            categoryName: this.params.category
-        }
+        to: 'main'
     });
     this.render('banner', {to: 'sidebar_right'});
 }, {
@@ -114,6 +114,8 @@ Router.route('/corps_post/:postId', function() {
     });
     this.render('banner', {to: 'sidebar_right'});
     this.wait(Meteor.subscribe('corpsPost', this.params.postId));
+}, {
+    name: 'corps_post'
 });
 
 
@@ -144,6 +146,8 @@ Router.route('/focus_post/:postId', function() {
     });
     this.render('banner', {to: 'sidebar_right'});
     this.wait(Meteor.subscribe('focusPost', this.params.postId));
+}, {
+    name: 'focus_post'
 });
 
 
@@ -160,6 +164,8 @@ Router.route('/favorites', function() {
     });
     this.render('banner', {to: 'sidebar_right'});
     this.wait(Meteor.subscribe('favoritesSummary'));
+}, {
+    name: 'favorites'
 });
 
 Router.route('/favorites/:category', function() {
@@ -174,6 +180,8 @@ Router.route('/favorites/:category', function() {
     this.render('banner', {to: 'sidebar_right'});
     this.wait(Meteor.subscribe('favoritesList', this.params.category));
     this.wait(Meteor.subscribe('images'));
+}, {
+    name: 'favorites_category'
 });
 
 
@@ -203,6 +211,8 @@ Router.route('/events', function() {
     this.render('events', {to: 'main'});
     this.render('banner', {to: 'sidebar_right'});
     this.wait(Meteor.subscribe('events'));
+}, {
+    name: 'events'
 });
 
 // Pigplan Inroduction
@@ -212,6 +222,8 @@ Router.route('/pigplan/intro', function() {
     this.render('pigplan_category', {to: 'sidebar_left'});
     this.render('pigplan_intro', {to: 'main'});
     this.render('banner', {to: 'sidebar_right'});
+}, {
+    name: 'pigplan_intro'
 });
 
 // Pigplan Feature
@@ -221,6 +233,8 @@ Router.route('/pigplan/feature', function() {
     this.render('pigplan_category', {to: 'sidebar_left'});
     this.render('pigplan_feature', {to: 'main'});
     this.render('banner', {to: 'sidebar_right'});
+}, {
+    name: 'pigplan_feature'
 });
 
 // Pigplan Use Case
@@ -231,7 +245,7 @@ Router.route('/pigplan/case/:page', function() {
     this.render('case', {to: 'main'});
     this.render('banner', {to: 'sidebar_right'});
 }, {
-    name: 'case'
+    name: 'pigplan_case'
 });
 
 Router.route('/case_post/:postId', function() {
@@ -245,4 +259,6 @@ Router.route('/case_post/:postId', function() {
     });
     this.render('banner', {to: 'sidebar_right'});
     this.wait(Meteor.subscribe('casePost', this.params.postId));
+}, {
+    name: 'pigplan_case_post'
 });

@@ -1,6 +1,4 @@
-var imageStore = new FS.Store.FileSystem("images", {
-    // path: process.env.PWD + "/public/images"
-});
+var imageStore = new FS.Store.FileSystem("images");
 
 Images = new FS.Collection("Images", {
     stores: [imageStore],
