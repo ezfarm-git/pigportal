@@ -24,8 +24,7 @@ Template.corps_admin.helpers({
             fields: [
                 { key: 'date', label: '일자', sortOrder: 0, sortDirection: 'descending' },
                 { key: 'title', label: '제목' },
-                { key: 'summary', label: '요약' },
-                { key: 'category', label: '분류' }
+                { key: 'summary', label: '요약' }
             ]
         };
     },

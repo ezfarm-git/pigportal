@@ -187,7 +187,7 @@ Router.route('/favorites/:category', function() {
 
 // Infographic
 
-Router.route('/infographic/:category/:page', function() {
+Router.route('/infographic/:page', function() {
     this.layout('layout_app');
     this.render('', {to: 'sidebar_left'});
     this.render('infographic', {
