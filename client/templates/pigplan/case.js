@@ -15,12 +15,12 @@ Template.case.helpers({
     prevPage: function() {
         var currentPage = parseInt(Router.current().params.page) || 1;
         var previousPage = currentPage === 1 ? 1 : currentPage - 1;
-        return Router.routes.case.path({page: previousPage});
+        return Router.routes.pigplan_case.path({page: previousPage});
     },
     nextPage: function() {
         var currentPage = parseInt(Router.current().params.page) || 1;
         var nextPage = hasMorePages() ? currentPage + 1 : currentPage;
-        return Router.routes.case.path({page: nextPage});
+        return Router.routes.pigplan_case.path({page: nextPage});
     }
 });
 
