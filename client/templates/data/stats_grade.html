@@ -1,0 +1,23 @@
+<template name="stats_grade">
+    <h2 class="postHeading">
+        <i class="fa fa-area-chart"></i>&nbsp;양돈 통계&nbsp;
+        <span class="text-muted postsCategory">등급판정 통계</span>
+    </h2>
+    <div class="container">
+    <form role="form">
+        <label class="radio-inline">
+            <input type="radio" name="optradio" value="data_total" checked>전체
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="optradio" value="data_female">암
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="optradio" value="data_cast">거세
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="optradio" value="data_male">수
+        </label>
+    </form>
+    </div>
+    <div id="plot_1" style="width:100%;height:1000px;"></div>
+</template>

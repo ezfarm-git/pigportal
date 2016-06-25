@@ -30,7 +30,9 @@ Template.events_admin.onRendered(function() {
             });
             $('#add-edit-event-modal').modal('show');
         },
-        lang: 'ko'
+        lang: 'ko',
+        allDayDefault: false
+
     });
     Tracker.autorun(function() {
         Events.find().fetch();

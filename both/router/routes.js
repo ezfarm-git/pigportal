@@ -42,20 +42,37 @@ Router.route('/data/market', {
 });
 
 
-// Data - Stats
+// Data - Stats - PigPops
 
-Router.route('/data/stats', {
+Router.route('/data/stats/pigpops', {
     layoutTemplate: 'layout_app',
-    template: 'stats',
+    template: 'stats_pigpops',
     yieldRegions: {
-        '': {to: 'sidebar_left'},
+        'stats_category': {to: 'sidebar_left'},
         'banner': {to: 'sidebar_right'}
     },
     waitOn: function() {
         return [IRLibLoader.load('https://cdn.plot.ly/plotly-latest.min.js')];
     }
 }, {
-    name: 'data_stats'
+    name: 'data_stats_pigpops'
+});
+
+
+// Data - Stats - Grade
+
+Router.route('/data/stats/grade', {
+    layoutTemplate: 'layout_app',
+    template: 'stats_grade',
+    yieldRegions: {
+        'stats_category': {to: 'sidebar_left'},
+        'banner': {to: 'sidebar_right'}
+    },
+    waitOn: function() {
+        return [IRLibLoader.load('https://cdn.plot.ly/plotly-latest.min.js')];
+    }
+}, {
+    name: 'data_stats_grade'
 });
 
 

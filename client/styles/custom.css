@@ -139,12 +139,6 @@ li.main_li {
     /*color: rgb(52,152,219);*/
 }
 
-/*Events*/
-
-.events-container {
-    margin-top: 15px;
-}
-
 /*Focus, Corps*/
 
 .list-container {
@@ -320,33 +314,21 @@ a.fancybox-next span {
 
 /*fullcalendar*/
 
+.events-container {
+    margin-top: 15px;
+}
+
 .fc-event {
     border-color: #9191ba;
     background: #efeff5;
     text-align: center;
+    color: black;
     padding: 2px;
     margin-bottom: 2px;
 }
 .fc-event:hover {
     cursor: pointer;
-}
-.event-title {
     color: blue;
-}
-.event-summary {
-    color: black;
-}
-.category-A {
-    color: red;
-}
-.category-B {
-    color: green;
-}
-.category-C {
-    color: blue;
-}
-.category-D {
-    color: purple;
 }
 .fc-sat {
     color: blue;
