@@ -3,10 +3,8 @@
         "persistent_session": {
             "default_method": "persistent"
         },
-        "analyticsSettings": {
-            "Google Analytics": {
-                "trackingId": "UA-79916323-1"
-            }
+        "ga": {
+            "id": "UA-79916323-1"
         }
     }
 }
