@@ -15,6 +15,6 @@ Template.corps_post.events({
         window.open('https://story.kakao.com/share?url='+encodeURIComponent(document.URL), 'kakaostorysharedialog', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;
     },
     'click .fb-share': function() {
-        window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(document.URL)+'&t='+encodeURIComponent(document.title), 'facebooksharedialog', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;
+        window.open('https://www.facebook.com/dialog/share?app_id=150240602048486&display=popup&href='+encodeURIComponent(document.URL)+'&redirect_uri=http://pig-portal.herokuapp.com');return false;
     }
 })
