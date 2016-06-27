@@ -77,8 +77,6 @@ img.list-thumbnail {
     text-align: center;
     margin-top: 10px;
     margin-bottom: 5px;
-}
-.nv-kk-share {
     display: inline-block;
 }
 .nv-share {
@@ -89,9 +87,6 @@ img.list-thumbnail {
     margin-left: 2px;
     margin-right: 2px;
 }
-.share-buttons {
-    display: inline-block;
-}
 .fb-share {
     margin-left: 2px;
     margin-right: 4px;
@@ -100,10 +95,7 @@ img.list-thumbnail {
     margin-left: 2px;
     margin-right: 2px;
 }
-#file-input-wrapper {
-    display: none;
-    margin-top: 50px;
-}
+
 
 /*Main Page*/
 
