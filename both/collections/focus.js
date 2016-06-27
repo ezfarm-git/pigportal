@@ -42,12 +42,12 @@ Focus.attachSchema(new SimpleSchema({
     category: {
         type: String,
         label: '카테고리',
-        allowedValues: ['가', '나', '다'],
+        allowedValues: ['글로벌', '리뷰', '자료'],
         autoform: {
             options: [
-                {label: "가", value: "가"},
-                {label: "나", value: "나"},
-                {label: "다", value: "다"},
+                {label: "글로벌", value: "글로벌"},
+                {label: "리뷰", value: "리뷰"},
+                {label: "자료", value: "자료"}
             ]
         }
     }
