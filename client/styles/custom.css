@@ -100,6 +100,10 @@ img.list-thumbnail {
     margin-left: 2px;
     margin-right: 2px;
 }
+#file-input-wrapper {
+    display: none;
+    margin-top: 50px;
+}
 
 /*Main Page*/
 

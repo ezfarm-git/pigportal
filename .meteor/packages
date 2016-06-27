@@ -70,6 +70,7 @@ sacha:spin
 # Design
 twbs:bootstrap
 fortawesome:fontawesome
+tanis:bootstrap-social
 aslagle:reactive-table
 rajit:bootstrap3-datepicker
 mpowaga:autoform-summernote
