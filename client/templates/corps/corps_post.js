@@ -9,7 +9,7 @@ Template.corps_post.helpers({
 
 Template.corps_post.events({
     'click .nv-share': function() {
-        window.open("//band.us/plugin/share?body=hello&route=www.bloter.net", "share_band", "width=410, height=540, resizable=no");
+        window.open('https://band.us/plugin/share?body='+encodeURIComponent($('article').val())+'&route='+encodeURIComponent(document.URL));return false;
     },
     'click .kk-share': function() {
         window.open('https://story.kakao.com/share?url='+encodeURIComponent(document.URL), 'kakaostorysharedialog', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;
