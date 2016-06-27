@@ -3,7 +3,7 @@ ShareIt.configure({
         'facebook': {
             'appId': '150240602048486' // use sharer.php when it's null, otherwise use share dialog
         },
-        'twitter': {},
+        'twitter': null,
         'googleplus': null,
         'pinterest': null
     },
