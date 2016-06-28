@@ -10,22 +10,22 @@ Template.main.onRendered(function() {
 
 Template.main.helpers({
     mainNews_A: function() {
-        return News.find({category: "A"}, {sort: {date: -1}, limit: postsNumber});
+        return News.find({category: "알림"}, {sort: {date: -1}, limit: postsNumber});
     },
     mainNews_B: function() {
-        return News.find({category: "B"}, {sort: {date: -1}, limit: postsNumber});
+        return News.find({category: "산업"}, {sort: {date: -1}, limit: postsNumber});
     },
     mainNews_C: function() {
-        return News.find({category: "C"}, {sort: {date: -1}, limit: postsNumber});
+        return News.find({category: "현장"}, {sort: {date: -1}, limit: postsNumber});
     },
     mainFocus_A: function() {
-        return Focus.find({category: "가"}, {sort: {date: -1}, limit: postsNumber});
+        return Focus.find({category: "글로벌"}, {sort: {date: -1}, limit: postsNumber});
     },
     mainFocus_B: function() {
-        return Focus.find({category: "나"}, {sort: {date: -1}, limit: postsNumber});
+        return Focus.find({category: "리뷰"}, {sort: {date: -1}, limit: postsNumber});
     },
     mainFocus_C: function() {
-        return Focus.find({category: "다"}, {sort: {date: -1}, limit: postsNumber});
+        return Focus.find({category: "자료"}, {sort: {date: -1}, limit: postsNumber});
     },
     mainCorps: function() {
         return Corps.find({}, {sort: {date: -1}, limit: postsNumber});

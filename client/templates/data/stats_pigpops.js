@@ -1,4 +1,4 @@
-Tracker.autorun(function() {
+Template.stats_pigpops.onCreated(function() {
     // 사육규모
     Meteor.call('pig_farms_by_scale_total.get', function(error, result) {
         if (error) {

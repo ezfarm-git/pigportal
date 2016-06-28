@@ -1,4 +1,4 @@
-Tracker.autorun(function() {
+Template.stats_grade.onCreated(function() {
     // 등급별 판정두수
     Meteor.call('quantity_by_grade_1+_total.get', function(error, result) {
         if (error) {

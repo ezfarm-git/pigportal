@@ -1,12 +1,12 @@
 // Route Configure
 Router.configure({
     trackPageView: true
-})
+});
 
 // Test
 Router.route('/test', function() {
     this.render('test');
-})
+});
 
 // Main
 
