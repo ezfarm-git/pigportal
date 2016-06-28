@@ -9,7 +9,6 @@ aldeed:schema-deny@1.0.1
 aldeed:schema-index@1.0.1
 aldeed:simple-schema@1.5.3
 allow-deny@1.0.5
-amplify@1.0.0
 anti:i18n@0.4.3
 aslagle:reactive-table@0.8.32
 autoupdate@1.2.10
@@ -135,7 +134,6 @@ templating-tools@1.0.4
 tmeasday:publish-counts@0.7.3
 tracker@1.0.14
 twbs:bootstrap@3.3.6
-u2622:persistent-session@0.4.4
 ui@1.0.11
 underscore@1.0.9
 url@1.0.10
