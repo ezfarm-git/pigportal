@@ -1,7 +1,7 @@
 // Route Configure
-Router.configure({
-    trackPageView: true
-});
+// Router.configure({
+//     trackPageView: true
+// });
 
 // Test
 Router.route('/test', function() {
@@ -26,7 +26,8 @@ Router.route('/', function() {
     this.wait(Meteor.subscribe('mainInfographic'));
     this.wait(Meteor.subscribe('images'));
 }, {
-    name: 'main'
+    name: 'main',
+    trackPageView: true
 });
 
 
@@ -43,7 +44,8 @@ Router.route('/data/market', {
         return [IRLibLoader.load('https://cdn.plot.ly/plotly-latest.min.js')];
     }
 }, {
-    name: 'data_market'
+    name: 'data_market',
+    trackPageView: true
 });
 
 
@@ -60,7 +62,8 @@ Router.route('/data/stats/pigpops', {
         return [IRLibLoader.load('https://cdn.plot.ly/plotly-latest.min.js')];
     }
 }, {
-    name: 'data_stats_pigpops'
+    name: 'data_stats_pigpops',
+    trackPageView: true
 });
 
 
@@ -77,7 +80,8 @@ Router.route('/data/stats/grade', {
         return [IRLibLoader.load('https://cdn.plot.ly/plotly-latest.min.js')];
     }
 }, {
-    name: 'data_stats_grade'
+    name: 'data_stats_grade',
+    trackPageView: true
 });
 
 
@@ -94,7 +98,8 @@ Router.route('/news/:category/:page', function() {
     });
     this.render('banner', {to: 'sidebar_right'});
 }, {
-    name: 'news'
+    name: 'news',
+    trackPageView: true
 });
 
 
@@ -108,7 +113,8 @@ Router.route('/cardnews/:page', function() {
     });
     this.render('banner', {to: 'sidebar_right'});
 }, {
-    name: 'cardnews'
+    name: 'cardnews',
+    trackPageView: true
 });
 
 
@@ -122,7 +128,8 @@ Router.route('/corps/:page', function() {
     });
     this.render('banner', {to: 'sidebar_right'});
 }, {
-    name: 'corps'
+    name: 'corps',
+    trackPageView: true
 });
 
 Router.route('/corps_post/:postId', function() {
@@ -137,7 +144,8 @@ Router.route('/corps_post/:postId', function() {
     this.render('banner', {to: 'sidebar_right'});
     this.wait(Meteor.subscribe('corpsPost', this.params.postId));
 }, {
-    name: 'corps_post'
+    name: 'corps_post',
+    trackPageView: true
 });
 
 
@@ -154,7 +162,8 @@ Router.route('/focus/:category/:page', function() {
     });
     this.render('banner', {to: 'sidebar_right'});
 }, {
-    name: 'focus'
+    name: 'focus',
+    trackPageView: true
 });
 
 Router.route('/focus_post/:postId', function() {
@@ -169,7 +178,8 @@ Router.route('/focus_post/:postId', function() {
     this.render('banner', {to: 'sidebar_right'});
     this.wait(Meteor.subscribe('focusPost', this.params.postId));
 }, {
-    name: 'focus_post'
+    name: 'focus_post',
+    trackPageView: true
 });
 
 
@@ -187,7 +197,8 @@ Router.route('/favorites', function() {
     this.render('banner', {to: 'sidebar_right'});
     this.wait(Meteor.subscribe('favoritesSummary'));
 }, {
-    name: 'favorites'
+    name: 'favorites',
+    trackPageView: true
 });
 
 Router.route('/favorites/:category', function() {
@@ -203,7 +214,8 @@ Router.route('/favorites/:category', function() {
     this.wait(Meteor.subscribe('favoritesList', this.params.category));
     this.wait(Meteor.subscribe('images'));
 }, {
-    name: 'favorites_category'
+    name: 'favorites_category',
+    trackPageView: true
 });
 
 
@@ -221,7 +233,8 @@ Router.route('/infographic/:page', function() {
     this.render('banner', {to: 'sidebar_right'});
     this.wait(Meteor.subscribe('images'));
 }, {
-    name: 'infographic'
+    name: 'infographic',
+    trackPageView: true
 });
 
 
@@ -234,7 +247,8 @@ Router.route('/events', function() {
     this.render('banner', {to: 'sidebar_right'});
     this.wait(Meteor.subscribe('events'));
 }, {
-    name: 'events'
+    name: 'events',
+    trackPageView: true
 });
 
 // Pigplan Inroduction
@@ -245,7 +259,8 @@ Router.route('/pigplan/intro', function() {
     this.render('pigplan_intro', {to: 'main'});
     this.render('banner', {to: 'sidebar_right'});
 }, {
-    name: 'pigplan_intro'
+    name: 'pigplan_intro',
+    trackPageView: true
 });
 
 // Pigplan Feature
@@ -256,7 +271,8 @@ Router.route('/pigplan/feature', function() {
     this.render('pigplan_feature', {to: 'main'});
     this.render('banner', {to: 'sidebar_right'});
 }, {
-    name: 'pigplan_feature'
+    name: 'pigplan_feature',
+    trackPageView: true
 });
 
 // Pigplan Use Case
@@ -267,7 +283,8 @@ Router.route('/pigplan/case/:page', function() {
     this.render('case', {to: 'main'});
     this.render('banner', {to: 'sidebar_right'});
 }, {
-    name: 'pigplan_case'
+    name: 'pigplan_case',
+    trackPageView: true
 });
 
 Router.route('/case_post/:postId', function() {
@@ -282,5 +299,6 @@ Router.route('/case_post/:postId', function() {
     this.render('banner', {to: 'sidebar_right'});
     this.wait(Meteor.subscribe('casePost', this.params.postId));
 }, {
-    name: 'pigplan_case_post'
+    name: 'pigplan_case_post',
+    trackPageView: true
 });
