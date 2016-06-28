@@ -1,4 +1,4 @@
-Template.stats_grade.onRendered(function() {
+Tracker.autorun(function() {
     // 등급별 판정두수
     Meteor.call('quantity_by_grade_1+_total.get', function(error, result) {
         if (error) {
@@ -225,11 +225,15 @@ Template.stats_grade.onRendered(function() {
             Session.setPersistent('price_by_grade_out_cast', JSON.parse(result.content));
         }
     });
+});
+
+Template.stats_grade.onRendered(function() {
 
 
     var d3 = Plotly.d3;
     var gd3 = d3.select('div[id="plot_1"]');
     var gd = gd3.node();
+
     function stringToDate(x) {
         return x.substring(0, 4) + '년 ' + x.substring(4, 6) + '월';
     }
@@ -735,47 +739,61 @@ Template.stats_grade.onRendered(function() {
             color: '#2c3e50'
         },
         showlegend: false,
-        xaxis: {domain: [0, 1]},
-        yaxis: {domain: [0.36, 0.63]},
-        xaxis2: {anchor: 'y2'},
-        yaxis2: {domain: [0.72, 1]},
-        xaxis3: {anchor: 'y3'},
-        yaxis3: {domain: [0, 0.27]},
-        annotations: [
-            {
-                yanchor: 'top',
-                y: 1,
-                yref: 'paper',
-                xanchor: 'right',
-                x: 1,
-                xref: 'paper',
-                text: '판정두수 합계(마리)',
-                showarrow: false,
-                font: {size: 15}
-            },
-            {
-                yanchor: 'top',
-                y: 0.62,
-                yref: 'paper',
-                xanchor: 'right',
-                x: 1,
-                xref: 'paper',
-                text: '등급별 판정두수(마리)',
-                showarrow: false,
-                font: {size: 15}
-            },
-            {
-                yanchor: 'top',
-                y: 0.27,
-                yref: 'paper',
-                xanchor: 'right',
-                x: 1,
-                xref: 'paper',
-                text: '등급별 경락가격 (원/kg)',
-                showarrow: false,
-                font: {size: 15}
+        xaxis: {
+            domain: [0, 1]
+        },
+        yaxis: {
+            domain: [0.36, 0.63]
+        },
+        xaxis2: {
+            anchor: 'y2'
+        },
+        yaxis2: {
+            domain: [0.72, 1]
+        },
+        xaxis3: {
+            anchor: 'y3'
+        },
+        yaxis3: {
+            domain: [0, 0.27]
+        },
+        annotations: [{
+            yanchor: 'top',
+            y: 1,
+            yref: 'paper',
+            xanchor: 'right',
+            x: 1,
+            xref: 'paper',
+            text: '판정두수 합계(마리)',
+            showarrow: false,
+            font: {
+                size: 15
             }
-        ]
+        }, {
+            yanchor: 'top',
+            y: 0.62,
+            yref: 'paper',
+            xanchor: 'right',
+            x: 1,
+            xref: 'paper',
+            text: '등급별 판정두수(마리)',
+            showarrow: false,
+            font: {
+                size: 15
+            }
+        }, {
+            yanchor: 'top',
+            y: 0.27,
+            yref: 'paper',
+            xanchor: 'right',
+            x: 1,
+            xref: 'paper',
+            text: '등급별 경락가격 (원/kg)',
+            showarrow: false,
+            font: {
+                size: 15
+            }
+        }]
     };
     Plotly.newPlot(gd, data, layout);
 
