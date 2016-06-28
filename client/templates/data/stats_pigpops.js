@@ -1,17 +1,17 @@
-Template.stats_pigpops.onRendered(function() {
+Tracker.autorun(function() {
     // 사육규모
     Meteor.call('pig_farms_by_scale_total.get', function(error, result) {
         if (error) {
             console.log(error);
         } else {
-            Session.setPersistent('pig_farms_by_scale_total', JSON.parse(result.content));
+            Session.set('pig_farms_by_scale_total', JSON.parse(result.content));
         }
     });
     Meteor.call('pig_pops_by_scale_total.get', function(error, result) {
         if (error) {
             console.log(error);
         } else {
-            Session.setPersistent('pig_pops_by_scale_total', JSON.parse(result.content));
+            Session.set('pig_pops_by_scale_total', JSON.parse(result.content));
         }
     });
     // 월령별 사육규모
@@ -19,52 +19,55 @@ Template.stats_pigpops.onRendered(function() {
         if (error) {
             console.log(error);
         } else {
-            Session.setPersistent('pig_pops_by_age_under_2_total', JSON.parse(result.content));
+            Session.set('pig_pops_by_age_under_2_total', JSON.parse(result.content));
         }
     });
     Meteor.call('pig_pops_by_age_under_4_total.get', function(error, result) {
         if (error) {
             console.log(error);
         } else {
-            Session.setPersistent('pig_pops_by_age_under_4_total', JSON.parse(result.content));
+            Session.set('pig_pops_by_age_under_4_total', JSON.parse(result.content));
         }
     });
     Meteor.call('pig_pops_by_age_under_6_total.get', function(error, result) {
         if (error) {
             console.log(error);
         } else {
-            Session.setPersistent('pig_pops_by_age_under_6_total', JSON.parse(result.content));
+            Session.set('pig_pops_by_age_under_6_total', JSON.parse(result.content));
         }
     });
     Meteor.call('pig_pops_by_age_under_8_female_total.get', function(error, result) {
         if (error) {
             console.log(error);
         } else {
-            Session.setPersistent('pig_pops_by_age_under_8_female_total', JSON.parse(result.content));
+            Session.set('pig_pops_by_age_under_8_female_total', JSON.parse(result.content));
         }
     });
     Meteor.call('pig_pops_by_age_under_8_male_total.get', function(error, result) {
         if (error) {
             console.log(error);
         } else {
-            Session.setPersistent('pig_pops_by_age_under_8_male_total', JSON.parse(result.content));
+            Session.set('pig_pops_by_age_under_8_male_total', JSON.parse(result.content));
         }
     });
     Meteor.call('pig_pops_by_age_over_8_female_total.get', function(error, result) {
         if (error) {
             console.log(error);
         } else {
-            Session.setPersistent('pig_pops_by_age_over_8_female_total', JSON.parse(result.content));
+            Session.set('pig_pops_by_age_over_8_female_total', JSON.parse(result.content));
         }
     });
     Meteor.call('pig_pops_by_age_over_8_male_total.get', function(error, result) {
         if (error) {
             console.log(error);
         } else {
-            Session.setPersistent('pig_pops_by_age_over_8_male_total', JSON.parse(result.content));
+            Session.set('pig_pops_by_age_over_8_male_total', JSON.parse(result.content));
         }
     });
+});
 
+
+Template.stats_pigpops.onRendered(function() {
 
     var d3 = Plotly.d3;
     var gd3 = d3.select('div[id="plot_1"]');
