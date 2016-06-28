@@ -27,7 +27,7 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 http
 session
 check
-# u2622:persistent-session
+u2622:persistent-session
 
 
 # Router

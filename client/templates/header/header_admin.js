@@ -1,6 +1,6 @@
 Template.header_admin.events({
-    'click #signout': function() {
-        event.preventDefault();
+    'click #signout': function(evt) {
+        evt.preventDefault();
         Meteor.logout(function(err) {
             if(err) {
                 console.log(err);

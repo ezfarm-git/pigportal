@@ -4,112 +4,112 @@ Template.stats_grade.onCreated(function() {
         if (error) {
             console.log(error);
         } else {
-            Session.set('quantity_by_grade_1+_total', JSON.parse(result.content));
+            Session.setPersistent('quantity_by_grade_1+_total', JSON.parse(result.content));
         }
     });
     Meteor.call('quantity_by_grade_1_total.get', function(error, result) {
         if (error) {
             console.log(error);
         } else {
-            Session.set('quantity_by_grade_1_total', JSON.parse(result.content));
+            Session.setPersistent('quantity_by_grade_1_total', JSON.parse(result.content));
         }
     });
     Meteor.call('quantity_by_grade_2_total.get', function(error, result) {
         if (error) {
             console.log(error);
         } else {
-            Session.set('quantity_by_grade_2_total', JSON.parse(result.content));
+            Session.setPersistent('quantity_by_grade_2_total', JSON.parse(result.content));
         }
     });
     Meteor.call('quantity_by_grade_out_total.get', function(error, result) {
         if (error) {
             console.log(error);
         } else {
-            Session.set('quantity_by_grade_out_total', JSON.parse(result.content));
+            Session.setPersistent('quantity_by_grade_out_total', JSON.parse(result.content));
         }
     });
     Meteor.call('quantity_by_grade_1+_female.get', function(error, result) {
         if (error) {
             console.log(error);
         } else {
-            Session.set('quantity_by_grade_1+_female', JSON.parse(result.content));
+            Session.setPersistent('quantity_by_grade_1+_female', JSON.parse(result.content));
         }
     });
     Meteor.call('quantity_by_grade_1_female.get', function(error, result) {
         if (error) {
             console.log(error);
         } else {
-            Session.set('quantity_by_grade_1_female', JSON.parse(result.content));
+            Session.setPersistent('quantity_by_grade_1_female', JSON.parse(result.content));
         }
     });
     Meteor.call('quantity_by_grade_2_female.get', function(error, result) {
         if (error) {
             console.log(error);
         } else {
-            Session.set('quantity_by_grade_2_female', JSON.parse(result.content));
+            Session.setPersistent('quantity_by_grade_2_female', JSON.parse(result.content));
         }
     });
     Meteor.call('quantity_by_grade_out_female.get', function(error, result) {
         if (error) {
             console.log(error);
         } else {
-            Session.set('quantity_by_grade_out_female', JSON.parse(result.content));
+            Session.setPersistent('quantity_by_grade_out_female', JSON.parse(result.content));
         }
     });
     Meteor.call('quantity_by_grade_1+_male.get', function(error, result) {
         if (error) {
             console.log(error);
         } else {
-            Session.set('quantity_by_grade_1+_male', JSON.parse(result.content));
+            Session.setPersistent('quantity_by_grade_1+_male', JSON.parse(result.content));
         }
     });
     Meteor.call('quantity_by_grade_1_male.get', function(error, result) {
         if (error) {
             console.log(error);
         } else {
-            Session.set('quantity_by_grade_1_male', JSON.parse(result.content));
+            Session.setPersistent('quantity_by_grade_1_male', JSON.parse(result.content));
         }
     });
     Meteor.call('quantity_by_grade_2_male.get', function(error, result) {
         if (error) {
             console.log(error);
         } else {
-            Session.set('quantity_by_grade_2_male', JSON.parse(result.content));
+            Session.setPersistent('quantity_by_grade_2_male', JSON.parse(result.content));
         }
     });
     Meteor.call('quantity_by_grade_out_male.get', function(error, result) {
         if (error) {
             console.log(error);
         } else {
-            Session.set('quantity_by_grade_out_male', JSON.parse(result.content));
+            Session.setPersistent('quantity_by_grade_out_male', JSON.parse(result.content));
         }
     });
     Meteor.call('quantity_by_grade_1+_cast.get', function(error, result) {
         if (error) {
             console.log(error);
         } else {
-            Session.set('quantity_by_grade_1+_cast', JSON.parse(result.content));
+            Session.setPersistent('quantity_by_grade_1+_cast', JSON.parse(result.content));
         }
     });
     Meteor.call('quantity_by_grade_1_cast.get', function(error, result) {
         if (error) {
             console.log(error);
         } else {
-            Session.set('quantity_by_grade_1_cast', JSON.parse(result.content));
+            Session.setPersistent('quantity_by_grade_1_cast', JSON.parse(result.content));
         }
     });
     Meteor.call('quantity_by_grade_2_cast.get', function(error, result) {
         if (error) {
             console.log(error);
         } else {
-            Session.set('quantity_by_grade_2_cast', JSON.parse(result.content));
+            Session.setPersistent('quantity_by_grade_2_cast', JSON.parse(result.content));
         }
     });
     Meteor.call('quantity_by_grade_out_cast.get', function(error, result) {
         if (error) {
             console.log(error);
         } else {
-            Session.set('quantity_by_grade_out_cast', JSON.parse(result.content));
+            Session.setPersistent('quantity_by_grade_out_cast', JSON.parse(result.content));
         }
     });
     // 등급별 경락가격
@@ -117,115 +117,116 @@ Template.stats_grade.onCreated(function() {
         if (error) {
             console.log(error);
         } else {
-            Session.set('price_by_grade_1+_total', JSON.parse(result.content));
+            Session.setPersistent('price_by_grade_1+_total', JSON.parse(result.content));
         }
     });
     Meteor.call('price_by_grade_1_total.get', function(error, result) {
         if (error) {
             console.log(error);
         } else {
-            Session.set('price_by_grade_1_total', JSON.parse(result.content));
+            Session.setPersistent('price_by_grade_1_total', JSON.parse(result.content));
         }
     });
     Meteor.call('price_by_grade_2_total.get', function(error, result) {
         if (error) {
             console.log(error);
         } else {
-            Session.set('price_by_grade_2_total', JSON.parse(result.content));
+            Session.setPersistent('price_by_grade_2_total', JSON.parse(result.content));
         }
     });
     Meteor.call('price_by_grade_out_total.get', function(error, result) {
         if (error) {
             console.log(error);
         } else {
-            Session.set('price_by_grade_out_total', JSON.parse(result.content));
+            Session.setPersistent('price_by_grade_out_total', JSON.parse(result.content));
         }
     });
     Meteor.call('price_by_grade_1+_female.get', function(error, result) {
         if (error) {
             console.log(error);
         } else {
-            Session.set('price_by_grade_1+_female', JSON.parse(result.content));
+            Session.setPersistent('price_by_grade_1+_female', JSON.parse(result.content));
         }
     });
     Meteor.call('price_by_grade_1_female.get', function(error, result) {
         if (error) {
             console.log(error);
         } else {
-            Session.set('price_by_grade_1_female', JSON.parse(result.content));
+            Session.setPersistent('price_by_grade_1_female', JSON.parse(result.content));
         }
     });
     Meteor.call('price_by_grade_2_female.get', function(error, result) {
         if (error) {
             console.log(error);
         } else {
-            Session.set('price_by_grade_2_female', JSON.parse(result.content));
+            Session.setPersistent('price_by_grade_2_female', JSON.parse(result.content));
         }
     });
     Meteor.call('price_by_grade_out_female.get', function(error, result) {
         if (error) {
             console.log(error);
         } else {
-            Session.set('price_by_grade_out_female', JSON.parse(result.content));
+            Session.setPersistent('price_by_grade_out_female', JSON.parse(result.content));
         }
     });
     Meteor.call('price_by_grade_1+_male.get', function(error, result) {
         if (error) {
             console.log(error);
         } else {
-            Session.set('price_by_grade_1+_male', JSON.parse(result.content));
+            Session.setPersistent('price_by_grade_1+_male', JSON.parse(result.content));
         }
     });
     Meteor.call('price_by_grade_1_male.get', function(error, result) {
         if (error) {
             console.log(error);
         } else {
-            Session.set('price_by_grade_1_male', JSON.parse(result.content));
+            Session.setPersistent('price_by_grade_1_male', JSON.parse(result.content));
         }
     });
     Meteor.call('price_by_grade_2_male.get', function(error, result) {
         if (error) {
             console.log(error);
         } else {
-            Session.set('price_by_grade_2_male', JSON.parse(result.content));
+            Session.setPersistent('price_by_grade_2_male', JSON.parse(result.content));
         }
     });
     Meteor.call('price_by_grade_out_male.get', function(error, result) {
         if (error) {
             console.log(error);
         } else {
-            Session.set('price_by_grade_out_male', JSON.parse(result.content));
+            Session.setPersistent('price_by_grade_out_male', JSON.parse(result.content));
         }
     });
     Meteor.call('price_by_grade_1+_cast.get', function(error, result) {
         if (error) {
             console.log(error);
         } else {
-            Session.set('price_by_grade_1+_cast', JSON.parse(result.content));
+            Session.setPersistent('price_by_grade_1+_cast', JSON.parse(result.content));
         }
     });
     Meteor.call('price_by_grade_1_cast.get', function(error, result) {
         if (error) {
             console.log(error);
         } else {
-            Session.set('price_by_grade_1_cast', JSON.parse(result.content));
+            Session.setPersistent('price_by_grade_1_cast', JSON.parse(result.content));
         }
     });
     Meteor.call('price_by_grade_2_cast.get', function(error, result) {
         if (error) {
             console.log(error);
         } else {
-            Session.set('price_by_grade_2_cast', JSON.parse(result.content));
+            Session.setPersistent('price_by_grade_2_cast', JSON.parse(result.content));
         }
     });
     Meteor.call('price_by_grade_out_cast.get', function(error, result) {
         if (error) {
             console.log(error);
         } else {
-            Session.set('price_by_grade_out_cast', JSON.parse(result.content));
+            Session.setPersistent('price_by_grade_out_cast', JSON.parse(result.content));
         }
     });
 });
+
 
 Template.stats_grade.onRendered(function() {
 
