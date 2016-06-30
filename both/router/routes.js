@@ -1,7 +1,7 @@
 // Route Configure
-// Router.configure({
-//     trackPageView: true
-// });
+Router.configure({
+    trackPageView: true
+});
 
 // Test
 Router.route('/test', function() {
@@ -26,7 +26,24 @@ Router.route('/', function() {
     this.wait(Meteor.subscribe('mainInfographic'));
     this.wait(Meteor.subscribe('images'));
 }, {
-    name: 'main',
+    name: 'main'
+});
+
+
+// Data - Market
+
+Router.route('/data/product', {
+    layoutTemplate: 'layout_app',
+    template: 'product',
+    yieldRegions: {
+        '': {to: 'sidebar_left'},
+        'banner': {to: 'sidebar_right'}
+    },
+    waitOn: function() {
+        return [IRLibLoader.load('https://cdn.plot.ly/plotly-latest.min.js')];
+    }
+}, {
+    name: 'data_product',
     trackPageView: true
 });
 
@@ -49,11 +66,11 @@ Router.route('/data/market', {
 });
 
 
-// Data - Stats - PigPops
+// Data - Stats - Pig - Pops
 
-Router.route('/data/stats/pigpops', {
+Router.route('/data/stats/pig/pops', {
     layoutTemplate: 'layout_app',
-    template: 'stats_pigpops',
+    template: 'stats_pig_pops',
     yieldRegions: {
         'stats_category': {to: 'sidebar_left'},
         'banner': {to: 'sidebar_right'}
@@ -62,16 +79,16 @@ Router.route('/data/stats/pigpops', {
         return [IRLibLoader.load('https://cdn.plot.ly/plotly-latest.min.js')];
     }
 }, {
-    name: 'data_stats_pigpops',
+    name: 'data_stats_pig_pops',
     trackPageView: true
 });
 
 
-// Data - Stats - Grade
+// Data - Stats - Pig - Grade
 
-Router.route('/data/stats/grade', {
+Router.route('/data/stats/pig/grade', {
     layoutTemplate: 'layout_app',
-    template: 'stats_grade',
+    template: 'stats_pig_grade',
     yieldRegions: {
         'stats_category': {to: 'sidebar_left'},
         'banner': {to: 'sidebar_right'}
@@ -80,9 +97,25 @@ Router.route('/data/stats/grade', {
         return [IRLibLoader.load('https://cdn.plot.ly/plotly-latest.min.js')];
     }
 }, {
-    name: 'data_stats_grade',
-    trackPageView: true
+    name: 'data_stats_pig_grade'
 });
+
+
+// Data - Stats - Livestock - Pig - Pops - ByScale
+
+// Router.route('/data/stats/livestock/pig_pops_by_scale', {
+//     layoutTemplate: 'layout_app',
+//     template: 'stats_livestock_pig_pops_by_scale',
+//     yieldRegions: {
+//         'stats_livestock_category': {to: 'sidebar_left'},
+//         'banner': {to: 'sidebar_right'}
+//     },
+//     waitOn: function() {
+//         return [IRLibLoader.load('https://cdn.plot.ly/plotly-latest.min.js')];
+//     }
+// }, {
+//     name: 'data_stats_livestock_pig_pops_by_scale'
+// });
 
 
 // News
@@ -98,8 +131,7 @@ Router.route('/news/:category/:page', function() {
     });
     this.render('banner', {to: 'sidebar_right'});
 }, {
-    name: 'news',
-    trackPageView: true
+    name: 'news'
 });
 
 
@@ -113,8 +145,7 @@ Router.route('/cardnews/:page', function() {
     });
     this.render('banner', {to: 'sidebar_right'});
 }, {
-    name: 'cardnews',
-    trackPageView: true
+    name: 'cardnews'
 });
 
 
@@ -128,8 +159,7 @@ Router.route('/corps/:page', function() {
     });
     this.render('banner', {to: 'sidebar_right'});
 }, {
-    name: 'corps',
-    trackPageView: true
+    name: 'corps'
 });
 
 Router.route('/corps_post/:postId', function() {
@@ -144,8 +174,7 @@ Router.route('/corps_post/:postId', function() {
     this.render('banner', {to: 'sidebar_right'});
     this.wait(Meteor.subscribe('corpsPost', this.params.postId));
 }, {
-    name: 'corps_post',
-    trackPageView: true
+    name: 'corps_post'
 });
 
 
@@ -162,8 +191,7 @@ Router.route('/focus/:category/:page', function() {
     });
     this.render('banner', {to: 'sidebar_right'});
 }, {
-    name: 'focus',
-    trackPageView: true
+    name: 'focus'
 });
 
 Router.route('/focus_post/:postId', function() {
@@ -178,8 +206,7 @@ Router.route('/focus_post/:postId', function() {
     this.render('banner', {to: 'sidebar_right'});
     this.wait(Meteor.subscribe('focusPost', this.params.postId));
 }, {
-    name: 'focus_post',
-    trackPageView: true
+    name: 'focus_post'
 });
 
 
@@ -197,8 +224,7 @@ Router.route('/favorites', function() {
     this.render('banner', {to: 'sidebar_right'});
     this.wait(Meteor.subscribe('favoritesSummary'));
 }, {
-    name: 'favorites',
-    trackPageView: true
+    name: 'favorites'
 });
 
 Router.route('/favorites/:category', function() {
@@ -214,8 +240,7 @@ Router.route('/favorites/:category', function() {
     this.wait(Meteor.subscribe('favoritesList', this.params.category));
     this.wait(Meteor.subscribe('images'));
 }, {
-    name: 'favorites_category',
-    trackPageView: true
+    name: 'favorites_category'
 });
 
 
@@ -233,8 +258,7 @@ Router.route('/infographic/:page', function() {
     this.render('banner', {to: 'sidebar_right'});
     this.wait(Meteor.subscribe('images'));
 }, {
-    name: 'infographic',
-    trackPageView: true
+    name: 'infographic'
 });
 
 
@@ -247,8 +271,7 @@ Router.route('/events', function() {
     this.render('banner', {to: 'sidebar_right'});
     this.wait(Meteor.subscribe('events'));
 }, {
-    name: 'events',
-    trackPageView: true
+    name: 'events'
 });
 
 // Pigplan Inroduction
@@ -259,8 +282,7 @@ Router.route('/pigplan/intro', function() {
     this.render('pigplan_intro', {to: 'main'});
     this.render('banner', {to: 'sidebar_right'});
 }, {
-    name: 'pigplan_intro',
-    trackPageView: true
+    name: 'pigplan_intro'
 });
 
 // Pigplan Feature
@@ -271,8 +293,7 @@ Router.route('/pigplan/feature', function() {
     this.render('pigplan_feature', {to: 'main'});
     this.render('banner', {to: 'sidebar_right'});
 }, {
-    name: 'pigplan_feature',
-    trackPageView: true
+    name: 'pigplan_feature'
 });
 
 // Pigplan Use Case
@@ -283,8 +304,7 @@ Router.route('/pigplan/case/:page', function() {
     this.render('case', {to: 'main'});
     this.render('banner', {to: 'sidebar_right'});
 }, {
-    name: 'pigplan_case',
-    trackPageView: true
+    name: 'pigplan_case'
 });
 
 Router.route('/case_post/:postId', function() {
@@ -299,6 +319,5 @@ Router.route('/case_post/:postId', function() {
     this.render('banner', {to: 'sidebar_right'});
     this.wait(Meteor.subscribe('casePost', this.params.postId));
 }, {
-    name: 'pigplan_case_post',
-    trackPageView: true
+    name: 'pigplan_case_post'
 });

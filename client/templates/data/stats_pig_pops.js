@@ -1,4 +1,4 @@
-Template.stats_pigpops.onCreated(function() {
+Template.stats_pig_pops.onCreated(function() {
     // 사육규모
     Meteor.call('pig_farms_by_scale_total.get', function(error, result) {
         if (error) {
@@ -67,7 +67,7 @@ Template.stats_pigpops.onCreated(function() {
 });
 
 
-Template.stats_pigpops.onRendered(function() {
+Template.stats_pig_pops.onRendered(function() {
 
     var d3 = Plotly.d3;
     var gd3 = d3.select('div[id="plot_1"]');
