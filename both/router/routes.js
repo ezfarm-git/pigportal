@@ -43,8 +43,7 @@ Router.route('/data/product', {
         return [IRLibLoader.load('https://cdn.plot.ly/plotly-latest.min.js')];
     }
 }, {
-    name: 'data_product',
-    trackPageView: true
+    name: 'data_product'
 });
 
 
@@ -61,8 +60,7 @@ Router.route('/data/market', {
         return [IRLibLoader.load('https://cdn.plot.ly/plotly-latest.min.js')];
     }
 }, {
-    name: 'data_market',
-    trackPageView: true
+    name: 'data_market'
 });
 
 
@@ -72,15 +70,14 @@ Router.route('/data/stats/pig/pops', {
     layoutTemplate: 'layout_app',
     template: 'stats_pig_pops',
     yieldRegions: {
-        'stats_category': {to: 'sidebar_left'},
+        'stats_pig_category': {to: 'sidebar_left'},
         'banner': {to: 'sidebar_right'}
     },
     waitOn: function() {
         return [IRLibLoader.load('https://cdn.plot.ly/plotly-latest.min.js')];
     }
 }, {
-    name: 'data_stats_pig_pops',
-    trackPageView: true
+    name: 'data_stats_pig_pops'
 });
 
 
@@ -90,7 +87,7 @@ Router.route('/data/stats/pig/grade', {
     layoutTemplate: 'layout_app',
     template: 'stats_pig_grade',
     yieldRegions: {
-        'stats_category': {to: 'sidebar_left'},
+        'stats_pig_category': {to: 'sidebar_left'},
         'banner': {to: 'sidebar_right'}
     },
     waitOn: function() {

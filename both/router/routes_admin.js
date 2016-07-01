@@ -15,7 +15,8 @@ Router.route('/admin', function() {
     this.layout('layout_admin');
     this.render('main_admin', {to: 'main'});
 }, {
-    name: 'admin_main'
+    name: 'admin_main',
+    trackPageView: false
 });
 
 
@@ -24,7 +25,8 @@ Router.route('/admin', function() {
 Router.route('/signin', function() {
     this.render('signin', {to: 'main'});
 }, {
-    name: 'signin'
+    name: 'signin',
+    trackPageView: false
 });
 
 // News
@@ -34,7 +36,8 @@ Router.route('/admin/news', function() {
     this.render('news_admin', {to: 'main'});
     this.wait(Meteor.subscribe('newsListAdmin'));
 }, {
-    name: 'admin_news'
+    name: 'admin_news',
+    trackPageView: false
 });
 
 
@@ -46,7 +49,8 @@ Router.route('/admin/cardnews', function() {
     this.wait(Meteor.subscribe('cardNewsListAdmin'));
     this.wait(Meteor.subscribe('images'));
 }, {
-    name: 'admin_cardnews'
+    name: 'admin_cardnews',
+    trackPageView: false
 });
 
 
@@ -57,7 +61,8 @@ Router.route('/admin/events', function() {
     this.render('events_admin', {to: 'main'});
     this.wait(Meteor.subscribe('events'));
 }, {
-    name: 'admin_events'
+    name: 'admin_events',
+    trackPageView: false
 });
 
 
@@ -69,7 +74,8 @@ Router.route('/admin/corps', function() {
     this.wait(Meteor.subscribe('corpsListAdmin'));
     this.wait(Meteor.subscribe('images'));
 }, {
-    name: 'admin_corps'
+    name: 'admin_corps',
+    trackPageView: false
 });
 
 
@@ -81,7 +87,8 @@ Router.route('/admin/focus', function() {
     this.wait(Meteor.subscribe('focusListAdmin'));
     this.wait(Meteor.subscribe('images'));
 }, {
-    name: 'admin_focus'
+    name: 'admin_focus',
+    trackPageView: false
 });
 
 
@@ -93,7 +100,8 @@ Router.route('/admin/favorites', function() {
     this.wait(Meteor.subscribe('favoritesListAdmin'));
     this.wait(Meteor.subscribe('images'));
 }, {
-    name: 'admin_favorites'
+    name: 'admin_favorites',
+    trackPageView: false
 });
 
 // Infographic
@@ -104,7 +112,8 @@ Router.route('/admin/infographic', function() {
     this.wait(Meteor.subscribe('infographicListAdmin'));
     this.wait(Meteor.subscribe('images'));
 }, {
-    name: 'admin_infographic'
+    name: 'admin_infographic',
+    trackPageView: false
 });
 
 // Pigplan Case
@@ -115,5 +124,6 @@ Router.route('/admin/pigplan/case', function() {
     this.wait(Meteor.subscribe('caseListAdmin'));
     this.wait(Meteor.subscribe('images'));
 }, {
-    name: 'admin_pigplan_case'
+    name: 'admin_pigplan_case',
+    trackPageView: false
 });

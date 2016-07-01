@@ -23,7 +23,13 @@ Template.events.onRendered(function() {
             $('#event-modal').modal('show');
         },
         lang: 'ko',
-        height: 'auto'
+        height: 'auto',
+        header: {
+            left: 'prev, next, today',
+            center: 'title',
+            right: 'month, agendaWeek, agendaDay'
+        },
+        defaultView: 'month'
     });
     Tracker.autorun(function() {
         Events.find().fetch();
