@@ -317,7 +317,6 @@ Router.route('/case_post/:postId', function() {
     });
     this.render('banner', {to: 'sidebar_right'});
     this.wait(Meteor.subscribe('casePost', this.params.postId));
-    this.wait(Meteor.subscribe('images'));
 }, {
     name: 'pigplan_case_post'
 });
