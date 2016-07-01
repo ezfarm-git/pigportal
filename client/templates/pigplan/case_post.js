@@ -30,7 +30,7 @@ Template.case_post.helpers({
 
 Template.case_post.events({
     'click .nv-share': function() {
-        window.open('http://band.us/plugin/share?body=' + $('article').text() + '&route=' + encodeURIComponent(document.URL), 'bandsharedialog', 'menubar=no,toolbar=no,resizable=no,scrollbars=yes,height=540,width=410');
+        window.open('http://band.us/plugin/share?body=' + $('article').html() + '&route=' + encodeURIComponent(document.URL), 'bandsharedialog', 'menubar=no,toolbar=no,resizable=no,scrollbars=yes,height=540,width=410');
         return false;
     },
     'click .kk-share': function() {
@@ -45,6 +45,8 @@ Template.case_post.events({
         FB.ui({
             method: 'share',
             href: window.location.href,
+            title: $('h1').text(),
+            picture: $('#hidden-image').attr('src')
         }, function(response){});
     }
 })

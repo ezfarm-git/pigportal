@@ -10,6 +10,9 @@
             </header>
             <div>
                 {{{content}}}
+                {{#with FS.GetFile "Images" image}}
+                    <img src="{{this.url store='images'}}" id="hidden-image">
+                {{/with}}
             </div>
             <div class="share-box">
                 <a href="#" target="_blank" class="nv-share">
