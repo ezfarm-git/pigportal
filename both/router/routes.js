@@ -304,6 +304,23 @@ Router.route('/pigplan/case/:page', function() {
     name: 'pigplan_case'
 });
 
+// Router.route('/case_post/:postId', {
+//     layoutTemplate: 'layout_app',
+//     template: 'case_post',
+//     data: function() {
+//         return { postId: this.params.postId };
+//     },
+//     yieldRegions: {
+//         'pigplan_category': {to: 'sidebar_left'},
+//         'banner': {to: 'sidebar_right'}
+//     },
+//     waitOn: function() {
+//         Meteor.subscribe('casePost', this.params.postId);
+//         return [IRLibLoader.load('//developers.band.us/js/share/band-button.js?v=01072016')];
+//     },
+//     name: 'pigplan_case_post'
+// });
+
 Router.route('/case_post/:postId', function() {
     this.layout('layout_app');
     this.render('pigplan_category', {to: 'sidebar_left'});

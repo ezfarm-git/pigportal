@@ -1,4 +1,4 @@
-Template.case_post.onCreated(function() {
+Template.case_post.onRendered(function() {
     window.fbAsyncInit = function() {
         FB.init({
             appId: '150240602048486',
@@ -30,7 +30,7 @@ Template.case_post.helpers({
 
 Template.case_post.events({
     'click .nv-share': function() {
-        window.open('https://band.us/plugin/share?body=' + encodeURIComponent($('#content').val()) + '&route=' + encodeURIComponent(document.URL), 'bandsharedialog', 'menubar=no,toolbar=no,resizable=no,scrollbars=yes,height=540,width=410');
+        window.open('http://band.us/plugin/share?body=' + $('article').text() + '&route=' + encodeURIComponent(document.URL), 'bandsharedialog', 'menubar=no,toolbar=no,resizable=no,scrollbars=yes,height=540,width=410');
         return false;
     },
     'click .kk-share': function() {
@@ -44,7 +44,7 @@ Template.case_post.events({
     'click .fb-share': function() {
         FB.ui({
             method: 'share',
-            href: encodeURIComponent(document.URL),
+            href: window.location.href,
         }, function(response){});
     }
 })
