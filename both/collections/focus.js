@@ -50,5 +50,16 @@ Focus.attachSchema(new SimpleSchema({
                 {label: "자료", value: "자료"}
             ]
         }
+    },
+    file: {
+        type: String,
+        label: '첨부파일',
+        autoform: {
+            afFieldInput: {
+                type: "cfs-file",
+                collection: "Files"
+            }
+        },
+        optional: true
     }
 }));

@@ -72,12 +72,17 @@ img.list-thumbnail {
     object-fit: cover;
 }
 
+/*Download Button*/
+.downloadButton {
+    margin-top: 20px;
+    text-align: right;
+}
+
 /*Share box*/
 .share-box {
     text-align: center;
-    margin-top: 10px;
+    margin-top: 30px;
     margin-bottom: 5px;
-    display: inline-block;
 }
 .nv-share {
     margin-left: 2px;

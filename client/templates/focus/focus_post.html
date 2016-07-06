@@ -11,6 +11,13 @@
             <div>
                 {{{content}}}
             </div>
+            <div class="downloadButton">
+                {{#with FS.GetFile "Files" file}}
+                    <strong>{{this.name}}</strong>
+                    <a href="{{this.url download=true}}" class="btn btn-info btn-xs" target="_parent" style="margin-bottom:5px;">
+                    첨부 파일</a>
+                {{/with}}
+            </div>
             <div class="share-box">
                 <a href="#" target="_blank" class="nv-share">
                     <img src="/share_buttons/naver/BAND_32.png" alt="">

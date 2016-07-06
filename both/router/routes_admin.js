@@ -86,6 +86,7 @@ Router.route('/admin/focus', function() {
     this.render('focus_admin', {to: 'main'});
     this.wait(Meteor.subscribe('focusListAdmin'));
     this.wait(Meteor.subscribe('images'));
+    this.wait(Meteor.subscribe('files'));
 }, {
     name: 'admin_focus',
     trackPageView: false

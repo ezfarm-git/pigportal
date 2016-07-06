@@ -202,6 +202,7 @@ Router.route('/focus_post/:postId', function() {
     });
     this.render('banner', {to: 'sidebar_right'});
     this.wait(Meteor.subscribe('focusPost', this.params.postId));
+    this.wait(Meteor.subscribe('files'));
 }, {
     name: 'focus_post'
 });

@@ -9,10 +9,15 @@
             {{> afQuickField name="summary" id="summary"}}
             {{> afQuickField name="content" id="content"}}
             {{> afQuickField name="image" type="cfs-file" collection="Images" id="image"}}
-            {{#with FS.GetFile "Images" selectedImage }}
+            {{#with FS.GetFile "Images" selectedImage}}
                 <img src="{{this.url store='images'}}" alt="" width="300px">
             {{/with}}
             {{> afQuickField name="category" id="category"}}
+            {{> afQuickField name="file" type="cfs-file" collection="Files" id="file"}}
+            {{#with FS.GetFile "Files" selectedFile}}
+                {{this.name}}
+            {{/with}}
+
             <br><br>
             <div class="form-group">
                 <button type="submit" class="btn btn-primary submit-btn">Submit</button>

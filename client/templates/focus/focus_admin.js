@@ -1,6 +1,7 @@
 Template.focus_admin.onCreated(function() {
     this.selectedDoc = new ReactiveVar("");
     this.selectedImage = new ReactiveVar("");
+    this.selectedFile = new ReactiveVar("");
     this.formType = new ReactiveVar("insert");
 });
 
@@ -8,6 +9,7 @@ Template.focus_admin.onDestroyed(function() {
     document.getElementById('Form').reset();
     this.selectedDoc.set(null);
     this.selectedImage.set(null);
+    this.selectedFile.set(null);
     this.formType.set(null);
 });
 
@@ -35,6 +37,9 @@ Template.focus_admin.helpers({
     selectedImage: function() {
         return Template.instance().selectedImage.get();
     },
+    selectedFile: function() {
+        return Template.instance().selectedFile.get();
+    },
     formType: function() {
         return Template.instance().formType.get();
     }
@@ -45,17 +50,21 @@ Template.focus_admin.events({
         evt.preventDefault();
         tmpl.selectedDoc.set(this._id);
         tmpl.selectedImage.set(this.image);
+        tmpl.selectedFile.set(this.file);
         tmpl.formType.set("update");
     },
     'click .remove-btn': function(evt, tmpl) {
         evt.preventDefault();
         var postId = tmpl.selectedDoc.get();
         var imageId = tmpl.selectedImage.get();
+        var fileId = tmpl.selectedFile.get();
         Meteor.call('Focus.remove', postId);
         Meteor.call('Images.remove', imageId);
+        Meteor.call('Files.remove', fileId);
         document.getElementById('Form').reset();
         tmpl.selectedDoc.set("");
         tmpl.selectedImage.set("");
+        tmpl.selectedFile.set("");
         tmpl.formType.set("insert");
     },
     'click .reset-btn': function(evt, tmpl) {
@@ -63,6 +72,7 @@ Template.focus_admin.events({
         document.getElementById('Form').reset();
         tmpl.selectedDoc.set("");
         tmpl.selectedImage.set("");
+        tmpl.selectedFile.set("");
         tmpl.formType.set("insert");
     }
 });
