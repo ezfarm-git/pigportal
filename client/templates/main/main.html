@@ -162,7 +162,7 @@
                             {{#each images}}
                                 {{#with FS.GetFile "Images" this}}
                                     <a href="{{this.url store='images'}}" class="fancybox" rel="gallery" title="{{../../title}}, {{../../summary}}">
-                                        <img src="{{this.url store='images'}}" alt="" width="100%" height="{{galleryHeight ../../images 160}}" style="object-fit: cover;">
+                                        <img src="{{this.url store='images'}}" alt="" width="100%" height="{{galleryHeight ../../images 150}}" style="object-fit: cover;">
                                     </a>
                                 {{/with}}
                             {{/each}}
@@ -186,7 +186,7 @@
                             <p>{{truncate title 32}}</p>
                             {{#with FS.GetFile "Images" image}}
                                 <a href="{{this.url store='images'}}" class="fancybox" title="{{../title}}, {{../summary}}">
-                                    <img src="{{this.url store='images'}}" alt="" width="100%" height="160px" style="object-fit: cover;">
+                                    <img src="{{this.url store='images'}}" alt="" width="100%" height="150px" style="object-fit: cover;">
                                 </a>
                             {{/with}}
                         {{/with}}
