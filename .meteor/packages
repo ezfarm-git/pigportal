@@ -82,3 +82,7 @@ mrt:fancybox
 
 # Tabs
 templates:tabs
+
+
+# XML Handling
+peerlibrary:xml2js

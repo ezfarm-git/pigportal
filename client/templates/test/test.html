@@ -1,7 +1,11 @@
 <template name="test">
-    {{#with pig_farms_by_scale_total.[0]}}
-        {{TBL_NM}}, {{PRD_DE}}, {{DT}}
+    {{#with test}}
+        <ul>
+        {{#each breakfast_menu.food}}
+            <li>{{name}}</li>
+        {{/each}}
+        </ul>
     {{/with}}
     <hr>
-    {{pig_farms_by_scale_total.[0].TBL_NM}}
+
 </template>
