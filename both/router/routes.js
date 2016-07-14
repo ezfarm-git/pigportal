@@ -8,6 +8,10 @@ Router.route('/test', function() {
     this.render('test');
 });
 
+Router.route('/test2', function() {
+    this.render('test2');
+});
+
 // Main
 
 Router.route('/', function() {

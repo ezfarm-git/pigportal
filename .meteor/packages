@@ -73,6 +73,7 @@ fortawesome:fontawesome
 tanis:bootstrap-social
 aslagle:reactive-table
 rajit:bootstrap3-datepicker
+tsega:bootstrap3-datetimepicker
 mpowaga:autoform-summernote
 fullcalendar:fullcalendar
 momentjs:moment
