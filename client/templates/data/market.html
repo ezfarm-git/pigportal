@@ -1,7 +1,90 @@
 <template name="market">
     <h3 class="postHeading">
-        <i class="fa fa-money"></i>&nbsp;실시간 시황&nbsp;
-        <span class="text-muted postsCategory">준비중</span>
+          <i class="fa fa-money"></i>&nbsp;실시간 시황&nbsp;
     </h3>
-    <div id="market_plot" style="width:100%;height:auto;"></div>
+    <style>
+        div.container {
+            width: 86.6666667%;
+        }
+
+        div.category_div {
+            box-shadow: 1px 1px 1px 1px #2c3e50;
+            height: auto;
+            padding: 15px;
+            border-style: ridge;
+            margin-bottom: 5px;
+            border-width: thin;
+            border-radius: 4px;
+        }
+
+        span.sort {
+            width: 17%;
+            font-size: 16px;
+            padding-right: 20px;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            margin-right: 6%;
+            margin-left: 13%;
+        }
+
+        p.sort {
+            display: inline-block;
+            width: 10%;
+            padding: 0;
+        }
+
+        #datepicker1,
+        #datepicker2 {
+            width: 20%;
+            font-size: 14px;
+            padding: 0, 0, 0, 20px;
+            margin: 0 0 0 1%;
+        }
+
+        label.radio-inline {
+            font-size: 16px;
+            width: 15%;
+            margin-left: 3%;
+            padding: 15px;
+        }
+    </style>
+
+    <div class="container">
+        <div class="row" padding="50px">
+
+            <div class="category_div">
+                <form role="form">
+                    <span class="sort">기&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;간&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <input type="date" id="datepicker1">
+                    <p class="sort" style="width:10%; text-align:center;"> ~ </p>
+                    <input type="date" id="datepicker2">
+                    <br>
+
+                    <span class="sort">성&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;별&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio" value="25001" checked>암</label>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio" value="25003">거세 </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio" value="25002">수</label>
+                    <br>
+
+                    <span class="sort">돈피&nbsp;구분&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio2" value="Y" checked>탕박</label>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio2" value="N">박피</label>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="market_plot1" style="width:100%;height:auto;"></div>
+    <div id="market_plot2" style="width:100%;height:auto;"></div>
+    <div id="market_plot3" style="width:100%;height:auto;"></div>
+    <div id="market_plot4" style="width:100%;height:auto;"></div>
+    <div id="market_plot5" style="width:100%;height:auto;"></div>
+    <div id="market_plot6" style="width:100%;height:auto;"></div>
+    <div id="market_plot7" style="width:100%;height:auto;"></div>
+
 </template>
