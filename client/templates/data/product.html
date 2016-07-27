@@ -1,19 +1,22 @@
 <template name="product">
+
     <h3 class="postHeading">
         <i class="fa fa-bar-chart"></i>&nbsp;주간생산지표&nbsp;
     </h3>
     <div class="container">
-    <form role="form">
-        <label class="radio-inline">
-            <input type="radio" name="optradio" value="GCNT" checked>교배복수
-        </label>
-        <label class="radio-inline">
-            <input type="radio" name="optradio" value="BCNT">분만복수
-        </label>
-        <label class="radio-inline">
-            <input type="radio" name="optradio" value="EU_DUSU">이유두수
-        </label>
-    </form>
+        <form role="form">
+            <label class="radio-inline">
+                <input type="radio" name="optradio" value="GCNT" checked>교배복수
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="optradio" value="BCNT">분만복수
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="optradio" value="EU_DUSU">이유두수
+            </label>
+        </form>
     </div>
     <div id="plot_1" style="width:100%;height:auto;"></div>
+    <div style="text-align:center; "> ※ 출처 : 피그플랜 이용 농장 100곳의 자료 </div>
+
 </template>

@@ -1,3 +1,4 @@
+﻿
 Template.product.onCreated(function() {
 
     var today = new Date();
@@ -28,6 +29,8 @@ Template.product.onRendered(function() {
     var pastyear = Session.get('pastYear');
     var twoyears = Session.get('twoyears');
     var currentWeek = Session.get('currentweek');
+
+    var txt = "교배복수";
 
     var d3 = Plotly.d3;
     var gd3 = d3.select('div[id="plot_1"]');
@@ -78,6 +81,12 @@ Template.product.onRendered(function() {
     var period = [];
     for (i = 0; i < 52; i++) {
         period[i] = stringToWeek(week1[i]);
+    }
+
+    for (i = 0; i < 2; i++) {
+        currentBCNT.pop();
+        currentGCNT.pop();
+        currentEU_DUSU.pop();
     }
 
     var trace1 = {
@@ -153,47 +162,56 @@ Template.product.onRendered(function() {
     var eu_dusuData = [trace3, trace6];
 
     var data = gcntData;
+    var layout = "";
 
-    var layout = {
-        title: '돼지 사육 동향 <br> ',
-        titlefont: {
-            family: 'Jeju Gothic, serif',
-            size: 22,
-            color: '#2c3e50'
-        },
-        showlegend: false,
-        annotations: [{
-            yanchor: 'top',
-            y: 1.1,
-            yref: 'paper',
-            xanchor: 'right',
-            x: 1,
-            xref: 'paper',
-            text: '현재 ' + currentWeek + ' 주차',
-            showarrow: false,
-            font: {
-                size: 16
-            }
-        }]
-    };
+    function setlayout() {
+
+        layout = {
+            title: '돼지 사육 동향 ( ' + txt + ' )',
+            titlefont: {
+                family: 'Jeju Gothic, serif',
+                size: 22,
+                color: '#2c3e50'
+            },
+            showlegend: false,
+            annotations: [{
+                yanchor: 'top',
+                y: 1.1,
+                yref: 'paper',
+                xanchor: 'right',
+                x: 1,
+                xref: 'paper',
+                text: '현재 ' + currentWeek + ' 주차',
+                showarrow: false,
+                font: {
+                    size: 16
+                }
+            }],
+        };
+    }
+
+    setlayout();
 
     Plotly.newPlot(gd, data, layout);
-
-    $('input[name="optradio"]').click(function() {
-        if (this.value === "BCNT") {
-            var data = bcntData;
-            Plotly.newPlot(gd, data, layout);
-        } else if (this.value === "GCNT") {
-            var data = gcntData;
-            Plotly.newPlot(gd, data, layout);
-        } else {
-            var data = eu_dusuData;
-            Plotly.newPlot(gd, data, layout);
-        }
-    });
 
     window.onresize = function() {
         Plotly.Plots.resize(gd);
     };
+
+    $('input[name="optradio"]').click(function() {
+
+        if (this.value === "BCNT") {
+            var data = bcntData;
+            txt = "분만복수";
+        } else if (this.value === "GCNT") {
+            var data = gcntData;
+            txt = "교배복수";
+        } else {
+            var data = eu_dusuData;
+            txt = "이유두수";
+        }
+        setlayout();
+        Plotly.newPlot(gd, data, layout);
+    });
 
 });
