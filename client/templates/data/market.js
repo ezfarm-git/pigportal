@@ -1,4 +1,4 @@
-// skinYn 돈피구분 N 박피,  Y 탕박  Default 탕박
+﻿ // skinYn 돈피구분 N 박피,  Y 탕박  Default 탕박
 // sexCd	성별	6	0	025001	025001	암  025002	수 025003	거세 025004	기타(프리마틴등) Default  025001
 
 // 도매시장 코드
@@ -19,7 +19,8 @@
 
 Template.market.onRendered(function() {
 
-    document.getElementById("datepicker1").defaultValue = moment(new Date()).format('YYYY-MM-DD');
+    var today = new Date();
+    document.getElementById("datepicker1").defaultValue = moment(new Date(Date.parse(today) - 5 * 1000 * 60 * 60 * 24)).format('YYYY-MM-DD');
     document.getElementById("datepicker2").defaultValue = moment(new Date()).format('YYYY-MM-DD');
 
     var sexText = "암";
@@ -45,21 +46,18 @@ Template.market.onRendered(function() {
         } else {
             skinText = "박피"
         }
-        titleText = start + " ~ " + end + sexText + " " + skinText;
+        titleText = start + " ~ " + end + " " + sexText + " " + skinText;
 
         Meteor.call('market.get', start, end, skin, sex, function(error, result) {
             if (error) {
                 console.log(error);
             } else {
-                console.log(start, end, skin, sex);
                 Session.setPersistent('test', result);
                 var test = Session.get('test');
 
                 function unitK(x) {
                     return Math.floor(x / 10) + "." + (x % 10);
-
                 }
-
                 // 등급 : 1+ , 1 , 2 , 등외 , 등외제외 , 모돈 , 평균
                 var xname = [];
                 var trace_1plus_Amt = [],
@@ -699,9 +697,7 @@ Template.market.onRendered(function() {
                         }
                         trace_avg_Amt = [PNC.BK_Amt, PNC.HS_Amt, PNC.DDL_Amt, PNC.NH_BC_Amt, PNC.NH_YS_Amt, PNC.YS_Amt, PNC.NH_NG_Amt, PNC.NH_KL_Amt, PNC.KH_Amt, PNC.JJ_Amt, PNC.SH_Amt, PNC.SS_Amt, PNC.SHC_Amt];
                         trace_avg_Cnt = [PNC.BK_Cnt, PNC.HS_Cnt, PNC.DDL_Cnt, PNC.NH_BC_Cnt, PNC.NH_YS_Cnt, PNC.YS_Cnt, PNC.NH_NG_Cnt, PNC.NH_KL_Cnt, PNC.KH_Cnt, PNC.JJ_Cnt, PNC.SH_Cnt, PNC.SS_Cnt, PNC.SHC_Cnt];
-
                     }
-
                 });
 
                 var d3 = Plotly.d3;
@@ -798,49 +794,42 @@ Template.market.onRendered(function() {
                     y: trace_1plus_Cnt,
                     type: 'bar',
                     name: '1+등급 두수',
-                    // yaxis: 'y2'
                 };
                 var trace9 = {
                     x: xname,
                     y: trace_1_Cnt,
                     type: 'bar',
                     name: '1등급 두수',
-                    //  yaxis:'y2'
                 };
                 var trace10 = {
                     x: xname,
                     y: trace_2_Cnt,
                     type: 'bar',
                     name: '2등급 두수',
-                    //  yaxis:'y2'
                 };
                 var trace11 = {
                     x: xname,
                     y: trace_exc_Cnt,
                     type: 'bar',
                     name: '등외 두수',
-                    //  yaxis:'y2'
                 };
                 var trace12 = {
                     x: xname,
                     y: trace_non_Cnt,
                     type: 'bar',
                     name: '등외제외 두수',
-                    //  yaxis:'y2'
                 };
                 var trace13 = {
                     x: xname,
                     y: trace_mom_Cnt,
                     type: 'bar',
                     name: '모돈 두수',
-                    //  yaxis:'y2'
                 };
                 var trace14 = {
                     x: xname,
                     y: trace_avg_Cnt,
                     type: 'bar',
                     name: '평균 두수',
-                    //  yaxis:'y2'
                 };
 
                 var data_1plus = [trace1, trace8];
@@ -852,41 +841,12 @@ Template.market.onRendered(function() {
                 var data_avg = [trace7, trace14];
 
                 var layout = {
-                    title: '돼지 도축장별 경락가격',
+                    title: "1+등급 [ " + titleText + " ]",
                     titlefont: {
                         family: 'Jeju Gothic, serif',
-                        size: 22,
+                        size: 20,
                         color: '#2c3e50'
                     },
-                    xaxis: {
-                        title: "1+등급 [ " + titleText + " ]",
-                        titlefont: {
-                            size: 15,
-                            color: '#2c3e50',
-                        }
-                    },
-                    yaxis: {
-                        title: '',
-                        titlefont: {
-                            color: '#1f77b4'
-                        },
-                        tickfont: {
-                            color: '#1f77b4'
-                        }
-                    },
-                    annotations: [{
-                        yanchor: 'top',
-                        y: 1.05,
-                        yref: 'paper',
-                        xanchor: 'right',
-                        x: 1,
-                        xref: 'paper',
-                        text: ' (10원/kg, 두) ',
-                        showarrow: false,
-                        font: {
-                            size: 15
-                        }
-                    }, ],
                     showlegend: false,
                     barmode: 'group',
                 };
@@ -894,36 +854,12 @@ Template.market.onRendered(function() {
                 Plotly.newPlot('market_plot1', data_1plus, layout);
 
                 var layout2 = {
-                    title: '',
-                    xaxis: {
-                        title: "1등급 [ " + titleText + " ]",
-                        titlefont: {
-                            size: 15,
-                            color: '#2c3e50',
-                        }
+                    title: "1등급 [ " + titleText + " ]",
+                    titlefont: {
+                        family: 'Jeju Gothic, serif',
+                        size: 20,
+                        color: '#2c3e50'
                     },
-                    yaxis: {
-                        title: '',
-                        titlefont: {
-                            color: '#1f77b4'
-                        },
-                        tickfont: {
-                            color: '#1f77b4'
-                        }
-                    },
-                    annotations: [{
-                        yanchor: 'top',
-                        y: 1.05,
-                        yref: 'paper',
-                        xanchor: 'right',
-                        x: 1,
-                        xref: 'paper',
-                        text: ' (10원/kg, 두) ',
-                        showarrow: false,
-                        font: {
-                            size: 15
-                        }
-                    }, ],
                     showlegend: false,
                     barmode: 'group',
                 };
@@ -931,36 +867,12 @@ Template.market.onRendered(function() {
                 Plotly.newPlot('market_plot2', data_1, layout2);
 
                 var layout3 = {
-                    title: '',
-                    xaxis: {
-                        title: "2등급 [ " + titleText + " ]",
-                        titlefont: {
-                            size: 15,
-                            color: '#2c3e50',
-                        }
+                    title: "2등급 [ " + titleText + " ]",
+                    titlefont: {
+                        family: 'Jeju Gothic, serif',
+                        size: 20,
+                        color: '#2c3e50'
                     },
-                    yaxis: {
-                        title: '',
-                        titlefont: {
-                            color: '#1f77b4'
-                        },
-                        tickfont: {
-                            color: '#1f77b4'
-                        }
-                    },
-                    annotations: [{
-                        yanchor: 'top',
-                        y: 1.05,
-                        yref: 'paper',
-                        xanchor: 'right',
-                        x: 1,
-                        xref: 'paper',
-                        text: ' (10원/kg, 두) ',
-                        showarrow: false,
-                        font: {
-                            size: 15
-                        }
-                    }, ],
                     showlegend: false,
                     barmode: 'group',
                 };
@@ -968,36 +880,12 @@ Template.market.onRendered(function() {
                 Plotly.newPlot('market_plot3', data_2, layout3);
 
                 var layout4 = {
-                    title: '',
-                    xaxis: {
-                        title: "등외 [ " + titleText + " ]",
-                        titlefont: {
-                            size: 15,
-                            color: '#2c3e50',
-                        }
+                    title: "등외 [ " + titleText + " ]",
+                    titlefont: {
+                        family: 'Jeju Gothic, serif',
+                        size: 20,
+                        color: '#2c3e50'
                     },
-                    yaxis: {
-                        title: '',
-                        titlefont: {
-                            color: '#1f77b4'
-                        },
-                        tickfont: {
-                            color: '#1f77b4'
-                        }
-                    },
-                    annotations: [{
-                        yanchor: 'top',
-                        y: 1.05,
-                        yref: 'paper',
-                        xanchor: 'right',
-                        x: 1,
-                        xref: 'paper',
-                        text: ' (10원/kg, 두) ',
-                        showarrow: false,
-                        font: {
-                            size: 15
-                        }
-                    }, ],
                     showlegend: false,
                     barmode: 'group',
                 };
@@ -1005,36 +893,12 @@ Template.market.onRendered(function() {
                 Plotly.newPlot('market_plot4', data_exc, layout4);
 
                 var layout5 = {
-                    title: '',
-                    xaxis: {
-                        title: "등외제외 [ " + titleText + " ]",
-                        titlefont: {
-                            size: 15,
-                            color: '#2c3e50',
-                        }
+                    title: "등외제외 [ " + titleText + " ]",
+                    titlefont: {
+                        family: 'Jeju Gothic, serif',
+                        size: 20,
+                        color: '#2c3e50'
                     },
-                    yaxis: {
-                        title: '',
-                        titlefont: {
-                            color: '#1f77b4'
-                        },
-                        tickfont: {
-                            color: '#1f77b4'
-                        }
-                    },
-                    annotations: [{
-                        yanchor: 'top',
-                        y: 1.05,
-                        yref: 'paper',
-                        xanchor: 'right',
-                        x: 1,
-                        xref: 'paper',
-                        text: ' (10원/kg, 두) ',
-                        showarrow: false,
-                        font: {
-                            size: 15
-                        }
-                    }, ],
                     showlegend: false,
                     barmode: 'group',
                 };
@@ -1042,36 +906,12 @@ Template.market.onRendered(function() {
                 Plotly.newPlot('market_plot5', data_non, layout5);
 
                 var layout6 = {
-                    title: '',
-                    xaxis: {
-                        title: "모돈 [ " + titleText + " ]",
-                        titlefont: {
-                            size: 15,
-                            color: '#2c3e50',
-                        }
+                    title: "모돈 [ " + titleText + " ]",
+                    titlefont: {
+                        family: 'Jeju Gothic, serif',
+                        size: 20,
+                        color: '#2c3e50'
                     },
-                    yaxis: {
-                        title: '',
-                        titlefont: {
-                            color: '#1f77b4'
-                        },
-                        tickfont: {
-                            color: '#1f77b4'
-                        }
-                    },
-                    annotations: [{
-                        yanchor: 'top',
-                        y: 1.05,
-                        yref: 'paper',
-                        xanchor: 'right',
-                        x: 1,
-                        xref: 'paper',
-                        text: ' (10원/kg, 두) ',
-                        showarrow: false,
-                        font: {
-                            size: 15
-                        }
-                    }, ],
                     showlegend: false,
                     barmode: 'group',
                 };
@@ -1079,37 +919,12 @@ Template.market.onRendered(function() {
                 Plotly.newPlot('market_plot6', data_mom, layout6);
 
                 var layout7 = {
-                    title: '',
-                    xaxis: {
-                        title: "평균 [ " + titleText + " ]",
-                        titlefont: {
-                            size: 15,
-                            color: '#2c3e50',
-                            anchor: 'top',
-                        }
+                    title: "평균 [ " + titleText + " ]",
+                    titlefont: {
+                        family: 'Jeju Gothic, serif',
+                        size: 20,
+                        color: '#2c3e50'
                     },
-                    yaxis: {
-                        title: '',
-                        titlefont: {
-                            color: '#1f77b4'
-                        },
-                        tickfont: {
-                            color: '#1f77b4'
-                        }
-                    },
-                    annotations: [{
-                        yanchor: 'top',
-                        y: 1.05,
-                        yref: 'paper',
-                        xanchor: 'right',
-                        x: 1,
-                        xref: 'paper',
-                        text: ' (10원/kg, 두) ',
-                        showarrow: false,
-                        font: {
-                            size: 15
-                        }
-                    }, ],
                     showlegend: false,
                     barmode: 'group',
                 };
@@ -1124,15 +939,13 @@ Template.market.onRendered(function() {
                     Plotly.Plots.resize(gd5);
                     Plotly.Plots.resize(gd6);
                     Plotly.Plots.resize(gd7);
-
                 };
             }
         });
     }
-
     drawPlot();
 
-    $('.container').change(function() {
+    $('.category_div').change(function() {
         drawPlot();
     });
 

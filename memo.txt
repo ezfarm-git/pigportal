@@ -32,27 +32,12 @@ MONGODB_URI : mongodb://heroku_304dc04f:scd5v6q9vb6seekkbo4ggrf0hg@ds023064.mlab
 MONGO_URL=mongodb://localhost:27017/pigportal PORT=3000 ROOT_URL=http://localhost:3000 npm start
 
 
+export PORT=3000 MONGO_URL=mongodb://pigportal:pig2016@localhost:27017/pigportal ROOT_URL=http://localhost node main.js
+
+
 export MONGO_URL='mongodb://pigportal:pig2016@localhost:27017/pigportal'
 export ROOT_URL='http://210.92.91.212'
 export PORT=3000
 
 
-"repository": {
-  "type": "git",
-  "url": "https://github.com/wooyol/pigportal.git"
-},
-"author": "wooyol",
-"deployConfig": {
-  "alpha": {
-    "remote" : "210.92.91.212",
-    "port": "22",
-    "user": "blaze",
-    "cert": "/home/wooyol/.ssh",
-    "passphrase": "sky3090",
-    "remotePath": "/home/blaze/meteor_app",
-    "ref": "origin/master",
-    "runPort": "3000",
-    "rootUrl": "http://210.92.91.212",
-    "mongoUrl": "mongodb://pigportal:pig2016@210.92.91.212:27017/pigportal"
-  }
-}
+

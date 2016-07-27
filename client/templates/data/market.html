@@ -1,83 +1,104 @@
 <template name="market">
-    <h3 class="postHeading">
-          <i class="fa fa-money"></i>&nbsp;실시간 시황&nbsp;
-    </h3>
-    <style>
-        div.container {
-            width: 86.6666667%;
-        }
 
+    <style>
         div.category_div {
             box-shadow: 1px 1px 1px 1px #2c3e50;
-            height: auto;
-            padding: 15px;
+            height: 25%;
+            margin: 1% 5%;
+            padding: 2%;
             border-style: ridge;
             margin-bottom: 5px;
             border-width: thin;
             border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .annotation_div {
+            margin: 1% 5%;
+            padding: 0 2%;
+        }
+
+        p.annotation_div {
+            font-size: 20px;
+            font-family: 'Jeju Gothic, serif';
+            text-align: center;
+            font-weight: bold;
         }
 
         span.sort {
-            width: 17%;
-            font-size: 16px;
-            padding-right: 20px;
-            padding-top: 2px;
-            padding-bottom: 2px;
-            margin-right: 6%;
-            margin-left: 13%;
+            padding: 0 5%;
+            display: inline-block;
         }
 
         p.sort {
             display: inline-block;
-            width: 10%;
+            width: 5%;
             padding: 0;
         }
 
         #datepicker1,
         #datepicker2 {
-            width: 20%;
-            font-size: 14px;
-            padding: 0, 0, 0, 20px;
-            margin: 0 0 0 1%;
+            display: inline-block;
+            width: 30%;
+            text-align: center;
+            min-width: 162px;
         }
 
         label.radio-inline {
-            font-size: 16px;
-            width: 15%;
-            margin-left: 3%;
-            padding: 15px;
+            margin-left: 1%;
+            margin-right: 5%;
+        }
+
+        input.radio-btn {
+            height: 1.2em;
+        }
+
+        h1.sort {
+            font-size: 20px;
         }
     </style>
 
-    <div class="container">
-        <div class="row" padding="50px">
+    <h3 class="postHeading">
+    <i class="fa fa-money"></i>&nbsp;실시간 시황&nbsp;
+</h3>
+    <p class="annotation_div"> 돼지 도축장별 경락가격 조회</p>
 
-            <div class="category_div">
-                <form role="form">
-                    <span class="sort">기&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;간&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    <input type="date" id="datepicker1">
-                    <p class="sort" style="width:10%; text-align:center;"> ~ </p>
-                    <input type="date" id="datepicker2">
-                    <br>
-
-                    <span class="sort">성&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;별&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    <label class="radio-inline">
-                        <input type="radio" name="optradio" value="25001" checked>암</label>
-                    <label class="radio-inline">
-                        <input type="radio" name="optradio" value="25003">거세 </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="optradio" value="25002">수</label>
-                    <br>
-
-                    <span class="sort">돈피&nbsp;구분&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    <label class="radio-inline">
-                        <input type="radio" name="optradio2" value="Y" checked>탕박</label>
-                    <label class="radio-inline">
-                        <input type="radio" name="optradio2" value="N">박피</label>
-                </form>
+    <form role="form">
+        <div class="category_div">
+            <div class="test-div">
+                <span class="sort">기&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;간&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <input type="date" id="datepicker1">
+                <p class="sort" style="text-align:center;"> - </p>
+                <input type="date" id="datepicker2">
+            </div>
+            <div class="test-div" style="margin-bottom:10px;">
+                <span class="sort"> 성&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;별&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <label class="radio-inline">
+                    <input type="radio" class="radio-btn" name="optradio" value="25001" checked>암</label>
+                <label class="radio-inline">
+                    <input type="radio" class="radio-btn" name="optradio" value="25003">거세 </label>
+                <label class="radio-inline">
+                    <input type="radio" class="radio-btn" name="optradio" value="25002">수</label>
+            </div>
+            <div class="test-div" style="">
+                <span class="sort">돈피&nbsp;&nbsp;구분&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <label class="radio-inline">
+                    <input type="radio" class="radio-btn" name="optradio2" value="Y" checked>탕박</label>
+                <label class="radio-inline">
+                    <input type="radio" class="radio-btn" name="optradio2" value="N">박피</label>
             </div>
         </div>
+    </form>
+
+    <div class="annotation_div">
+        <p><span style="padding-bottom:10px;"> ※  당일가격정보는 익일 10시까지 변동 될 수 있음을 알려드리니 이용에 착오 없으시기 바랍니다.</span></p>
+        <p><span> ※  가격은 해당 기간 평균가격 , 두수는 해당 기간 누적 두수 </span></p>
+        <p style="padding-right: 3%; text-align:right; font-size:110%;">
+            <span style="color:#1f77b4;">■ 가격(10원/kg)</span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span style="color:#ff7f0e;">■ 거래량(두)</span>
+        </p>
     </div>
+
 
     <div id="market_plot1" style="width:100%;height:auto;"></div>
     <div id="market_plot2" style="width:100%;height:auto;"></div>
