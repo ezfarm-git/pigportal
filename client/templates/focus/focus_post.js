@@ -1,7 +1,15 @@
+Template.focus_post.onRendered(function() {
+    try {
+        FB.XFBML.parse();
+    } catch (e) {}
+});
+
 Template.focus_post.helpers({
     post: function() {
         var postId = this.postId;
-        return Focus.find({_id: postId}).fetch()[0];
+        return Focus.find({
+            _id: postId
+        }).fetch()[0];
     }
 });
 
@@ -16,7 +24,7 @@ Template.focus_post.events({
     },
     'click .fb-share': function() {
         window.open('https://www.facebook.com/dialog/share?app_id=150240602048486&display=popup&href=' + encodeURIComponent(document.URL) + '&redirect_uri=http://pig-portal.herokuapp.com',
-                    'facebooksharedialog', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=540,width=410');
+            'facebooksharedialog', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=540,width=410');
         return false;
     }
 })

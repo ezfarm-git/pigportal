@@ -70,6 +70,7 @@ img.list-thumbnail {
     width: 100px;
     height: 100px;
     object-fit: cover;
+    border-radius: 50%;
 }
 
 /*Download Button*/
@@ -151,9 +152,21 @@ li.main_li {
     border-width: 1px;
     border-color: #e0e0eb;
 }
+.list-container-no-border {
+    clear: both;
+    min-height: 101px;
+    padding: 0px;
+    margin-bottom: 15px;
+}
 .list-image {
     width: 100px;
     float: left;
+}
+img.list-thumbnail-sm {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%;
 }
 .list-info {
     margin-left: 110px;
@@ -167,8 +180,8 @@ li.main_li {
     color: #00004d;
 }
 .list-summary {
-    padding-left: 12px;
-    text-indent: 3px;
+    padding-left: 8px;
+    text-indent: 5px;
 }
 
 /*favorites*/

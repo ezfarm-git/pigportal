@@ -5,11 +5,14 @@ Meteor.startup(function() {
             password: 'pig2016'
         });
     }
-
-    // var users = Meteor.users.find().fetch();
-    // _.each(users, function(userData) {
-    //     if(userData.emails[0].address === "pigportal@ezfarm.co.kr") {
-    //         Roles.addUsersToRoles(userData, ['admin']);
-    //     }
-    // });
+    if (Meteor.isClient) {
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId: '133083553796392',
+                status: true,
+                xfbml: true,
+                version: 'v2.5'
+            });
+        };
+    }
 });

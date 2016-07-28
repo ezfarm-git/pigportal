@@ -4,19 +4,9 @@ Template.card_news_admin.onCreated(function() {
     this.formType = new ReactiveVar("insert");
 });
 
-// Template.card_news_admin.onRendered(function() {
-//     var hooksObject = {
-//         before: function() {
-//
-//         },
-//         after: function() {
-//
-//         }
-//     };
-//     AutoForm.hooks({
-//         "Form": hooksObject
-//     });
-// });
+Template.card_news_admin.onRendered(function() {
+
+});
 
 Template.card_news_admin.onDestroyed(function() {
     document.getElementById('Form').reset();
@@ -55,8 +45,6 @@ Template.card_news_admin.helpers({
 
 Template.card_news_admin.events({
     'click .reactive-table tbody tr': function(evt, tmpl) {
-        // $('#postId').val(this._id);
-        // $('#imageIds').val(this.images);
         evt.preventDefault();
         tmpl.selectedDoc.set(this._id);
         tmpl.selectedImages.set(this.images);
@@ -67,7 +55,7 @@ Template.card_news_admin.events({
         var postId = tmpl.selectedDoc.get();
         var imageIds = tmpl.selectedImages.get();
         Meteor.call('CardNews.remove', postId);
-        Meteor.call('Images.remove', imageIds);
+        Meteor.call('Images.multiple.remove', imageIds);
         document.getElementById('Form').reset();
         tmpl.selectedDoc.set("");
         tmpl.selectedImages.set("");

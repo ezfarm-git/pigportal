@@ -68,6 +68,7 @@ sacha:spin
 
 
 # Design
+# materialize:materialize
 twbs:bootstrap
 fortawesome:fontawesome
 tanis:bootstrap-social
@@ -87,3 +88,7 @@ templates:tabs
 
 # XML Handling
 peerlibrary:xml2js
+
+
+# SNS Share
+biasport:facebook-sdk

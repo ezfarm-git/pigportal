@@ -41,13 +41,10 @@ Template.corps_admin.helpers({
 
 Template.corps_admin.events({
     'click .reactive-table tbody tr': function(evt, tmpl) {
-        $('#postId').val(this._id);
-        $('#imageId').val(this.image);
         evt.preventDefault();
         tmpl.selectedDoc.set(this._id);
         tmpl.selectedImage.set(this.image);
         tmpl.formType.set("update");
-        // $('.submit-btn').text('Edit').removeClass('submit-btn').addClass('edit-btn');
     },
     'click .remove-btn': function(evt, tmpl) {
         evt.preventDefault();

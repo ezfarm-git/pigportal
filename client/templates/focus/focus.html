@@ -6,16 +6,16 @@
     </h2>
     {{#each postsList}}
     <a href="/focus_post/{{_id}}" class="post-list-link">
-        <div class="list-container col-md-12">
+        <div class="list-container-no-border col-md-12">
             <div class="list-image">
                 {{#with FS.GetFile "Images" image}}
-                    <img src="{{this.url store='images'}}" alt="" class="list-thumbnail">
+                    <img src="{{this.url store='images'}}" alt="" class="list-thumbnail-sm">
                 {{/with}}
             </div>
             <div class="list-info">
                 <div class="list-title">
-                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                    {{title}}
+                    <!-- <i class="fa fa-pencil-square-o" aria-hidden="true"></i> -->
+                    &nbsp;{{title}}
                     <span class="text-muted small">{{prettyDate date}}</span>
                 </div>
                 <div class="list-summary">

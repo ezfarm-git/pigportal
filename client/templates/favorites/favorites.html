@@ -16,7 +16,7 @@
             <!-- the image -->
             <div class="favorites-image">
                 {{#with FS.GetFile "Images" image }}
-                    <img src="{{this.url store='images'}}" alt="" width="300px" height="100px" style="object-fit: cover;">
+                    <img src="{{this.url store='images'}}" alt="" width="300px" height="100px" style="object-fit: contain;">
                 {{/with}}
             </div>
         </div>
