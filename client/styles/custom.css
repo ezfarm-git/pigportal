@@ -70,7 +70,6 @@ img.list-thumbnail {
     width: 100px;
     height: 100px;
     object-fit: cover;
-    border-radius: 50%;
 }
 
 /*Download Button*/
@@ -162,10 +161,10 @@ li.main_li {
     width: 100px;
     float: left;
 }
-img.list-thumbnail-sm {
+img.list-thumbnail-circle {
     width: 90px;
     height: 90px;
-    object-fit: cover;
+    object-fit: fill;
     border-radius: 50%;
 }
 .list-info {
