@@ -46,7 +46,7 @@ Template.market.onRendered(function() {
         } else {
             skinText = "박피"
         }
-        titleText = start + " ~ " + end + " " + sexText + " " + skinText;
+        titleText = sexText + ", " + skinText + "<br>" + start + " ~ " + end;
 
         Meteor.call('market.get', start, end, skin, sex, function(error, result) {
             if (error) {
@@ -841,7 +841,7 @@ Template.market.onRendered(function() {
                 var data_avg = [trace7, trace14];
 
                 var layout = {
-                    title: "1+등급 [ " + titleText + " ]",
+                    title: "1+등급, " + titleText,
                     titlefont: {
                         family: 'Jeju Gothic, serif',
                         size: 20,
@@ -854,7 +854,7 @@ Template.market.onRendered(function() {
                 Plotly.newPlot('market_plot1', data_1plus, layout);
 
                 var layout2 = {
-                    title: "1등급 [ " + titleText + " ]",
+                    title: "1등급, " + titleText,
                     titlefont: {
                         family: 'Jeju Gothic, serif',
                         size: 20,
@@ -867,7 +867,7 @@ Template.market.onRendered(function() {
                 Plotly.newPlot('market_plot2', data_1, layout2);
 
                 var layout3 = {
-                    title: "2등급 [ " + titleText + " ]",
+                    title: "2등급, " + titleText,
                     titlefont: {
                         family: 'Jeju Gothic, serif',
                         size: 20,
@@ -880,7 +880,7 @@ Template.market.onRendered(function() {
                 Plotly.newPlot('market_plot3', data_2, layout3);
 
                 var layout4 = {
-                    title: "등외 [ " + titleText + " ]",
+                    title: "등외, " + titleText,
                     titlefont: {
                         family: 'Jeju Gothic, serif',
                         size: 20,
@@ -893,7 +893,7 @@ Template.market.onRendered(function() {
                 Plotly.newPlot('market_plot4', data_exc, layout4);
 
                 var layout5 = {
-                    title: "등외제외 [ " + titleText + " ]",
+                    title: "등외제외, " + titleText,
                     titlefont: {
                         family: 'Jeju Gothic, serif',
                         size: 20,
@@ -906,7 +906,7 @@ Template.market.onRendered(function() {
                 Plotly.newPlot('market_plot5', data_non, layout5);
 
                 var layout6 = {
-                    title: "모돈 [ " + titleText + " ]",
+                    title: "모돈, " + titleText,
                     titlefont: {
                         family: 'Jeju Gothic, serif',
                         size: 20,
@@ -919,7 +919,7 @@ Template.market.onRendered(function() {
                 Plotly.newPlot('market_plot6', data_mom, layout6);
 
                 var layout7 = {
-                    title: "평균 [ " + titleText + " ]",
+                    title: "평균, " + titleText,
                     titlefont: {
                         family: 'Jeju Gothic, serif',
                         size: 20,

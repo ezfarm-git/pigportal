@@ -74,7 +74,7 @@ Router.route('/data/stats/pig/pops', {
     layoutTemplate: 'layout_app',
     template: 'stats_pig_pops',
     yieldRegions: {
-        'stats_pig_category': {to: 'sidebar_left'},
+        'stats_category': {to: 'sidebar_left'},
         'banner': {to: 'sidebar_right'}
     },
     waitOn: function() {
@@ -85,38 +85,21 @@ Router.route('/data/stats/pig/pops', {
 });
 
 
-// Data - Stats - Pig - Grade
+// Data - Stats - Pig - Age
 
-Router.route('/data/stats/pig/grade', {
+Router.route('/data/stats/pig/age', {
     layoutTemplate: 'layout_app',
-    template: 'stats_pig_grade',
+    template: 'stats_pig_age',
     yieldRegions: {
-        'stats_pig_category': {to: 'sidebar_left'},
+        'stats_category': {to: 'sidebar_left'},
         'banner': {to: 'sidebar_right'}
     },
     waitOn: function() {
         return [IRLibLoader.load('https://cdn.plot.ly/plotly-latest.min.js')];
     }
 }, {
-    name: 'data_stats_pig_grade'
+    name: 'data_stats_pig_age'
 });
-
-
-// Data - Stats - Livestock - Pig - Pops - ByScale
-
-// Router.route('/data/stats/livestock/pig_pops_by_scale', {
-//     layoutTemplate: 'layout_app',
-//     template: 'stats_livestock_pig_pops_by_scale',
-//     yieldRegions: {
-//         'stats_livestock_category': {to: 'sidebar_left'},
-//         'banner': {to: 'sidebar_right'}
-//     },
-//     waitOn: function() {
-//         return [IRLibLoader.load('https://cdn.plot.ly/plotly-latest.min.js')];
-//     }
-// }, {
-//     name: 'data_stats_livestock_pig_pops_by_scale'
-// });
 
 
 // News

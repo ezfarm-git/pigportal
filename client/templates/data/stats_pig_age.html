@@ -1,4 +1,5 @@
-<template name="stats_pig_pops">
+<template name="stats_pig_age">
+
     <style>
         .citySelect {
             font-size: 17px;
@@ -6,8 +7,8 @@
     </style>
 
     <h2 class="postHeading">
-      <i class="fa fa-area-chart"></i>&nbsp;양돈 통계&nbsp;
-      <span class="text-muted postsCategory">시도별 사육 동향</span>
+        <i class="fa fa-area-chart"></i>&nbsp;양돈 통계&nbsp;
+        <span class="text-muted postsCategory">월령별 사육 동향</span>
     </h2>
 
     <select class="citySelect" name="country">
@@ -29,10 +30,20 @@
         <option value="26">울산광역시</option>
     </select>
 
-    <div id="plot_1" style="width:100%;height:auto;"></div>
-    <div id="plot_2" style="width:100%;height:auto;"></div>
-    <div id="plot_3" style="width:100%;height:auto;"></div>
-    <div id="plot_4" style="width:100%;height:auto;"></div>
+    <br><br>
+    <p style="text-align:center;">
+        <span style="color:steelblue; white-space:nowrap; margin-right:25px;">■ 2개월 미만</span>
+        <span style="color:darkorange; white-space:nowrap; margin-right:25px;">■ 2~4개월</span>
+        <span style="color:forestgreen; white-space:nowrap; margin-right:25px;">■ 4~6개월</span>
+        <span style="color:crimson; white-space:nowrap; margin-right:25px;">■ 6~8개월 암컷</span>
+        <span style="color:mediumpurple; white-space:nowrap; margin-right:25px;">■ 6~8개월 수컷</span>
+        <span style="color:sienna; white-space:nowrap; margin-right:25px;">■ 8개월 이상 암컷</span>
+        <span style="color:orchid; white-space:nowrap; margin-right:25px;">■ 8개월 이상 수컷</span>
+    </p>
+    <hr>
 
+    <div id="plot_1" style="width:100%;height:auto;"></div>
+
+    <div id="plot_2" style="width:100%;height:auto;"></div>
 
 </template>
