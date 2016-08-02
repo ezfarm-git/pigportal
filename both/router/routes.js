@@ -102,6 +102,32 @@ Router.route('/data/stats/pig/age', {
 });
 
 
+// Data - Bigdata
+
+Router.route('/data/bigdata', {
+    layoutTemplate: 'layout_full_width',
+    template: 'bigdata',
+    name: 'data_bigdata'
+});
+
+
+// Data - Disease
+
+Router.route('/data/disease', {
+    layoutTemplate: 'layout_app',
+    template: 'disease',
+    yieldRegions: {
+        '': {to: 'sidebar_left'},
+        'banner': {to: 'sidebar_right'}
+    },
+    waitOn: function() {
+        return [IRLibLoader.load('https://cdn.plot.ly/plotly-latest.min.js')];
+    }
+}, {
+    name: 'data_disease'
+});
+
+
 // News
 
 Router.route('/news/:category/:page', function() {

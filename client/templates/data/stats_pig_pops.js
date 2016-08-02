@@ -205,7 +205,7 @@ Template.stats_pig_pops.onRendered(function() {
         var trace3 = {
             x: period,
             y: trace3_y,
-            name: '1,000미만',
+            name: '1,000 두 미만',
             type: 'lines',
             marker: {
                 size: 10,
@@ -215,7 +215,7 @@ Template.stats_pig_pops.onRendered(function() {
         var trace4 = {
             x: period,
             y: trace4_y,
-            name: '1,000~5,000',
+            name: '1,000 두 ~ 5,000 두',
             type: 'lines',
             marker: {
                 size: 10,
@@ -225,7 +225,7 @@ Template.stats_pig_pops.onRendered(function() {
         var trace5 = {
             x: period,
             y: trace5_y,
-            name: '5,000~10,000',
+            name: '5,000 두 ~ 10,000 두',
             type: 'lines',
             marker: {
                 size: 10,
@@ -235,7 +235,7 @@ Template.stats_pig_pops.onRendered(function() {
         var trace6 = {
             x: period,
             y: trace6_y,
-            name: '10,000이상',
+            name: '10,000 두 이상',
             type: 'lines',
             marker: {
                 size: 10,
@@ -245,7 +245,7 @@ Template.stats_pig_pops.onRendered(function() {
         var trace7 = {
             x: period,
             y: trace7_y,
-            name: '1,000미만',
+            name: '1,000 두 미만',
             type: 'lines',
             marker: {
                 size: 10,
@@ -255,7 +255,7 @@ Template.stats_pig_pops.onRendered(function() {
         var trace8 = {
             x: period,
             y: trace8_y,
-            name: '1,000~5,000',
+            name: '1,000 두 ~ 5,000 두',
             type: 'lines',
             marker: {
                 size: 10,
@@ -266,7 +266,7 @@ Template.stats_pig_pops.onRendered(function() {
         var trace9 = {
             x: period,
             y: trace9_y,
-            name: '5,000~10,000',
+            name: '5,000 두 ~ 10,000 두',
             type: 'lines',
             marker: {
                 size: 10,
@@ -276,7 +276,7 @@ Template.stats_pig_pops.onRendered(function() {
         var trace10 = {
             x: period,
             y: trace10_y,
-            name: '10,000이상',
+            name: '10,000 두 이상',
             type: 'lines',
             marker: {
                 size: 10,

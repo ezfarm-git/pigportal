@@ -72,7 +72,6 @@ sacha:spin
 twbs:bootstrap
 fortawesome:fontawesome
 tanis:bootstrap-social
-aslagle:reactive-table
 rajit:bootstrap3-datepicker
 tsega:bootstrap3-datetimepicker
 mpowaga:autoform-summernote
@@ -80,6 +79,11 @@ fullcalendar:fullcalendar
 momentjs:moment
 tmeasday:publish-counts
 mrt:fancybox
+
+
+# Table
+aslagle:reactive-table
+ephemer:reactive-datatables
 
 
 # Tabs
