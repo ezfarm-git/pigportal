@@ -373,7 +373,7 @@ Template.stats_pig_age.onRendered(function() {
                 xanchor: 'right',
                 x: 0.98,
                 xref: 'paper',
-                text: '(단위 : 1,000 마리)',
+                text: '(단위: 1,000 마리)',
                 showarrow: false,
                 font: {
                     size: 15

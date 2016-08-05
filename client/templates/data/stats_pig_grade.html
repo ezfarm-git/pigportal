@@ -1,23 +1,39 @@
 <template name="stats_pig_grade">
-    <h2 class="postHeading">
-        <i class="fa fa-area-chart"></i>&nbsp;양돈 통계&nbsp;
-        <span class="text-muted postsCategory">등급판정 통계</span>
-    </h2>
-    <div class="container">
-    <form role="form">
-        <label class="radio-inline">
-            <input type="radio" name="optradio" value="data_total" checked>전체
-        </label>
-        <label class="radio-inline">
-            <input type="radio" name="optradio" value="data_female">암
-        </label>
-        <label class="radio-inline">
-            <input type="radio" name="optradio" value="data_cast">거세
-        </label>
-        <label class="radio-inline">
-            <input type="radio" name="optradio" value="data_male">수
-        </label>
-    </form>
+  <h2 class="postHeading">
+    <i class="fa fa-area-chart"></i>&nbsp;양돈 통계&nbsp;
+    <span class="text-muted postsCategory">등급판정 통계</span>
+  </h2>
+
+  <hr>
+  <div class="row options_div" style="text-align:center;">
+    <div class="col-md-2"></div>
+    <div class="col-md-4" style="white-space: nowrap; margin-bottom:10px;">
+      <span style="font-size:120%;">시작 월 : </span>
+      <input type="month" id="datepicker1" style="text-align:center;">
     </div>
-    <div id="plot_1" style="width:100%;height:1000px;"></div>
+    <div class="col-md-4" style="white-space: nowrap;">
+      <span style="font-size:120%;">종료 월 : </span>
+      <input type="month" id="datepicker2" style="text-align:center;">
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+
+  <hr>
+  <p style="margin-left: 5px; text-align:center;">
+    <span style="color:steelblue; white-space:nowrap; margin-right:25px;">■ 1+등급</span>
+    <span style="color:darkorange; white-space:nowrap; margin-right:25px;">■ 1등급</span>
+    <span style="color:forestgreen; white-space:nowrap; margin-right:25px;">■ 2등급</span>
+    <span style="color:crimson; white-space:nowrap; margin-right:25px;">■ 등외</span>
+  </p>
+  <hr style="border-width:2px; border-color:black;">
+
+  <div id="plot_1" style="width:100%;height:auto;"></div>
+  <div id="plot_2" style="width:100%;height:auto;"></div>
+  <hr style="border-width:2px; border-color:black;">
+  <div id="plot_3" style="width:100%;height:auto;"></div>
+  <div id="plot_4" style="width:100%;height:auto;"></div>
+  <hr style="border-width:2px; border-color:black;">
+  <div id="plot_5" style="width:100%;height:auto;"></div>
+  <div id="plot_6" style="width:100%;height:auto;"></div>
+
 </template>

@@ -102,29 +102,38 @@ Router.route('/data/stats/pig/age', {
 });
 
 
-// Data - Bigdata
+// Data - Stats - Pig - Grade
 
-Router.route('/data/bigdata', {
-    layoutTemplate: 'layout_full_width',
-    template: 'bigdata',
-    name: 'data_bigdata'
-});
-
-
-// Data - Disease
-
-Router.route('/data/disease', {
+Router.route('/data/stats/pig/grade', {
     layoutTemplate: 'layout_app',
-    template: 'disease',
+    template: 'stats_pig_grade',
     yieldRegions: {
-        '': {to: 'sidebar_left'},
+        'stats_category': {to: 'sidebar_left'},
         'banner': {to: 'sidebar_right'}
     },
     waitOn: function() {
         return [IRLibLoader.load('https://cdn.plot.ly/plotly-latest.min.js')];
     }
 }, {
+    name: 'data_stats_pig_grade'
+});
+
+
+// Data - Disease
+
+Router.route('/data/disease', {
+    layoutTemplate: 'layout_full_width',
+    template: 'disease',
     name: 'data_disease'
+});
+
+
+// Data - Bigdata
+
+Router.route('/data/bigdata', {
+    layoutTemplate: 'layout_full_width',
+    template: 'bigdata',
+    name: 'data_bigdata'
 });
 
 

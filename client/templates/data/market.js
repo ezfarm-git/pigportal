@@ -945,7 +945,7 @@ Template.market.onRendered(function() {
     }
     drawPlot();
 
-    $('.category_div').change(function() {
+    $('.options_div').change(function() {
         drawPlot();
     });
 
