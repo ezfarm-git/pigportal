@@ -1,5 +1,9 @@
 Template.stats_cow_pops.onCreated(function () {
 
+});
+
+Template.stats_cow_pops.onRendered(function () {
+
   Meteor.call('hanwoo_farm_scale_by_city.get', function (error, res) {
     if (error) {
       console.log(error);
@@ -23,10 +27,6 @@ Template.stats_cow_pops.onCreated(function () {
       Session.setPersistent('dariy_total', res);
     }
   });
-
-});
-
-Template.stats_cow_pops.onRendered(function () {
 
   var txt = "전국 ";
   var cow = "한우";

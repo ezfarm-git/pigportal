@@ -1,5 +1,9 @@
 ﻿Template.stats_pig_age.onCreated(function () {
 
+});
+
+Template.stats_pig_age.onRendered(function () {
+
   Meteor.call('pig_age_by_city.get', function (error, res) {
     if (error) {
       console.log(error);
@@ -7,9 +11,6 @@
       Session.setPersistent('pig_ages', res);
     }
   });
-});
-
-Template.stats_pig_age.onRendered(function () {
 
   var txt = "전국";
 

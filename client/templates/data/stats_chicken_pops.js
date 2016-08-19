@@ -1,5 +1,9 @@
 Template.stats_chicken_pops.onCreated(function () {
 
+});
+
+Template.stats_chicken_pops.onRendered(function () {
+
   Meteor.call('chicken_farm_scale_by_city.get', function (error, res) {
     if (error) {
       console.log(error);
@@ -7,9 +11,6 @@ Template.stats_chicken_pops.onCreated(function () {
       Session.setPersistent('chicken_total', res);
     }
   });
-});
-
-Template.stats_chicken_pops.onRendered(function () {
 
   var txt = "전국";
 

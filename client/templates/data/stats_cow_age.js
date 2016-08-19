@@ -1,5 +1,8 @@
-﻿
-Template.stats_cow_age.onCreated(function () {
+﻿Template.stats_cow_age.onCreated(function () {
+
+});
+
+Template.stats_cow_age.onRendered(function () {
 
   Meteor.call('hanwoo_age_by_city.get', function (error, res) {
     if (error) {
@@ -22,10 +25,6 @@ Template.stats_cow_age.onCreated(function () {
       Session.setPersistent('dariy_age', res);
     }
   });
-
-});
-
-Template.stats_cow_age.onRendered(function () {
 
   var txt = "전국 ";
   var cow = "한우";

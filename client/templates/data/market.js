@@ -829,7 +829,7 @@ Template.market.onRendered(function() {
                     x: xname,
                     y: trace_avg_Cnt,
                     type: 'bar',
-                    name: '평균 두수',
+                    name: '거래량 합계(두)',
                 };
 
                 var data_1plus = [trace1, trace8];

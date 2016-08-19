@@ -22,6 +22,7 @@ Template.product.onCreated(function() {
             Session.setPersistent('currentweek', JSON.parse(result.content)[0]['WEEK']);
         }
     });
+
 });
 
 Template.product.onRendered(function() {
