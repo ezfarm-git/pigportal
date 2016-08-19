@@ -119,6 +119,91 @@ Router.route('/data/stats/pig/grade', {
 });
 
 
+// Data - Stats - Cow - Pops
+
+Router.route('/data/stats/cow/pops', {
+    layoutTemplate: 'layout_app',
+    template: 'stats_cow_pops',
+    yieldRegions: {
+        'stats_category': {to: 'sidebar_left'},
+        'banner': {to: 'sidebar_right'}
+    },
+    waitOn: function() {
+        return [IRLibLoader.load('https://cdn.plot.ly/plotly-latest.min.js')];
+    }
+}, {
+    name: 'data_stats_cow_pops'
+});
+
+
+// Data - Stats - Cow - Age
+
+Router.route('/data/stats/cow/age', {
+    layoutTemplate: 'layout_app',
+    template: 'stats_cow_age',
+    yieldRegions: {
+        'stats_category': {to: 'sidebar_left'},
+        'banner': {to: 'sidebar_right'}
+    },
+    waitOn: function() {
+        return [IRLibLoader.load('https://cdn.plot.ly/plotly-latest.min.js')];
+    }
+}, {
+    name: 'data_stats_cow_age'
+});
+
+
+// Data - Stats - Cow - Grade
+
+Router.route('/data/stats/cow/grade', {
+    layoutTemplate: 'layout_app',
+    template: 'stats_cow_grade',
+    yieldRegions: {
+        'stats_category': {to: 'sidebar_left'},
+        'banner': {to: 'sidebar_right'}
+    },
+    waitOn: function() {
+        return [IRLibLoader.load('https://cdn.plot.ly/plotly-latest.min.js')];
+    }
+}, {
+    name: 'data_stats_cow_grade'
+});
+
+
+// Data - Stats - Chicken - Pops
+
+Router.route('/data/stats/chicken/pops', {
+    layoutTemplate: 'layout_app',
+    template: 'stats_chicken_pops',
+    yieldRegions: {
+        'stats_category': {to: 'sidebar_left'},
+        'banner': {to: 'sidebar_right'}
+    },
+    waitOn: function() {
+        return [IRLibLoader.load('https://cdn.plot.ly/plotly-latest.min.js')];
+    }
+}, {
+    name: 'data_stats_chicken_pops'
+});
+
+
+// Data - Stats - Chicken - Age
+
+Router.route('/data/stats/chicken/age', {
+    layoutTemplate: 'layout_app',
+    template: 'stats_chicken_age',
+    yieldRegions: {
+        'stats_category': {to: 'sidebar_left'},
+        'banner': {to: 'sidebar_right'}
+    },
+    waitOn: function() {
+        return [IRLibLoader.load('https://cdn.plot.ly/plotly-latest.min.js')];
+    }
+}, {
+    name: 'data_stats_chicken_age'
+});
+
+
 // Data - Disease
 
 Router.route('/data/disease', {

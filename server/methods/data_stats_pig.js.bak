@@ -1,17 +1,11 @@
-﻿﻿Meteor.methods({
+﻿﻿
+Meteor.methods({
 
   // 시도별 사육규모
   'pig_farm_scale_by_city.get': function () {
 
     var xml = HTTP.get('http://kosis.kr/openapi/statisticsBigData.do?method=getList&apiKey=OWI2ODY5NWEzMWNlMTJiNTBmYWJhMGVhMGI0Nzc3YmI=&format=sdmx&userStatsId=k0013280/101/DT_1EO051/3/1/20160630140534&type=StructureSpecific&prdSe=Q&newEstPrdCnt=5&version=v2_1');
-    var res;
-    xml2js.parseString(xml.content, function (err, result) {
-      if (err) {
-        console.log(err);
-      } else {
-        res = result['message:StructureSpecificTimeSeriesData']['message:DataSet'][0]['Series'];
-      }
-    });
+    var res = xml.content;
     return res;
   },
 
@@ -19,14 +13,7 @@
   'pig_age_by_city.get': function () {
 
     var xml = HTTP.get('http://kosis.kr/openapi/statisticsBigData.do?method=getList&apiKey=OWI2ODY5NWEzMWNlMTJiNTBmYWJhMGVhMGI0Nzc3YmI=&format=sdmx&userStatsId=k0013280/101/DT_1EO096/3/2/20160719113604&type=StructureSpecific&prdSe=Q&newEstPrdCnt=5&version=v2_1');
-    var res;
-    xml2js.parseString(xml.content, function (err, result) {
-      if (err) {
-        console.log(err);
-      } else {
-        res = result['message:StructureSpecificTimeSeriesData']['message:DataSet'][0]['Series'];
-      }
-    });
+    var res = xml.content;
     return res;
   },
 

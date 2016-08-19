@@ -1,0 +1,64 @@
+<template name="stats_cow_pops">
+  <style>
+    .citySelect {
+      font-size: 17px;
+    }
+  </style>
+
+  <h2 class="postHeading">
+      <i class="fa fa-area-chart"></i>&nbsp;축우 통계&nbsp;
+      <span class="text-muted postsCategory" style="white-space:nowrap;">시도별 사육 동향</span>
+  </h2>
+
+  <select class="citySelect" name="country">
+    <option value="00" selected="selected">전국</option>
+    <option value="31">경기도</option>
+    <option value="32">강원도</option>
+    <option value="33">충청북도</option>
+    <option value="34">충청남도</option>
+    <option value="35">전라북도</option>
+    <option value="36">전라남도</option>
+    <option value="37">경상북도</option>
+    <option value="38">경상남도</option>
+    <option value="39">제주도</option>
+    <option value="21">부산광역시</option>
+    <option value="22">대구광역시</option>
+    <option value="23">인천광역시</option>
+    <option value="24">광주광역시</option>
+    <option value="25">대전광역시</option>
+    <option value="26">울산광역시</option>
+  </select>
+
+  <hr>
+
+  <div style="text-align:center">
+    <label>
+      <input type="radio" name="name" value="korean" checked/>&nbsp;&nbsp;한 우
+    </label>&emsp;&emsp;&emsp;
+    <label>
+      <input type="radio" name="name" value="beef" />&nbsp;&nbsp;육 우
+    </label>&emsp;&emsp;&emsp;
+    <label>
+      <input type="radio" name="name" value="dairy" />&nbsp;&nbsp;젖 소
+    </label>
+  </div>
+
+  <hr>
+
+  <div id="plot_1" style="width:100%;height:auto;"></div>
+  <div id="plot_2" style="width:100%;height:auto;"></div>
+
+  <hr>
+  <p style="margin-left: 5px; text-align:center;">
+    <span style="color:steelblue; white-space:nowrap; margin-right:25px;">■ 20 두 미만</span>
+    <span style="color:darkorange; white-space:nowrap; margin-right:25px;">■ 20 ~ 50 두</span>
+    <span style="color:forestgreen; white-space:nowrap; margin-right:25px;">■ 50 ~ 100 두</span>
+    <span style="color:crimson; white-space:nowrap; margin-right:25px;">■ 100 두 이상</span>
+  </p>
+  <hr>
+
+  <div id="plot_3" style="width:100%;height:auto;"></div>
+  <div id="plot_4" style="width:100%;height:auto;"></div>
+
+
+</template>

@@ -6,364 +6,367 @@
 @import url(http://fonts.googleapis.com/earlyaccess/kopubbatang.css);
 @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+
+.container-fluid {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
 ol, ul, li, form, label {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 body {
-    margin-top: 70px;
+  margin-top: 70px;
 }
 article {
-    padding-left: 12px;
-    padding-right: 12px;
+  padding-left: 12px;
+  padding-right: 12px;
 }
 a.underline-none:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 .reactive-table tbody tr:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 /*footer*/
 
 .site-footer {
-    margin-top: 250px;
-    margin-bottom: 50px;
+  margin-top: 250px;
+  margin-bottom: 50px;
 }
 
 /*postsCategory*/
 
 .postsCategory {
-    font-size: 80%;
+  font-size: 80%;
 }
 
 /*post-date*/
 
 .post-date {
-    text-align: left;
-    text-indent: 3px;
-    margin-bottom: 7px;
+  text-align: left;
+  text-indent: 3px;
+  margin-bottom: 7px;
 }
 
 /*pagination*/
 
 .pager-nav {
-    margin-top: 40px;
+  margin-top: 40px;
 }
 
 /*banner*/
-.banner-container {
-    margin-top: 36px;
-}
 
+.banner-container {
+  margin-top: 36px;
+}
 .banner {
-    text-align: center;
-    margin-bottom: 32px;
+  text-align: center;
+  margin-bottom: 32px;
+  max-width: 170px;
 }
 
 /*List Thumbnail*/
+
 img.list-thumbnail {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
 }
 
 /*Download Button*/
+
 .downloadButton {
-    margin-top: 20px;
-    text-align: right;
+  margin-top: 20px;
+  text-align: right;
 }
 
 /*Share box*/
+
 .share-box {
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 5px;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 5px;
 }
 .nv-share {
-    margin-left: 2px;
-    margin-right: 2px;
+  margin-left: 2px;
+  margin-right: 2px;
 }
 .kk-share {
-    margin-left: 2px;
-    margin-right: 2px;
+  margin-left: 2px;
+  margin-right: 2px;
 }
 .fb-share {
-    margin-left: 2px;
-    margin-right: 4px;
+  margin-left: 2px;
+  margin-right: 4px;
 }
 .tw-share {
-    margin-left: 2px;
-    margin-right: 2px;
+  margin-left: 2px;
+  margin-right: 2px;
 }
-
 
 /*Main Page*/
 
 .main-page-link:hover {
-    text-decoration: none;
-    color: #3ec195;
-    cursor: pointer;
+  text-decoration: none;
+  color: #3ec195;
+  cursor: pointer;
 }
-
 h3.indexPanelTitle {
-    font-family: 'Jeju Gothic', serif;
-    color: white;
+  font-family: 'Jeju Gothic', serif;
+  color: white;
 }
 #main-panel-heading {
-    background-color: #26517d;
+  background-color: #26517d;
 }
 #main-panel-body {
-    background-color: #f7f7f7;
-    min-height: 218px;
+  background-color: #f7f7f7;
+  min-height: 218px;
 }
 a.mainList {
-    color: #04376c;
+  color: #04376c;
 }
 ul.main_ul {
-    list-style-position: outside;
-    padding-left: 12px;
+  list-style-position: outside;
+  padding-left: 12px;
 }
 li.main_li {
-    font-family: 'Nanum Gothic', serif;
-    margin-bottom: 5px;
+  font-family: 'Nanum Gothic', serif;
+  margin-bottom: 5px;
 }
 
 /*News*/
 
 .news-link {
-    color: #262673;
-    /*color: rgb(52,152,219);*/
+  color: #262673;
+  /*color: rgb(52,152,219);*/
 }
 
 /*Focus, Corps*/
 
 .list-container {
-    clear: both;
-    min-height: 101px;
-    padding: 0px;
-    margin-bottom: 15px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #e0e0eb;
+  clear: both;
+  min-height: 101px;
+  padding: 0px;
+  margin-bottom: 15px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e0e0eb;
 }
 .list-container-no-border {
-    clear: both;
-    min-height: 101px;
-    padding: 0px;
-    margin-bottom: 15px;
+  clear: both;
+  min-height: 101px;
+  padding: 0px;
+  margin-bottom: 15px;
 }
 .list-image {
-    width: 100px;
-    float: left;
+  width: 100px;
+  float: left;
 }
 img.list-thumbnail-circle {
-    width: 90px;
-    height: 90px;
-    object-fit: fill;
-    border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  object-fit: fill;
+  border-radius: 50%;
 }
 .list-info {
-    margin-left: 110px;
-    padding: 8px 15px 0px 0px;
+  margin-left: 110px;
+  padding: 8px 15px 0px 0px;
 }
 .list-title {
-    margin-bottom: 2px;
-    padding-left: 3px;
-    font-family: 'Jeju Gothic', serif;
-    font-size: 19px;
-    color: #00004d;
+  margin-bottom: 2px;
+  padding-left: 3px;
+  font-family: 'Jeju Gothic', serif;
+  font-size: 19px;
+  color: #00004d;
 }
 .list-summary {
-    padding-left: 8px;
-    text-indent: 5px;
+  padding-left: 8px;
+  text-indent: 5px;
 }
 
 /*favorites*/
 
 .post-list-link {
-    color: #00004d;
+  color: #00004d;
 }
 .favorites-container {
-    margin-left: 15px;
-    margin-right: 15px;
-    margin-bottom: 20px;
-    display: inline-block;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 20px;
+  display: inline-block;
 }
 .favorites-name {
-    margin-bottom: 5px;
-    padding-left: 5px;
-    font-size: 18px;
+  margin-bottom: 5px;
+  padding-left: 5px;
+  font-size: 18px;
 }
 
 /*image posts*/
 
 .image-post-container {
-    margin-bottom: 15px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #e0e0eb;
-    border-top-left-radius: 0.3em;
-    border-top-right-radius: 0.3em;
+  margin-bottom: 15px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e0e0eb;
+  border-top-left-radius: 0.3em;
+  border-top-right-radius: 0.3em;
 }
 .image-info {
-    background-color: rgba(242, 242, 242, 0.6);
-    border-bottom: solid 1px #e0e0eb;
-    padding-left: 12px;
-    padding-top: 14px;
-    padding-right: 12px;
-    padding-bottom: 0px;
+  background-color: rgba(242, 242, 242, 0.6);
+  border-bottom: solid 1px #e0e0eb;
+  padding-left: 12px;
+  padding-top: 14px;
+  padding-right: 12px;
+  padding-bottom: 0px;
 }
 .image-title {
-    margin-bottom: 5px;
-    padding-left: 3px;
-    font-family: 'Jeju Gothic', serif;
-    font-size: 19px;
-    color: #00004d;
+  margin-bottom: 5px;
+  padding-left: 3px;
+  font-family: 'Jeju Gothic', serif;
+  font-size: 19px;
+  color: #00004d;
 }
 .image-summary {
-    margin-bottom: 3px;
-    padding-left: 9px;
-    text-indent: 9px;
+  margin-bottom: 3px;
+  padding-left: 9px;
+  text-indent: 9px;
 }
 .image-date {
-    padding-right: 5px;
-    text-align: right;
+  padding-right: 5px;
+  text-align: right;
 }
 
 /*copied*/
 
 div.jumbotron#mainTop {
-    position: relative;
-    background: #000 url("/images_main/mainBackground4.jpg") 50% 25%;
-    opacity: 0.85;
-    width: 100%;
-    height: 200px;
-    background-size: cover;
-    overflow: hidden;
-    margin-top: 20px;
-    padding-left: 5vw;
-    padding-right: 5vw;
+  position: relative;
+  background: #000 url("/images_main/mainBackground4.jpg") 50% 25%;
+  opacity: 0.85;
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  overflow: hidden;
+  margin-top: 20px;
+  padding-left: 5vw;
+  padding-right: 5vw;
 }
 div.jumbotron#mainBottom {
-    position: relative;
-    background: #000 url("/images_main/mainBackground9.jpg") 50% 50%;
-    opacity: 0.85;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    overflow: hidden;
-    margin-top: 20px;
-    padding-top: 30px;
-    padding-bottom: 45px;
-    padding-left: 5vw;
-    padding-right: 10vw;
+  position: relative;
+  background: #000 url("/images_main/mainBackground9.jpg") 50% 50%;
+  opacity: 0.85;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  overflow: hidden;
+  margin-top: 20px;
+  padding-top: 30px;
+  padding-bottom: 45px;
+  padding-left: 5vw;
+  padding-right: 10vw;
 }
-
 
 /*News Setting*/
 
 ul.posts_ul {
-    list-style-position: outside;
-    padding-left: 20px;
+  list-style-position: outside;
+  padding-left: 20px;
 }
 li.posts_li {
-    font-family: 'Nanum Gothic', serif;
-    font-size: 1.3em;
-    margin-bottom: 15px;
+  font-family: 'Nanum Gothic', serif;
+  font-size: 1.3em;
+  margin-bottom: 15px;
 }
 .postHeading {
-    margin-top: 15px;
-    margin-bottom: 20px;
+  margin-top: 15px;
+  margin-bottom: 20px;
 }
 #categoryPanel {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 #categoryPanelHeading {
-    color: white;
-    font-size: 130%;
-    background-color: rgba(0,0,0,.75);
+  color: white;
+  font-size: 130%;
+  background-color: rgba(0, 0, 0, .75);
 }
 #categoryPanelBody {
-    padding-top: 5px;
-    padding-bottom: 7px;
-    padding-left: 3px;
-    padding-right: 3px;
+  padding-top: 5px;
+  padding-bottom: 7px;
+  padding-left: 3px;
+  padding-right: 3px;
 }
 #category_ul {
-    list-style: none;
-    font-size: 120%;
+  list-style: none;
+  font-size: 120%;
 }
 #category_ul a {
-    color: #04376c;
+  color: #04376c;
 }
-
 
 /*Navbar Setting*/
 
 li.dropdown {
-    font-family: 'Nanum Gothic', serif;
+  font-family: 'Nanum Gothic', serif;
 }
 ul.dropdown-menu {
-    padding-top: 8px;
-    padding-bottom: 0px;
+  padding-top: 8px;
+  padding-bottom: 0px;
 }
 ul.dropdown-menu li {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 /*fancybox*/
 
 a.fancybox-prev span {
-    left: -15px;
+  left: -15px;
 }
 a.fancybox-next span {
-    right: -15px;
+  right: -15px;
 }
 
 /*fullcalendar*/
 
 .events-container {
-    margin-top: 15px;
+  margin-top: 15px;
 }
-
 .fc-event {
-    border-color: #9191ba;
-    background: #efeff5;
-    text-align: center;
-    color: black;
-    padding: 2px;
-    margin-bottom: 2px;
+  border-color: #9191ba;
+  background: #efeff5;
+  text-align: center;
+  color: black;
+  padding: 2px;
+  margin-bottom: 2px;
 }
 .fc-event:hover {
-    cursor: pointer;
-    color: blue;
+  cursor: pointer;
+  color: blue;
 }
 .fc-sat {
-    color: blue;
+  color: blue;
 }
 .fc-sun {
-    color: red;
+  color: red;
 }
 
 /*pigplan*/
+
 div.pigplan_headline {
-    background-color:
+  background-color:
 }
-
 p.pigplan_paragraph {
-    line-height: 200%;
+  line-height: 200%;
 }
-
 p.pigplan_paragraph::first-letter {
-    font-size: 120%;
-    color: steelblue;
+  font-size: 120%;
+  color: steelblue;
 }
-
 p.pigplan_tab_paragraph {
-    line-height: 200%;
+  line-height: 200%;
 }
