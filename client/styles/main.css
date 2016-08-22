@@ -1,0 +1,55 @@
+/*.navbar-default {
+  box-shadow: none;
+}*/
+
+#main-menu {
+  /*text-align: justify;*/
+  font-size: 120%;
+  /*margin-left: 15px;
+  margin-right: 15px;*/
+}
+
+#main-menu:hover {
+  /*margin-top: -2px;
+  border-top: 2px solid*/
+}
+
+ul.dropdown-menu {
+  padding-top: 8px;
+  padding-bottom: 0px;
+  /*box-shadow: none;*/
+}
+ul.dropdown-menu li {
+  margin-bottom: 10px;
+  font-size: 110%;
+}
+
+/*Main Page*/
+
+.main-page-link:hover {
+  text-decoration: none;
+  color: #3ec195;
+  cursor: pointer;
+}
+h3.indexPanelTitle {
+  font-family: 'Jeju Gothic', serif;
+  color: white;
+}
+#main-panel-heading {
+  background-color: #26517d;
+}
+#main-panel-body {
+  background-color: #f7f7f7;
+  min-height: 218px;
+}
+a.mainList {
+  color: #04376c;
+}
+ul.main_ul {
+  list-style-position: outside;
+  padding-left: 12px;
+}
+li.main_li {
+  font-family: 'Nanum Gothic', serif;
+  margin-bottom: 5px;
+}

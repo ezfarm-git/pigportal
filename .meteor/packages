@@ -68,7 +68,7 @@ sacha:spin
 
 
 # Design
-# materialize:materialize
+materialize:materialize
 twbs:bootstrap
 fortawesome:fontawesome
 tanis:bootstrap-social

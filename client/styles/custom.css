@@ -6,12 +6,10 @@
 @import url(http://fonts.googleapis.com/earlyaccess/kopubbatang.css);
 @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
-
 .container-fluid {
   max-width: 1200px;
   margin: 0 auto;
 }
-
 ol, ul, li, form, label {
   margin: 0;
   padding: 0;
@@ -21,7 +19,7 @@ ol, ul, li, form, label {
   vertical-align: baseline;
 }
 body {
-  margin-top: 70px;
+  margin-top: 10px;
 }
 article {
   padding-left: 12px;
@@ -111,34 +109,11 @@ img.list-thumbnail {
   margin-right: 2px;
 }
 
-/*Main Page*/
+/*Data*/
 
-.main-page-link:hover {
-  text-decoration: none;
-  color: #3ec195;
-  cursor: pointer;
-}
-h3.indexPanelTitle {
-  font-family: 'Jeju Gothic', serif;
-  color: white;
-}
-#main-panel-heading {
-  background-color: #26517d;
-}
-#main-panel-body {
-  background-color: #f7f7f7;
-  min-height: 218px;
-}
-a.mainList {
-  color: #04376c;
-}
-ul.main_ul {
-  list-style-position: outside;
-  padding-left: 12px;
-}
-li.main_li {
-  font-family: 'Nanum Gothic', serif;
-  margin-bottom: 5px;
+.citySelect {
+  font-size: 17px;
+  padding: 5px 10px 5px 10px;
 }
 
 /*News*/
@@ -307,19 +282,6 @@ li.posts_li {
 }
 #category_ul a {
   color: #04376c;
-}
-
-/*Navbar Setting*/
-
-li.dropdown {
-  font-family: 'Nanum Gothic', serif;
-}
-ul.dropdown-menu {
-  padding-top: 8px;
-  padding-bottom: 0px;
-}
-ul.dropdown-menu li {
-  margin-bottom: 10px;
 }
 
 /*fancybox*/
