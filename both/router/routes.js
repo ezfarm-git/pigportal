@@ -15,10 +15,8 @@ Router.route('/test2', function() {
 // Main
 
 Router.route('/', function() {
-    this.layout('layout_app');
-    this.render('', {to: 'sidebar_left'});
+    this.layout('layout_main');
     this.render('main', {to: 'main'});
-    this.render('banner', {to: 'sidebar_right'});
     this.wait(Meteor.subscribe('mainNews_A'));
     this.wait(Meteor.subscribe('mainNews_B'));
     this.wait(Meteor.subscribe('mainNews_C'));

@@ -1,0 +1,11 @@
+<template name="layout_main">
+    {{>header}}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                {{> yield "main" }}
+            </div>
+        </div>
+    </div>
+    {{>footer}}
+</template>
