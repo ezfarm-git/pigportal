@@ -40,11 +40,11 @@ Router.route('/data/product', {
     layoutTemplate: 'layout_app',
     template: 'product',
     yieldRegions: {
-        '': {to: 'sidebar_left'},
-        'banner': {to: 'sidebar_right'}
+        'banner': {to: 'sidebar_left'},
+        // 'banner': {to: 'sidebar_right'}
     },
     waitOn: function() {
-        return [IRLibLoader.load('https://cdn.plot.ly/plotly-latest.min.js')];
+        return [IRLibLoader.load('/js/plotly-latest.min.js')];
     }
 }, {
     name: 'data_product'
@@ -57,11 +57,11 @@ Router.route('/data/market', {
     layoutTemplate: 'layout_app',
     template: 'market',
     yieldRegions: {
-        '': {to: 'sidebar_left'},
-        'banner': {to: 'sidebar_right'}
+        'banner': {to: 'sidebar_left'},
+        // 'banner': {to: 'sidebar_right'}
     },
     waitOn: function() {
-        return [IRLibLoader.load('https://cdn.plot.ly/plotly-latest.min.js')];
+        return [IRLibLoader.load('/js/plotly-latest.min.js')];
     }
 }, {
     name: 'data_market'
@@ -75,10 +75,10 @@ Router.route('/data/stats/pig/pops', {
     template: 'stats_pig_pops',
     yieldRegions: {
         'stats_category': {to: 'sidebar_left'},
-        'banner': {to: 'sidebar_right'}
+        // 'banner': {to: 'sidebar_right'}
     },
     waitOn: function() {
-        return [IRLibLoader.load('https://cdn.plot.ly/plotly-latest.min.js')];
+        return [IRLibLoader.load('/js/plotly-latest.min.js')];
     }
 }, {
     name: 'data_stats_pig_pops'
@@ -92,10 +92,10 @@ Router.route('/data/stats/pig/age', {
     template: 'stats_pig_age',
     yieldRegions: {
         'stats_category': {to: 'sidebar_left'},
-        'banner': {to: 'sidebar_right'}
+        // 'banner': {to: 'sidebar_right'}
     },
     waitOn: function() {
-        return [IRLibLoader.load('https://cdn.plot.ly/plotly-latest.min.js')];
+        return [IRLibLoader.load('/js/plotly-latest.min.js')];
     }
 }, {
     name: 'data_stats_pig_age'
@@ -109,10 +109,10 @@ Router.route('/data/stats/pig/grade', {
     template: 'stats_pig_grade',
     yieldRegions: {
         'stats_category': {to: 'sidebar_left'},
-        'banner': {to: 'sidebar_right'}
+        // 'banner': {to: 'sidebar_right'}
     },
     waitOn: function() {
-        return [IRLibLoader.load('https://cdn.plot.ly/plotly-latest.min.js')];
+        return [IRLibLoader.load('/js/plotly-latest.min.js')];
     }
 }, {
     name: 'data_stats_pig_grade'
@@ -126,10 +126,10 @@ Router.route('/data/stats/cow/pops', {
     template: 'stats_cow_pops',
     yieldRegions: {
         'stats_category': {to: 'sidebar_left'},
-        'banner': {to: 'sidebar_right'}
+        // 'banner': {to: 'sidebar_right'}
     },
     waitOn: function() {
-        return [IRLibLoader.load('https://cdn.plot.ly/plotly-latest.min.js')];
+        return [IRLibLoader.load('/js/plotly-latest.min.js')];
     }
 }, {
     name: 'data_stats_cow_pops'
@@ -143,10 +143,10 @@ Router.route('/data/stats/cow/age', {
     template: 'stats_cow_age',
     yieldRegions: {
         'stats_category': {to: 'sidebar_left'},
-        'banner': {to: 'sidebar_right'}
+        // 'banner': {to: 'sidebar_right'}
     },
     waitOn: function() {
-        return [IRLibLoader.load('https://cdn.plot.ly/plotly-latest.min.js')];
+        return [IRLibLoader.load('/js/plotly-latest.min.js')];
     }
 }, {
     name: 'data_stats_cow_age'
@@ -160,10 +160,10 @@ Router.route('/data/stats/cow/grade', {
     template: 'stats_cow_grade',
     yieldRegions: {
         'stats_category': {to: 'sidebar_left'},
-        'banner': {to: 'sidebar_right'}
+        // 'banner': {to: 'sidebar_right'}
     },
     waitOn: function() {
-        return [IRLibLoader.load('https://cdn.plot.ly/plotly-latest.min.js')];
+        return [IRLibLoader.load('/js/plotly-latest.min.js')];
     }
 }, {
     name: 'data_stats_cow_grade'
@@ -177,10 +177,10 @@ Router.route('/data/stats/chicken/pops', {
     template: 'stats_chicken_pops',
     yieldRegions: {
         'stats_category': {to: 'sidebar_left'},
-        'banner': {to: 'sidebar_right'}
+        // 'banner': {to: 'sidebar_right'}
     },
     waitOn: function() {
-        return [IRLibLoader.load('https://cdn.plot.ly/plotly-latest.min.js')];
+        return [IRLibLoader.load('/js/plotly-latest.min.js')];
     }
 }, {
     name: 'data_stats_chicken_pops'
@@ -194,10 +194,10 @@ Router.route('/data/stats/chicken/age', {
     template: 'stats_chicken_age',
     yieldRegions: {
         'stats_category': {to: 'sidebar_left'},
-        'banner': {to: 'sidebar_right'}
+        // 'banner': {to: 'sidebar_right'}
     },
     waitOn: function() {
-        return [IRLibLoader.load('https://cdn.plot.ly/plotly-latest.min.js')];
+        return [IRLibLoader.load('/js/plotly-latest.min.js')];
     }
 }, {
     name: 'data_stats_chicken_age'
@@ -233,7 +233,7 @@ Router.route('/news/:category/:page', function() {
             categoryName: this.params.category
         }
     });
-    this.render('banner', {to: 'sidebar_right'});
+    // this.render('banner', {to: 'sidebar_right'});
 }, {
     name: 'news'
 });
@@ -247,7 +247,7 @@ Router.route('/cardnews/:page', function() {
     this.render('card_news', {
         to: 'main'
     });
-    this.render('banner', {to: 'sidebar_right'});
+    // this.render('banner', {to: 'sidebar_right'});
 }, {
     name: 'cardnews'
 });
@@ -257,25 +257,25 @@ Router.route('/cardnews/:page', function() {
 
 Router.route('/corps/:page', function() {
     this.layout('layout_app');
-    this.render('', {to: 'sidebar_left'});
+    this.render('banner', {to: 'sidebar_left'});
     this.render('corps', {
         to: 'main'
     });
-    this.render('banner', {to: 'sidebar_right'});
+    // this.render('banner', {to: 'sidebar_right'});
 }, {
     name: 'corps'
 });
 
 Router.route('/corps_post/:postId', function() {
     this.layout('layout_app');
-    this.render('', {to: 'sidebar_left'});
+    this.render('banner', {to: 'sidebar_left'});
     this.render('corps_post', {
         to: 'main',
         data: {
             postId: this.params.postId
         }
     });
-    this.render('banner', {to: 'sidebar_right'});
+    // this.render('banner', {to: 'sidebar_right'});
     this.wait(Meteor.subscribe('corpsPost', this.params.postId));
 }, {
     name: 'corps_post'
@@ -293,7 +293,7 @@ Router.route('/focus/:category/:page', function() {
             categoryName: this.params.category
         }
     });
-    this.render('banner', {to: 'sidebar_right'});
+    // this.render('banner', {to: 'sidebar_right'});
 }, {
     name: 'focus'
 });
@@ -307,7 +307,7 @@ Router.route('/focus_post/:postId', function() {
             postId: this.params.postId
         }
     });
-    this.render('banner', {to: 'sidebar_right'});
+    // this.render('banner', {to: 'sidebar_right'});
     this.wait(Meteor.subscribe('focusPost', this.params.postId));
     this.wait(Meteor.subscribe('files'));
 }, {
@@ -326,7 +326,7 @@ Router.route('/favorites', function() {
             categoryName: this.params.category
         }
     });
-    this.render('banner', {to: 'sidebar_right'});
+    // this.render('banner', {to: 'sidebar_right'});
     this.wait(Meteor.subscribe('favoritesSummary'));
 }, {
     name: 'favorites'
@@ -341,7 +341,7 @@ Router.route('/favorites/:category', function() {
             categoryName: this.params.category
         }
     });
-    this.render('banner', {to: 'sidebar_right'});
+    // this.render('banner', {to: 'sidebar_right'});
     this.wait(Meteor.subscribe('favoritesList', this.params.category));
     this.wait(Meteor.subscribe('images'));
 }, {
@@ -353,14 +353,14 @@ Router.route('/favorites/:category', function() {
 
 Router.route('/infographic/:page', function() {
     this.layout('layout_app');
-    this.render('', {to: 'sidebar_left'});
+    this.render('banner', {to: 'sidebar_left'});
     this.render('infographic', {
         to: 'main',
         data: {
             categoryName: this.params.category
         }
     });
-    this.render('banner', {to: 'sidebar_right'});
+    // this.render('banner', {to: 'sidebar_right'});
     this.wait(Meteor.subscribe('images'));
 }, {
     name: 'infographic'
@@ -371,9 +371,9 @@ Router.route('/infographic/:page', function() {
 
 Router.route('/events', function() {
     this.layout('layout_app');
-    this.render('', {to: 'sidebar_left'});
+    this.render('banner', {to: 'sidebar_left'});
     this.render('events', {to: 'main'});
-    this.render('banner', {to: 'sidebar_right'});
+    // this.render('banner', {to: 'sidebar_right'});
     this.wait(Meteor.subscribe('events'));
 }, {
     name: 'events'
@@ -385,7 +385,7 @@ Router.route('/pigplan/intro', function() {
     this.layout('layout_app');
     this.render('pigplan_category', {to: 'sidebar_left'});
     this.render('pigplan_intro', {to: 'main'});
-    this.render('banner', {to: 'sidebar_right'});
+    // this.render('banner', {to: 'sidebar_right'});
 }, {
     name: 'pigplan_intro'
 });
@@ -396,7 +396,7 @@ Router.route('/pigplan/feature', function() {
     this.layout('layout_app');
     this.render('pigplan_category', {to: 'sidebar_left'});
     this.render('pigplan_feature', {to: 'main'});
-    this.render('banner', {to: 'sidebar_right'});
+    // this.render('banner', {to: 'sidebar_right'});
 }, {
     name: 'pigplan_feature'
 });
@@ -408,7 +408,7 @@ Router.route('/pigplan/case/:page', function() {
     this.layout('layout_app');
     this.render('pigplan_category', {to: 'sidebar_left'});
     this.render('case', {to: 'main'});
-    this.render('banner', {to: 'sidebar_right'});
+    // this.render('banner', {to: 'sidebar_right'});
 }, {
     name: 'pigplan_case'
 });
@@ -423,7 +423,7 @@ Router.route('/case_post/:postId', function() {
             postId: this.params.postId
         }
     });
-    this.render('banner', {to: 'sidebar_right'});
+    // this.render('banner', {to: 'sidebar_right'});
     this.wait(Meteor.subscribe('casePost', this.params.postId));
 }, {
     name: 'pigplan_case_post'
