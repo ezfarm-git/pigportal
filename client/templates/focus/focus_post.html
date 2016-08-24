@@ -1,36 +1,35 @@
 <template name="focus_post">
-    <div>
-        {{#with post}}
-        <article>
-            <header>
-                <h4>{{title}}</h4>
-                <p class="text-muted text-small post-date">{{prettyDate date}}&nbsp;&nbsp;
-                    <a href="/focus/{{category}}/1">{{category}}</a>
-                </p>
-            </header>
-            <div>
-                {{{content}}}
-            </div>
-            <div class="downloadButton">
-                {{#with FS.GetFile "Files" file}}
-                    <strong>{{this.name}}</strong>
-                    <a href="{{this.url download=true}}" class="btn btn-info btn-xs" target="_parent" style="margin-bottom:5px;">
+  <div>
+    {{#with post}}
+      <article>
+        <header>
+          <h4>{{title}}</h4>
+          <p class="text-muted text-small post-date">{{prettyDate date}}&nbsp;&nbsp;
+            <a href="/focus/{{category}}/1">{{category}}</a>
+          </p>
+        </header>
+        <div>
+          {{{content}}}
+        </div>
+        <div class="downloadButton">
+          {{#with FS.GetFile "Files" file}}
+            <strong>{{this.name}}</strong>
+            <a href="{{this.url download=true}}" class="btn btn-info btn-xs" target="_parent" style="margin-bottom:5px;">
                     첨부 파일</a>
-                {{/with}}
-            </div>
-            <div class="share-box">
-                <a href="#" target="_blank" class="nv-share">
-                    <img src="/share_buttons/naver/BAND_32.png" alt="">
-                </a>
-                <a href="#" target="_blank" class="kk-share">
-                    <img src="/share_buttons/kakao/pc/story_pc_32x32.png" alt="">
-                </a>
-                <a href="#" target="_blank" class="btn btn-social-icon btn-facebook fb-share">
-                    <span class="fa fa-facebook"></span>
-                </a>
-            </div>
-            {{> facebookShare }}
-        </article>
-        {{/with}}
-    </div>
+          {{/with}}
+        </div>
+        <div class="share-box">
+          <a href="#" target="_blank" class="nv-share">
+            <img src="/share_buttons/naver/BAND_32.png" alt="">
+          </a>
+          <a href="#" target="_blank" class="kk-share">
+            <img src="/share_buttons/kakao/pc/story_pc_32x32.png" alt="">
+          </a>
+          <a href="#" target="_blank" class="btn btn-social-icon btn-facebook fb-share">
+            <span class="fa fa-facebook"></span>
+          </a>
+        </div>
+      </article>
+    {{/with}}
+  </div>
 </template>

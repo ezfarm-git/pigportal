@@ -172,7 +172,7 @@ Template.stats_chicken_age.onRendered(function () {
     var data2 = [trace5, trace6, trace7];
 
     var layout = {
-      title: txt + ' 닭 사육 동향',
+      title: txt + ' 닭 월령별 사육 동향',
       titlefont: {
         family: 'Jeju Gothic, serif',
         size: 22,
@@ -196,7 +196,7 @@ Template.stats_chicken_age.onRendered(function () {
     Plotly.newPlot(gd, data, layout);
 
     var layout2 = {
-      title: txt + " 닭 사육 비율",
+      title: txt + " 닭 월령별 사육 비율",
       titlefont: {
         family: 'Jeju Gothic, serif',
         size: 22,

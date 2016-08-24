@@ -1,7 +1,3 @@
-Template.stats_pig_pops.onCreated(function () {
-
-});
-
 Template.stats_pig_pops.onRendered(function () {
 
   Meteor.call('pig_farm_scale_by_city.get', function (error, res) {

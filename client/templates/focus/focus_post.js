@@ -1,9 +1,3 @@
-Template.focus_post.onRendered(function() {
-    try {
-        FB.XFBML.parse();
-    } catch (e) {}
-});
-
 Template.focus_post.helpers({
     post: function() {
         var postId = this.postId;

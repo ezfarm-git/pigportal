@@ -1,7 +1,3 @@
-Template.stats_cow_pops.onCreated(function () {
-
-});
-
 Template.stats_cow_pops.onRendered(function () {
 
   Meteor.call('hanwoo_farm_scale_by_city.get', function (error, res) {

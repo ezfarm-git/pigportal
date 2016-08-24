@@ -1,8 +1,4 @@
-﻿Template.stats_pig_age.onCreated(function () {
-
-});
-
-Template.stats_pig_age.onRendered(function () {
+﻿Template.stats_pig_age.onRendered(function () {
 
   Meteor.call('pig_age_by_city.get', function (error, res) {
     if (error) {
@@ -334,7 +330,7 @@ Template.stats_pig_age.onRendered(function () {
     var data2 = [trace12, trace13, trace14, trace16, trace17, trace19, trace20];
 
     var layout = {
-      title: txt + ' 월령별 사육 동향',
+      title: txt + ' 돼지 월령별 사육 동향',
       titlefont: {
         family: 'Jeju Gothic, serif',
         size: 22,
@@ -359,7 +355,7 @@ Template.stats_pig_age.onRendered(function () {
     Plotly.newPlot(gd, data, layout);
 
     var layout2 = {
-      title: txt + ' 월령별 사육 비율',
+      title: txt + ' 돼지 월령별 사육 비율',
       titlefont: {
         family: 'Jeju Gothic, serif',
         size: 22,

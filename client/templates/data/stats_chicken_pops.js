@@ -1,7 +1,3 @@
-Template.stats_chicken_pops.onCreated(function () {
-
-});
-
 Template.stats_chicken_pops.onRendered(function () {
 
   Meteor.call('chicken_farm_scale_by_city.get', function (error, res) {

@@ -1,8 +1,4 @@
-﻿Template.stats_cow_age.onCreated(function () {
-
-});
-
-Template.stats_cow_age.onRendered(function () {
+﻿Template.stats_cow_age.onRendered(function () {
 
   Meteor.call('hanwoo_age_by_city.get', function (error, res) {
     if (error) {
@@ -344,16 +340,15 @@ Template.stats_cow_age.onRendered(function () {
 
   $('input:radio[name="name"]').change(function () {
     if (this.value === "korean") {
-      cow = " 한우 ";
+      cow = "한우";
       series = Session.get('hanwoo_age');
       drawPlot(setCity);
-
     } else if (this.value === "beef") {
-      cow = " 육우 ";
+      cow = "육우";
       series = Session.get('yukwoo_age');
       drawPlot(setCity);
     } else {
-      cow = " 젖소 ";
+      cow = "젖소";
       series = Session.get('dariy_age');
       drawPlot(setCity);
     }
