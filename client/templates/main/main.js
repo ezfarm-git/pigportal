@@ -1,5 +1,3 @@
-let postsNumber = 4
-
 Template.main.onRendered(function() {
     $('.fancybox').fancybox({
         helpers: {
@@ -9,26 +7,20 @@ Template.main.onRendered(function() {
 })
 
 Template.main.helpers({
-    mainNews_A: function() {
-        return News.find({category: "알림"}, {sort: {date: -1}, limit: postsNumber});
+    latestFocus: function() {
+        return Focus.find({}, {sort: {date: -1}, limit: 1});
     },
-    mainNews_B: function() {
-        return News.find({category: "산업"}, {sort: {date: -1}, limit: postsNumber});
+    mainFocus: function() {
+        return Focus.find({}, {skip: 1}, {sort: {date: -1}, limit: 6});
     },
-    mainNews_C: function() {
-        return News.find({category: "현장"}, {sort: {date: -1}, limit: postsNumber});
-    },
-    mainFocus_A: function() {
-        return Focus.find({category: "글로벌"}, {sort: {date: -1}, limit: postsNumber});
-    },
-    mainFocus_B: function() {
-        return Focus.find({category: "리뷰"}, {sort: {date: -1}, limit: postsNumber});
-    },
-    mainFocus_C: function() {
-        return Focus.find({category: "자료"}, {sort: {date: -1}, limit: postsNumber});
+    mainNews: function() {
+        return News.find({}, {sort: {date: -1}, limit: 6});
     },
     mainCorps: function() {
-        return Corps.find({}, {sort: {date: -1}, limit: postsNumber});
+        return Corps.find({}, {sort: {date: -1}, limit: 2});
+    },
+    mainCase: function() {
+        return Case.find({}, {sort: {date: -1}, limit: 1});
     },
     mainCardNews: function() {
         return CardNews.find({}, {sort: {date: -1}, limit: 1}).fetch()[0];

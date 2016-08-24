@@ -1,107 +1,56 @@
 <template name="header">
 
-  <div style="max-width:1200px; margin-left:auto; margin-right:auto;">
+  <div style="max-width:1180px; margin-left:auto; margin-right:auto;">
 
-    <div>
-      <img src="/images_main/logo1.png" alt="">
-    </div>
+    <a href="/">
+      <img src="/images_main/logo2.png" alt="" class="main-logo">
+    </a>
 
-
-    <nav>
-      <div class="nav-wrapper">
-        <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="/" target="_top" id="main-menu">Home</a></li>
-          <li><a class="dropdown-button" href="#!" data-activates="data-menu" data-beloworigin="true" id="main-menu">실시간 정보&emsp;<span class="caret"></span></a></li>
-          <li><a class="dropdown-button" href="#!" data-activates="news-menu" id="main-menu">양돈뉴스&emsp;<span class="caret"></span></a></li>
-          <li><a class="dropdown-button" href="#!" data-activates="info-menu" id="main-menu">양돈정보&emsp;<span class="caret"></span></a></li>
-          <li><a href="/pigplan/intro" target="_top" id="main-menu">피그플랜 소개</a></li>
-        </ul>
-        <ul class="side-nav" id="mobile-menu">
-          <li><a href="/" target="_top" id="main-menu">Home</a></li>
-          <li><a class="dropdown-button" href="#!" data-activates="data-menu" id="main-menu">실시간 정보&emsp;<span class="caret"></span></a></li>
-          <li><a class="dropdown-button" href="#!" data-activates="news-menu" id="main-menu">양돈뉴스&emsp;<span class="caret"></span></a></li>
-          <li><a class="dropdown-button" href="#!" data-activates="info-menu" id="main-menu">양돈정보&emsp;<span class="caret"></span></a></li>
-          <li><a href="/pigplan/intro" target="_top" id="main-menu">피그플랜 소개</a></li>
-        </ul>
+    <nav role="navigation" class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse" style="font-family: 'Nanum Gothic', serif; font-weight:bold;">
+          <ul class="nav navbar-nav">
+            <li><a href="/" target="_top" id="main-menu">Home</a></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="main-menu">실 시 간&emsp;정 보&emsp;<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/data/product" target="_top">&emsp;<i class="fa fa-bar-chart">&emsp;주간생산지표</i></a></li>
+                <li><a href="/data/market" target="_top">&emsp;<i class="fa fa-money">&emsp;실시간 시황</i></a></li>
+                <li><a href="/data/stats/pig/pops" target="_top">&emsp;<i class="fa fa-area-chart">&emsp;축산 통계</i></a></li>
+                <li><a href="/data/disease" target="_top">&emsp;<i class="fa fa-medkit">&emsp;질병 통계</i></a></li>
+                <li><a href="/data/bigdata" target="_top">&emsp;<i class="fa fa-line-chart">&emsp;빅데이터</i></a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="main-menu">양 돈 뉴 스&emsp;<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/news/total/1" target="_top">&emsp;<i class="fa fa-newspaper-o">&emsp;뉴스</i></a></li>
+                <li><a href="/cardnews/1" target="_top">&emsp;<i class="fa fa-camera-retro">&emsp;카드 뉴스</i></a></li>
+                <li><a href="/events" target="_top">&emsp;<i class="fa fa-calendar-check-o">&emsp;양돈 일정</i></a></li>
+                <li><a href="/corps/1" target="_top">&emsp;<i class="fa fa-building-o">&emsp;기업 소식</i></a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="main-menu">양 돈 정 보&emsp;<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/focus/total/1" target="_top">&emsp;<i class="fa fa-eye">&emsp;양돈 포커스</i></a></li>
+                <li><a href="/favorites" target="_top">&emsp;<i class="fa fa-share">&emsp;관련 사이트</i></a></li>
+                <li><a href="/infographic/1" target="_top">&emsp;<i class="fa fa-picture-o">&emsp;인포그래픽</i></a></li>
+              </ul>
+            </li>
+            <li><a href="/pigplan/intro" target="_top" id="main-menu">피 그 플 랜&emsp;소 개</a></li>
+          </ul>
+        </div>
       </div>
     </nav>
-
-    <ul id="data-menu" class="dropdown-content collection">
-      <li><a href="/data/product" target="_top"><i class="fa fa-bar-chart">&emsp;주간생산지표</i></a></li>
-      <li><a href="/data/market" target="_top"><i class="fa fa-money">&emsp;실시간 시황</i></a></li>
-      <li><a href="/data/stats/pig/pops" target="_top"><i class="fa fa-area-chart">&emsp;축산 통계</i></a></li>
-      <li><a href="/data/disease" target="_top"><i class="fa fa-medkit">&emsp;질병 통계</i></a></li>
-      <li><a href="/data/bigdata" target="_top"><i class="fa fa-line-chart">&emsp;빅데이터</i></a></li>
-    </ul>
-    <ul id="news-menu" class="dropdown-content collection">
-      <li><a href="/news/total/1" target="_top"><i class="fa fa-newspaper-o">&emsp;뉴스</i></a></li>
-      <li><a href="/cardnews/1" target="_top"><i class="fa fa-camera-retro">&emsp;한 컷 뉴스</i></a></li>
-      <li><a href="/events" target="_top"><i class="fa fa-calendar-check-o">&emsp;양돈 일정</i></a></li>
-      <li><a href="/corps/1" target="_top"><i class="fa fa-building-o">&emsp;기업 소식</i></a></li>
-    </ul>
-    <ul id="info-menu" class="dropdown-content collection">
-      <li><a href="/focus/total/1" target="_top"><i class="fa fa-eye">&emsp;양돈 포커스</i></a></li>
-      <li><a href="/favorites" target="_top"><i class="fa fa-share">&emsp;관련 사이트</i></a></li>
-      <li><a href="/infographic/1" target="_top"><i class="fa fa-picture-o">&emsp;인포그래픽</i></a></li>
-    </ul>
-
   </div>
-    <!-- <nav role="navigation" class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div>
-      <div class="collapse navbar-collapse" id="navbar-collapse" style="font-family: 'Nanum Gothic', serif; font-weight:bold;">
-        <ul class="nav navbar-nav navbar-left">
-          <li><a href="/" target="_top" id="main-menu">Home</a></li>
-          <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="main-menu">실시간 정보&emsp;<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="/data/product" target="_top"><i class="fa fa-bar-chart">&emsp;주간생산지표</i></a></li>
-              <li><a href="/data/market" target="_top"><i class="fa fa-money">&emsp;실시간 시황</i></a></li>
-              <li><a href="/data/stats/pig/pops" target="_top"><i class="fa fa-area-chart">&emsp;축산 통계</i></a></li>
-              <li><a href="/data/disease" target="_top"><i class="fa fa-medkit">&emsp;질병 통계</i></a></li>
-              <li><a href="/data/bigdata" target="_top"><i class="fa fa-line-chart">&emsp;빅데이터</i></a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="main-menu">양돈뉴스&emsp;<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="/news/total/1" target="_top"><i class="fa fa-newspaper-o">&emsp;뉴스</i></a></li>
-              <li><a href="/cardnews/1" target="_top"><i class="fa fa-camera-retro">&emsp;한 컷 뉴스</i></a></li>
-              <li><a href="/events" target="_top"><i class="fa fa-calendar-check-o">&emsp;양돈 일정</i></a></li>
-              <li><a href="/corps/1" target="_top"><i class="fa fa-building-o">&emsp;기업 소식</i></a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="main-menu">양돈정보&emsp;<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="/focus/total/1" target="_top"><i class="fa fa-eye">&emsp;양돈 포커스</i></a></li>
-              <li><a href="/favorites" target="_top"><i class="fa fa-share">&emsp;관련 사이트</i></a></li>
-              <li><a href="/infographic/1" target="_top"><i class="fa fa-picture-o">&emsp;인포그래픽</i></a></li>
-            </ul>
-          </li>
-          <li><a href="/pigplan/intro" target="_top" id="main-menu">피그플랜 소개</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav> -->
-
-  <!-- Dropdown Trigger -->
-  <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Drop Me!</a>
-
-  <!-- Dropdown Structure -->
-  <ul id='dropdown1' class='dropdown-content'>
-    <li><a href="#!">one</a></li>
-    <li><a href="#!">two</a></li>
-    <li class="divider"></li>
-    <li><a href="#!">three</a></li>
-  </ul>
 
 </template>

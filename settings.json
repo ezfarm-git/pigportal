@@ -1,10 +1,10 @@
 {
-    "public": {
-        "persistent_session": {
-            "default_method": "persistent"
-        },
-        "ga": {
-            "id": "UA-79916323-2"
-        }
+  "public": {
+    "persistent_session": {
+      "default_method": "persistent"
+    },
+    "ga": {
+      "id": "UA-79916323-2"
     }
+  }
 }
