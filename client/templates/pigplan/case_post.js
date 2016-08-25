@@ -6,7 +6,7 @@ Template.case_post.onRendered(function () {
     if (error) {
       console.log(error);
     } else {
-      Session.setPersistent('case', result);
+      Session.set('case', result);
     }
   });
 
@@ -16,11 +16,14 @@ Template.case_post.onRendered(function () {
     if (error) {
       console.log(error);
     } else {
-      Session.setPersistent('image', result);
+      Session.set('image', result);
     }
   });
 
   var imageFile = Session.get('image').original.name;
+  var imageURL = window.location.origin + "/cfs/files/Images/" + imageId + "/" + imageFile;
+  Session.set('imageURL', imageURL);
+  console.log(Session.get('imageURL'));
 
   DocHead.addLink(
     {rel: "canonical", href: window.location.href}
@@ -50,7 +53,7 @@ Template.case_post.onRendered(function () {
   });
   DocHead.addMeta({
     name: "og:image",
-    content: "http://210.92.91.212:3000/cfs/files/Images/" + imageId + "/" + imageFile
+    content: window.location.origin + "/cfs/files/Images/" + imageId + "/" + imageFile
   });
 
   // $("meta[property='og:type']").attr('content', Session.get('case').title);
@@ -63,6 +66,13 @@ Template.case_post.helpers({
     return Case.find({
       _id: postId
     }).fetch()[0];
+  },
+  shareData: function() {
+    return {
+      title: Session.get('case').title,
+      description: Session.get('case').summary,
+      image: Session.get('imageURL')
+    }
   }
 });
 
