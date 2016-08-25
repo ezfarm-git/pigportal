@@ -68,12 +68,12 @@ Template.case_post.helpers({
 
 Template.case_post.events({
   'click .nv-share': function () {
-    window.open('http://band.us/plugin/share',
+    window.open('http://band.us/plugin/share?body=' + encodeURIComponent(Session.get('case').summary) + '&route=' + encodeURIComponent(window.location.href),
       'bandsharedialog', 'menubar=no,toolbar=no,resizable=no,scrollbars=yes,height=540,width=410');
     return false;
   },
   'click .kk-share': function () {
-    window.open('https://story.kakao.com/s/share?url=' + encodeURIComponent(document.URL),
+    window.open('https://story.kakao.com/s/share?url=' + encodeURIComponent(window.location.href),
       'kakaostorysharedialog', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=540,width=540');
     return false;
   },
