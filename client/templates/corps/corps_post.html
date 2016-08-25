@@ -1,28 +1,17 @@
 <template name="corps_post">
-    <div>
-        {{#with post}}
-        <article>
-            <header>
-                <h4>{{title}}</h4>
-                <p class="text-muted text-small post-date">{{prettyDate date}}&nbsp;&nbsp;
-                    <a href="/corps/1">기업소식</a>
-                </p>
-            </header>
-            <div id="content">
-                {{{content}}}
-            </div>
-            <div class="share-box">
-                <a href="#" target="_blank" class="nv-share">
-                    <img src="/share_buttons/naver/BAND_32.png" alt="">
-                </a>
-                <a href="#" target="_blank" class="kk-share">
-                    <img src="/share_buttons/kakao/pc/story_pc_32x32.png" alt="">
-                </a>
-                <a href="#" target="_blank" class="btn btn-social-icon btn-facebook fb-share">
-                    <span class="fa fa-facebook"></span>
-                </a>
-            </div>
-        </article>
-        {{/with}}
-    </div>
+  <div>
+    {{#with post}}
+      <article>
+        <header>
+          <h4>{{title}}</h4>
+          <p class="text-muted text-small post-date">{{prettyDate date}}&nbsp;&nbsp;
+            <a href="/corps/1">기업소식</a>
+          </p>
+        </header>
+        <div id="content">
+          {{{content}}}
+        </div>
+      </article>
+    {{/with}}
+  </div>
 </template>

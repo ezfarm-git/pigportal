@@ -7,14 +7,6 @@ Router.configure({
 // Test
 Router.route('/test', function() {
     this.render('test');
-    DocHead.addMeta({property: 'og:image', content: 'image_URL'});
-    DocHead.addMeta({property: 'og:image:width', content: '2083'});
-    DocHead.addMeta({property: 'og:image:height', content: '1091'});
-    DocHead.addMeta({property: 'og:site_name', content: 'X'});
-    DocHead.addMeta({property: 'og:title', content: X});
-    DocHead.addMeta({property: 'og:type', content: 'website'});
-    DocHead.addMeta({property: 'og:description', content: 'X'});
-    DocHead.addMeta({property: 'og:keywords', content: 'X'});
 });
 
 Router.route('/test2', function () {
