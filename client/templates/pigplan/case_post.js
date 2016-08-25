@@ -30,14 +30,6 @@ Template.case_post.onRendered(function () {
     content: Session.get('case').summary
   });
   DocHead.addMeta({
-    name: "keywords",
-    content: ['양돈', '축산', '돼지', 'pig', 'swine']
-  });
-  DocHead.addMeta({
-    name: "og:site_name",
-    content: "Pig Portal"
-  });
-  DocHead.addMeta({
     name: "og:type",
     content: "article"
   });
@@ -58,7 +50,7 @@ Template.case_post.onRendered(function () {
     content: "http://210.92.91.212:3000/cfs/files/Images/" + imageId + "/" + imageFile
   });
 
-  $("meta[property='og:type']").attr('content', Session.get('case').title);
+  // $("meta[property='og:type']").attr('content', Session.get('case').title);
 
 });
 
