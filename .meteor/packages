@@ -86,13 +86,10 @@ aslagle:reactive-table
 ephemer:reactive-datatables
 
 
-# Tabs
-# templates:tabs
-
-
 # XML Handling
 peerlibrary:xml2js
 
 
 # SNS Share
 kadira:dochead
+# spiderable

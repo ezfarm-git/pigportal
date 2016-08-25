@@ -1,38 +1,3 @@
 <template name="test2">
-    <div class="container">
-        <div class="row">
-            <div class='col-sm-6'>
-                <input type="date" id="datepicker1">
-            </div>
-            <div class='col-sm-6'>
-                <input type="date" id="datepicker2">
-            </div>
-        </div>
-
-        <form role="form">
-            <label class="radio-inline">
-                <input type="radio" name="optradio" value="25001" checked>암
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="optradio" value="25002">수
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="optradio" value="25003">거세
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="optradio" value="25004">기타
-            </label>
-        </form>
-    </div>
-
-
-    <hr> {{#with test.response.body.[0].items.[0]}}
-    <ul>
-        {{#each item}}
-        <li>{{CCityAmt}}, {{CCityCnt}}</li>
-        {{/each}}
-    </ul>
-    {{/with}}
-    <hr>
-
+  <h1>test 2</h1>
 </template>
