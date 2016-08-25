@@ -1,5 +1,8 @@
 Template.case_post.onRendered(function () {
 
+  // document.createElement('meta').property = 'test';
+  $('head').append('<meta name="apple-itunes-app" content="app-id=xxxxx">');
+
   var postId = this.data.postId;
 
   Meteor.call('get.Case', postId, function (error, result) {
@@ -60,6 +63,17 @@ Template.case_post.helpers({
     return Case.find({
       _id: postId
     }).fetch()[0];
+  },
+  shareData: function() {
+    return {
+      title: 'test 1',
+      author: 'author 1',
+      description: 'description 1',
+      summary: 'summary 1',
+      url: 'url 1',
+      thumbnail: 'http://210.92.91.212:3000/images_main/logo2.png',
+      image: 'http://210.92.91.212:3000/images_main/mainBackground7.jpg'
+    }
   }
 });
 
