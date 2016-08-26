@@ -1,9 +1,20 @@
 Template.main.onRendered(function() {
-    $('.fancybox').fancybox({
-        helpers: {
-            title: {type: 'inside'}
-        }
+  $('.fancybox').fancybox({
+      helpers: {
+          title: {type: 'inside'}
+      }
+  });
+  if ( ! Modernizr.objectfit ) {
+    $('.post__image-container').each(function () {
+      var $container = $(this),
+          imgUrl = $container.find('img').prop('src');
+      if (imgUrl) {
+        $container
+          .css('backgroundImage', 'url(' + imgUrl + ')')
+          .addClass('compat-object-fit');
+      }
     });
+  }
 })
 
 Template.main.helpers({
