@@ -1,4 +1,6 @@
 #!/bin/bash
+forever stop 1
+rm -rf ../pigportal_build
 npm install --production
 meteor build ../pigportal_build --architecture os.linux.x86_64
 cd ../pigportal_build

@@ -4,17 +4,6 @@ Template.main.onRendered(function() {
           title: {type: 'inside'}
       }
   });
-  if ( ! Modernizr.objectfit ) {
-    $('.post__image-container').each(function () {
-      var $container = $(this),
-          imgUrl = $container.find('img').prop('src');
-      if (imgUrl) {
-        $container
-          .css('backgroundImage', 'url(' + imgUrl + ')')
-          .addClass('compat-object-fit');
-      }
-    });
-  }
 })
 
 Template.main.helpers({

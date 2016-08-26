@@ -11,7 +11,7 @@
           {{#each latestFocus}}
             <a href="/focus_post/{{_id}}" class="underline-none">
               <div class="card">
-                <div class="post__image-container">
+                <div class="">
                   {{#with FS.GetFile "Images" image}}
                     <img src="{{this.url store='images'}}" alt="" class="card-img-top hover-opacity" style="width:100%; max-height:340px; object-fit: cover;">
                   {{/with}}
@@ -49,7 +49,7 @@
       {{#each mainFocus}}
         <a href="/focus_post/{{_id}}" class="underline-none">
           <div class="main-post-container-outer">
-            <div class="main-post-image-container post__image-container">
+            <div class="main-post-image-container">
               {{#with FS.GetFile "Images" image}}
                 <img src="{{this.url store='images'}}" alt="" class="main-post-image hover-opacity">
               {{/with}}
@@ -71,7 +71,7 @@
       {{#each mainCorps}}
         <a href="/corps_post/{{_id}}" class="underline-none">
           <div class="main-post-container-outer">
-            <div class="main-post-image-container post__image-container">
+            <div class="main-post-image-container">
               {{#with FS.GetFile "Images" image}}
                 <img src="{{this.url store='images'}}" alt="" class="main-post-image hover-opacity">
               {{/with}}
@@ -93,7 +93,7 @@
       {{#each mainCase}}
         <a href="/case_post/{{_id}}" class="underline-none">
           <div class="main-post-container-outer">
-            <div class="main-post-image-container post__image-container">
+            <div class="main-post-image-container">
               {{#with FS.GetFile "Images" image}}
                 <img src="{{this.url store='images'}}" alt="" class="main-post-image hover-opacity">
               {{/with}}
@@ -123,7 +123,7 @@
         {{#with mainCardNews}}
           {{#each images}}
             {{#with FS.GetFile "Images" this}}
-              <div class="post__image-container">
+              <div class="">
                 <a href="{{this.url store='images'}}" rel="gallery" title="{{../../title}}, {{../../summary}}" class="fancybox card-img-top">
                   <img src="{{this.url store='images'}}" alt="" width="100%" height="{{galleryHeight ../../images 240}}" style="object-fit: cover;">
                 </a>
@@ -143,7 +143,7 @@
       <div class="card">
         {{#with mainInfographic}}
           {{#with FS.GetFile "Images" image}}
-            <div class="post__image-container">
+            <div class="">
               <a href="{{this.url store='images'}}" title="{{../title}}, {{../summary}}" class="fancybox card-img-top">
                 <img src="{{this.url store='images'}}" alt="" width="100%" height="240px" style="object-fit: cover;">
               </a>
