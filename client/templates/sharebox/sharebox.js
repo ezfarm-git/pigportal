@@ -2,8 +2,22 @@ Template.sharebox.onRendered(function () {
 
   Kakao.Story.createShareButton({
     container: '#kakaostory-share-button',
-    url: document.URL,
-    text: $('#summary').text()
+    text: $('#summary').text(),
+    url: document.URL
+  });
+
+  Kakao.Link.createTalkLinkButton({
+    container: '#kakao-link-btn',
+    label: $('h4').text(),
+    image: {
+      src: 'http://res.cloudinary.com/dvydtgalv/image/upload/v1472197539/mainBackground5_qcc7t0.jpg',
+      width: '210',
+      height: '140'
+    },
+    webButton: {
+      text: $('#summary').text(),
+      url: document.URL
+    }
   });
 
 });
