@@ -146,9 +146,16 @@
         {{#with mainCardNews}}
 
           <div class="post_img">
+            {{#with images.[0]}}
+              {{#with FS.GetFile "Images" this}}
+                <a href="{{this.url store='images'}}" class="fancyboxLauncher card-img-top">
+                  <img src="{{this.url store='images'}}" alt="" width="100%" height=240 style="object-fit: cover;">
+                </a>
+              {{/with}}
+            {{/with}}
             {{#each images}}
               {{#with FS.GetFile "Images" this}}
-                <a href="{{this.url store='images'}}" rel="gallery" title="{{../../title}}, {{../../summary}}" class="fancybox card-img-top">
+                <a href="{{this.url store='images'}}" rel="gallery" title="{{../../title}}, {{../../summary}}" class="fancybox card-img-top" style="display:none;">
                   <img src="{{this.url store='images'}}" alt="" width="100%" height="{{galleryHeight ../../images 240}}" style="object-fit: cover;">
                 </a>
               {{/with}}
@@ -177,7 +184,7 @@
           <div class="post_img">
             {{#with FS.GetFile "Images" image}}
               <a href="{{this.url store='images'}}" title="{{../title}}, {{../summary}}" class="fancybox card-img-top">
-                <img src="{{this.url store='images'}}" alt="" width="100%" height="240px" style="object-fit: cover;">
+                <img src="{{this.url store='images'}}" alt="" width="100%" height=240 style="object-fit: cover;">
               </a>
             {{/with}}
             <h4 class="card-title">{{truncate title 40}}</h4>
