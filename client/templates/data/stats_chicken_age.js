@@ -1,7 +1,3 @@
-Template.stats_chicken_age.onCreated(function () {
-
-});
-
 Template.stats_chicken_age.onRendered(function () {
 
   Meteor.call('chicken_age_by_city.get', function (error, res) {

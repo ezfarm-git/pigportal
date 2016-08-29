@@ -25,8 +25,8 @@ Template.stats_cow_grade.onRendered(function () {
   startPrd.setMonth(today.getMonth() - 2);
   endPrd.setMonth(today.getMonth() - 2);
 
-  document.getElementById("datepicker1").defaultValue = moment(new Date(startPrd)).format('YYYY-MM');
-  document.getElementById("datepicker2").defaultValue = moment(new Date(endPrd)).format('YYYY-MM');
+  document.getElementById("datepicker1").value = moment(new Date(startPrd)).format('YYYY-MM');
+  document.getElementById("datepicker2").value = moment(new Date(endPrd)).format('YYYY-MM');
 
   // 경락가격 , 두수
   function drawPlot(cow) {

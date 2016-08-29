@@ -1,5 +1,4 @@
-﻿
-Template.product.onCreated(function() {
+﻿Template.product.onRendered(function() {
 
     var today = new Date();
     var currentYear = today.getFullYear();
@@ -11,7 +10,7 @@ Template.product.onCreated(function() {
         if (error) {
             console.log(error);
         } else {
-            Session.setPersistent('twoyears', JSON.parse(result.content));
+            Session.setPersistent('twoyears', result);
         }
     });
 
@@ -19,13 +18,11 @@ Template.product.onCreated(function() {
         if (error) {
             console.log(error);
         } else {
-            Session.setPersistent('currentweek', JSON.parse(result.content)[0]['WEEK']);
+            Session.setPersistent('currentweek', result);
         }
     });
 
-});
 
-Template.product.onRendered(function() {
     var currentyear = Session.get('currentYear');
     var pastyear = Session.get('pastYear');
     var twoyears = Session.get('twoyears');
@@ -97,7 +94,7 @@ Template.product.onRendered(function() {
         mode: 'lines+markers',
         marker: {
             size: 8,
-            opacity: 0.8
+            opacity: 0.5
         },
         name: pastyear + "년 교배복수"
     };

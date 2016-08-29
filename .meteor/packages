@@ -33,7 +33,6 @@ u2622:persistent-session
 # Router
 iron:router
 iron:layout
-manuelschoebel:wait-on-lib
 
 
 # Auth
@@ -62,16 +61,11 @@ aldeed:autoform-bs-datepicker
 matb33:collection-hooks
 dburles:collection-helpers
 
-chrismbeckett:toastr
-msavin:mongol
-sacha:spin
-
 
 # Design
 # materialize:materialize
 twbs:bootstrap
 fortawesome:fontawesome
-tanis:bootstrap-social
 rajit:bootstrap3-datepicker
 tsega:bootstrap3-datetimepicker
 mpowaga:autoform-summernote
