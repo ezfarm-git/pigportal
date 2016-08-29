@@ -10,6 +10,8 @@ Template.card_news.onCreated(function() {
 
 Template.card_news.onRendered(function() {
     $('.fancybox').fancybox({
+        closeBtn: false,
+        maxHeight: '600',
         helpers: {
             title: {type: 'inside'}
         }

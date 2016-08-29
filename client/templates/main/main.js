@@ -1,5 +1,7 @@
 Template.main.onRendered(function() {
   $('.fancybox').fancybox({
+      closeBtn: false,
+      maxHeight: '600',
       helpers: {
           title: {type: 'inside'}
       }
