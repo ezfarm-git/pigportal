@@ -1,20 +1,20 @@
 <template name="favorites_category">
-    <div class="panel panel-default" id="categoryPanel">
-        <div class="panel-heading" id="categoryPanelHeading">&nbsp;&nbsp;&nbsp;카테고리</div>
-        <div class="panel-body" id="categoryPanelBody">
-            <ul class="nav nav-pills nav-stacked" id="category_ul">
-                <li class="category_li"><a href="/favorites" target="_top">전체</a></li>
-                <li class="category_li"><a href="/favorites/정부기관" target="_top"><i class="fa fa-angle-double-right" aria-hidden="true">&nbsp;&nbsp;정부기관</i></a></li>
-                <li class="category_li"><a href="/favorites/대학" target="_top"><i class="fa fa-angle-double-right" aria-hidden="true">&nbsp;&nbsp;대학</i></a></li>
-                <li class="category_li"><a href="/favorites/협회" target="_top"><i class="fa fa-angle-double-right" aria-hidden="true">&nbsp;&nbsp;협회</i></a></li>
-                <li class="category_li"><a href="/favorites/단체" target="_top"><i class="fa fa-angle-double-right" aria-hidden="true">&nbsp;&nbsp;단체</i></a></li>
-                <li class="category_li"><a href="/favorites/학회" target="_top"><i class="fa fa-angle-double-right" aria-hidden="true">&nbsp;&nbsp;학회</i></a></li>
-                <li class="category_li"><a href="/favorites/언론" target="_top"><i class="fa fa-angle-double-right" aria-hidden="true">&nbsp;&nbsp;언론</i></a></li>
-                <li class="category_li"><a href="/favorites/기업" target="_top"><i class="fa fa-angle-double-right" aria-hidden="true">&nbsp;&nbsp;기업</i></a></li>
-                <li class="category_li"><a href="/favorites/해외" target="_top"><i class="fa fa-angle-double-right" aria-hidden="true">&nbsp;&nbsp;해외</i></a></li>
-                <li class="category_li"><a href="/favorites/기타" target="_top"><i class="fa fa-angle-double-right" aria-hidden="true">&nbsp;&nbsp;기타</i></a></li>
-            </ul>
-        </div>
+  <div class="panel panel-default" id="categoryPanel">
+    <div class="panel-heading" id="categoryPanelHeading">&nbsp;&nbsp;&nbsp;카테고리</div>
+    <div class="panel-body" id="categoryPanelBody">
+      <ul class="nav nav-pills nav-stacked" id="category_ul">
+        <li class="category_li all"><a href="/favorites" target="_top">전체</a></li>
+        <li class="category_li"><a href="/favorites/정부기관" target="_top">-&nbsp;&nbsp;정부기관</a></li>
+        <li class="category_li"><a href="/favorites/대학" target="_top">-&nbsp;&nbsp;대학</a></li>
+        <li class="category_li"><a href="/favorites/협회" target="_top">-&nbsp;&nbsp;협회</a></li>
+        <li class="category_li"><a href="/favorites/단체" target="_top">-&nbsp;&nbsp;단체</a></li>
+        <li class="category_li"><a href="/favorites/학회" target="_top">-&nbsp;&nbsp;학회</a></li>
+        <li class="category_li"><a href="/favorites/언론" target="_top">-&nbsp;&nbsp;언론</a></li>
+        <li class="category_li"><a href="/favorites/기업" target="_top">-&nbsp;&nbsp;기업</a></li>
+        <li class="category_li"><a href="/favorites/해외" target="_top">-&nbsp;&nbsp;해외</a></li>
+        <li class="category_li"><a href="/favorites/기타" target="_top" class="end">-&nbsp;&nbsp;기타</a></li>
+      </ul>
     </div>
-    {{>banner}}
+  </div>
+  {{>banner}}
 </template>

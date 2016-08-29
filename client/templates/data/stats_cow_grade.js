@@ -409,7 +409,7 @@ Template.stats_cow_grade.onRendered(function () {
             xanchor: 'right',
             x: 0.98,
             xref: 'paper',
-            text: '(단위: 마리)',
+            text: '(단위: 원 / Kg)',
             showarrow: false,
             font: {
               size: 15
@@ -469,20 +469,20 @@ Template.stats_cow_grade.onRendered(function () {
       drawPlot(setCow);
       drawPlot2(setCow2);
     } else if (this.value === "korean") {
-      txt = " 한우 ";
+      txt = "한우 ";
       setCow = "13102112719A_002";
       setCow2 = "13102112720A_002";
       drawPlot(setCow);
       drawPlot2(setCow2);
 
     } else if (this.value === "beef") {
-      txt = " 육우 ";
+      txt = "육우 ";
       setCow = "13102112719A_003";
       setCow2 = "13102112720A_003";
       drawPlot(setCow);
       drawPlot2(setCow2);
     } else if (this.value === "dairy") {
-      txt = " 젖소 ";
+      txt = "젖소 ";
       setCow = "13102112719A_004";
       setCow2 = "13102112720A_004";
       drawPlot(setCow);

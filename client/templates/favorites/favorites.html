@@ -1,25 +1,23 @@
 <template name="favorites">
-    <h4 class="postHeading">
-        <i class="fa fa-share"></i>&nbsp;
-            관련 사이트&nbsp;
-            <span class="text-muted postsCategory">{{postsCategory}}</span>
-    </h4>
-    {{#each postsList}}
+  <h4 class="postHeading">
+    관련 사이트&nbsp;
+    <span class="text-muted postsCategory">{{postsCategory}}</span>
+  </h4>
+  {{#each postsList}}
     <a href="{{url}}" target="_blank" class="post-list-link">
-        <div class="favorites-container">
-            <!-- image info -->
-            <div class="favorites-name">
-                <i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;
-                {{name}}
-            </div>
-
-            <!-- the image -->
-            <div class="favorites-image">
-                {{#with FS.GetFile "Images" image }}
-                    <img src="{{this.url store='images'}}" alt="" width="300px" height="100px" style="object-fit: contain;">
-                {{/with}}
-            </div>
+      <div class="favorites-container">
+        <!-- image info -->
+        <div class="favorites-name">
+          <i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp; {{name}}
         </div>
+
+        <!-- the image -->
+        <div class="favorites-image">
+          {{#with FS.GetFile "Images" image }}
+            <img src="{{this.url store='images'}}" alt="" width="300px" height="100px" style="object-fit: contain;">
+          {{/with}}
+        </div>
+      </div>
     </a>
-    {{/each}}
+  {{/each}}
 </template>

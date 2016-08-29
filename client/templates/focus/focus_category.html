@@ -1,14 +1,14 @@
 <template name="focus_category">
-    <div class="panel panel-default" id="categoryPanel">
-        <div class="panel-heading" id="categoryPanelHeading">&nbsp;&nbsp;&nbsp;카테고리</div>
-        <div class="panel-body" id="categoryPanelBody">
-            <ul class="nav nav-pills nav-stacked" id="category_ul">
-                <li class="category_li"><a href="/focus/total/1" target="_top">전체</a></li>
-                <li class="category_li"><a href="/focus/글로벌/1" target="_top"><i class="fa fa-angle-double-right" aria-hidden="true">&nbsp;&nbsp;글로벌</i></a></li>
-                <li class="category_li"><a href="/focus/리뷰/1" target="_top"><i class="fa fa-angle-double-right" aria-hidden="true">&nbsp;&nbsp;리뷰</i></a></li>
-                <li class="category_li"><a href="/focus/자료/1" target="_top"><i class="fa fa-angle-double-right" aria-hidden="true">&nbsp;&nbsp;자료</i></a></li>
-            </ul>
-        </div>
+  <div class="panel panel-default" id="categoryPanel">
+    <div class="panel-heading" id="categoryPanelHeading">카테고리</div>
+    <div class="panel-body" id="categoryPanelBody">
+      <ul class="nav nav-pills nav-stacked" id="category_ul">
+        <li class="category_li all"><a href="/focus/total/1" target="_top">전체</a></li>
+        <li class="category_li"><a href="/focus/글로벌/1" target="_top">-&nbsp;&nbsp;글로벌</a></li>
+        <li class="category_li"><a href="/focus/리뷰/1" target="_top">-&nbsp;&nbsp;리뷰</a></li>
+        <li class="category_li"><a href="/focus/자료/1" target="_top" class="end">-&nbsp;&nbsp;자료</a></li>
+      </ul>
     </div>
-    {{>banner}}
+  </div>
+  {{>banner}}
 </template>

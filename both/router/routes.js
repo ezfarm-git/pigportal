@@ -42,9 +42,6 @@ Router.route('/data/product', {
       to: 'sidebar_left'
     },
     // 'banner': {to: 'sidebar_right'}
-  },
-  waitOn: function () {
-    return [IRLibLoader.load('/js/plotly-latest.min.js')];
   }
 }, {
   name: 'data_product'
@@ -60,9 +57,6 @@ Router.route('/data/market', {
       to: 'sidebar_left'
     },
     // 'banner': {to: 'sidebar_right'}
-  },
-  waitOn: function () {
-    return [IRLibLoader.load('/js/plotly-latest.min.js')];
   }
 }, {
   name: 'data_market'
@@ -78,9 +72,6 @@ Router.route('/data/stats/pig/pops', {
       to: 'sidebar_left'
     },
     // 'banner': {to: 'sidebar_right'}
-  },
-  waitOn: function () {
-    return [IRLibLoader.load('/js/plotly-latest.min.js')];
   }
 }, {
   name: 'data_stats_pig_pops'
@@ -96,9 +87,6 @@ Router.route('/data/stats/pig/age', {
       to: 'sidebar_left'
     },
     // 'banner': {to: 'sidebar_right'}
-  },
-  waitOn: function () {
-    return [IRLibLoader.load('/js/plotly-latest.min.js')];
   }
 }, {
   name: 'data_stats_pig_age'
@@ -114,9 +102,6 @@ Router.route('/data/stats/pig/grade', {
       to: 'sidebar_left'
     },
     // 'banner': {to: 'sidebar_right'}
-  },
-  waitOn: function () {
-    return [IRLibLoader.load('/js/plotly-latest.min.js')];
   }
 }, {
   name: 'data_stats_pig_grade'
@@ -132,9 +117,6 @@ Router.route('/data/stats/cow/pops', {
       to: 'sidebar_left'
     },
     // 'banner': {to: 'sidebar_right'}
-  },
-  waitOn: function () {
-    return [IRLibLoader.load('/js/plotly-latest.min.js')];
   }
 }, {
   name: 'data_stats_cow_pops'
@@ -150,9 +132,6 @@ Router.route('/data/stats/cow/age', {
       to: 'sidebar_left'
     },
     // 'banner': {to: 'sidebar_right'}
-  },
-  waitOn: function () {
-    return [IRLibLoader.load('/js/plotly-latest.min.js')];
   }
 }, {
   name: 'data_stats_cow_age'
@@ -168,9 +147,6 @@ Router.route('/data/stats/cow/grade', {
       to: 'sidebar_left'
     },
     // 'banner': {to: 'sidebar_right'}
-  },
-  waitOn: function () {
-    return [IRLibLoader.load('/js/plotly-latest.min.js')];
   }
 }, {
   name: 'data_stats_cow_grade'
@@ -186,9 +162,6 @@ Router.route('/data/stats/chicken/pops', {
       to: 'sidebar_left'
     },
     // 'banner': {to: 'sidebar_right'}
-  },
-  waitOn: function () {
-    return [IRLibLoader.load('/js/plotly-latest.min.js')];
   }
 }, {
   name: 'data_stats_chicken_pops'
@@ -204,9 +177,6 @@ Router.route('/data/stats/chicken/age', {
       to: 'sidebar_left'
     },
     // 'banner': {to: 'sidebar_right'}
-  },
-  waitOn: function () {
-    return [IRLibLoader.load('/js/plotly-latest.min.js')];
   }
 }, {
   name: 'data_stats_chicken_age'
@@ -250,7 +220,7 @@ Router.route('/news/:category/:page', function () {
 
 Router.route('/cardnews/:page', function () {
   this.layout('layout_app');
-  this.render('', {
+  this.render('banner', {
     to: 'sidebar_left'
   });
   this.render('card_news', {

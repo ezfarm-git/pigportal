@@ -1,0 +1,92 @@
+.navbar-default {
+  box-shadow: none;
+  border-bottom: 2px solid darkgreen;
+  margin-bottom: 25px;
+}
+@media (min-width: 767px) {
+  .navbar-nav {
+    margin: 0 auto;
+    display: table;
+    table-layout: auto;
+    float: none;
+    width: 100%;
+  }
+  .navbar-nav>li {
+    display: table-cell;
+    float: none;
+    text-align: center;
+  }
+}
+
+.main-logo {
+  display: block;
+  margin: auto;
+  width: 30%;
+  max-width: 200px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+#main-menu {
+  font-size: 120%;
+  z-index: 30;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -ms-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#main-menu:hover {
+  margin-top: -1px;
+  border-top: 1px solid darkgreen;
+}
+
+.main-post-title {
+  margin-bottom: 2px;
+  font-size: 19px;
+  color: #003300;
+}
+.latest-post-summary {
+  color: black;
+}
+.main-post-summary {
+  color: black;
+  padding-left: 5px;
+}
+.main-post-container {
+  margin-left: 170px;
+  padding: 0px 15px 0px 0px;
+}
+.main-post-container-outer {
+  clear: both;
+  min-height: 101px;
+  padding: 0px;
+  margin-bottom: 15px;
+}
+.main-post-image-container {
+  width: 160px;
+  float: left;
+}
+.main-post-image {
+  width: 160px;
+  height: 120px;;
+  object-fit: cover;
+}
+
+.hover-opacity:hover {
+  opacity: 0.7;
+}
+.hover-color:hover {
+  color: #003366;
+}
+
+ul.dropdown-menu {
+  padding-top: 8px;
+  padding-bottom: 0px;
+  width: 100%;
+}
+ul.dropdown-menu li {
+  margin-bottom: 10px;
+  font-size: 110%;
+}

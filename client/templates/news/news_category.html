@@ -1,14 +1,14 @@
 <template name="news_category">
-    <div class="panel panel-default" id="categoryPanel">
-        <div class="panel-heading" id="categoryPanelHeading">&nbsp;&nbsp;&nbsp;카테고리</div>
-        <div class="panel-body" id="categoryPanelBody">
-            <ul class="nav nav-pills nav-stacked" id="category_ul">
-                <li class="category_li"><a href="/news/total/1" target="_top">전체</a></li>
-                <li class="category_li"><a href="/news/알림/1" target="_top"><i class="fa fa-angle-double-right" aria-hidden="true">&nbsp;&nbsp;알림</i></a></li>
-                <li class="category_li"><a href="/news/산업/1" target="_top"><i class="fa fa-angle-double-right" aria-hidden="true">&nbsp;&nbsp;산업</i></a></li>
-                <li class="category_li"><a href="/news/현장/1" target="_top"><i class="fa fa-angle-double-right" aria-hidden="true">&nbsp;&nbsp;현장</i></a></li>
-            </ul>
-        </div>
+  <div class="panel panel-default" id="categoryPanel">
+    <div class="panel-heading" id="categoryPanelHeading">카테고리</div>
+    <div class="panel-body" id="categoryPanelBody">
+      <ul class="nav nav-pills nav-stacked" id="category_ul">
+        <li class="category_li all"><a href="/news/total/1" target="_top">전체</a></li>
+        <li class="category_li"><a href="/news/알림/1" target="_top">-&nbsp;&nbsp;알림</a></li>
+        <li class="category_li"><a href="/news/산업/1" target="_top">-&nbsp;&nbsp;산업</a></li>
+        <li class="category_li"><a href="/news/현장/1" target="_top" class="end">-&nbsp;&nbsp;현장</a></li>
+      </ul>
     </div>
-    {{>banner}}
+  </div>
+  {{>banner}}
 </template>

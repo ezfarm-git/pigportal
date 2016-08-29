@@ -1,23 +1,25 @@
 <template name="EventModal">
-    <div class="modal fade" id="event-modal" tabindex="-1" role="dialog" aria-labelledby="event-modal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="event" style="text-align: center;">{{event.title}}</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12">
-                            <p style="color: SteelBlue"><i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;&nbsp;개요 :</p>
-                            <div style="padding-left: 5px; padding-right: 5px;">{{event.summary}}</div>
-                            <br>
-                            <p style="color: SteelBlue"><i class="fa fa-calendar-check-o" aria-hidden="true"></i>&nbsp;&nbsp;행사 기간 :</p>
-                            <div style="padding-left: 5px; padding-right: 5px;">{{event.start}} ~ {{event.end}}</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <div class="modal fade" id="event-modal" tabindex="-1" role="dialog" aria-labelledby="event-modal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="event" style="text-align: center;">{{event.title}}</h4>
         </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12">
+              <p style="color: SteelBlue"><i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;&nbsp;개요 :</p>
+              <div style="padding-left: 5px; padding-right: 5px;">{{event.summary}}</div>
+              <br>
+              <p style="color: SteelBlue"><i class="fa fa-calendar-check-o" aria-hidden="true"></i>&nbsp;&nbsp;행사 기간 :</p>
+              <div style="padding-left: 5px; padding-right: 5px;">{{event.start}} ~ {{event.end}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </template>
