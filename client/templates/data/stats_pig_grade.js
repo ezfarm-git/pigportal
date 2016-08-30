@@ -1,4 +1,5 @@
-﻿Template.stats_pig_grade.onRendered(function () {
+﻿
+Template.stats_pig_grade.onRendered(function () {
 
   var time = [];
   var period = [];
@@ -65,63 +66,63 @@
         //  성별 : 13102112724A.001 전체  13102112724A.002 암  13102112724A.003	수   13102112724A.004	거세
         //  등급 : 13102112724B.018 1+   13102112724B.019 1    13102112724B.020	2      13102112724B.021	등외
 
-        $.each(series, function (i, val) {
+        for (i = 0; i < series.length; i++) {
           // 전체
           if (series[i].$.C_13101112724A === "13102112724A_001" && series[i].$.C_13101112724B === "13102112724B_018") {
-            $.each(series[i].Obs, function (iv, val) {
-              time[iv] = series[i].Obs[iv].$.TIME_PERIOD;
-              price_plus_1_total[iv] = series[i].Obs[iv].$.OBS_VALUE;
-            });
+            for (j = 0; j < series[i].Obs.length; j++) {
+              time[j] = series[i].Obs[j].$.TIME_PERIOD;
+              price_plus_1_total[j] = series[i].Obs[j].$.OBS_VALUE;
+            }
           } else if (series[i].$.C_13101112724A === "13102112724A_001" && series[i].$.C_13101112724B === "13102112724B_019") {
-            $.each(series[i].Obs, function (iv, val) {
-              price_1_total[iv] = series[i].Obs[iv].$.OBS_VALUE;
-            });
+            for (j = 0; j < series[i].Obs.length; j++) {
+              price_1_total[j] = series[i].Obs[j].$.OBS_VALUE;
+            }
           } else if (series[i].$.C_13101112724A === "13102112724A_001" && series[i].$.C_13101112724B === "13102112724B_020") {
-            $.each(series[i].Obs, function (iv, val) {
-              price_2_total[iv] = series[i].Obs[iv].$.OBS_VALUE;
-            });
+            for (j = 0; j < series[i].Obs.length; j++) {
+              price_2_total[j] = series[i].Obs[j].$.OBS_VALUE;
+            }
           } else if (series[i].$.C_13101112724A === "13102112724A_001" && series[i].$.C_13101112724B === "13102112724B_021") {
-            $.each(series[i].Obs, function (iv, val) {
-              price_exc_total[iv] = series[i].Obs[iv].$.OBS_VALUE;
-            });
+            for (j = 0; j < series[i].Obs.length; j++) {
+              price_exc_total[j] = series[i].Obs[j].$.OBS_VALUE;
+            }
           }
           // 암 등급별
           else if (series[i].$.C_13101112724A === "13102112724A_002" && series[i].$.C_13101112724B === "13102112724B_018") {
-            $.each(series[i].Obs, function (iv, val) {
-              price_plus_1_female[iv] = series[i].Obs[iv].$.OBS_VALUE;
-            });
+            for (j = 0; j < series[i].Obs.length; j++) {
+              price_plus_1_female[j] = series[i].Obs[j].$.OBS_VALUE;
+            }
           } else if (series[i].$.C_13101112724A === "13102112724A_002" && series[i].$.C_13101112724B === "13102112724B_019") {
-            $.each(series[i].Obs, function (iv, val) {
-              price_1_female[iv] = series[i].Obs[iv].$.OBS_VALUE;
-            });
+            for (j = 0; j < series[i].Obs.length; j++) {
+              price_1_female[j] = series[i].Obs[j].$.OBS_VALUE;
+            }
           } else if (series[i].$.C_13101112724A === "13102112724A_002" && series[i].$.C_13101112724B === "13102112724B_020") {
-            $.each(series[i].Obs, function (iv, val) {
-              price_2_female[iv] = series[i].Obs[iv].$.OBS_VALUE;
-            });
+            for (j = 0; j < series[i].Obs.length; j++) {
+              price_2_female[j] = series[i].Obs[j].$.OBS_VALUE;
+            }
           } else if (series[i].$.C_13101112724A === "13102112724A_002" && series[i].$.C_13101112724B === "13102112724B_021") {
-            $.each(series[i].Obs, function (iv, val) {
-              price_exc_female[iv] = series[i].Obs[iv].$.OBS_VALUE;
-            });
+            for (j = 0; j < series[i].Obs.length; j++) {
+              price_exc_female[j] = series[i].Obs[j].$.OBS_VALUE;
+            }
           }
           // 거세
           else if (series[i].$.C_13101112724A === "13102112724A_004" && series[i].$.C_13101112724B === "13102112724B_018") {
-            $.each(series[i].Obs, function (iv, val) {
-              price_plus_1_neuter[iv] = series[i].Obs[iv].$.OBS_VALUE;
-            });
+            for (j = 0; j < series[i].Obs.length; j++) {
+              price_plus_1_neuter[j] = series[i].Obs[j].$.OBS_VALUE;
+            }
           } else if (series[i].$.C_13101112724A === "13102112724A_004" && series[i].$.C_13101112724B === "13102112724B_019") {
-            $.each(series[i].Obs, function (iv, val) {
-              price_1_neuter[iv] = series[i].Obs[iv].$.OBS_VALUE;
-            });
+            for (j = 0; j < series[i].Obs.length; j++) {
+              price_1_neuter[j] = series[i].Obs[j].$.OBS_VALUE;
+            }
           } else if (series[i].$.C_13101112724A === "13102112724A_004" && series[i].$.C_13101112724B === "13102112724B_020") {
-            $.each(series[i].Obs, function (iv, val) {
-              price_2_neuter[iv] = series[i].Obs[iv].$.OBS_VALUE;
-            });
+            for (j = 0; j < series[i].Obs.length; j++) {
+              price_2_neuter[j] = series[i].Obs[j].$.OBS_VALUE;
+            }
           } else if (series[i].$.C_13101112724A === "13102112724A_004" && series[i].$.C_13101112724B === "13102112724B_021") {
-            $.each(series[i].Obs, function (iv, val) {
-              price_exc_neuter[iv] = series[i].Obs[iv].$.OBS_VALUE;
-            });
+            for (j = 0; j < series[i].Obs.length; j++) {
+              price_exc_neuter[j] = series[i].Obs[j].$.OBS_VALUE;
+            }
           }
-        }); //each end
+        } //for end
 
         for (i = 0; i < time.length; i++) {
           period[i] = stringToDate(time[i]);
@@ -328,63 +329,63 @@
         //  단위 : 14STD043555 두
 
         // 전체
-        $.each(series, function (i, val) {
+        for (i = 0; i < series.length; i++) {
           if (series[i].$.C_13101112722A === "13102112722A_001" && series[i].$.C_13101112722B === "13102112722B_018") {
-            $.each(series[i].Obs, function (iv, val) {
-              time[iv] = series[i].Obs[iv].$.TIME_PERIOD;
-              quantity_plus_1_total[iv] = series[i].Obs[iv].$.OBS_VALUE;
-            });
+            for (j = 0; j < series[i].Obs.length; j++) {
+              time[j] = series[i].Obs[j].$.TIME_PERIOD;
+              quantity_plus_1_total[j] = series[i].Obs[j].$.OBS_VALUE;
+            }
           } else if (series[i].$.C_13101112722A === "13102112722A_001" && series[i].$.C_13101112722B === "13102112722B_019") {
-            $.each(series[i].Obs, function (iv, val) {
-              quantity_1_total[iv] = series[i].Obs[iv].$.OBS_VALUE;
-            });
+            for (j = 0; j < series[i].Obs.length; j++) {
+              quantity_1_total[j] = series[i].Obs[j].$.OBS_VALUE;
+            }
           } else if (series[i].$.C_13101112722A === "13102112722A_001" && series[i].$.C_13101112722B === "13102112722B_020") {
-            $.each(series[i].Obs, function (iv, val) {
-              quantity_2_total[iv] = series[i].Obs[iv].$.OBS_VALUE;
-            });
+            for (j = 0; j < series[i].Obs.length; j++) {
+              quantity_2_total[j] = series[i].Obs[j].$.OBS_VALUE;
+            }
           } else if (series[i].$.C_13101112722A === "13102112722A_001" && series[i].$.C_13101112722B === "13102112722B_021") {
-            $.each(series[i].Obs, function (iv, val) {
-              quantity_exc_total[iv] = series[i].Obs[iv].$.OBS_VALUE;
-            });
+            for (j = 0; j < series[i].Obs.length; j++) {
+              quantity_exc_total[j] = series[i].Obs[j].$.OBS_VALUE;
+            }
           }
           // 암 등급별
           else if (series[i].$.C_13101112722A === "13102112722A_002" && series[i].$.C_13101112722B === "13102112722B_018") {
-            $.each(series[i].Obs, function (iv, val) {
-              quantity_plus_1_female[iv] = series[i].Obs[iv].$.OBS_VALUE;
-            });
+            for (j = 0; j < series[i].Obs.length; j++) {
+              quantity_plus_1_female[j] = series[i].Obs[j].$.OBS_VALUE;
+            }
           } else if (series[i].$.C_13101112722A === "13102112722A_002" && series[i].$.C_13101112722B === "13102112722B_019") {
-            $.each(series[i].Obs, function (iv, val) {
-              quantity_1_female[iv] = series[i].Obs[iv].$.OBS_VALUE;
-            });
+            for (j = 0; j < series[i].Obs.length; j++) {
+              quantity_1_female[j] = series[i].Obs[j].$.OBS_VALUE;
+            }
           } else if (series[i].$.C_13101112722A === "13102112722A_002" && series[i].$.C_13101112722B === "13102112722B_020") {
-            $.each(series[i].Obs, function (iv, val) {
-              quantity_2_female[iv] = series[i].Obs[iv].$.OBS_VALUE;
-            });
+            for (j = 0; j < series[i].Obs.length; j++) {
+              quantity_2_female[j] = series[i].Obs[j].$.OBS_VALUE;
+            }
           } else if (series[i].$.C_13101112722A === "13102112722A_002" && series[i].$.C_13101112722B === "13102112722B_021") {
-            $.each(series[i].Obs, function (iv, val) {
-              quantity_exc_female[iv] = series[i].Obs[iv].$.OBS_VALUE;
-            });
+            for (j = 0; j < series[i].Obs.length; j++) {
+              quantity_exc_female[j] = series[i].Obs[j].$.OBS_VALUE;
+            }
           }
           // 거세
           else if (series[i].$.C_13101112722A === "13102112722A_004" && series[i].$.C_13101112722B === "13102112722B_018") {
-            $.each(series[i].Obs, function (iv, val) {
-              quantity_plus_1_neuter[iv] = series[i].Obs[iv].$.OBS_VALUE;
-            });
+            for (j = 0; j < series[i].Obs.length; j++) {
+              quantity_plus_1_neuter[j] = series[i].Obs[j].$.OBS_VALUE;
+            }
           } else if (series[i].$.C_13101112722A === "13102112722A_004" && series[i].$.C_13101112722B === "13102112722B_019") {
-            $.each(series[i].Obs, function (iv, val) {
-              quantity_1_neuter[iv] = series[i].Obs[iv].$.OBS_VALUE;
-            });
+            for (j = 0; j < series[i].Obs.length; j++) {
+              quantity_1_neuter[j] = series[i].Obs[j].$.OBS_VALUE;
+            }
           } else if (series[i].$.C_13101112722A === "13102112722A_004" && series[i].$.C_13101112722B === "13102112722B_020") {
-            $.each(series[i].Obs, function (iv, val) {
-              quantity_2_neuter[iv] = series[i].Obs[iv].$.OBS_VALUE;
-            });
+            for (j = 0; j < series[i].Obs.length; j++) {
+              quantity_2_neuter[j] = series[i].Obs[j].$.OBS_VALUE;
+            }
           } else if (series[i].$.C_13101112722A === "13102112722A_004" && series[i].$.C_13101112722B === "13102112722B_021") {
-            $.each(series[i].Obs, function (iv, val) {
-              quantity_exc_neuter[iv] = series[i].Obs[iv].$.OBS_VALUE;
-            });
+            for (j = 0; j < series[i].Obs.length; j++) {
+              quantity_exc_neuter[j] = series[i].Obs[j].$.OBS_VALUE;
+            }
           }
 
-        }); //each end
+        } //for end
 
         var period = [];
         for (i = 0; i < time.length; i++) {

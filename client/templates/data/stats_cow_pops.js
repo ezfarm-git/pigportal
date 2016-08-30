@@ -70,60 +70,60 @@ Template.stats_cow_pops.onRendered(function () {
 
     // Q 분기 ,  T01 농가수 , T02 마리수 , 사육규모 00 (전체) 05 (20미만) 10 (20~50)  15(50~100) 20 (100이상)
 
-    $.each(series, function (i, val) {
+    for (i = 0; i < series.length; i++) {
       // 한우 가구
       if (series[i].$.ITEM === "T01" && series[i].$.C_A === currnet_City && series[i].$.C_B === "00") {
-        $.each(series[i].Obs, function (iv, val) {
-          city_farm[iv] = series[i].Obs[iv].$.OBS_VALUE;
-          time[iv] = series[i].Obs[iv].$.TIME_PERIOD;
-        });
+        for (j = 0; j < series[i].Obs.length; j++) {
+          city_farm[j] = series[i].Obs[j].$.OBS_VALUE;
+          time[j] = series[i].Obs[j].$.TIME_PERIOD;
+        }
       }
       //마리수
       else if (series[i].$.ITEM === "T02" && series[i].$.C_A === currnet_City && series[i].$.C_B === "00") {
-        $.each(series[i].Obs, function (iv, val) {
-          city_scale[iv] = series[i].Obs[iv].$.OBS_VALUE;
-        });
+        for (j = 0; j < series[i].Obs.length; j++) {
+          city_scale[j] = series[i].Obs[j].$.OBS_VALUE;
+        }
       }
 
       //규모별 농가수
       else if (series[i].$.ITEM === "T01" && series[i].$.C_A === currnet_City && series[i].$.C_B === "05") {
-        $.each(series[i].Obs, function (iv, val) {
-          scale_under_20_farm[iv] = series[i].Obs[iv].$.OBS_VALUE;
-        });
+        for (j = 0; j < series[i].Obs.length; j++) {
+          scale_under_20_farm[j] = series[i].Obs[j].$.OBS_VALUE;
+        }
       } else if (series[i].$.ITEM === "T01" && series[i].$.C_A === currnet_City && series[i].$.C_B === "10") {
-        $.each(series[i].Obs, function (iv, val) {
-          scale_20_50_farm[iv] = series[i].Obs[iv].$.OBS_VALUE;
-        });
+        for (j = 0; j < series[i].Obs.length; j++) {
+          scale_20_50_farm[j] = series[i].Obs[j].$.OBS_VALUE;
+        }
       } else if (series[i].$.ITEM === "T01" && series[i].$.C_A === currnet_City && series[i].$.C_B === "15") {
-        $.each(series[i].Obs, function (iv, val) {
-          scale_50_100_farm[iv] = series[i].Obs[iv].$.OBS_VALUE;
-        });
+        for (j = 0; j < series[i].Obs.length; j++) {
+          scale_50_100_farm[j] = series[i].Obs[j].$.OBS_VALUE;
+        }
       } else if (series[i].$.ITEM === "T01" && series[i].$.C_A === currnet_City && series[i].$.C_B === "20") {
-        $.each(series[i].Obs, function (iv, val) {
-          scale_over_100_farm[iv] = series[i].Obs[iv].$.OBS_VALUE;
-        });
+        for (j = 0; j < series[i].Obs.length; j++) {
+          scale_over_100_farm[j] = series[i].Obs[j].$.OBS_VALUE;
+        }
       }
       // 규모별 마리수
       else if (series[i].$.ITEM === "T02" && series[i].$.C_A === currnet_City && series[i].$.C_B === "05") {
-        $.each(series[i].Obs, function (iv, val) {
-          scale_under_20_cnt[iv] = series[i].Obs[iv].$.OBS_VALUE;
-        });
+        for (j = 0; j < series[i].Obs.length; j++) {
+          scale_under_20_cnt[j] = series[i].Obs[j].$.OBS_VALUE;
+        }
       } //마리수
       else if (series[i].$.ITEM === "T02" && series[i].$.C_A === currnet_City && series[i].$.C_B === "10") {
-        $.each(series[i].Obs, function (iv, val) {
-          scale_20_50_cnt[iv] = series[i].Obs[iv].$.OBS_VALUE;
-        });
+        for (j = 0; j < series[i].Obs.length; j++) {
+          scale_20_50_cnt[j] = series[i].Obs[j].$.OBS_VALUE;
+        }
       } //마리수
       else if (series[i].$.ITEM === "T02" && series[i].$.C_A === currnet_City && series[i].$.C_B === "15") {
-        $.each(series[i].Obs, function (iv, val) {
-          scale_50_100_cnt[iv] = series[i].Obs[iv].$.OBS_VALUE;
-        });
+        for (j = 0; j < series[i].Obs.length; j++) {
+          scale_50_100_cnt[j] = series[i].Obs[j].$.OBS_VALUE;
+        }
       } else if (series[i].$.ITEM === "T02" && series[i].$.C_A === currnet_City && series[i].$.C_B === "20") {
-        $.each(series[i].Obs, function (iv, val) {
-          scale_over_100_cnt[iv] = series[i].Obs[iv].$.OBS_VALUE;
-        });
+        for (j = 0; j < series[i].Obs.length; j++) {
+          scale_over_100_cnt[j] = series[i].Obs[j].$.OBS_VALUE;
+        }
       }
-    });
+    }
 
     function stringToDate(x) {
       return x.substring(0, 4) + '년 ' + x.substring(6, 7) + '분기';

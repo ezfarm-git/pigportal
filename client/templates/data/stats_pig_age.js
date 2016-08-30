@@ -1,4 +1,5 @@
-﻿Template.stats_pig_age.onRendered(function () {
+﻿
+Template.stats_pig_age.onRendered(function () {
 
   Meteor.call('pig_age_by_city.get', function (error, res) {
     if (error) {
@@ -41,42 +42,42 @@
     //T01	합계 / T02	2개월미만 / T03	2~4개월 / T04	4~6개월  / T05	6~8개월:계  / T06	6~8개월:암컷 / T07 6~8개월:수컷  / T08	8개월이상:계  / T09	8개월이상:암컷 /  T10	8개월이상:수컷
     // 14STD04410 마리 (단위)
 
-    $.each(series, function (i, val) {
+    for (i = 0; i < series.length; i++) {
       if (series[i].$.C_A === currnet_City && series[i].$.ITEM === "T01") {
-        $.each(series[i].Obs, function (iv, val) {
-          time[iv] = series[i].Obs[iv].$.TIME_PERIOD;
-          age_total[iv] = series[i].Obs[iv].$.OBS_VALUE;
-        });
+        for (j = 0; j < series[i].Obs.length; j++) {
+          time[j] = series[i].Obs[j].$.TIME_PERIOD;
+          age_total[j] = series[i].Obs[j].$.OBS_VALUE;
+        }
       } else if (series[i].$.C_A === currnet_City && series[i].$.ITEM === "T02") {
-        $.each(series[i].Obs, function (iv, val) {
-          age_under_2_total[iv] = series[i].Obs[iv].$.OBS_VALUE;
-        });
+        for (j = 0; j < series[i].Obs.length; j++) {
+          age_under_2_total[j] = series[i].Obs[j].$.OBS_VALUE;
+        }
       } else if (series[i].$.C_A === currnet_City && series[i].$.ITEM === "T03") {
-        $.each(series[i].Obs, function (iv, val) {
-          age_2_4_total[iv] = series[i].Obs[iv].$.OBS_VALUE;
-        });
+        for (j = 0; j < series[i].Obs.length; j++) {
+          age_2_4_total[j] = series[i].Obs[j].$.OBS_VALUE;
+        }
       } else if (series[i].$.C_A === currnet_City && series[i].$.ITEM === "T04") {
-        $.each(series[i].Obs, function (iv, val) {
-          age_4_6_total[iv] = series[i].Obs[iv].$.OBS_VALUE;
-        });
+        for (j = 0; j < series[i].Obs.length; j++) {
+          age_4_6_total[j] = series[i].Obs[j].$.OBS_VALUE;
+        }
       } else if (series[i].$.C_A === currnet_City && series[i].$.ITEM === "T06") {
-        $.each(series[i].Obs, function (iv, val) {
-          age_6_8_female[iv] = series[i].Obs[iv].$.OBS_VALUE;
-        });
+        for (j = 0; j < series[i].Obs.length; j++) {
+          age_6_8_female[j] = series[i].Obs[j].$.OBS_VALUE;
+        }
       } else if (series[i].$.C_A === currnet_City && series[i].$.ITEM === "T07") {
-        $.each(series[i].Obs, function (iv, val) {
-          age_6_8_male[iv] = series[i].Obs[iv].$.OBS_VALUE;
-        });
+        for (j = 0; j < series[i].Obs.length; j++) {
+          age_6_8_male[j] = series[i].Obs[j].$.OBS_VALUE;
+        }
       } else if (series[i].$.C_A === currnet_City && series[i].$.ITEM === "T08") {
-        $.each(series[i].Obs, function (iv, val) {
-          age_over_8_female[iv] = series[i].Obs[iv].$.OBS_VALUE;
-        });
+        for (j = 0; j < series[i].Obs.length; j++) {
+          age_over_8_female[j] = series[i].Obs[j].$.OBS_VALUE;
+        }
       } else if (series[i].$.C_A === currnet_City && series[i].$.ITEM === "T10") {
-        $.each(series[i].Obs, function (iv, val) {
-          age_over_8_male[iv] = series[i].Obs[iv].$.OBS_VALUE;
-        });
+        for (j = 0; j < series[i].Obs.length; j++) {
+          age_over_8_male[j] = series[i].Obs[j].$.OBS_VALUE;
+        }
       }
-    });
+    }
 
     function stringToDate(x) {
       return x.substring(0, 4) + '년 ' + x.substring(6, 7) + '분기';

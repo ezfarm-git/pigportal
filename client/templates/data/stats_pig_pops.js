@@ -55,70 +55,70 @@ Template.stats_pig_pops.onRendered(function () {
     // C_A 시도별
     // C_B 사육규모 00 (전체) 05 (1000) 10 (1000~5000)  15(5000~10000) 20 (10000)
 
-    $.each(series, function (i, val) {
+    for (i = 0; i < series.length; i++) {
       // 농가수
       if (series[i].$.C_A === currnet_City && series[i].$.C_B === "00" && series[i].$.ITEM === "T01") {
-        $.each(series[i].Obs, function (iv, val) {
-          time[iv] = series[i].Obs[iv].$.TIME_PERIOD;
-          city_farm[iv] = series[i].Obs[iv].$.OBS_VALUE;
-        });
+        for (j = 0; j < series[i].Obs.length; j++) {
+          time[j] = series[i].Obs[j].$.TIME_PERIOD;
+          city_farm[j] = series[i].Obs[j].$.OBS_VALUE;
+        }
       }
       //마리수
       else if (series[i].$.C_A === currnet_City && series[i].$.C_B === "00" && series[i].$.ITEM === "T02") {
-        $.each(series[i].Obs, function (iv, val) {
-          city_scale[iv] = series[i].Obs[iv].$.OBS_VALUE;
-        });
+        for (j = 0; j < series[i].Obs.length; j++) {
+          city_scale[j] = series[i].Obs[j].$.OBS_VALUE;
+        }
       }
       // 규모별 농가수
       else if (series[i].$.C_A === currnet_City && series[i].$.C_B === "05" && series[i].$.ITEM === "T01") {
-        $.each(series[i].Obs, function (iv, val) {
-          scale_under_1000_farm[iv] = series[i].Obs[iv].$.OBS_VALUE;
-        });
+        for (j = 0; j < series[i].Obs.length; j++) {
+          scale_under_1000_farm[j] = series[i].Obs[j].$.OBS_VALUE;
+        }
       } else if (series[i].$.C_A === currnet_City && series[i].$.C_B === "10" && series[i].$.ITEM === "T01") {
-        $.each(series[i].Obs, function (iv, val) {
-          scale_1000_5000_farm[iv] = series[i].Obs[iv].$.OBS_VALUE;
-        });
+        for (j = 0; j < series[i].Obs.length; j++) {
+          scale_1000_5000_farm[j] = series[i].Obs[j].$.OBS_VALUE;
+        }
       } else if (series[i].$.C_A === currnet_City && series[i].$.C_B === "15" && series[i].$.ITEM === "T01") {
-        $.each(series[i].Obs, function (iv, val) {
-          if (series[i].Obs[iv].$.OBS_VALUE === "-") {
-            scale_5000_10000_farm[iv] = "0";
+        for (j = 0; j < series[i].Obs.length; j++) {
+          if (series[i].Obs[j].$.OBS_VALUE === "-") {
+            scale_5000_10000_farm[j] = "0";
           } else
-            scale_5000_10000_farm[iv] = series[i].Obs[iv].$.OBS_VALUE;
-        });
+            scale_5000_10000_farm[j] = series[i].Obs[j].$.OBS_VALUE;
+        }
       } else if (series[i].$.C_A === currnet_City && series[i].$.C_B === "20" && series[i].$.ITEM === "T01") {
-        $.each(series[i].Obs, function (iv, val) {
-          if (series[i].Obs[iv].$.OBS_VALUE === "-") {
-            scale_over_10000_farm[iv] = "0";
+        for (j = 0; j < series[i].Obs.length; j++) {
+          if (series[i].Obs[j].$.OBS_VALUE === "-") {
+            scale_over_10000_farm[j] = "0";
           } else
-            scale_over_10000_farm[iv] = series[i].Obs[iv].$.OBS_VALUE;
-        });
+            scale_over_10000_farm[j] = series[i].Obs[j].$.OBS_VALUE;
+        }
       }
 
       // 규모별 마리수
       else if (series[i].$.ITEM === "T02" && series[i].$.C_A === currnet_City && series[i].$.C_B === "05") {
-        $.each(series[i].Obs, function (iv, val) {
-          scale_under_1000_cnt[iv] = series[i].Obs[iv].$.OBS_VALUE;
-        });
+        for (j = 0; j < series[i].Obs.length; j++) {
+          scale_under_1000_cnt[j] = series[i].Obs[j].$.OBS_VALUE;
+        }
       } else if (series[i].$.ITEM === "T02" && series[i].$.C_A === currnet_City && series[i].$.C_B === "10") {
-        $.each(series[i].Obs, function (iv, val) {
-          scale_1000_5000_cnt[iv] = series[i].Obs[iv].$.OBS_VALUE;
-        });
+        for (j = 0; j < series[i].Obs.length; j++) {
+          scale_1000_5000_cnt[j] = series[i].Obs[j].$.OBS_VALUE;
+        }
       } else if (series[i].$.ITEM === "T02" && series[i].$.C_A === currnet_City && series[i].$.C_B === "15") {
-        $.each(series[i].Obs, function (iv, val) {
-          if (series[i].Obs[iv].$.OBS_VALUE === "-") {
-            scale_5000_10000_cnt[iv] = "0";
+        for (j = 0; j < series[i].Obs.length; j++) {
+          if (series[i].Obs[j].$.OBS_VALUE === "-") {
+            scale_5000_10000_cnt[j] = "0";
           } else
-            scale_5000_10000_cnt[iv] = series[i].Obs[iv].$.OBS_VALUE;
-        });
+            scale_5000_10000_cnt[j] = series[i].Obs[j].$.OBS_VALUE;
+        }
       } else if (series[i].$.ITEM === "T02" && series[i].$.C_A === currnet_City && series[i].$.C_B === "20") {
-        $.each(series[i].Obs, function (iv, val) {
-          if (series[i].Obs[iv].$.OBS_VALUE === "-") {
-            scale_over_10000_cnt[iv] = "0";
+        for (j = 0; j < series[i].Obs.length; j++) {
+          if (series[i].Obs[j].$.OBS_VALUE === "-") {
+            scale_over_10000_cnt[j] = "0";
           } else
-            scale_over_10000_cnt[iv] = series[i].Obs[iv].$.OBS_VALUE;
-        });
+            scale_over_10000_cnt[j] = series[i].Obs[j].$.OBS_VALUE;
+        }
       }
-    });
+    }
 
     function stringToDate(x) {
       return x.substring(0, 4) + '년 ' + x.substring(6, 7) + '분기';

@@ -105,7 +105,7 @@ Template.market.onRendered(function () {
 
         var st = marketData.response.body[0].items[0];
 
-        $.each(st.item, function (i, val) {
+        for (i = 0; i < st.item.length; i++) {
           if (st.item[i].gradeNm.toString() === '1+') {
             PNC = {
               "BK_Amt": "",
@@ -697,7 +697,7 @@ Template.market.onRendered(function () {
             trace_avg_Amt = [PNC.BK_Amt, PNC.HS_Amt, PNC.DDL_Amt, PNC.NH_BC_Amt, PNC.NH_YS_Amt, PNC.YS_Amt, PNC.NH_NG_Amt, PNC.NH_KL_Amt, PNC.KH_Amt, PNC.JJ_Amt, PNC.SH_Amt, PNC.SS_Amt, PNC.SHC_Amt];
             trace_avg_Cnt = [PNC.BK_Cnt, PNC.HS_Cnt, PNC.DDL_Cnt, PNC.NH_BC_Cnt, PNC.NH_YS_Cnt, PNC.YS_Cnt, PNC.NH_NG_Cnt, PNC.NH_KL_Cnt, PNC.KH_Cnt, PNC.JJ_Cnt, PNC.SH_Cnt, PNC.SS_Cnt, PNC.SHC_Cnt];
           }
-        });
+        }
 
         var d3 = Plotly.d3;
         var g1 = d3.select('div[id="market_plot1"]');

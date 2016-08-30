@@ -1,4 +1,5 @@
-﻿Template.stats_cow_age.onRendered(function () {
+﻿
+Template.stats_cow_age.onRendered(function () {
 
   Meteor.call('hanwoo_age_by_city.get', function (error, res) {
     if (error) {
@@ -22,7 +23,7 @@
     }
   });
 
-  var txt = "전국 ";
+  var txt = "전국";
   var cow = "한우";
 
   function unitK(x) {
@@ -57,61 +58,61 @@
 
     var time = [];
 
-    $.each(series, function (i, val) {
+    for (i = 0; i < series.length; i++) {
 
       if (series[i].$.C_D) {
         // 모든 연령별 성별 전체
         if (series[i].$.ITEM === "T02" && series[i].$.C_A === currnet_City && series[i].$.C_D === "0") {
-          $.each(series[i].Obs, function (iv, val) {
-            time[iv] = series[i].Obs[iv].$.TIME_PERIOD;
-            age_under_1_total[iv] = series[i].Obs[iv].$.OBS_VALUE;
-          });
+          for (j = 0; j < series[i].Obs.length; j++) {
+            time[j] = series[i].Obs[j].$.TIME_PERIOD;
+            age_under_1_total[j] = series[i].Obs[j].$.OBS_VALUE;
+          }
         } else if (series[i].$.ITEM === "T03" && series[i].$.C_A === currnet_City && series[i].$.C_D === "0") {
-          $.each(series[i].Obs, function (iv, val) {
-            age_1_2_total[iv] = series[i].Obs[iv].$.OBS_VALUE;
-          });
+          for (j = 0; j < series[i].Obs.length; j++) {
+            age_1_2_total[j] = series[i].Obs[j].$.OBS_VALUE;
+          }
         } else if (series[i].$.ITEM === "T04" && series[i].$.C_A === currnet_City && series[i].$.C_D === "0") {
-          $.each(series[i].Obs, function (iv, val) {
-            age_over_2_total[iv] = series[i].Obs[iv].$.OBS_VALUE;
-          });
+          for (j = 0; j < series[i].Obs.length; j++) {
+            age_over_2_total[j] = series[i].Obs[j].$.OBS_VALUE;
+          }
         }
       } else {
 
         if (series[i].$.ITEM === "T02" && series[i].$.C_A === currnet_City) {
-          $.each(series[i].Obs, function (iv, val) {
-            if (series[i].Obs[iv].$.OBS_VALUE === "-") {
-              time[iv] = series[i].Obs[iv].$.TIME_PERIOD;
-              age_under_1_total[iv] = "0";
+          for (j = 0; j < series[i].Obs.length; j++) {
+            if (series[i].Obs[j].$.OBS_VALUE === "-") {
+              time[j] = series[i].Obs[j].$.TIME_PERIOD;
+              age_under_1_total[j] = "0";
             } else {
-              time[iv] = series[i].Obs[iv].$.TIME_PERIOD;
-              age_under_1_total[iv] = series[i].Obs[iv].$.OBS_VALUE;
+              time[j] = series[i].Obs[j].$.TIME_PERIOD;
+              age_under_1_total[j] = series[i].Obs[j].$.OBS_VALUE;
             }
-          });
+          }
         } else if (series[i].$.ITEM === "T03" && series[i].$.C_A === currnet_City) {
-          $.each(series[i].Obs, function (iv, val) {
-            if (series[i].Obs[iv].$.OBS_VALUE === "-") {
-              age_1_2_total[iv] = "0";
+          for (j = 0; j < series[i].Obs.length; j++) {
+            if (series[i].Obs[j].$.OBS_VALUE === "-") {
+              age_1_2_total[j] = "0";
             } else
-              age_1_2_total[iv] = series[i].Obs[iv].$.OBS_VALUE;
-          });
+              age_1_2_total[j] = series[i].Obs[j].$.OBS_VALUE;
+          }
         } else if (series[i].$.ITEM === "T04" && series[i].$.C_A === currnet_City) {
-          $.each(series[i].Obs, function (iv, val) {
-            if (series[i].Obs[iv].$.OBS_VALUE === "-") {
-              age_over_2_total[iv] = "0";
+          for (j = 0; j < series[i].Obs.length; j++) {
+            if (series[i].Obs[j].$.OBS_VALUE === "-") {
+              age_over_2_total[j] = "0";
             } else
-              age_over_2_total[iv] = series[i].Obs[iv].$.OBS_VALUE;
-          });
+              age_over_2_total[j] = series[i].Obs[j].$.OBS_VALUE;
+          }
         }
       }
-    }); //each end
+    } //for end
 
     function stringToDate(x) {
       return x.substring(0, 4) + '년 ' + x.substring(6, 7) + '분기';
     }
     var period = [];
-    $.each(time, function (i, val) {
+    for (i = 0; i < time.length; i++) {
       period[i] = stringToDate(time[i]);
-    });
+    }
 
     var trace2_y = [];
     for (i = 0; i < 5; i++) {
@@ -214,7 +215,7 @@
     var data2 = [trace6, trace7, trace8];
 
     var layout = {
-      title: txt + cow + ' 연령별 사육 동향',
+      title: txt + ' ' + cow + ' 연령별 사육 동향',
       titlefont: {
         family: 'Jeju Gothic, serif',
         size: 22,
@@ -239,7 +240,7 @@
     Plotly.newPlot(gd, data, layout);
 
     var layout2 = {
-      title: txt + cow + ' 연령별 사육 비율',
+      title: txt + ' ' + cow + ' 연령별 사육 비율',
       titlefont: {
         family: 'Jeju Gothic, serif',
         size: 22,

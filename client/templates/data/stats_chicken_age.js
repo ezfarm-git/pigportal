@@ -35,22 +35,22 @@ Template.stats_chicken_age.onRendered(function () {
     // C_A : 시도별
     // 14STD04410	마리
 
-    $.each(series, function (i, val) {
+    for (i = 0; i < series.length; i++) {
       if (series[i].$.ITEM === "T02" && series[i].$.C_A === currnet_City) {
-        $.each(series[i].Obs, function (iv, val) {
-          time[iv] = series[i].Obs[iv].$.TIME_PERIOD;
-          age_under_3_total[iv] = series[i].Obs[iv].$.OBS_VALUE;
-        });
+        for (j = 0; j < series[i].Obs.length; j++) {
+          time[j] = series[i].Obs[j].$.TIME_PERIOD;
+          age_under_3_total[j] = series[i].Obs[j].$.OBS_VALUE;
+        }
       } else if (series[i].$.ITEM === "T03" && series[i].$.C_A === currnet_City) {
-        $.each(series[i].Obs, function (iv, val) {
-          age_3_6_total[iv] = series[i].Obs[iv].$.OBS_VALUE;
-        });
+        for (j = 0; j < series[i].Obs.length; j++) {
+          age_3_6_total[j] = series[i].Obs[j].$.OBS_VALUE;
+        }
       } else if (series[i].$.ITEM === "T04" && series[i].$.C_A === currnet_City) {
-        $.each(series[i].Obs, function (iv, val) {
-          age_over_6_total[iv] = series[i].Obs[iv].$.OBS_VALUE;
-        });
+        for (j = 0; j < series[i].Obs.length; j++) {
+          age_over_6_total[j] = series[i].Obs[j].$.OBS_VALUE;
+        }
       }
-    });
+    } // for end
 
     function stringToDate(x) {
       return x.substring(0, 4) + '년 ' + x.substring(6, 7) + '분기';

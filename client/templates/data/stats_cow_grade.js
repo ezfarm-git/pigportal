@@ -62,88 +62,88 @@ Template.stats_cow_grade.onRendered(function () {
         // 도매시장별 : C_13101112719C_001	계
         // 단위 : 14STD05638 원/㎏   /  14STD04355	두
 
-        $.each(series, function (i, val) {
+        for (i = 0; i < series.length; i++) {
           if (series[i].$.C_13101112719A === setCow && series[i].$.C_13101112719B === "13102112719B_001" && series[i].$.C_13101112719C === "13102112719C_001") {
             if (series[i].$.ITEM === "13103112719T2") {
-              $.each(series[i].Obs, function (iv, val) {
-                if (series[i].Obs[iv].$.OBS_VALUE === "-") {
-                  time[iv] = series[i].Obs[iv].$.TIME_PERIOD;
-                  price_two_plus_1_total[iv] = "0";
+              for (j = 0; j < series[i].Obs.length; j++) {
+                if (series[i].Obs[j].$.OBS_VALUE === "-") {
+                  time[j] = series[i].Obs[j].$.TIME_PERIOD;
+                  price_two_plus_1_total[j] = "0";
                 } else {
-                  time[iv] = series[i].Obs[iv].$.TIME_PERIOD;
-                  price_two_plus_1_total[iv] = series[i].Obs[iv].$.OBS_VALUE;
+                  time[j] = series[i].Obs[j].$.TIME_PERIOD;
+                  price_two_plus_1_total[j] = series[i].Obs[j].$.OBS_VALUE;
                 }
-              });
+              }
             } else if (series[i].$.ITEM === "13103112719T1") {
-              $.each(series[i].Obs, function (iv, val) {
-                if (series[i].Obs[iv].$.OBS_VALUE === "-") {
-                  time[iv] = series[i].Obs[iv].$.TIME_PERIOD;
-                  count_two_plus_1_total[iv] = "0";
+              for (j = 0; j < series[i].Obs.length; j++) {
+                if (series[i].Obs[j].$.OBS_VALUE === "-") {
+                  time[j] = series[i].Obs[j].$.TIME_PERIOD;
+                  count_two_plus_1_total[j] = "0";
                 } else {
-                  count_two_plus_1_total[iv] = series[i].Obs[iv].$.OBS_VALUE;
+                  count_two_plus_1_total[j] = series[i].Obs[j].$.OBS_VALUE;
                 }
-              });
+              }
             }
           } else if (series[i].$.C_13101112719A === setCow && series[i].$.C_13101112719B === "13102112719B_002" && series[i].$.C_13101112719C === "13102112719C_001") {
             if (series[i].$.ITEM === "13103112719T2") {
-              $.each(series[i].Obs, function (iv, val) {
-                if (series[i].Obs[iv].$.OBS_VALUE === "-") {
-                  price_plus_1_total[iv] = "0";
+              for (j = 0; j < series[i].Obs.length; j++) {
+                if (series[i].Obs[j].$.OBS_VALUE === "-") {
+                  price_plus_1_total[j] = "0";
                 } else {
-                  price_plus_1_total[iv] = series[i].Obs[iv].$.OBS_VALUE;
+                  price_plus_1_total[j] = series[i].Obs[j].$.OBS_VALUE;
                 }
-              });
+              }
             } else if (series[i].$.ITEM === "13103112719T1") {
-              $.each(series[i].Obs, function (iv, val) {
-                if (series[i].Obs[iv].$.OBS_VALUE === "-") {
-                  count_plus_1_total[iv] = "0";
+              for (j = 0; j < series[i].Obs.length; j++) {
+                if (series[i].Obs[j].$.OBS_VALUE === "-") {
+                  count_plus_1_total[j] = "0";
                 } else {
-                  count_plus_1_total[iv] = series[i].Obs[iv].$.OBS_VALUE;
+                  count_plus_1_total[j] = series[i].Obs[j].$.OBS_VALUE;
                 }
-              });
+              }
             }
 
           } else if (series[i].$.C_13101112719A === setCow && series[i].$.C_13101112719B === "13102112719B_003" && series[i].$.C_13101112719C === "13102112719C_001") {
             if (series[i].$.ITEM === "13103112719T2") {
-              $.each(series[i].Obs, function (iv, val) {
-                if (series[i].Obs[iv].$.OBS_VALUE === "-") {
-                  price_1_total[iv] = "0";
+              for (j = 0; j < series[i].Obs.length; j++) {
+                if (series[i].Obs[j].$.OBS_VALUE === "-") {
+                  price_1_total[j] = "0";
                 } else {
-                  price_1_total[iv] = series[i].Obs[iv].$.OBS_VALUE;
+                  price_1_total[j] = series[i].Obs[j].$.OBS_VALUE;
                 }
-              });
+              }
             } else if (series[i].$.ITEM === "13103112719T1") {
-              $.each(series[i].Obs, function (iv, val) {
-                if (series[i].Obs[iv].$.OBS_VALUE === "-") {
-                  count_1_total[iv] = "0";
+              for (j = 0; j < series[i].Obs.length; j++) {
+                if (series[i].Obs[j].$.OBS_VALUE === "-") {
+                  count_1_total[j] = "0";
                 } else {
-                  count_1_total[iv] = series[i].Obs[iv].$.OBS_VALUE;
+                  count_1_total[j] = series[i].Obs[j].$.OBS_VALUE;
                 }
-              });
+              }
             }
           } else if (series[i].$.C_13101112719A === setCow && series[i].$.C_13101112719B === "13102112719B_004" && series[i].$.C_13101112719C === "13102112719C_001") {
             if (series[i].$.ITEM === "13103112719T2") {
-              $.each(series[i].Obs, function (iv, val) {
-                price_2_total[iv] = series[i].Obs[iv].$.OBS_VALUE;
-              });
+              for (j = 0; j < series[i].Obs.length; j++) {
+                price_2_total[j] = series[i].Obs[j].$.OBS_VALUE;
+              }
             } else if (series[i].$.ITEM === "13103112719T1") {
-              $.each(series[i].Obs, function (iv, val) {
-                count_2_total[iv] = series[i].Obs[iv].$.OBS_VALUE;
-              });
+              for (j = 0; j < series[i].Obs.length; j++) {
+                count_2_total[j] = series[i].Obs[j].$.OBS_VALUE;
+              }
             }
           } else if (series[i].$.C_13101112719A === setCow && series[i].$.C_13101112719B === "13102112719B_005" && series[i].$.C_13101112719C === "13102112719C_001") {
 
             if (series[i].$.ITEM === "13103112719T2") {
-              $.each(series[i].Obs, function (iv, val) {
-                price_3_total[iv] = series[i].Obs[iv].$.OBS_VALUE;
-              });
+              for (j = 0; j < series[i].Obs.length; j++) {
+                price_3_total[j] = series[i].Obs[j].$.OBS_VALUE;
+              }
             } else if (series[i].$.ITEM === "13103112719T1") {
-              $.each(series[i].Obs, function (iv, val) {
-                count_3_total[iv] = series[i].Obs[iv].$.OBS_VALUE;
-              });
+              for (j = 0; j < series[i].Obs.length; j++) {
+                count_3_total[j] = series[i].Obs[j].$.OBS_VALUE;
+              }
             }
           }
-        }); //each end
+        } //for end
 
         for (i = 0; i < time.length; i++) {
           period[i] = stringToDate(time[i]);
@@ -301,44 +301,44 @@ Template.stats_cow_grade.onRendered(function () {
         Session.setPersistent('cow_quantity', res);
         var series = Session.get('cow_quantity');
 
-        $.each(series, function (i, val) {
+        for (i = 0; i < series.length; i++) {
 
           if (series[i].$.C_13101112720A === setCow && series[i].$.C_13101112720B === "13102112720B_001" && series[i].$.C_13101112720C === "13102112720C_001") {
             if (series[i].$.ITEM === "13103112720T2") {
-              $.each(series[i].Obs, function (iv, val) {
-                time[iv] = series[i].Obs[iv].$.TIME_PERIOD;
-                price_A_total[iv] = series[i].Obs[iv].$.OBS_VALUE;
-              });
+              for (j = 0; j < series[i].Obs.length; j++) {
+                time[j] = series[i].Obs[j].$.TIME_PERIOD;
+                price_A_total[j] = series[i].Obs[j].$.OBS_VALUE;
+              }
             } else if (series[i].$.ITEM === "13103112720T1") {
-              $.each(series[i].Obs, function (iv, val) {
-                time[iv] = series[i].Obs[iv].$.TIME_PERIOD;
-                count_A_total[iv] = series[i].Obs[iv].$.OBS_VALUE;
-              });
+              for (j = 0; j < series[i].Obs.length; j++) {
+                time[j] = series[i].Obs[j].$.TIME_PERIOD;
+                count_A_total[j] = series[i].Obs[j].$.OBS_VALUE;
+              }
             }
 
           } else if (series[i].$.C_13101112720A === setCow && series[i].$.C_13101112720B === "13102112720B_002" && series[i].$.C_13101112720C === "13102112720C_001") {
             if (series[i].$.ITEM === "13103112720T2") {
-              $.each(series[i].Obs, function (iv, val) {
-                price_B_total[iv] = series[i].Obs[iv].$.OBS_VALUE;
-              });
+              for (j = 0; j < series[i].Obs.length; j++) {
+                price_B_total[j] = series[i].Obs[j].$.OBS_VALUE;
+              }
             } else if (series[i].$.ITEM === "13103112720T1") {
-              $.each(series[i].Obs, function (iv, val) {
-                count_B_total[iv] = series[i].Obs[iv].$.OBS_VALUE;
-              });
+              for (j = 0; j < series[i].Obs.length; j++) {
+                count_B_total[j] = series[i].Obs[j].$.OBS_VALUE;
+              }
             }
 
           } else if (series[i].$.C_13101112720A === setCow && series[i].$.C_13101112720B === "13102112720B_003" && series[i].$.C_13101112720C === "13102112720C_001") {
             if (series[i].$.ITEM === "13103112720T2") {
-              $.each(series[i].Obs, function (iv, val) {
-                price_C_total[iv] = series[i].Obs[iv].$.OBS_VALUE;
-              });
+              for (j = 0; j < series[i].Obs.length; j++) {
+                price_C_total[j] = series[i].Obs[j].$.OBS_VALUE;
+              }
             } else if (series[i].$.ITEM === "13103112720T1") {
-              $.each(series[i].Obs, function (iv, val) {
-                count_C_total[iv] = series[i].Obs[iv].$.OBS_VALUE;
-              });
+              for (j = 0; j < series[i].Obs.length; j++) {
+                count_C_total[j] = series[i].Obs[j].$.OBS_VALUE;
+              }
             }
           }
-        }); //each end
+        } //for end
 
         var period = [];
         for (i = 0; i < time.length; i++) {
