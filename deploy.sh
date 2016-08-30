@@ -1,5 +1,5 @@
 #!/bin/bash
-forever stop 1
+pm2 stop ../process.json
 rm -rf ../pigportal_build
 npm install --production
 meteor npm rebuild
@@ -11,4 +11,4 @@ npm uninstall fibers --save
 npm install fibers --save
 export PORT=3000 MONGO_URL=mongodb://pigportal:pig2016@localhost:27017/pigportal ROOT_URL=http://localhost METEOR_SETTINGS=$(cat /var/srv/pigportal/settings.json)
 cd ../..
-forever start main.js
+pm2 start ../process.json
