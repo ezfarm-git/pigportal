@@ -40,8 +40,7 @@ Router.route('/data/product', {
   yieldRegions: {
     'banner': {
       to: 'sidebar_left'
-    },
-    // 'banner': {to: 'sidebar_right'}
+    }
   }
 }, {
   name: 'data_product'
@@ -55,8 +54,7 @@ Router.route('/data/market', {
   yieldRegions: {
     'banner': {
       to: 'sidebar_left'
-    },
-    // 'banner': {to: 'sidebar_right'}
+    }
   }
 }, {
   name: 'data_market'
@@ -70,8 +68,7 @@ Router.route('/data/stats/pig/pops', {
   yieldRegions: {
     'stats_category': {
       to: 'sidebar_left'
-    },
-    // 'banner': {to: 'sidebar_right'}
+    }
   }
 }, {
   name: 'data_stats_pig_pops'
@@ -85,8 +82,7 @@ Router.route('/data/stats/pig/age', {
   yieldRegions: {
     'stats_category': {
       to: 'sidebar_left'
-    },
-    // 'banner': {to: 'sidebar_right'}
+    }
   }
 }, {
   name: 'data_stats_pig_age'
@@ -100,8 +96,7 @@ Router.route('/data/stats/pig/grade', {
   yieldRegions: {
     'stats_category': {
       to: 'sidebar_left'
-    },
-    // 'banner': {to: 'sidebar_right'}
+    }
   }
 }, {
   name: 'data_stats_pig_grade'
@@ -115,8 +110,7 @@ Router.route('/data/stats/cow/pops', {
   yieldRegions: {
     'stats_category': {
       to: 'sidebar_left'
-    },
-    // 'banner': {to: 'sidebar_right'}
+    }
   }
 }, {
   name: 'data_stats_cow_pops'
@@ -130,8 +124,7 @@ Router.route('/data/stats/cow/age', {
   yieldRegions: {
     'stats_category': {
       to: 'sidebar_left'
-    },
-    // 'banner': {to: 'sidebar_right'}
+    }
   }
 }, {
   name: 'data_stats_cow_age'
@@ -145,8 +138,7 @@ Router.route('/data/stats/cow/grade', {
   yieldRegions: {
     'stats_category': {
       to: 'sidebar_left'
-    },
-    // 'banner': {to: 'sidebar_right'}
+    }
   }
 }, {
   name: 'data_stats_cow_grade'
@@ -160,8 +152,7 @@ Router.route('/data/stats/chicken/pops', {
   yieldRegions: {
     'stats_category': {
       to: 'sidebar_left'
-    },
-    // 'banner': {to: 'sidebar_right'}
+    }
   }
 }, {
   name: 'data_stats_chicken_pops'
@@ -175,8 +166,7 @@ Router.route('/data/stats/chicken/age', {
   yieldRegions: {
     'stats_category': {
       to: 'sidebar_left'
-    },
-    // 'banner': {to: 'sidebar_right'}
+    }
   }
 }, {
   name: 'data_stats_chicken_age'
@@ -211,7 +201,6 @@ Router.route('/news/:category/:page', function () {
       categoryName: this.params.category
     }
   });
-  // this.render('banner', {to: 'sidebar_right'});
 }, {
   name: 'news'
 });
@@ -226,7 +215,6 @@ Router.route('/cardnews/:page', function () {
   this.render('card_news', {
     to: 'main'
   });
-  // this.render('banner', {to: 'sidebar_right'});
 }, {
   name: 'cardnews'
 });
@@ -241,7 +229,6 @@ Router.route('/corps/:page', function () {
   this.render('corps', {
     to: 'main'
   });
-  // this.render('banner', {to: 'sidebar_right'});
 }, {
   name: 'corps'
 });
@@ -257,7 +244,6 @@ Router.route('/corps_post/:postId', function () {
       postId: this.params.postId
     }
   });
-  // this.render('banner', {to: 'sidebar_right'});
   this.wait(Meteor.subscribe('corpsPost', this.params.postId));
 }, {
   name: 'corps_post'
@@ -276,7 +262,6 @@ Router.route('/focus/:category/:page', function () {
       categoryName: this.params.category
     }
   });
-  // this.render('banner', {to: 'sidebar_right'});
 }, {
   name: 'focus'
 });
@@ -292,7 +277,6 @@ Router.route('/focus_post/:postId', function () {
       postId: this.params.postId
     }
   });
-  // this.render('banner', {to: 'sidebar_right'});
   this.wait(Meteor.subscribe('focusPost', this.params.postId));
   this.wait(Meteor.subscribe('files'));
 }, {
@@ -312,7 +296,6 @@ Router.route('/favorites', function () {
       categoryName: this.params.category
     }
   });
-  // this.render('banner', {to: 'sidebar_right'});
   this.wait(Meteor.subscribe('favoritesSummary'));
 }, {
   name: 'favorites'
@@ -329,7 +312,6 @@ Router.route('/favorites/:category', function () {
       categoryName: this.params.category
     }
   });
-  // this.render('banner', {to: 'sidebar_right'});
   this.wait(Meteor.subscribe('favoritesList', this.params.category));
   this.wait(Meteor.subscribe('images'));
 }, {
@@ -349,7 +331,6 @@ Router.route('/infographic/:page', function () {
       categoryName: this.params.category
     }
   });
-  // this.render('banner', {to: 'sidebar_right'});
   this.wait(Meteor.subscribe('images'));
 }, {
   name: 'infographic'
@@ -365,7 +346,6 @@ Router.route('/events', function () {
   this.render('events', {
     to: 'main'
   });
-  // this.render('banner', {to: 'sidebar_right'});
   this.wait(Meteor.subscribe('events'));
 }, {
   name: 'events'
@@ -381,7 +361,6 @@ Router.route('/pigplan/intro', function () {
   this.render('pigplan_intro', {
     to: 'main'
   });
-  // this.render('banner', {to: 'sidebar_right'});
 }, {
   name: 'pigplan_intro'
 });
@@ -396,7 +375,6 @@ Router.route('/pigplan/feature', function () {
   this.render('pigplan_feature', {
     to: 'main'
   });
-  // this.render('banner', {to: 'sidebar_right'});
 }, {
   name: 'pigplan_feature'
 });
@@ -411,7 +389,6 @@ Router.route('/pigplan/case/:page', function () {
   this.render('case', {
     to: 'main'
   });
-  // this.render('banner', {to: 'sidebar_right'});
 }, {
   name: 'pigplan_case'
 });
@@ -427,7 +404,6 @@ Router.route('/case_post/:postId', function () {
       postId: this.params.postId
     }
   });
-  // this.render('banner', {to: 'sidebar_right'});
   this.wait(Meteor.subscribe('casePost', this.params.postId));
   this.wait(Meteor.subscribe('images'));
 }, {
