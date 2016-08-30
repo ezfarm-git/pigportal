@@ -1,10 +1,3 @@
-// News
-
-Meteor.publish("mainNews", function() {
-  return News.find({}, {sort: {date: -1}, limit: 6});
-});
-
-
 // Focus
 
 Meteor.publish("latestFocus", function() {
@@ -12,14 +5,21 @@ Meteor.publish("latestFocus", function() {
 });
 
 Meteor.publish("mainFocus", function() {
-  return Focus.find({}, {skip: 1}, {sort: {date: -1}, limit: 6});
+  return Focus.find({}, {skip: 1, limit: 6}, {sort: {date: -1, title: 1}});
+});
+
+
+// News
+
+Meteor.publish("mainNews", function() {
+  return News.find({}, {sort: {date: -1, title: 1}, limit: 6});
 });
 
 
 // Corps
 
 Meteor.publish("mainCorps", function() {
-  return Corps.find({}, {sort: {date: -1}, limit: 2});
+  return Corps.find({}, {sort: {date: -1, title: 1}, limit: 2});
 });
 
 
