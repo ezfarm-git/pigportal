@@ -1,8 +1,7 @@
 {
   "apps": [{
     "name": "pigplan-database-api",
-    "script": "/var/srv/pigplan-database-api/index.js",
-    "node-args": "--port 4000"
+    "script": "/var/srv/pigplan-database-api/index.js"
   }, {
     "name": "pigportal",
     "script": "/var/srv/pigportal_build/bundle/main.js",
