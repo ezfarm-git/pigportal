@@ -3,6 +3,7 @@ forever stop 1
 rm -rf ../pigportal_build
 meteor npm install bcrypt --save
 npm install --production
+meteor npm rebuild
 meteor build ../pigportal_build --architecture os.linux.x86_64
 cd ../pigportal_build
 tar -zxvf pigportal.tar.gz
