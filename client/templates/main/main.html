@@ -144,7 +144,6 @@
       </h5>
       <div class="card">
         {{#with mainCardNews}}
-
           <div class="post_img">
             {{#with images.[0]}}
               {{#with FS.GetFile "Images" this}}
@@ -162,9 +161,7 @@
             {{/each}}
             <h4 class="card-title">{{truncate title 40}}</h4>
           </div>
-
           <div class="card-block">
-
             <p class="card-text">{{truncate summary 160}}</p>
           </div>
         {{/with}}
@@ -190,7 +187,6 @@
             <h4 class="card-title">{{truncate title 40}}</h4>
           </div>
           <div class="card-block">
-
             <p class="card-text">{{truncate summary 160}}</p>
           </div>
         {{/with}}

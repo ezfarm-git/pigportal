@@ -2,7 +2,7 @@ Template.card_news.onCreated(function () {
   var self = this;
   self.autorun(function () {
     var currentPage = parseInt(Router.current().params.page) || 1;
-    var skipCount = (currentPage - 1) * 20; // 5 records per page
+    var skipCount = (currentPage - 1) * 10; // 5 records per page
     self.subscribe('cardNewsList', skipCount);
     self.subscribe('images');
   });
@@ -54,7 +54,7 @@ Template.card_news.helpers({
 var hasMorePages = function () {
   var currentPage = parseInt(Router.current().params.page) || 1;
   var totalPosts = Counts.get('postsCount');
-  return currentPage * 20 < totalPosts;
+  return currentPage * 10 < totalPosts;
 }
 
 Template.card_news.events({

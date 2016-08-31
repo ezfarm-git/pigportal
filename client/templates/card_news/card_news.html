@@ -8,13 +8,175 @@
     <div class="grid">
       {{#each postsList}}
         <div class="card grid-item">
-          {{#each images}}
+
+          {{#with images.[0]}}
             {{#with FS.GetFile "Images" this}}
-              <a href="{{this.url store='images'}}" rel="{{../../_id}}" title="{{../../title}}, {{../../summary}}" class="fancybox card-img-top">
-                <img src="{{this.url store='images'}}" width=270 height=90 style="object-fit: cover;">
+              <a href="{{this.url store='images'}}" rel="{{../../_id}}" title="{{../../title}}, {{../../summary}}" class="fancybox">
+                <img class="card-img-top" src="{{this.url store='images'}}" width=270 height=180 style="object-fit: cover;">
               </a>
             {{/with}}
-          {{/each}}
+          {{/with}}
+
+          {{#with images.[1]}}
+            {{#with FS.GetFile "Images" this}}
+              <a href="{{this.url store='images'}}" rel="{{../../_id}}" title="{{../../title}}, {{../../summary}}" class="fancybox" style="display:none;">
+                <img src="{{this.url store='images'}}">
+              </a>
+            {{/with}}
+          {{/with}}
+
+          {{#with images.[2]}}
+            {{#with FS.GetFile "Images" this}}
+              <a href="{{this.url store='images'}}" rel="{{../../_id}}" title="{{../../title}}, {{../../summary}}" class="fancybox" style="display:none;">
+                <img src="{{this.url store='images'}}">
+              </a>
+            {{/with}}
+          {{/with}}
+
+          {{#with images.[3]}}
+            {{#with FS.GetFile "Images" this}}
+              <a href="{{this.url store='images'}}" rel="{{../../_id}}" title="{{../../title}}, {{../../summary}}" class="fancybox" style="display:none;">
+                <img src="{{this.url store='images'}}">
+              </a>
+            {{/with}}
+          {{/with}}
+
+          {{#with images.[4]}}
+            {{#with FS.GetFile "Images" this}}
+              <a href="{{this.url store='images'}}" rel="{{../../_id}}" title="{{../../title}}, {{../../summary}}" class="fancybox" style="display:none;">
+                <img src="{{this.url store='images'}}">
+              </a>
+            {{/with}}
+          {{/with}}
+
+          {{#with images.[5]}}
+            {{#with FS.GetFile "Images" this}}
+              <a href="{{this.url store='images'}}" rel="{{../../_id}}" title="{{../../title}}, {{../../summary}}" class="fancybox" style="display:none;">
+                <img src="{{this.url store='images'}}">
+              </a>
+            {{/with}}
+          {{/with}}
+
+          {{#with images.[6]}}
+            {{#with FS.GetFile "Images" this}}
+              <a href="{{this.url store='images'}}" rel="{{../../_id}}" title="{{../../title}}, {{../../summary}}" class="fancybox" style="display:none;">
+                <img src="{{this.url store='images'}}">
+              </a>
+            {{/with}}
+          {{/with}}
+
+          {{#with images.[7]}}
+            {{#with FS.GetFile "Images" this}}
+              <a href="{{this.url store='images'}}" rel="{{../../_id}}" title="{{../../title}}, {{../../summary}}" class="fancybox" style="display:none;">
+                <img src="{{this.url store='images'}}">
+              </a>
+            {{/with}}
+          {{/with}}
+
+          {{#with images.[8]}}
+            {{#with FS.GetFile "Images" this}}
+              <a href="{{this.url store='images'}}" rel="{{../../_id}}" title="{{../../title}}, {{../../summary}}" class="fancybox" style="display:none;">
+                <img src="{{this.url store='images'}}">
+              </a>
+            {{/with}}
+          {{/with}}
+
+          {{#with images.[9]}}
+            {{#with FS.GetFile "Images" this}}
+              <a href="{{this.url store='images'}}" rel="{{../../_id}}" title="{{../../title}}, {{../../summary}}" class="fancybox" style="display:none;">
+                <img src="{{this.url store='images'}}">
+              </a>
+            {{/with}}
+          {{/with}}
+
+          {{#with images.[10]}}
+            {{#with FS.GetFile "Images" this}}
+              <a href="{{this.url store='images'}}" rel="{{../../_id}}" title="{{../../title}}, {{../../summary}}" class="fancybox" style="display:none;">
+                <img src="{{this.url store='images'}}">
+              </a>
+            {{/with}}
+          {{/with}}
+
+          {{#with images.[11]}}
+            {{#with FS.GetFile "Images" this}}
+              <a href="{{this.url store='images'}}" rel="{{../../_id}}" title="{{../../title}}, {{../../summary}}" class="fancybox" style="display:none;">
+                <img src="{{this.url store='images'}}">
+              </a>
+            {{/with}}
+          {{/with}}
+
+          {{#with images.[12]}}
+            {{#with FS.GetFile "Images" this}}
+              <a href="{{this.url store='images'}}" rel="{{../../_id}}" title="{{../../title}}, {{../../summary}}" class="fancybox" style="display:none;">
+                <img src="{{this.url store='images'}}">
+              </a>
+            {{/with}}
+          {{/with}}
+
+          {{#with images.[13]}}
+            {{#with FS.GetFile "Images" this}}
+              <a href="{{this.url store='images'}}" rel="{{../../_id}}" title="{{../../title}}, {{../../summary}}" class="fancybox" style="display:none;">
+                <img src="{{this.url store='images'}}">
+              </a>
+            {{/with}}
+          {{/with}}
+
+          {{#with images.[14]}}
+            {{#with FS.GetFile "Images" this}}
+              <a href="{{this.url store='images'}}" rel="{{../../_id}}" title="{{../../title}}, {{../../summary}}" class="fancybox" style="display:none;">
+                <img src="{{this.url store='images'}}">
+              </a>
+            {{/with}}
+          {{/with}}
+
+          {{#with images.[15]}}
+            {{#with FS.GetFile "Images" this}}
+              <a href="{{this.url store='images'}}" rel="{{../../_id}}" title="{{../../title}}, {{../../summary}}" class="fancybox" style="display:none;">
+                <img src="{{this.url store='images'}}">
+              </a>
+            {{/with}}
+          {{/with}}
+
+          {{#with images.[16]}}
+            {{#with FS.GetFile "Images" this}}
+              <a href="{{this.url store='images'}}" rel="{{../../_id}}" title="{{../../title}}, {{../../summary}}" class="fancybox" style="display:none;">
+                <img src="{{this.url store='images'}}">
+              </a>
+            {{/with}}
+          {{/with}}
+
+          {{#with images.[17]}}
+            {{#with FS.GetFile "Images" this}}
+              <a href="{{this.url store='images'}}" rel="{{../../_id}}" title="{{../../title}}, {{../../summary}}" class="fancybox" style="display:none;">
+                <img src="{{this.url store='images'}}">
+              </a>
+            {{/with}}
+          {{/with}}
+
+          {{#with images.[18]}}
+            {{#with FS.GetFile "Images" this}}
+              <a href="{{this.url store='images'}}" rel="{{../../_id}}" title="{{../../title}}, {{../../summary}}" class="fancybox" style="display:none;">
+                <img src="{{this.url store='images'}}">
+              </a>
+            {{/with}}
+          {{/with}}
+
+          {{#with images.[19]}}
+            {{#with FS.GetFile "Images" this}}
+              <a href="{{this.url store='images'}}" rel="{{../../_id}}" title="{{../../title}}, {{../../summary}}" class="fancybox" style="display:none;">
+                <img src="{{this.url store='images'}}">
+              </a>
+            {{/with}}
+          {{/with}}
+
+          {{#with images.[20]}}
+            {{#with FS.GetFile "Images" this}}
+              <a href="{{this.url store='images'}}" rel="{{../../_id}}" title="{{../../title}}, {{../../summary}}" class="fancybox" style="display:none;">
+                <img src="{{this.url store='images'}}">
+              </a>
+            {{/with}}
+          {{/with}}
+
           <div class="card-block">
             <h4 class="card-title">{{title}}</h4>
             <p class="card-text">{{summary}}</p>
@@ -37,7 +199,7 @@
           <a id="nextPage" href="{{nextPage}}">
             다음&nbsp;
             <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
-        </a>
+          </a>
         </li>
       </ul>
     </nav>
