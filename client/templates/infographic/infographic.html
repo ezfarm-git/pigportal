@@ -1,52 +1,43 @@
 <template name="infographic">
+
   <h4 class="postHeading">
     인포그래픽
   </h4>
-  {{#each postsList}}
-    <div class="image-post-container">
-      <!-- image info -->
-      <div class="row">
-        <div class="col-md-12">
-          <div class="image-info">
-            <div class="image-title">
-              <i class="fa fa-chevron-circle-right" aria-hidden="true"></i> {{title}}
-            </div>
-            <div class="image-summary">
-              {{summary}}
-            </div>
-            <div class="image-date">
-              <p class="text-muted">{{prettyDate date}}</p>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- the image -->
-      <div class="row">
-        <div class="col-md-12">
+  <div class="row">
+    <div class="grid">
+      {{#each postsList}}
+        <div class="card grid-item">
           {{#with FS.GetFile "Images" image }}
-            <a href="{{this.url store='images'}}" class="fancybox" title="{{../title}}, {{../summary}}">
-              <img src="{{this.url store='images'}}" alt="" width="100%">
+            <a href="{{this.url store='images'}}" class="fancybox card-img-top" title="{{../title}}, {{../summary}}">
+              <img src="{{this.url store='images'}}" width=270 height=180 style="object-fit: cover;">
             </a>
           {{/with}}
+          <div class="card-block">
+            <h4 class="card-title">{{title}}</h4>
+            <p class="card-text">{{summary}}</p>
+          </div>
         </div>
-      </div>
+      {{/each}}
     </div>
-  {{/each}}
-  <nav class="pager-nav">
-    <ul class="pager">
-      <li class="{{prevPageClass}}">
-        <a id="prevPage" href="{{prevPage}}">
-          <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> &nbsp;이전
-        </a>
-      </li>
-      &nbsp;&nbsp;&nbsp;&nbsp;
-      <li class="{{nextPageClass}}">
-        <a id="nextPage" href="{{nextPage}}">
+  </div>
+
+  <div class="row">
+    <nav class="pager-nav">
+      <ul class="pager">
+        <li class="{{prevPageClass}}">
+          <a id="prevPage" href="{{prevPage}}">
+            <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> &nbsp;이전
+          </a>
+        </li>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <li class="{{nextPageClass}}">
+          <a id="nextPage" href="{{nextPage}}">
                     다음&nbsp;
                     <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
                 </a>
-      </li>
-    </ul>
-  </nav>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </template>

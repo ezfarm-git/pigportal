@@ -73,7 +73,7 @@ fullcalendar:fullcalendar
 momentjs:moment
 tmeasday:publish-counts
 mrt:fancybox
-# mrt:modernizr-meteor
+isotope:isotope
 
 
 # Table

@@ -16,7 +16,7 @@ Meteor.publish("cardNewsList", function(skipCount) {
     });
 
     return CardNews.find({}, {
-        limit: 5, // records to show per page
+        limit: 20, // records to show per page
         skip: skipCount,
         sort: {date: -1}
     });

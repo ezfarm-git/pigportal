@@ -155,8 +155,8 @@
             {{/with}}
             {{#each images}}
               {{#with FS.GetFile "Images" this}}
-                <a href="{{this.url store='images'}}" rel="gallery" title="{{../../title}}, {{../../summary}}" class="fancybox card-img-top" style="display:none;">
-                  <img src="{{this.url store='images'}}" alt="" width="100%" height="{{galleryHeight ../../images 240}}" style="object-fit: cover;">
+                <a href="{{this.url store='images'}}" rel="gallery" title="{{../../title}}, {{../../summary}}" class="fancybox" style="display:none;">
+                  <img src="{{this.url store='images'}}">
                 </a>
               {{/with}}
             {{/each}}

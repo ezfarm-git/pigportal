@@ -1,3 +1,38 @@
 <template name="test">
-  <h1>test 1</h1>
+  <style media="screen">
+    .grid-item {
+      float: left;
+      width: 100px;
+      height: 100px;
+      background: #0D8;
+      border: 2px solid #333;
+      border-color: hsla(0, 0%, 0%, 0.7);
+    }
+
+    .grid-item--width2 {
+      width: 200px;
+    }
+
+    .grid-item--height2 {
+      height: 200px;
+    }
+  </style>
+
+  <h1>Isotope - masonry layout mode</h1>
+
+  <div class="grid">
+    <div class="grid-item grid-item--width2"></div>
+    <div class="grid-item grid-item--height2"></div>
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
+    <div class="grid-item grid-item--width2 grid-item--height2"></div>
+    <div class="grid-item grid-item--width2"></div>
+    <div class="grid-item grid-item--width2"></div>
+    <div class="grid-item grid-item--height2"></div>
+    <div class="grid-item"></div>
+    <div class="grid-item grid-item--width2"></div>
+    <div class="grid-item grid-item--height2"></div>
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
+  </div>
 </template>

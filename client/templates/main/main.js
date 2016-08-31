@@ -33,7 +33,7 @@ Template.main.helpers({
 });
 
 Template.main.events({
-    'click .fancybox': function(evt, tmpl) {
+    'click .fancybox': function(evt) {
         evt.preventDefault();
     },
     'click .fancyboxLauncher': function(evt) {

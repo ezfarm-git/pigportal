@@ -2,7 +2,7 @@ Template.infographic.onCreated(function() {
     var self = this;
     self.autorun(function() {
         var currentPage = parseInt(Router.current().params.page) || 1;
-        var skipCount = (currentPage - 1) * 5; // 10 records per page
+        var skipCount = (currentPage - 1) * 20; // 10 records per page
         self.subscribe('infographicList', skipCount);
     });
 });
@@ -12,6 +12,13 @@ Template.infographic.onRendered(function() {
         helpers: {
             title: {type: 'inside'}
         }
+    });
+    $('.grid').isotope({
+      // options...
+      itemSelector: '.grid-item',
+      masonry: {
+        columnWidth: 50
+      }
     });
 })
 
@@ -34,7 +41,7 @@ Template.infographic.helpers({
 var hasMorePages = function() {
     var currentPage = parseInt(Router.current().params.page) || 1;
     var totalPosts = Counts.get('postsCount');
-    return currentPage * 5 < totalPosts;
+    return currentPage * 20 < totalPosts;
 }
 
 Template.infographic.events({

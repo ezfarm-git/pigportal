@@ -571,7 +571,7 @@ Template.stats_pig_grade.onRendered(function () {
     Plotly.Plots.resize(gd6);
   };
 
-  $('.options_div').change(function () {
+  $('.time_div').change(function () {
     drawPlot();
     drawPlot2();
   });

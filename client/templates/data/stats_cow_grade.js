@@ -1,8 +1,5 @@
 Template.stats_cow_grade.onRendered(function () {
 
-  var time = [];
-  var period = [];
-
   var d3 = Plotly.d3;
   var g = d3.select('div[id="plot_1"]');
   var gd = g.node();
@@ -28,10 +25,23 @@ Template.stats_cow_grade.onRendered(function () {
   document.getElementById("datepicker1").value = moment(new Date(startPrd)).format('YYYY-MM');
   document.getElementById("datepicker2").value = moment(new Date(endPrd)).format('YYYY-MM');
 
-  // 경락가격 , 두수
-  function drawPlot(cow) {
+  var setCowDict = {
+    'total': '13102112719A_001',
+    'korean': '13102112719A_002',
+    'beef': '13102112719A_003',
+    'dairy': '13102112719A_004'
+  }
+  var setCowDict2 = {
+    'total': '13102112720A_001',
+    'korean': '13102112720A_002',
+    'beef': '13102112720A_003',
+    'dairy': '13102112720A_004'
+  }
 
-    var setCow = cow;
+  // 경락가격 , 두수
+  function drawPlot() {
+
+    var time = [];
 
     var price_two_plus_1_total = [];
     var price_plus_1_total = [];
@@ -54,6 +64,8 @@ Template.stats_cow_grade.onRendered(function () {
       } else {
         Session.setPersistent('cow_quality', res);
         var series = Session.get('cow_quality');
+
+        var setCow = setCowDict[$('input:radio[name="optradio"]:checked').val()];
         var txt = $('input:radio[name="optradio"]:checked').next('label').text();
 
         //   월 : M
@@ -146,6 +158,7 @@ Template.stats_cow_grade.onRendered(function () {
           }
         } //for end
 
+        var period = [];
         for (i = 0; i < time.length; i++) {
           period[i] = stringToDate(time[i]);
         }
@@ -279,10 +292,9 @@ Template.stats_cow_grade.onRendered(function () {
 
   } // drowplot end
 
-  function drawPlot2(cow) {
+  function drawPlot2() {
 
-    // 판정두수
-    var setCow = cow;
+    var time = [];
 
     var price_A_total = [];
     var price_B_total = [];
@@ -301,6 +313,8 @@ Template.stats_cow_grade.onRendered(function () {
       } else {
         Session.setPersistent('cow_quantity', res);
         var series = Session.get('cow_quantity');
+
+        var setCow = setCowDict2[$('input:radio[name="optradio"]:checked').val()];
         var txt = $('input:radio[name="optradio"]:checked').next('label').text();
 
         for (i = 0; i < series.length; i++) {
@@ -457,39 +471,17 @@ Template.stats_cow_grade.onRendered(function () {
 
   };
 
-  var setCow = "13102112719A_001";
-  drawPlot(setCow);
-  var setCow2 = "13102112720A_001"
-  drawPlot2(setCow2);
+  drawPlot();
+  drawPlot2();
 
-  $('input:radio[name="optradio"]').change(function () {
-    if (this.value === "total") {
-      setCow = "13102112719A_001";
-      setCow2 = "13102112720A_001";
-      drawPlot(setCow);
-      drawPlot2(setCow2);
-    } else if (this.value === "korean") {
-      setCow = "13102112719A_002";
-      setCow2 = "13102112720A_002";
-      drawPlot(setCow);
-      drawPlot2(setCow2);
-
-    } else if (this.value === "beef") {
-      setCow = "13102112719A_003";
-      setCow2 = "13102112720A_003";
-      drawPlot(setCow);
-      drawPlot2(setCow2);
-    } else if (this.value === "dairy") {
-      setCow = "13102112719A_004";
-      setCow2 = "13102112720A_004";
-      drawPlot(setCow);
-      drawPlot2(setCow2);
-    }
+  $('.time_div').change(function () {
+    drawPlot();
+    drawPlot2();
   });
 
-  $('.options_div').change(function () {
-    drawPlot(setCow);
-    drawPlot2(setCow2);
+  $('input:radio[name="optradio"]').change(function () {
+    drawPlot();
+    drawPlot2();
   });
 
 });
