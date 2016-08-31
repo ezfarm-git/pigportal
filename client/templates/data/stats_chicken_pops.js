@@ -7,21 +7,25 @@ Template.stats_chicken_pops.onRendered(function () {
       Session.setPersistent('chicken_total', res);
     }
   });
-
-  var txt = "전국";
+  var series = Session.get('chicken_total');
 
   function unitK(x) {
     return Math.round(x / 1000);
   }
-
   function unit10K(x) {
     return Math.round(x / 10000);
   }
-
   function unitM(x) {
     return Math.round(x / 1000000);
   }
+  function stringToDate(x) {
+    return x.substring(0, 4) + '년 ' + x.substring(6, 7) + '분기';
+  }
+  function stringToCount(x) {
+    return x + '마리';
+  }
 
+  var time = [];
   var city_farm = [];
   var city_scale = [];
   var scale_under_10000_cnt = [];
@@ -33,26 +37,19 @@ Template.stats_chicken_pops.onRendered(function () {
   var scale_30000_50000_farm = [];
   var scale_over_50000_farm = [];
 
-  // x축
-  var time = [];
-
   var d3 = Plotly.d3;
   var g = d3.select('div[id="plot_1"]');
   var gd = g.node();
-
   var g2 = d3.select('div[id="plot_2"]');
   var gd2 = g2.node();
-
   var g3 = d3.select('div[id="plot_3"]');
   var gd3 = g3.node();
-
   var g4 = d3.select('div[id="plot_4"]');
   var gd4 = g4.node();
 
   function drawPlot(curCity) {
-    var currnet_City = curCity;
 
-    var series = Session.get('chicken_total');
+    var currnet_City = curCity;
 
     // FREQ 분기 Q
     // ITEM T01 농가수 , T02 마리수 ,
@@ -125,13 +122,6 @@ Template.stats_chicken_pops.onRendered(function () {
       }
     } // for end
 
-    function stringToDate(x) {
-      return x.substring(0, 4) + '년 ' + x.substring(6, 7) + '분기';
-    }
-
-    function stringToCount(x) {
-      return x + '마리';
-    }
     var period = [];
     for (i = 0; i < 5; i++) {
       period[i] = stringToDate(time[i]);
@@ -399,13 +389,13 @@ Template.stats_chicken_pops.onRendered(function () {
 
   }
 
+  var txt = "전국";
   var setCity = "00";
   drawPlot(setCity);
 
   $('.citySelect').change(function () {
     var currentCity = this.value;
     txt = $('.citySelect option:selected').text();
-
     drawPlot(currentCity);
   });
 });

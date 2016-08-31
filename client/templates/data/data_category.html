@@ -1,0 +1,16 @@
+<template name="data_category">
+  <div class="panel panel-default" id="categoryPanel">
+    <div class="panel-heading" id="categoryPanelHeading">카테고리</div>
+    <div class="panel-body" id="categoryPanelBody">
+      <ul class="nav nav-pills nav-stacked" id="category_ul">
+        <li class="category_li"><a href="/data/product" target="_top">-&nbsp;&nbsp;주간생산지표</a></li>
+        <li class="category_li"><a href="/data/market" target="_top">-&nbsp;&nbsp;실시간 시황</a></li>
+        <li class="category_li"><a href="/data/stats/pig/pops" target="_top">-&nbsp;&nbsp;축산 통계</a></li>
+        <li class="category_li"><a href="/data/disease" target="_top">-&nbsp;&nbsp;질병 통계</a></li>
+        <li class="category_li"><a href="/data/bigdata" target="_top" class="end">-&nbsp;&nbsp;빅데이터</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="" style="margin-top:-10px; padding-left:5px; padding-right:5px;">이 페이지를 처음 방문한 경우, 차트가 로딩되지 않을 수 있습니다. 차트가 보이지 않는다면 잠시후 다시 시도해주세요.</p>
+  {{>banner}}
+</template>

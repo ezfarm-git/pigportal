@@ -7,8 +7,7 @@ Template.stats_chicken_age.onRendered(function () {
       Session.setPersistent('chicken_age', res);
     }
   });
-
-  var txt = "전국";
+  var series = Session.get('chicken_age');
 
   function unit10K(x) {
     return Math.round(x / 10000);
@@ -20,15 +19,15 @@ Template.stats_chicken_age.onRendered(function () {
   var age_3_6_total = [];
   var age_over_6_total = [];
 
-  function drawPlot(curCity) {
-    var currnet_City = curCity;
-    var series = Session.get('chicken_age');
+  var d3 = Plotly.d3;
+  var g = d3.select('div[id="plot_1"]');
+  var gd = g.node();
+  var g2 = d3.select('div[id="plot_2"]');
+  var gd2 = g2.node();
 
-    var d3 = Plotly.d3;
-    var g = d3.select('div[id="plot_1"]');
-    var gd = g.node();
-    var g2 = d3.select('div[id="plot_2"]');
-    var gd2 = g2.node();
+  function drawPlot(curCity) {
+
+    var currnet_City = curCity;
 
     //  FREQ : Q 분기
     // ITEM  : T01 합계 / T02 3개월미만 / T03	3~6개월 / T04	6개월이상 /
@@ -287,13 +286,13 @@ Template.stats_chicken_age.onRendered(function () {
     };
   }
 
+  var txt = "전국";
   var setCity = "00";
   drawPlot(setCity);
 
   $('.citySelect').change(function () {
     var currentCity = this.value;
     txt = $('.citySelect option:selected').text();
-
     drawPlot(currentCity);
   });
 });

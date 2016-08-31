@@ -9,7 +9,15 @@ Template.stats_pig_age.onRendered(function () {
     }
   });
 
-  var txt = "전국";
+  var series = Session.get('pig_ages');
+
+  function unitK(x) {
+    return Math.round(x / 1000);
+  }
+
+  function stringToDate(x) {
+    return x.substring(0, 4) + '년 ' + x.substring(6, 7) + '분기';
+  }
 
   var d3 = Plotly.d3;
   var g = d3.select('div[id="plot_1"]');
@@ -17,10 +25,7 @@ Template.stats_pig_age.onRendered(function () {
   var g2 = d3.select('div[id="plot_2"]');
   var gd2 = g2.node();
 
-  function unitK(x) {
-    return Math.round(x / 1000);
-  }
-
+  var time = [];
   var age_total = [];
   var age_under_2_total = [];
   var age_2_4_total = [];
@@ -32,12 +37,10 @@ Template.stats_pig_age.onRendered(function () {
   var age_over_8_female = [];
   var age_over_8_male = [];
 
-  // x축
-  var time = [];
-  var series = Session.get('pig_ages');
-
   function drawPlot(curCity) {
+
     var currnet_City = curCity;
+
     // Q 분기
     //T01	합계 / T02	2개월미만 / T03	2~4개월 / T04	4~6개월  / T05	6~8개월:계  / T06	6~8개월:암컷 / T07 6~8개월:수컷  / T08	8개월이상:계  / T09	8개월이상:암컷 /  T10	8개월이상:수컷
     // 14STD04410 마리 (단위)
@@ -79,9 +82,6 @@ Template.stats_pig_age.onRendered(function () {
       }
     }
 
-    function stringToDate(x) {
-      return x.substring(0, 4) + '년 ' + x.substring(6, 7) + '분기';
-    }
     var period = [];
     for (i = 0; i < 5; i++) {
       period[i] = stringToDate(time[i]);
@@ -466,13 +466,13 @@ Template.stats_pig_age.onRendered(function () {
     };
   }
 
+  var txt = "전국";
   var setCity = "00";
   drawPlot(setCity);
 
   $('.citySelect').change(function () {
     var currentCity = this.value;
     txt = $('.citySelect option:selected').text();
-
     drawPlot(currentCity);
   });
 });

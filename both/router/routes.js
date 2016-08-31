@@ -38,7 +38,7 @@ Router.route('/data/product', {
   layoutTemplate: 'layout_app',
   template: 'product',
   yieldRegions: {
-    'banner': {
+    'data_category': {
       to: 'sidebar_left'
     }
   }
@@ -52,7 +52,7 @@ Router.route('/data/market', {
   layoutTemplate: 'layout_app',
   template: 'market',
   yieldRegions: {
-    'banner': {
+    'data_category': {
       to: 'sidebar_left'
     }
   }

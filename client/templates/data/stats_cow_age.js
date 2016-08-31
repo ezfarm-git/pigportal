@@ -22,21 +22,22 @@ Template.stats_cow_age.onRendered(function () {
       Session.setPersistent('dariy_age', res);
     }
   });
+  var series = Session.get('hanwoo_age');
+  var series3 = Session.get('dariy_age');
 
-  var txt = "전국";
-  var cow = "한우";
 
   function unitK(x) {
     return Math.round(x / 1000);
   }
+  function stringToDate(x) {
+    return x.substring(0, 4) + '년 ' + x.substring(6, 7) + '분기';
+  }
 
+  var time = [];
   var age_total = [];
   var age_under_1_total = [];
   var age_1_2_total = [];
   var age_over_2_total = [];
-
-  // x축
-  var time = [];
 
   var d3 = Plotly.d3;
   var g = d3.select('div[id="plot_1"]');
@@ -44,19 +45,15 @@ Template.stats_cow_age.onRendered(function () {
   var g2 = d3.select('div[id="plot_2"]');
   var gd2 = g2.node();
 
-  // FREQ (분기) : Q
-  // ITEM : T01합계  /  T02 1세미만 /  T03	1~2세  /  T04	2세이상
-  // C_A (시도별)
-  // C_D (성별): 0 합계 /   1 암컷 /  2 수컷
-  // UNIT (단위):	14STD04410 마리
-
-  var series = Session.get('hanwoo_age');
-  var series3 = Session.get('dariy_age');
-
   function drawPlot(curCity) {
+
     var currnet_City = curCity;
 
-    var time = [];
+    // FREQ (분기) : Q
+    // ITEM : T01합계  /  T02 1세미만 /  T03	1~2세  /  T04	2세이상
+    // C_A (시도별)
+    // C_D (성별): 0 합계 /   1 암컷 /  2 수컷
+    // UNIT (단위):	14STD04410 마리
 
     for (i = 0; i < series.length; i++) {
 
@@ -106,9 +103,6 @@ Template.stats_cow_age.onRendered(function () {
       }
     } //for end
 
-    function stringToDate(x) {
-      return x.substring(0, 4) + '년 ' + x.substring(6, 7) + '분기';
-    }
     var period = [];
     for (i = 0; i < time.length; i++) {
       period[i] = stringToDate(time[i]);
@@ -336,6 +330,8 @@ Template.stats_cow_age.onRendered(function () {
     Plotly.Plots.resize(gd2);
   };
 
+  var txt = "전국";
+  var cow = "한우";
   var setCity = "00";
   drawPlot(setCity);
 

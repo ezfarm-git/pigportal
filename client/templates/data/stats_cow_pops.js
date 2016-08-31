@@ -24,20 +24,19 @@ Template.stats_cow_pops.onRendered(function () {
     }
   });
 
-  var txt = "전국 ";
-  var cow = "한우";
   var series = Session.get('hanwoo_total');
-  // var series2 = Session.get('yukwoo_total');
-  // var series3  = Session.get('dariy_total');
 
   function unitH(x) {
     return Math.round(x / 100);
   }
-
   function unitK(x) {
     return Math.round(x / 1000);
   }
+  function stringToDate(x) {
+    return x.substring(0, 4) + '년 ' + x.substring(6, 7) + '분기';
+  }
 
+  var time = [];
   var city_farm = [];
   var city_scale = [];
   var scale_under_20_cnt = [];
@@ -49,24 +48,19 @@ Template.stats_cow_pops.onRendered(function () {
   var scale_50_100_farm = [];
   var scale_over_100_farm = [];
 
-  // x축
-  var time = [];
+  var d3 = Plotly.d3;
+  var g = d3.select('div[id="plot_1"]');
+  var gd = g.node();
+  var g2 = d3.select('div[id="plot_2"]');
+  var gd2 = g2.node();
+  var g3 = d3.select('div[id="plot_3"]');
+  var gd3 = g3.node();
+  var g4 = d3.select('div[id="plot_4"]');
+  var gd4 = g4.node();
 
   function drawPlot(curCity) {
+
     var currnet_City = curCity;
-
-    var d3 = Plotly.d3;
-    var g = d3.select('div[id="plot_1"]');
-    var gd = g.node();
-
-    var g2 = d3.select('div[id="plot_2"]');
-    var gd2 = g2.node();
-
-    var g3 = d3.select('div[id="plot_3"]');
-    var gd3 = g3.node();
-
-    var g4 = d3.select('div[id="plot_4"]');
-    var gd4 = g4.node();
 
     // Q 분기 ,  T01 농가수 , T02 마리수 , 사육규모 00 (전체) 05 (20미만) 10 (20~50)  15(50~100) 20 (100이상)
 
@@ -125,9 +119,6 @@ Template.stats_cow_pops.onRendered(function () {
       }
     }
 
-    function stringToDate(x) {
-      return x.substring(0, 4) + '년 ' + x.substring(6, 7) + '분기';
-    }
     var period = [];
     for (i = 0; i < 5; i++) {
       period[i] = stringToDate(time[i]);
@@ -288,7 +279,7 @@ Template.stats_cow_pops.onRendered(function () {
     var data4 = [trace7, trace8, trace9, trace10];
 
     var layout = {
-      title: txt + cow + ' 사육 동향',
+      title: txt + ' ' + cow + ' 사육 동향',
       titlefont: {
         family: 'Jeju Gothic, serif',
         size: 22,
@@ -313,7 +304,7 @@ Template.stats_cow_pops.onRendered(function () {
     Plotly.newPlot(gd, data, layout);
 
     var layout2 = {
-      title: txt + cow + ' 가구당 사육두수',
+      title: txt + ' ' + cow + ' 가구당 사육두수',
       titlefont: {
         family: 'Jeju Gothic, serif',
         size: 22,
@@ -337,7 +328,7 @@ Template.stats_cow_pops.onRendered(function () {
     Plotly.newPlot(gd2, data2, layout2);
 
     var layout3 = {
-      title: txt + cow + ' 규모별 가구수',
+      title: txt + ' ' + cow + ' 규모별 가구수',
       titlefont: {
         family: 'Jeju Gothic, serif',
         size: 22,
@@ -361,7 +352,7 @@ Template.stats_cow_pops.onRendered(function () {
     Plotly.newPlot(gd3, data3, layout3);
 
     var layout4 = {
-      title: txt + cow + ' 규모별 사육두수',
+      title: txt + ' ' + cow + ' 규모별 사육두수',
       titlefont: {
         family: 'Jeju Gothic, serif',
         size: 22,
@@ -394,19 +385,21 @@ Template.stats_cow_pops.onRendered(function () {
 
   }
 
+  var txt = "전국";
+  var cow = "한우";
   var setCity = "00";
   drawPlot(setCity);
 
   $('input:radio[name="name"]').change(function () {
     // 한우
     if (this.value === "korean") {
-      cow = " 한우 ";
+      cow = "한우";
       series = Session.get('hanwoo_total');
     } else if (this.value === "beef") {
-      cow = " 육우 ";
+      cow = "육우";
       series = Session.get('yukwoo_total');
     } else {
-      cow = " 젖소 "
+      cow = "젖소"
       series = Session.get('dariy_total');
     }
     drawPlot(setCity);
