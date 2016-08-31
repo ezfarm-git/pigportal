@@ -13,11 +13,9 @@ Template.stats_pig_pops.onRendered(function () {
   function unitK(x) {
     return Math.round(x / 1000);
   }
-
   function unit10K(x) {
     return Math.round(x / 10000);
   }
-
   function stringToDate(x) {
     return x.substring(0, 4) + '년 ' + x.substring(6, 7) + '분기';
   }
@@ -25,13 +23,10 @@ Template.stats_pig_pops.onRendered(function () {
   var d3 = Plotly.d3;
   var g = d3.select('div[id="plot_1"]');
   var gd = g.node();
-
   var g2 = d3.select('div[id="plot_2"]');
   var gd2 = g2.node();
-
   var g3 = d3.select('div[id="plot_3"]');
   var gd3 = g3.node();
-
   var g4 = d3.select('div[id="plot_4"]');
   var gd4 = g4.node();
 
@@ -47,9 +42,10 @@ Template.stats_pig_pops.onRendered(function () {
   var scale_5000_10000_farm = [];
   var scale_over_10000_farm = [];
 
-  function drawPlot(curCity) {
+  function drawPlot() {
 
-    var currnet_City = curCity;
+    var current_City = $('.citySelect option:selected').val();
+    var txt = $('.citySelect option:selected').text();
 
     // Q 분기 ,
     // ITEM T01 농가수 , T02 마리수 ,
@@ -58,35 +54,35 @@ Template.stats_pig_pops.onRendered(function () {
 
     for (i = 0; i < series.length; i++) {
       // 농가수
-      if (series[i].$.C_A === currnet_City && series[i].$.C_B === "00" && series[i].$.ITEM === "T01") {
+      if (series[i].$.C_A === current_City && series[i].$.C_B === "00" && series[i].$.ITEM === "T01") {
         for (j = 0; j < series[i].Obs.length; j++) {
           time[j] = series[i].Obs[j].$.TIME_PERIOD;
           city_farm[j] = series[i].Obs[j].$.OBS_VALUE;
         }
       }
       //마리수
-      else if (series[i].$.C_A === currnet_City && series[i].$.C_B === "00" && series[i].$.ITEM === "T02") {
+      else if (series[i].$.C_A === current_City && series[i].$.C_B === "00" && series[i].$.ITEM === "T02") {
         for (j = 0; j < series[i].Obs.length; j++) {
           city_scale[j] = series[i].Obs[j].$.OBS_VALUE;
         }
       }
       // 규모별 농가수
-      else if (series[i].$.C_A === currnet_City && series[i].$.C_B === "05" && series[i].$.ITEM === "T01") {
+      else if (series[i].$.C_A === current_City && series[i].$.C_B === "05" && series[i].$.ITEM === "T01") {
         for (j = 0; j < series[i].Obs.length; j++) {
           scale_under_1000_farm[j] = series[i].Obs[j].$.OBS_VALUE;
         }
-      } else if (series[i].$.C_A === currnet_City && series[i].$.C_B === "10" && series[i].$.ITEM === "T01") {
+      } else if (series[i].$.C_A === current_City && series[i].$.C_B === "10" && series[i].$.ITEM === "T01") {
         for (j = 0; j < series[i].Obs.length; j++) {
           scale_1000_5000_farm[j] = series[i].Obs[j].$.OBS_VALUE;
         }
-      } else if (series[i].$.C_A === currnet_City && series[i].$.C_B === "15" && series[i].$.ITEM === "T01") {
+      } else if (series[i].$.C_A === current_City && series[i].$.C_B === "15" && series[i].$.ITEM === "T01") {
         for (j = 0; j < series[i].Obs.length; j++) {
           if (series[i].Obs[j].$.OBS_VALUE === "-") {
             scale_5000_10000_farm[j] = "0";
           } else
             scale_5000_10000_farm[j] = series[i].Obs[j].$.OBS_VALUE;
         }
-      } else if (series[i].$.C_A === currnet_City && series[i].$.C_B === "20" && series[i].$.ITEM === "T01") {
+      } else if (series[i].$.C_A === current_City && series[i].$.C_B === "20" && series[i].$.ITEM === "T01") {
         for (j = 0; j < series[i].Obs.length; j++) {
           if (series[i].Obs[j].$.OBS_VALUE === "-") {
             scale_over_10000_farm[j] = "0";
@@ -96,22 +92,22 @@ Template.stats_pig_pops.onRendered(function () {
       }
 
       // 규모별 마리수
-      else if (series[i].$.ITEM === "T02" && series[i].$.C_A === currnet_City && series[i].$.C_B === "05") {
+      else if (series[i].$.ITEM === "T02" && series[i].$.C_A === current_City && series[i].$.C_B === "05") {
         for (j = 0; j < series[i].Obs.length; j++) {
           scale_under_1000_cnt[j] = series[i].Obs[j].$.OBS_VALUE;
         }
-      } else if (series[i].$.ITEM === "T02" && series[i].$.C_A === currnet_City && series[i].$.C_B === "10") {
+      } else if (series[i].$.ITEM === "T02" && series[i].$.C_A === current_City && series[i].$.C_B === "10") {
         for (j = 0; j < series[i].Obs.length; j++) {
           scale_1000_5000_cnt[j] = series[i].Obs[j].$.OBS_VALUE;
         }
-      } else if (series[i].$.ITEM === "T02" && series[i].$.C_A === currnet_City && series[i].$.C_B === "15") {
+      } else if (series[i].$.ITEM === "T02" && series[i].$.C_A === current_City && series[i].$.C_B === "15") {
         for (j = 0; j < series[i].Obs.length; j++) {
           if (series[i].Obs[j].$.OBS_VALUE === "-") {
             scale_5000_10000_cnt[j] = "0";
           } else
             scale_5000_10000_cnt[j] = series[i].Obs[j].$.OBS_VALUE;
         }
-      } else if (series[i].$.ITEM === "T02" && series[i].$.C_A === currnet_City && series[i].$.C_B === "20") {
+      } else if (series[i].$.ITEM === "T02" && series[i].$.C_A === current_City && series[i].$.C_B === "20") {
         for (j = 0; j < series[i].Obs.length; j++) {
           if (series[i].Obs[j].$.OBS_VALUE === "-") {
             scale_over_10000_cnt[j] = "0";
@@ -387,13 +383,9 @@ Template.stats_pig_pops.onRendered(function () {
     };
   }
 
-  var txt = "전국";
-  var setCity = "00";
-  drawPlot(setCity);
+  drawPlot();
 
   $('.citySelect').change(function () {
-    var currentCity = this.value;
-    txt = $('.citySelect option:selected').text();
-    drawPlot(currentCity);
+    drawPlot();
   });
 });

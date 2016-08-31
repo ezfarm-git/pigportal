@@ -47,9 +47,10 @@ Template.stats_chicken_pops.onRendered(function () {
   var g4 = d3.select('div[id="plot_4"]');
   var gd4 = g4.node();
 
-  function drawPlot(curCity) {
+  function drawPlot() {
 
-    var currnet_City = curCity;
+    var current_City = $('.citySelect option:selected').val();
+    var txt = $('.citySelect option:selected').text();
 
     // FREQ 분기 Q
     // ITEM T01 농가수 , T02 마리수 ,
@@ -58,26 +59,26 @@ Template.stats_chicken_pops.onRendered(function () {
 
     for (i = 0; i < series.length; i++) {
       // 시도별 농가,마리수
-      if (series[i].$.ITEM === "T01" && series[i].$.C_A === currnet_City && series[i].$.C_B === "00") {
+      if (series[i].$.ITEM === "T01" && series[i].$.C_A === current_City && series[i].$.C_B === "00") {
         for (j = 0; j < series[i].Obs.length; j++) {
           time[j] = series[i].Obs[j].$.TIME_PERIOD;
           city_farm[j] = series[i].Obs[j].$.OBS_VALUE;
         }
-      } else if (series[i].$.ITEM === "T02" && series[i].$.C_A === currnet_City && series[i].$.C_B === "00") {
+      } else if (series[i].$.ITEM === "T02" && series[i].$.C_A === current_City && series[i].$.C_B === "00") {
         for (j = 0; j < series[i].Obs.length; j++) {
           city_scale[j] = series[i].Obs[j].$.OBS_VALUE;
         }
       }
       //규모별 농가수
-      else if (series[i].$.ITEM === "T01" && series[i].$.C_A === currnet_City && series[i].$.C_B === "05") {
+      else if (series[i].$.ITEM === "T01" && series[i].$.C_A === current_City && series[i].$.C_B === "05") {
         for (j = 0; j < series[i].Obs.length; j++) {
           scale_under_10000_farm[j] = series[i].Obs[j].$.OBS_VALUE;
         }
-      } else if (series[i].$.ITEM === "T01" && series[i].$.C_A === currnet_City && series[i].$.C_B === "10") {
+      } else if (series[i].$.ITEM === "T01" && series[i].$.C_A === current_City && series[i].$.C_B === "10") {
         for (j = 0; j < series[i].Obs.length; j++) {
           scale_10000_30000_farm[j] = series[i].Obs[j].$.OBS_VALUE;
         }
-      } else if (series[i].$.ITEM === "T01" && series[i].$.C_A === currnet_City && series[i].$.C_B === "15") {
+      } else if (series[i].$.ITEM === "T01" && series[i].$.C_A === current_City && series[i].$.C_B === "15") {
         for (j = 0; j < series[i].Obs.length; j++) {
           if (series[i].Obs[j].$.OBS_VALUE === "-") {
             scale_30000_50000_farm[j] = "0";
@@ -85,7 +86,7 @@ Template.stats_chicken_pops.onRendered(function () {
             scale_30000_50000_farm[j] = series[i].Obs[j].$.OBS_VALUE;
           }
         }
-      } else if (series[i].$.ITEM === "T01" && series[i].$.C_A === currnet_City && series[i].$.C_B === "20") {
+      } else if (series[i].$.ITEM === "T01" && series[i].$.C_A === current_City && series[i].$.C_B === "20") {
         for (j = 0; j < series[i].Obs.length; j++) {
           if (series[i].Obs[j].$.OBS_VALUE === "-") {
             scale_over_50000_farm[j] = "0";
@@ -95,15 +96,15 @@ Template.stats_chicken_pops.onRendered(function () {
         }
       }
       //규모별 마리수
-      else if (series[i].$.ITEM === "T02" && series[i].$.C_A === currnet_City && series[i].$.C_B === "05") {
+      else if (series[i].$.ITEM === "T02" && series[i].$.C_A === current_City && series[i].$.C_B === "05") {
         for (j = 0; j < series[i].Obs.length; j++) {
           scale_under_10000_cnt[j] = series[i].Obs[j].$.OBS_VALUE;
         }
-      } else if (series[i].$.ITEM === "T02" && series[i].$.C_A === currnet_City && series[i].$.C_B === "10") {
+      } else if (series[i].$.ITEM === "T02" && series[i].$.C_A === current_City && series[i].$.C_B === "10") {
         for (j = 0; j < series[i].Obs.length; j++) {
           scale_10000_30000_cnt[j] = series[i].Obs[j].$.OBS_VALUE;
         }
-      } else if (series[i].$.ITEM === "T02" && series[i].$.C_A === currnet_City && series[i].$.C_B === "15") {
+      } else if (series[i].$.ITEM === "T02" && series[i].$.C_A === current_City && series[i].$.C_B === "15") {
         for (j = 0; j < series[i].Obs.length; j++) {
           if (series[i].Obs[j].$.OBS_VALUE === "-") {
             scale_30000_50000_cnt[j] = "0";
@@ -111,7 +112,7 @@ Template.stats_chicken_pops.onRendered(function () {
             scale_30000_50000_cnt[j] = series[i].Obs[j].$.OBS_VALUE;
           }
         }
-      } else if (series[i].$.ITEM === "T02" && series[i].$.C_A === currnet_City && series[i].$.C_B === "20") {
+      } else if (series[i].$.ITEM === "T02" && series[i].$.C_A === current_City && series[i].$.C_B === "20") {
         for (j = 0; j < series[i].Obs.length; j++) {
           if (series[i].Obs[j].$.OBS_VALUE === "-") {
             scale_over_50000_cnt[j] = "0";
@@ -389,13 +390,9 @@ Template.stats_chicken_pops.onRendered(function () {
 
   }
 
-  var txt = "전국";
-  var setCity = "00";
-  drawPlot(setCity);
+  drawPlot();
 
   $('.citySelect').change(function () {
-    var currentCity = this.value;
-    txt = $('.citySelect option:selected').text();
-    drawPlot(currentCity);
+    drawPlot();
   });
 });

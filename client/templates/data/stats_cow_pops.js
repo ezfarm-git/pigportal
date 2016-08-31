@@ -58,61 +58,63 @@ Template.stats_cow_pops.onRendered(function () {
   var g4 = d3.select('div[id="plot_4"]');
   var gd4 = g4.node();
 
-  function drawPlot(curCity) {
+  function drawPlot() {
 
-    var currnet_City = curCity;
+    var current_City = $('.citySelect option:selected').val();
+    var txt = $('.citySelect option:selected').text();
+    var cow = $('input:radio[name="optradio"]:checked').next('label').text();
 
     // Q 분기 ,  T01 농가수 , T02 마리수 , 사육규모 00 (전체) 05 (20미만) 10 (20~50)  15(50~100) 20 (100이상)
 
     for (i = 0; i < series.length; i++) {
       // 한우 가구
-      if (series[i].$.ITEM === "T01" && series[i].$.C_A === currnet_City && series[i].$.C_B === "00") {
+      if (series[i].$.ITEM === "T01" && series[i].$.C_A === current_City && series[i].$.C_B === "00") {
         for (j = 0; j < series[i].Obs.length; j++) {
           city_farm[j] = series[i].Obs[j].$.OBS_VALUE;
           time[j] = series[i].Obs[j].$.TIME_PERIOD;
         }
       }
       //마리수
-      else if (series[i].$.ITEM === "T02" && series[i].$.C_A === currnet_City && series[i].$.C_B === "00") {
+      else if (series[i].$.ITEM === "T02" && series[i].$.C_A === current_City && series[i].$.C_B === "00") {
         for (j = 0; j < series[i].Obs.length; j++) {
           city_scale[j] = series[i].Obs[j].$.OBS_VALUE;
         }
       }
 
       //규모별 농가수
-      else if (series[i].$.ITEM === "T01" && series[i].$.C_A === currnet_City && series[i].$.C_B === "05") {
+      else if (series[i].$.ITEM === "T01" && series[i].$.C_A === current_City && series[i].$.C_B === "05") {
         for (j = 0; j < series[i].Obs.length; j++) {
           scale_under_20_farm[j] = series[i].Obs[j].$.OBS_VALUE;
         }
-      } else if (series[i].$.ITEM === "T01" && series[i].$.C_A === currnet_City && series[i].$.C_B === "10") {
+      } else if (series[i].$.ITEM === "T01" && series[i].$.C_A === current_City && series[i].$.C_B === "10") {
         for (j = 0; j < series[i].Obs.length; j++) {
           scale_20_50_farm[j] = series[i].Obs[j].$.OBS_VALUE;
         }
-      } else if (series[i].$.ITEM === "T01" && series[i].$.C_A === currnet_City && series[i].$.C_B === "15") {
+      } else if (series[i].$.ITEM === "T01" && series[i].$.C_A === current_City && series[i].$.C_B === "15") {
         for (j = 0; j < series[i].Obs.length; j++) {
           scale_50_100_farm[j] = series[i].Obs[j].$.OBS_VALUE;
         }
-      } else if (series[i].$.ITEM === "T01" && series[i].$.C_A === currnet_City && series[i].$.C_B === "20") {
+      } else if (series[i].$.ITEM === "T01" && series[i].$.C_A === current_City && series[i].$.C_B === "20") {
         for (j = 0; j < series[i].Obs.length; j++) {
           scale_over_100_farm[j] = series[i].Obs[j].$.OBS_VALUE;
         }
       }
       // 규모별 마리수
-      else if (series[i].$.ITEM === "T02" && series[i].$.C_A === currnet_City && series[i].$.C_B === "05") {
+      else if (series[i].$.ITEM === "T02" && series[i].$.C_A === current_City && series[i].$.C_B === "05") {
         for (j = 0; j < series[i].Obs.length; j++) {
           scale_under_20_cnt[j] = series[i].Obs[j].$.OBS_VALUE;
         }
       } //마리수
-      else if (series[i].$.ITEM === "T02" && series[i].$.C_A === currnet_City && series[i].$.C_B === "10") {
+      else if (series[i].$.ITEM === "T02" && series[i].$.C_A === current_City && series[i].$.C_B === "10") {
         for (j = 0; j < series[i].Obs.length; j++) {
           scale_20_50_cnt[j] = series[i].Obs[j].$.OBS_VALUE;
         }
       } //마리수
-      else if (series[i].$.ITEM === "T02" && series[i].$.C_A === currnet_City && series[i].$.C_B === "15") {
+      else if (series[i].$.ITEM === "T02" && series[i].$.C_A === current_City && series[i].$.C_B === "15") {
         for (j = 0; j < series[i].Obs.length; j++) {
           scale_50_100_cnt[j] = series[i].Obs[j].$.OBS_VALUE;
         }
-      } else if (series[i].$.ITEM === "T02" && series[i].$.C_A === currnet_City && series[i].$.C_B === "20") {
+      } else if (series[i].$.ITEM === "T02" && series[i].$.C_A === current_City && series[i].$.C_B === "20") {
         for (j = 0; j < series[i].Obs.length; j++) {
           scale_over_100_cnt[j] = series[i].Obs[j].$.OBS_VALUE;
         }
@@ -385,29 +387,21 @@ Template.stats_cow_pops.onRendered(function () {
 
   }
 
-  var txt = "전국";
-  var cow = "한우";
-  var setCity = "00";
-  drawPlot(setCity);
+  drawPlot();
 
-  $('input:radio[name="name"]').change(function () {
+  $('input:radio[name="optradio"]').change(function () {
     // 한우
     if (this.value === "korean") {
-      cow = "한우";
       series = Session.get('hanwoo_total');
     } else if (this.value === "beef") {
-      cow = "육우";
       series = Session.get('yukwoo_total');
     } else {
-      cow = "젖소"
       series = Session.get('dariy_total');
     }
-    drawPlot(setCity);
+    drawPlot();
   });
 
   $('.citySelect').change(function () {
-    var currentCity = this.value;
-    txt = $('.citySelect option:selected').text();
-    drawPlot(currentCity);
+    drawPlot();
   });
 });

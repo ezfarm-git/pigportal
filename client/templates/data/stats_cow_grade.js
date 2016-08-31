@@ -54,6 +54,7 @@ Template.stats_cow_grade.onRendered(function () {
       } else {
         Session.setPersistent('cow_quality', res);
         var series = Session.get('cow_quality');
+        var txt = $('input:radio[name="optradio"]:checked').next('label').text();
 
         //   월 : M
         //  항목 : 	13103112719T1	두수 / 13103112719T2 경락가격
@@ -226,7 +227,7 @@ Template.stats_cow_grade.onRendered(function () {
         var c_data = [trace5, trace6, trace7, trace8, trace9];
 
         var layout = {
-          title: txt + '경락가격 (육질)',
+          title: txt + ' 경락가격 (육질)',
           titlefont: {
             family: 'Jeju Gothic, serif',
             size: 22,
@@ -250,7 +251,7 @@ Template.stats_cow_grade.onRendered(function () {
         Plotly.newPlot(gd, p_data, layout);
 
         var layout2 = {
-          title: txt + '판정두수 (육질)',
+          title: txt + ' 판정두수 (육질)',
           titlefont: {
             family: 'Jeju Gothic, serif',
             size: 22,
@@ -300,6 +301,7 @@ Template.stats_cow_grade.onRendered(function () {
       } else {
         Session.setPersistent('cow_quantity', res);
         var series = Session.get('cow_quantity');
+        var txt = $('input:radio[name="optradio"]:checked').next('label').text();
 
         for (i = 0; i < series.length; i++) {
 
@@ -395,7 +397,7 @@ Template.stats_cow_grade.onRendered(function () {
         var c_data = [trace5, trace6, trace7];
 
         var layout = {
-          title: txt + '경락가격 (육량)',
+          title: txt + ' 경락가격 (육량)',
           titlefont: {
             family: 'Jeju Gothic, serif',
             size: 22,
@@ -419,7 +421,7 @@ Template.stats_cow_grade.onRendered(function () {
         Plotly.newPlot(gd3, p_data, layout);
 
         var layout2 = {
-          title: txt + '판정두수 (육량)',
+          title: txt + ' 판정두수 (육량)',
           titlefont: {
             family: 'Jeju Gothic, serif',
             size: 22,
@@ -455,34 +457,29 @@ Template.stats_cow_grade.onRendered(function () {
 
   };
 
-  var txt = "전체 ";
   var setCow = "13102112719A_001";
   drawPlot(setCow);
   var setCow2 = "13102112720A_001"
   drawPlot2(setCow2);
 
-  $('input:radio[name="name"]').change(function () {
+  $('input:radio[name="optradio"]').change(function () {
     if (this.value === "total") {
-      txt = "전체 ";
       setCow = "13102112719A_001";
       setCow2 = "13102112720A_001";
       drawPlot(setCow);
       drawPlot2(setCow2);
     } else if (this.value === "korean") {
-      txt = "한우 ";
       setCow = "13102112719A_002";
       setCow2 = "13102112720A_002";
       drawPlot(setCow);
       drawPlot2(setCow2);
 
     } else if (this.value === "beef") {
-      txt = "육우 ";
       setCow = "13102112719A_003";
       setCow2 = "13102112720A_003";
       drawPlot(setCow);
       drawPlot2(setCow2);
     } else if (this.value === "dairy") {
-      txt = "젖소 ";
       setCow = "13102112719A_004";
       setCow2 = "13102112720A_004";
       drawPlot(setCow);

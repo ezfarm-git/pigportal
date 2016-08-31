@@ -12,6 +12,9 @@ Template.stats_chicken_age.onRendered(function () {
   function unit10K(x) {
     return Math.round(x / 10000);
   }
+  function stringToDate(x) {
+    return x.substring(0, 4) + '년 ' + x.substring(6, 7) + '분기';
+  }
 
   var time = [];
   var age_total = [];
@@ -25,9 +28,10 @@ Template.stats_chicken_age.onRendered(function () {
   var g2 = d3.select('div[id="plot_2"]');
   var gd2 = g2.node();
 
-  function drawPlot(curCity) {
+  function drawPlot() {
 
-    var currnet_City = curCity;
+    var current_City = $('.citySelect option:selected').val();
+    var txt = $('.citySelect option:selected').text();
 
     //  FREQ : Q 분기
     // ITEM  : T01 합계 / T02 3개월미만 / T03	3~6개월 / T04	6개월이상 /
@@ -35,25 +39,22 @@ Template.stats_chicken_age.onRendered(function () {
     // 14STD04410	마리
 
     for (i = 0; i < series.length; i++) {
-      if (series[i].$.ITEM === "T02" && series[i].$.C_A === currnet_City) {
+      if (series[i].$.ITEM === "T02" && series[i].$.C_A === current_City) {
         for (j = 0; j < series[i].Obs.length; j++) {
           time[j] = series[i].Obs[j].$.TIME_PERIOD;
           age_under_3_total[j] = series[i].Obs[j].$.OBS_VALUE;
         }
-      } else if (series[i].$.ITEM === "T03" && series[i].$.C_A === currnet_City) {
+      } else if (series[i].$.ITEM === "T03" && series[i].$.C_A === current_City) {
         for (j = 0; j < series[i].Obs.length; j++) {
           age_3_6_total[j] = series[i].Obs[j].$.OBS_VALUE;
         }
-      } else if (series[i].$.ITEM === "T04" && series[i].$.C_A === currnet_City) {
+      } else if (series[i].$.ITEM === "T04" && series[i].$.C_A === current_City) {
         for (j = 0; j < series[i].Obs.length; j++) {
           age_over_6_total[j] = series[i].Obs[j].$.OBS_VALUE;
         }
       }
     } // for end
 
-    function stringToDate(x) {
-      return x.substring(0, 4) + '년 ' + x.substring(6, 7) + '분기';
-    }
     var period = [];
     for (i = 0; i < 5; i++) {
       period[i] = stringToDate(time[i]);
@@ -286,13 +287,9 @@ Template.stats_chicken_age.onRendered(function () {
     };
   }
 
-  var txt = "전국";
-  var setCity = "00";
-  drawPlot(setCity);
+  drawPlot();
 
   $('.citySelect').change(function () {
-    var currentCity = this.value;
-    txt = $('.citySelect option:selected').text();
-    drawPlot(currentCity);
+    drawPlot();
   });
 });

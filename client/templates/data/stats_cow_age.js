@@ -45,9 +45,11 @@ Template.stats_cow_age.onRendered(function () {
   var g2 = d3.select('div[id="plot_2"]');
   var gd2 = g2.node();
 
-  function drawPlot(curCity) {
+  function drawPlot() {
 
-    var currnet_City = curCity;
+    var current_City = $('.citySelect option:selected').val();
+    var txt = $('.citySelect option:selected').text();
+    var cow = $('input:radio[name="optradio"]:checked').next('label').text();
 
     // FREQ (분기) : Q
     // ITEM : T01합계  /  T02 1세미만 /  T03	1~2세  /  T04	2세이상
@@ -59,23 +61,23 @@ Template.stats_cow_age.onRendered(function () {
 
       if (series[i].$.C_D) {
         // 모든 연령별 성별 전체
-        if (series[i].$.ITEM === "T02" && series[i].$.C_A === currnet_City && series[i].$.C_D === "0") {
+        if (series[i].$.ITEM === "T02" && series[i].$.C_A === current_City && series[i].$.C_D === "0") {
           for (j = 0; j < series[i].Obs.length; j++) {
             time[j] = series[i].Obs[j].$.TIME_PERIOD;
             age_under_1_total[j] = series[i].Obs[j].$.OBS_VALUE;
           }
-        } else if (series[i].$.ITEM === "T03" && series[i].$.C_A === currnet_City && series[i].$.C_D === "0") {
+        } else if (series[i].$.ITEM === "T03" && series[i].$.C_A === current_City && series[i].$.C_D === "0") {
           for (j = 0; j < series[i].Obs.length; j++) {
             age_1_2_total[j] = series[i].Obs[j].$.OBS_VALUE;
           }
-        } else if (series[i].$.ITEM === "T04" && series[i].$.C_A === currnet_City && series[i].$.C_D === "0") {
+        } else if (series[i].$.ITEM === "T04" && series[i].$.C_A === current_City && series[i].$.C_D === "0") {
           for (j = 0; j < series[i].Obs.length; j++) {
             age_over_2_total[j] = series[i].Obs[j].$.OBS_VALUE;
           }
         }
       } else {
 
-        if (series[i].$.ITEM === "T02" && series[i].$.C_A === currnet_City) {
+        if (series[i].$.ITEM === "T02" && series[i].$.C_A === current_City) {
           for (j = 0; j < series[i].Obs.length; j++) {
             if (series[i].Obs[j].$.OBS_VALUE === "-") {
               time[j] = series[i].Obs[j].$.TIME_PERIOD;
@@ -85,14 +87,14 @@ Template.stats_cow_age.onRendered(function () {
               age_under_1_total[j] = series[i].Obs[j].$.OBS_VALUE;
             }
           }
-        } else if (series[i].$.ITEM === "T03" && series[i].$.C_A === currnet_City) {
+        } else if (series[i].$.ITEM === "T03" && series[i].$.C_A === current_City) {
           for (j = 0; j < series[i].Obs.length; j++) {
             if (series[i].Obs[j].$.OBS_VALUE === "-") {
               age_1_2_total[j] = "0";
             } else
               age_1_2_total[j] = series[i].Obs[j].$.OBS_VALUE;
           }
-        } else if (series[i].$.ITEM === "T04" && series[i].$.C_A === currnet_City) {
+        } else if (series[i].$.ITEM === "T04" && series[i].$.C_A === current_City) {
           for (j = 0; j < series[i].Obs.length; j++) {
             if (series[i].Obs[j].$.OBS_VALUE === "-") {
               age_over_2_total[j] = "0";
@@ -330,30 +332,22 @@ Template.stats_cow_age.onRendered(function () {
     Plotly.Plots.resize(gd2);
   };
 
-  var txt = "전국";
-  var cow = "한우";
-  var setCity = "00";
-  drawPlot(setCity);
+  drawPlot();
 
-  $('input:radio[name="name"]').change(function () {
+  $('input:radio[name="optradio"]').change(function () {
     if (this.value === "korean") {
-      cow = "한우";
       series = Session.get('hanwoo_age');
-      drawPlot(setCity);
+      drawPlot();
     } else if (this.value === "beef") {
-      cow = "육우";
       series = Session.get('yukwoo_age');
-      drawPlot(setCity);
+      drawPlot();
     } else {
-      cow = "젖소";
       series = Session.get('dariy_age');
-      drawPlot(setCity);
+      drawPlot();
     }
   });
 
   $('.citySelect').change(function () {
-    setCity = this.value;
-    txt = $('.citySelect option:selected').text();
-    drawPlot(setCity);
+    drawPlot();
   });
 });

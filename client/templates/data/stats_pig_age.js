@@ -14,7 +14,6 @@ Template.stats_pig_age.onRendered(function () {
   function unitK(x) {
     return Math.round(x / 1000);
   }
-
   function stringToDate(x) {
     return x.substring(0, 4) + '년 ' + x.substring(6, 7) + '분기';
   }
@@ -37,45 +36,46 @@ Template.stats_pig_age.onRendered(function () {
   var age_over_8_female = [];
   var age_over_8_male = [];
 
-  function drawPlot(curCity) {
+  function drawPlot() {
 
-    var currnet_City = curCity;
+    var current_City = $('.citySelect option:selected').val();
+    var txt = $('.citySelect option:selected').text();
 
     // Q 분기
     //T01	합계 / T02	2개월미만 / T03	2~4개월 / T04	4~6개월  / T05	6~8개월:계  / T06	6~8개월:암컷 / T07 6~8개월:수컷  / T08	8개월이상:계  / T09	8개월이상:암컷 /  T10	8개월이상:수컷
     // 14STD04410 마리 (단위)
 
     for (i = 0; i < series.length; i++) {
-      if (series[i].$.C_A === currnet_City && series[i].$.ITEM === "T01") {
+      if (series[i].$.C_A === current_City && series[i].$.ITEM === "T01") {
         for (j = 0; j < series[i].Obs.length; j++) {
           time[j] = series[i].Obs[j].$.TIME_PERIOD;
           age_total[j] = series[i].Obs[j].$.OBS_VALUE;
         }
-      } else if (series[i].$.C_A === currnet_City && series[i].$.ITEM === "T02") {
+      } else if (series[i].$.C_A === current_City && series[i].$.ITEM === "T02") {
         for (j = 0; j < series[i].Obs.length; j++) {
           age_under_2_total[j] = series[i].Obs[j].$.OBS_VALUE;
         }
-      } else if (series[i].$.C_A === currnet_City && series[i].$.ITEM === "T03") {
+      } else if (series[i].$.C_A === current_City && series[i].$.ITEM === "T03") {
         for (j = 0; j < series[i].Obs.length; j++) {
           age_2_4_total[j] = series[i].Obs[j].$.OBS_VALUE;
         }
-      } else if (series[i].$.C_A === currnet_City && series[i].$.ITEM === "T04") {
+      } else if (series[i].$.C_A === current_City && series[i].$.ITEM === "T04") {
         for (j = 0; j < series[i].Obs.length; j++) {
           age_4_6_total[j] = series[i].Obs[j].$.OBS_VALUE;
         }
-      } else if (series[i].$.C_A === currnet_City && series[i].$.ITEM === "T06") {
+      } else if (series[i].$.C_A === current_City && series[i].$.ITEM === "T06") {
         for (j = 0; j < series[i].Obs.length; j++) {
           age_6_8_female[j] = series[i].Obs[j].$.OBS_VALUE;
         }
-      } else if (series[i].$.C_A === currnet_City && series[i].$.ITEM === "T07") {
+      } else if (series[i].$.C_A === current_City && series[i].$.ITEM === "T07") {
         for (j = 0; j < series[i].Obs.length; j++) {
           age_6_8_male[j] = series[i].Obs[j].$.OBS_VALUE;
         }
-      } else if (series[i].$.C_A === currnet_City && series[i].$.ITEM === "T08") {
+      } else if (series[i].$.C_A === current_City && series[i].$.ITEM === "T08") {
         for (j = 0; j < series[i].Obs.length; j++) {
           age_over_8_female[j] = series[i].Obs[j].$.OBS_VALUE;
         }
-      } else if (series[i].$.C_A === currnet_City && series[i].$.ITEM === "T10") {
+      } else if (series[i].$.C_A === current_City && series[i].$.ITEM === "T10") {
         for (j = 0; j < series[i].Obs.length; j++) {
           age_over_8_male[j] = series[i].Obs[j].$.OBS_VALUE;
         }
@@ -466,13 +466,9 @@ Template.stats_pig_age.onRendered(function () {
     };
   }
 
-  var txt = "전국";
-  var setCity = "00";
-  drawPlot(setCity);
+  drawPlot();
 
   $('.citySelect').change(function () {
-    var currentCity = this.value;
-    txt = $('.citySelect option:selected').text();
-    drawPlot(currentCity);
+    drawPlot();
   });
 });

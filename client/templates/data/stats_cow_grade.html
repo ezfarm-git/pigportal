@@ -5,7 +5,6 @@
     <span class="text-muted postsCategory" style="white-space:nowrap;">등급판정 통계</span>
   </h4>
 
-  <hr>
   <div class="row options_div" style="text-align:center;">
     <div class="col-md-2"></div>
     <div class="col-md-4" style="white-space: nowrap; margin-bottom:10px;">
@@ -17,28 +16,21 @@
       <input type="month" id="datepicker2" style="text-align:center;">
     </div>
     <div class="col-md-2"></div>
-
-    <br>
-    <br>
+    <br><br>
   </div>
   <div class="row options_div" style="text-align:center;">
-    &nbsp;
-    <label>
-      <input type="radio" name="name" value="total" checked/>&nbsp;&nbsp;전 체
-    </label>&emsp;&emsp;
-    <label>
-      <input type="radio" name="name" value="korean" />&nbsp;&nbsp;한 우
-    </label>&emsp;&emsp;
-    <label>
-      <input type="radio" name="name" value="beef" />&nbsp;&nbsp;육 우
-    </label>&emsp;&emsp;
-    <label>
-      <input type="radio" name="name" value="dairy" />&nbsp;&nbsp;젖 소
-    </label>
-    &nbsp;
+    <input type="radio" name="optradio" id="total" value="total" checked/>
+    <label for="total">전체</label>&emsp;&emsp;
+    <input type="radio" name="optradio" id="korean" value="korean">
+    <label for="korean">한우</label>&emsp;&emsp;
+    <input type="radio" name="optradio" id="beef" value="beef">
+    <label for="beef">육우</label>&emsp;&emsp;
+    <input type="radio" name="optradio" id="dairy" value="dairy">
+    <label for="dairy">젖소</label>
   </div>
 
-  <hr>
+  <hr style="margin-top:15px; margin-bottom:15px;">
+
   <p style="margin-left: 5px; text-align:center;">
     <span style="color:steelblue; white-space:nowrap; margin-right:25px;">■ 1+등급</span>
     <span style="color:darkorange; white-space:nowrap; margin-right:25px;">■ 1등급</span>
