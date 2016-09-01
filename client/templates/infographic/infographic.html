@@ -9,8 +9,8 @@
       {{#each postsList}}
         <div class="card grid-item">
           {{#with FS.GetFile "Images" image }}
-            <a href="{{this.url store='images'}}" class="fancybox card-img-top" title="{{../title}}, {{../summary}}">
-              <img src="{{this.url store='images'}}" width=270 height=180 style="object-fit: cover;">
+            <a href="{{this.url store='images'}}" class="fancybox" title="{{../title}}, {{../summary}}">
+              <img class="card-img-top" src="{{this.url store='images'}}" width=270 height=180 style="object-fit: cover;">
             </a>
           {{/with}}
           <div class="card-block">

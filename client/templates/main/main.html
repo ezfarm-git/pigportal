@@ -207,7 +207,10 @@
       </h5>
       <div class="list-group">
         {{#each mainEvents}}
-          <p class="list-group-item">{{title}}&emsp; {{start}} ... {{end}}</p>
+          <div class="list-group-item" style="padding-top:2px; padding-bottom:2px;">
+            <h6 style="margin-bottom:2px;">{{title}}</h6>
+            <p class="text-muted" style="margin-bottom:5px; color: #728FA7">{{start}} ... {{end}}</p>
+          </div>
         {{/each}}
       </div>
 

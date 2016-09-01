@@ -144,6 +144,11 @@
   .ba {
     display: none !important;
   }
+  .first-nav-li {
+    border-top-style: solid;
+    border-width: 1px;
+    border-color: darkgrey;
+  }
   .post_out .sec_title {
     width: 95%;
     margin: 0 auto !important;

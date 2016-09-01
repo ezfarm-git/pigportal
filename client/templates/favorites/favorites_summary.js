@@ -5,9 +5,11 @@ Template.favorites_summary.helpers({
     tableSetting: function() {
         return {
             collection: Favorites,
+            rowsPerPage: 10,
             showFilter: true,
+            showRowCount: true,
             multiColumnSort: false,
-            showNavigation: 'never',
+            showNavigationRowsPerPage: false,
             fields: [
                 { key: 'name', label: ' ◎ 사이트', sortOrder: 0, headerClass: 'success' },
                 { key: 'category', label: ' ◎ 카테고리', sortOrder: 1, headerClass: 'success' },
