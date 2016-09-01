@@ -40,3 +40,9 @@ Template.events.onRendered(function() {
 Template.events.onDestroyed(function() {
     Session.set('eventModal', null);
 });
+
+Template.events.helpers({
+  recentEvents: function() {
+    return Events.find({}, {sort: {start: -1}, limit: 7});
+  }
+});

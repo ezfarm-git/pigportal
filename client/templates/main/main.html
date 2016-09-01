@@ -192,7 +192,24 @@
         {{/with}}
       </div>
 
-      <hr style="border-width:2px; border-color: #49708d; margin-bottom: 20px;"> {{>banner}}
+      <hr style="border-width:2px; border-color: #49708d; margin-bottom: 20px;">
+
+      {{>banner}}
+
+      <hr style="border-width:2px; border-color: #49708d; margin-bottom: 20px;">
+
+      <h5 class="sec_title">최신 양돈 일정
+        <span>
+          <a href="/events">
+            <img src="/images_main/more.gif" alt="더보기" />
+          </a>
+        </span>
+      </h5>
+      <div class="list-group">
+        {{#each mainEvents}}
+          <p class="list-group-item">{{title}}&emsp; {{start}} ... {{end}}</p>
+        {{/each}}
+      </div>
 
     </div>
 

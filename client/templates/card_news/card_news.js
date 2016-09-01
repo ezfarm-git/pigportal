@@ -22,7 +22,8 @@ Template.card_news.onRendered(function () {
     // options...
     itemSelector: '.grid-item',
     masonry: {
-      columnWidth: 50
+      columnWidth: 10,
+      fitWidth: true
     }
   });
 })

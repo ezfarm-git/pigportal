@@ -3,30 +3,31 @@
     양돈 뉴스&nbsp;
     <span class="text-muted postsCategory">{{postsCategory}}</span>
   </h4>
-  <div>
-    <ul class="posts_ul">
-      {{#each postsList}}
-        <li class="posts_li">
-          <a href="{{url}}" class="news-link underline-none" target="_blank">{{title}}</a>&nbsp;&nbsp;
-          <span class="text-muted small">{{prettyDate date}}</span>
-        </li>
-      {{/each}}
-      <nav class="pager-nav">
-        <ul class="pager">
-          <li class="{{prevPageClass}}">
-            <a id="prevPage" href="{{prevPage}}">
-              <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> &nbsp;이전
-            </a>
-          </li>
-          &nbsp;&nbsp;&nbsp;&nbsp;
-          <li class="{{nextPageClass}}">
-            <a id="nextPage" href="{{nextPage}}">
-                다음&nbsp;
-                <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
-            </a>
-          </li>
-        </ul>
-      </nav>
+
+  <ul class="posts_ul">
+    {{#each postsList}}
+      <li class="posts_li">
+        <a href="{{url}}" class="news-link underline-none" target="_blank">{{title}}</a>&nbsp;&nbsp;
+        <span class="text-muted small">{{prettyDate date}}</span>
+      </li>
+    {{/each}}
+  </ul>
+
+  <nav class="pager-nav">
+    <ul class="pager">
+      <li class="{{prevPageClass}}">
+        <a id="prevPage" href="{{prevPage}}">
+          <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> &nbsp;이전
+        </a>
+      </li>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <li class="{{nextPageClass}}">
+        <a id="nextPage" href="{{nextPage}}">
+              다음&nbsp;
+              <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+          </a>
+      </li>
     </ul>
-  </div>
+  </nav>
+
 </template>

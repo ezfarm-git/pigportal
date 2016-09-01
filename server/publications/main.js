@@ -5,7 +5,7 @@ Meteor.publish("latestFocus", function() {
 });
 
 Meteor.publish("mainFocus", function() {
-  return Focus.find({}, {skip: 1, limit: 6}, {sort: {date: -1, title: 1}});
+  return Focus.find({}, {skip: 1, limit: 8}, {sort: {date: -1, title: 1}});
 });
 
 
@@ -41,4 +41,11 @@ Meteor.publish("mainCardNews", function() {
 
 Meteor.publish("mainInfographic", function() {
   return Infographic.find({}, {sort: {date: -1}, limit: 1});
+});
+
+
+// Events
+
+Meteor.publish("mainEvents", function() {
+  return Events.find({}, {sort: {date: -1}, limit: 5});
 });

@@ -113,6 +113,8 @@
   ul.dropdown-menu {
     width: 60% !important;
     margin-left: 20% !important;
+    padding-top: 0;
+    padding-bottom: 0;
     border: 1px #9d9d9d solid !important;
     border-top: 0 !important;
     border-radius: 0 !important;

@@ -13,7 +13,7 @@ Template.main.helpers({
         return Focus.find({}, {sort: {date: -1}, limit: 1});
     },
     mainFocus: function() {
-        return Focus.find({}, {skip: 1, limit: 6}, {sort: {date: -1, title: 1}});
+        return Focus.find({}, {skip: 1, limit: 8}, {sort: {date: -1, title: 1}});
     },
     mainNews: function() {
         return News.find({}, {sort: {date: -1, title: 1}, limit: 6});
@@ -29,6 +29,9 @@ Template.main.helpers({
     },
     mainInfographic: function() {
         return Infographic.find({}, {sort: {date: -1}, limit: 1}).fetch()[0];
+    },
+    mainEvents: function() {
+        return Events.find({}, {sort: {date: -1}, limit: 5});
     }
 });
 

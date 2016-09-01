@@ -1,6 +1,24 @@
 <template name="events">
-  <div class="events-container" style="margin-bottom:100px;">
+  <div class="events-container" style="margin-top: 20px; margin-bottom:20px;">
     {{> EventModal}}
     <div id="events-calendar"></div>
   </div>
+
+  <h5 class="bg-warning text-center" style="padding: 15px; opacity: 0.7;">
+    <i class="fa fa-bars" aria-hidden="true"></i>&nbsp;&nbsp;최신 일정
+  </h5>
+
+  <ul class="posts_ul">
+    {{#each recentEvents}}
+      <li class="posts_li" style="padding: 10px;">
+        <p style="margin-bottom: 3px;">
+          <kbd style="opacity: 0.9;">{{title}}</kbd>&emsp;{{summary}}
+        </p>
+        <p class="small text-success" style="margin-bottom: 0px;">
+          {{start}} ..... {{end}}
+        </p>
+      </li>
+    {{/each}}
+  </ul>
+
 </template>
