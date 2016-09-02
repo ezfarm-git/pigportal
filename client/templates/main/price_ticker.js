@@ -16,7 +16,7 @@
 // 1101	제주축협
 // 1401 삼호축산
 
-Template.test.onRendered(function () {
+Template.price_ticker.onRendered(function () {
   var today = moment(new Date()).format('YYYYMMDD');
 
   let wantedProperties = [
@@ -42,10 +42,8 @@ Template.test.onRendered(function () {
         });
       }
       Session.setPersistent('female_Y', female_Y);
-      console.log(Session.get('female_Y'));
     }
   });
-
 
   ////////////////////////////////////////////////////////
   var myIndex = 0;
@@ -67,8 +65,8 @@ Template.test.onRendered(function () {
 
 });
 
-Template.test.helpers({
-  female_Y: function() {
+Template.price_ticker.helpers({
+  female_Y: function () {
     return Session.get('female_Y');
   }
 });

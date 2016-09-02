@@ -1,7 +1,18 @@
-<template name="test">
+<template name="price_ticker">
+
+  <style media="screen">
+    table {
+      
+    }
+    th, td {
+      min-width: 110px;
+      text-align: center;
+    }
+  </style>
+
   {{#each female_Y}}
-    <table class="table table-responsive mySlides">
-      <h6>&nbsp;{{gradeNm}} 등급, {{judgeSexNm}}, {{skinNm}}</h6>
+    <table class="table table-condensed mySlides">
+      <h6 class="text-center">{{gradeNm}} 등급, {{judgeSexNm}}, {{skinNm}}</h6>
       <thead>
         <tr>
           <th>작업장</th>

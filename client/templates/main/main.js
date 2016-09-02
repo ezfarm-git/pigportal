@@ -13,16 +13,16 @@ Template.main.helpers({
         return Focus.find({}, {sort: {date: -1}, limit: 1});
     },
     mainFocus: function() {
-        return Focus.find({}, {skip: 1, limit: 8}, {sort: {date: -1, title: 1}});
+        return Focus.find({}, {skip: 1, limit: 10}, {sort: {date: -1, title: 1}});
     },
     mainNews: function() {
         return News.find({}, {sort: {date: -1, title: 1}, limit: 6});
     },
     mainCorps: function() {
-        return Corps.find({}, {sort: {date: -1, title: 1}, limit: 2});
+        return Corps.find({}, {sort: {date: -1, title: 1}, limit: 4});
     },
     mainCase: function() {
-        return Case.find({}, {sort: {date: -1}, limit: 1});
+        return Case.find({}, {sort: {date: -1}, limit: 2});
     },
     mainCardNews: function() {
         return CardNews.find({}, {sort: {date: -1}, limit: 1}).fetch()[0];

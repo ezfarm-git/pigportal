@@ -1,5 +1,5 @@
 ﻿ // skinYn 돈피구분 N 박피,  Y 탕박  Default 탕박
-// sexCd	성별	6	0	025001	025001	암  025002	수 025003	거세 025004	기타(프리마틴등) Default  025001
+// sexCd	성별	6	0	0025001	0025001	암  0025002	수 025003	거세 025004	기타(프리마틴등) Default  0025001
 
 // 도매시장 코드
 // 0905	농협고령
@@ -19,8 +19,8 @@
 Template.market.onRendered(function () {
 
   var today = new Date();
-  document.getElementById("datepicker1").value = moment(new Date(Date.parse(today) - 5 * 1000 * 60 * 60 * 24)).format('YYYY-MM-DD');
-  document.getElementById("datepicker2").value = moment(new Date()).format('YYYY-MM-DD');
+  document.getElementById("datepicker1").value = moment(today).add(-5, 'day').format('YYYY-MM-DD');
+  document.getElementById("datepicker2").value = moment(today).format('YYYY-MM-DD');
 
   var sexText = "암";
   var skinText = "탕박";
@@ -32,9 +32,9 @@ Template.market.onRendered(function () {
     var sex = $('input[name="optradio"]:checked').val();
     var skin = $('input[name="optradio2"]:checked').val();
 
-    if (sex === "25001") {
+    if (sex === "025001") {
       sexText = "암";
-    } else if (sex === "25002") {
+    } else if (sex === "025002") {
       sexText = "수";
     } else {
       sexText = "거세";
@@ -51,8 +51,9 @@ Template.market.onRendered(function () {
       if (error) {
         console.log(error);
       } else {
-        Session.setPersistent('market', result);
-        var marketData = Session.get('market');
+        // Session.setPersistent('market', result);
+        // var marketData = Session.get('market');
+        var marketData = result;
 
         function unitK(x) {
           return Math.floor(x / 10) + "." + (x % 10);

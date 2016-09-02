@@ -10,13 +10,15 @@
 
   <ul class="posts_ul">
     {{#each recentEvents}}
-      <li class="posts_li" style="padding: 7px 15px;">
-        <p style="margin-bottom: 2px;">
-          <kbd style="opacity: 0.9;">&nbsp;{{title}}&nbsp;</kbd>
+      <li class="posts_li" style="padding: 10px 15px 7px 15px;">
+        <p style="margin-bottom: 5px;">
+          <kbd class="text-center" style="padding:5px;">
+            {{title}}
+          </kbd>
         </p>
-        <p style="margin-bottom: 0px;">&nbsp;<small>{{summary}}</small></p>
+        <p style="margin-bottom: 0px;"><small>{{summary}}</small></p>
         <p class="text-success" style="margin-bottom: 0px;">
-          &nbsp;<small>{{start}} ..... {{end}}</small>
+          <small>{{start}} ..... {{end}}</small>
         </p>
       </li>
     {{/each}}

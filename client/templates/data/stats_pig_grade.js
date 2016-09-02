@@ -58,8 +58,9 @@ Template.stats_pig_grade.onRendered(function () {
       if (error) {
         console.log(error);
       } else {
-        Session.setPersistent('pig_price', res);
-        var series = Session.get('pig_price');
+        // Session.setPersistent('pig_price', res);
+        // var series = Session.get('pig_price');
+        var series = res;
 
         //   월 : M
         //  항목: 13103112724T1	경락가격
@@ -319,8 +320,9 @@ Template.stats_pig_grade.onRendered(function () {
       if (error) {
         console.log(error);
       } else {
-        Session.setPersistent('pig_quantity', res);
-        var series = Session.get('pig_quantity');
+        // Session.setPersistent('pig_quantity', res);
+        // var series = Session.get('pig_quantity');
+        var series = res;
 
         //   월 : M
         //  항목: 13103112722T1	판정두수

@@ -26,8 +26,8 @@ Template.events.onRendered(function() {
         height: 'auto',
         header: {
             left: 'prev, next, today',
-            center: 'title',
-            right: 'month, agendaWeek, agendaDay'
+            center: '',
+            right: 'title'
         },
         defaultView: 'month'
     });

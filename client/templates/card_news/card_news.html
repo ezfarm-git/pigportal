@@ -12,7 +12,7 @@
           {{#with images.[0]}}
             {{#with FS.GetFile "Images" this}}
               <a href="{{this.url store='images'}}" rel="{{../../_id}}" title="{{../../title}}, {{../../summary}}" class="fancybox">
-                <img class="card-img-top" src="{{this.url store='images'}}" width=270 height=180 style="object-fit: cover;">
+                <img class="card-img-top hover-opacity" src="{{this.url store='images'}}" width=270 height=180 style="object-fit: cover;">
               </a>
             {{/with}}
           {{/with}}
