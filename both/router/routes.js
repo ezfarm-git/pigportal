@@ -27,7 +27,7 @@ Router.route('/', function () {
   this.wait(Meteor.subscribe('mainCase'));
   this.wait(Meteor.subscribe('mainCardNews'));
   this.wait(Meteor.subscribe('mainInfographic'));
-  this.wait(Meteor.subscribe('mainEvents'));
+  this.wait(Meteor.subscribe('events'));
   this.wait(Meteor.subscribe('images'));
 }, {
   name: 'main'
