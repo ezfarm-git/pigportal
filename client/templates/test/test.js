@@ -27,7 +27,7 @@ Template.test.onRendered(function () {
     'c_1401Amt', 'c_1401Cnt', 'gradeNm', 'judgeSexNm', 'skinNm'
   ];
 
-  Meteor.call('market.get', today, today, 'Y', '025001', function (error, result) {
+  Meteor.call('market.get', '20160901', '20160901', 'Y', '025001', function (error, result) {
     if (error) {
       console.log(error);
     } else {
@@ -53,7 +53,7 @@ Template.test.onRendered(function () {
 
   function carousel() {
     var i;
-    var x = document.getElementsByClassName("mySlides");
+    var x = document.getElementsByClassName("slideshow");
     for (i = 0; i < x.length; i++) {
       x[i].style.display = "none";
     }

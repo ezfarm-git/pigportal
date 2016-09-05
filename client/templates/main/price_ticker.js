@@ -51,7 +51,7 @@ Template.price_ticker.onRendered(function () {
 
   function carousel() {
     var i;
-    var x = document.getElementsByClassName("mySlides");
+    var x = document.getElementsByClassName("slideshow");
     for (i = 0; i < x.length; i++) {
       x[i].style.display = "none";
     }
@@ -68,5 +68,20 @@ Template.price_ticker.onRendered(function () {
 Template.price_ticker.helpers({
   female_Y: function () {
     return Session.get('female_Y');
+  },
+  today: function () {
+    return moment().format('YYYY-MM-DD');
+  },
+  weekday: function () {
+    let weekmap = {
+      1: '월',
+      2: '화',
+      3: '수',
+      4: '목',
+      5: '금',
+      6: '토',
+      7: '일'
+    };
+    return weekmap[moment().weekday()];
   }
 });

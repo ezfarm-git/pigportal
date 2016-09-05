@@ -1,82 +1,79 @@
 <template name="test">
+
   {{#each female_Y}}
-    <table class="table table-responsive mySlides">
-      <h6>&nbsp;{{gradeNm}} 등급, {{judgeSexNm}}, {{skinNm}}</h6>
-      <thead>
-        <tr>
-          <th>작업장</th>
-          <th>가격</th>
-          <th>물량</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>부경축공</td>
-          <td>{{c_0202Amt}}</td>
-          <td>{{c_0202Cnt}}</td>
-        </tr>
-        <tr>
-          <td>협신식품</td>
-          <td>{{c_0302Amt}}</td>
-          <td>{{c_0302Cnt}}</td>
-        </tr>
-        <tr>
-          <td>도드람</td>
-          <td>{{c_0320Amt}}</td>
-          <td>{{c_0320Amt}}</td>
-        </tr>
-        <tr>
-          <td>농협부천</td>
-          <td>{{c_0323Amt}}</td>
-          <td>{{c_0323Cnt}}</td>
-        </tr>
-        <tr>
-          <td>농협음성</td>
-          <td>{{c_0513Amt}}</td>
-          <td>{{c_0513Cnt}}</td>
-        </tr>
-        <tr>
-          <td>익산</td>
-          <td>{{c_0714Amt}}</td>
-          <td>{{c_0714Cnt}}</td>
-        </tr>
-        <tr>
-          <td>나주농협</td>
-          <td>{{c_0809Amt}}</td>
-          <td>{{c_0809Cnt}}</td>
-        </tr>
-        <tr>
-          <td>농협고령</td>
-          <td>{{c_0905Amt}}</td>
-          <td>{{c_0905Cnt}}</td>
-        </tr>
-        <tr>
-          <td>김해축공</td>
-          <td>{{c_1005Amt}}</td>
-          <td>{{c_1005Cnt}}</td>
-        </tr>
-        <tr>
-          <td>제주축협</td>
-          <td>{{c_1101Amt}}</td>
-          <td>{{c_1101Cnt}}</td>
-        </tr>
-        <tr>
-          <td>신흥산업</td>
-          <td>{{c_1201Amt}}</td>
-          <td>{{c_1201Cnt}}</td>
-        </tr>
-        <tr>
-          <td>삼성식품</td>
-          <td>{{c_1301Amt}}</td>
-          <td>{{c_1301Cnt}}</td>
-        </tr>
-        <tr>
-          <td>삼호축산</td>
-          <td>{{c_1401Amt}}</td>
-          <td>{{c_1401Cnt}}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="slideshow">
+      <h6>&nbsp;&nbsp;{{gradeNm}} 등급, {{judgeSexNm}}, {{skinNm}}</h6>
+        <div class="row slideshow_row" style="background-color:#00004d;color:white; font-weight:bold;font-size:105%;padding:3px;margin-bottom:3px;">
+          <div class="col-xs-4">작업장</div>
+          <div class="col-xs-4">가격</div>
+          <div class="col-xs-4">물량</div>
+        </div>
+        <div class="row slideshow_row">
+          <div class="col-xs-4">부경축공</div>
+          <div class="col-xs-4">{{c_0202Amt}}</div>
+          <div class="col-xs-4">{{c_0202Cnt}}</div>
+        </div>
+        <div class="row slideshow_row">
+          <div class="col-xs-4">협신식품</div>
+          <div class="col-xs-4">{{c_0302Amt}}</div>
+          <div class="col-xs-4">{{c_0302Cnt}}</div>
+        </div>
+        <div class="row slideshow_row">
+          <div class="col-xs-4">도드람</div>
+          <div class="col-xs-4">{{c_0320Amt}}</div>
+          <div class="col-xs-4">{{c_0320Amt}}</div>
+        </div>
+        <div class="row slideshow_row">
+          <div class="col-xs-4">농협부천</div>
+          <div class="col-xs-4">{{c_0323Amt}}</div>
+          <div class="col-xs-4">{{c_0323Cnt}}</div>
+        </div>
+        <div class="row slideshow_row">
+          <div class="col-xs-4">농협음성</div>
+          <div class="col-xs-4">{{c_0513Amt}}</div>
+          <div class="col-xs-4">{{c_0513Cnt}}</div>
+        </div>
+        <div class="row slideshow_row">
+          <div class="col-xs-4">익산</div>
+          <div class="col-xs-4">{{c_0714Amt}}</div>
+          <div class="col-xs-4">{{c_0714Cnt}}</div>
+        </div>
+        <div class="row slideshow_row">
+          <div class="col-xs-4">나주농협</div>
+          <div class="col-xs-4">{{c_0809Amt}}</div>
+          <div class="col-xs-4">{{c_0809Cnt}}</div>
+        </div>
+        <div class="row slideshow_row">
+          <div class="col-xs-4">농협고령</div>
+          <div class="col-xs-4">{{c_0905Amt}}</div>
+          <div class="col-xs-4">{{c_0905Cnt}}</div>
+        </div>
+        <div class="row slideshow_row">
+          <div class="col-xs-4">김해축공</div>
+          <div class="col-xs-4">{{c_1005Amt}}</div>
+          <div class="col-xs-4">{{c_1005Cnt}}</div>
+        </div>
+        <div class="row slideshow_row">
+          <div class="col-xs-4">제주축협</div>
+          <div class="col-xs-4">{{c_1101Amt}}</div>
+          <div class="col-xs-4">{{c_1101Cnt}}</div>
+        </div>
+        <div class="row slideshow_row">
+          <div class="col-xs-4">신흥산업</div>
+          <div class="col-xs-4">{{c_1201Amt}}</div>
+          <div class="col-xs-4">{{c_1201Cnt}}</div>
+        </div>
+        <div class="row slideshow_row">
+          <div class="col-xs-4">삼성식품</div>
+          <div class="col-xs-4">{{c_1301Amt}}</div>
+          <div class="col-xs-4">{{c_1301Cnt}}</div>
+        </div>
+        <div class="row slideshow_row">
+          <div class="col-xs-4">삼호축산</div>
+          <div class="col-xs-4">{{c_1401Amt}}</div>
+          <div class="col-xs-4">{{c_1401Cnt}}</div>
+        </div>
+    </div>
   {{/each}}
 
 </template>

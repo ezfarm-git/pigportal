@@ -454,6 +454,13 @@ h5.sec_title span {
   float: right;
 }
 
-.mySlides {
-  display: none;
+.slideshow {
+  padding-left: 20px;
+  padding-right: 25px;
+}
+.slideshow_row {
+  text-align: center;
+  border-bottom-style: solid;
+  border-width: 1px;
+  border-color: darkgrey;
 }

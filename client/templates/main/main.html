@@ -220,7 +220,7 @@
         {{#each mainEvents}}
           <div class="list-group-item" style="padding-top:2px; padding-bottom:2px;">
             <h6 style="margin-bottom:2px;">{{title}}</h6>
-            <p class="text-muted" style="margin-bottom:5px; color: #728FA7">{{start}} ... {{end}}</p>
+            <p class="text-muted" style="margin-bottom:5px; color: #728FA7">{{start}} {{#if end}}... {{end}} {{/if}}</p>
           </div>
         {{/each}}
       </div>

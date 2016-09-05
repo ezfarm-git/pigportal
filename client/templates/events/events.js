@@ -43,6 +43,14 @@ Template.events.onDestroyed(function() {
 
 Template.events.helpers({
   recentEvents: function() {
-    return Events.find({}, {sort: {start: -1}, limit: 7});
+    let recentEvents = Events.find({end: {$gte: moment().format('YYYY-MM-DD')}}, {sort: {start: -1}}).fetch();
+    $.each(recentEvents, function(key, value) {
+      if (value.start === value.end) {
+        value.end = null;
+      } else {
+        value.end = moment(value.end).add(-1, 'day').format('YYYY-MM-DD');
+      }
+    });
+    return recentEvents;
   }
 });

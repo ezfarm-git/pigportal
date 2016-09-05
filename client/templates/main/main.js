@@ -31,7 +31,15 @@ Template.main.helpers({
         return Infographic.find({}, {sort: {date: -1}, limit: 1}).fetch()[0];
     },
     mainEvents: function() {
-        return Events.find({}, {sort: {date: -1}, limit: 5});
+        let recentEvents = Events.find({end: {$gte: moment().format('YYYY-MM-DD')}}, {sort: {start: -1}}).fetch();
+        $.each(recentEvents, function(key, value) {
+          if (value.start === value.end) {
+            value.end = null;
+          } else {
+            value.end = moment(value.end).add(-1, 'day').format('YYYY-MM-DD');
+          }
+        });
+        return recentEvents;
     }
 });
 
