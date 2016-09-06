@@ -15,7 +15,10 @@
               <div style="padding-left: 5px; padding-right: 5px;">{{event.summary}}</div>
               <br>
               <p style="color: SteelBlue"><i class="fa fa-calendar-check-o" aria-hidden="true"></i>&nbsp;&nbsp;행사 기간 :</p>
-              <div style="padding-left: 5px; padding-right: 5px;">{{event.start}} ~ {{endDate}}</div>
+              <div style="padding-left: 5px; padding-right: 5px;">
+                {{event.start}}
+                {{#if endDate}}~ {{endDate}} {{/if}}
+              </div>
             </div>
           </div>
         </div>

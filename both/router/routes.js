@@ -27,7 +27,7 @@ Router.route('/', function () {
   this.wait(Meteor.subscribe('mainCase'));
   this.wait(Meteor.subscribe('mainCardNews'));
   this.wait(Meteor.subscribe('mainInfographic'));
-  this.wait(Meteor.subscribe('events'));
+  this.wait(Meteor.subscribe('recentEvents'));
   this.wait(Meteor.subscribe('images'));
 }, {
   name: 'main'
@@ -348,6 +348,7 @@ Router.route('/events', function () {
     to: 'main'
   });
   this.wait(Meteor.subscribe('events'));
+  this.wait(Meteor.subscribe('recentEvents'));
 }, {
   name: 'events'
 });
