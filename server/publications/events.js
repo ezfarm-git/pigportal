@@ -8,5 +8,5 @@ Meteor.publish("events", function(start, end) {
 });
 
 Meteor.publish("recentEvents", function() {
-    return Events.find({end: {$gte: moment().format('YYYY-MM-DD')}}, {sort: {start: -1}});
+    return Events.find({end: {$gte: moment().format('YYYY-MM-DD')}}, {sort: {start: 1}});
 });

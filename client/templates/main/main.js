@@ -31,7 +31,7 @@ Template.main.helpers({
         return Infographic.find({}, {sort: {date: -1}, limit: 1}).fetch()[0];
     },
     mainEvents: function() {
-        let recentEvents = Events.find({end: {$gte: moment().format('YYYY-MM-DD')}}, {sort: {start: -1}}).fetch();
+        let recentEvents = Events.find({end: {$gte: moment().format('YYYY-MM-DD')}}, {sort: {start: 1}}).fetch();
         $.each(recentEvents, function(key, value) {
           if (value.start === value.end) {
             value.end = null;
