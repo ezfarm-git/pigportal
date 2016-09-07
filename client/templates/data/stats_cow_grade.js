@@ -62,8 +62,6 @@ Template.stats_cow_grade.onRendered(function () {
       if (error) {
         console.log(error);
       } else {
-        // Session.setPersistent('cow_quality', res);
-        // var series = Session.get('cow_quality');
         var series = res;
 
         var setCow = setCowDict[$('input:radio[name="optradio"]:checked').val()];
@@ -312,8 +310,6 @@ Template.stats_cow_grade.onRendered(function () {
       if (error) {
         console.log(error);
       } else {
-        // Session.setPersistent('cow_quantity', res);
-        // var series = Session.get('cow_quantity');
         var series = res;
 
         var setCow = setCowDict2[$('input:radio[name="optradio"]:checked').val()];

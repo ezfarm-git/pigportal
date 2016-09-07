@@ -33,7 +33,7 @@ Router.route('/', function () {
   name: 'main'
 });
 
-// Data - Market
+// Data - Product
 
 Router.route('/data/product', {
   layoutTemplate: 'layout_app',

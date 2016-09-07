@@ -51,8 +51,6 @@ Template.market.onRendered(function () {
       if (error) {
         console.log(error);
       } else {
-        // Session.setPersistent('market', result);
-        // var marketData = Session.get('market');
         var marketData = result;
 
         function unitK(x) {
@@ -725,22 +723,16 @@ Template.market.onRendered(function () {
         for (i = 0; i < 13; i++) {
           trace_1plus_Amt[i] = Number(trace_1plus_Amt[i]);
           trace_1plus_Amt[i] = unitK(trace_1plus_Amt[i]);
-
           trace_1_Amt[i] = Number(trace_1_Amt[i]);
           trace_1_Amt[i] = unitK(trace_1_Amt[i]);
-
           trace_2_Amt[i] = Number(trace_2_Amt[i]);
           trace_2_Amt[i] = unitK(trace_2_Amt[i]);
-
           trace_exc_Amt[i] = Number(trace_exc_Amt[i]);
           trace_exc_Amt[i] = unitK(trace_exc_Amt[i]);
-
           trace_non_Amt[i] = Number(trace_non_Amt[i]);
           trace_non_Amt[i] = unitK(trace_non_Amt[i]);
-
           trace_mom_Amt[i] = Number(trace_mom_Amt[i]);
           trace_mom_Amt[i] = unitK(trace_mom_Amt[i]);
-
           trace_avg_Amt[i] = Number(trace_avg_Amt[i]);
           trace_avg_Amt[i] = unitK(trace_avg_Amt[i]);
         }
@@ -928,22 +920,22 @@ Template.market.onRendered(function () {
           showlegend: false,
           barmode: 'group',
         };
-
         Plotly.newPlot('market_plot7', data_avg, layout7);
-
-        window.onresize = function () {
-          Plotly.Plots.resize(gd);
-          Plotly.Plots.resize(gd2);
-          Plotly.Plots.resize(gd3);
-          Plotly.Plots.resize(gd4);
-          Plotly.Plots.resize(gd5);
-          Plotly.Plots.resize(gd6);
-          Plotly.Plots.resize(gd7);
-        };
       }
     });
   }
+
   drawPlot();
+
+  window.onresize = function () {
+    Plotly.Plots.resize(gd);
+    Plotly.Plots.resize(gd2);
+    Plotly.Plots.resize(gd3);
+    Plotly.Plots.resize(gd4);
+    Plotly.Plots.resize(gd5);
+    Plotly.Plots.resize(gd6);
+    Plotly.Plots.resize(gd7);
+  };
 
   $('.options_div').change(function () {
     drawPlot();

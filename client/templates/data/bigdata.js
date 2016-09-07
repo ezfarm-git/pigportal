@@ -1,3 +1,0 @@
-Template.bigdata.onRendered(function () {
-
-});

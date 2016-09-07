@@ -71,7 +71,7 @@ Meteor.methods({
     return res;
   },
 
-  'dariy_age_by_city.get': function () {
+  'dairy_age_by_city.get': function () {
 
     var xml = HTTP.get('http://kosis.kr/openapi/statisticsBigData.do?method=getList&apiKey=OWI2ODY5NWEzMWNlMTJiNTBmYWJhMGVhMGI0Nzc3YmI=&format=sdmx&userStatsId=k0013280/101/DT_1EO095/3/15/20160804174426&type=StructureSpecific&prdSe=Q&newEstPrdCnt=5&version=v2_1');
     var res;
