@@ -706,7 +706,7 @@ Template.stats_cow_pops.onRendered(function () {
   // Loading Spinner
   var wait;
   function loadingSpin() {
-    wait = setTimeout(showPage, 1000);
+    wait = setTimeout(showPage, 2000);
   }
   loadingSpin();
   function showPage() {

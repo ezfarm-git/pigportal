@@ -183,11 +183,27 @@ Router.route('/data/disease', {
 
 // Data - Bigdata
 
-Router.route('/data/bigdata', {
+Router.route('/bigdata/anually', {
   layoutTemplate: 'layout_full_width',
   template: 'bigdata',
-  name: 'data_bigdata'
+  name: 'bigdata_anually'
 });
+Router.route('/bigdata/monthly', {
+  layoutTemplate: 'layout_full_width',
+  template: 'bigdata',
+  name: 'bigdata_monthly'
+});
+Router.route('/bigdata/points', {
+  layoutTemplate: 'layout_full_width',
+  template: 'bigdata',
+  name: 'bigdata_points'
+});
+Router.route('/bigdata/data', {
+  layoutTemplate: 'layout_full_width',
+  template: 'bigdata',
+  name: 'bigdata_data'
+});
+
 
 // News
 
