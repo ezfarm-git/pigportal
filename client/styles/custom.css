@@ -16,6 +16,7 @@ ol, ul, li, form, label {
 
 body {
   margin: 0;
+  overflow-x:hidden;
 }
 
 article {
@@ -209,6 +210,7 @@ img.list-thumbnail-circle {
   object-fit: fill;
   border-radius: 50%;
 }
+
 img.list-thumbnail-circle:hover {
   opacity: 0.8;
 }
@@ -293,6 +295,7 @@ img.list-thumbnail-circle:hover {
   padding-right: 5px;
   text-align: right;
 }
+
 
 /*News Setting*/
 
@@ -392,10 +395,12 @@ li.posts_li {
 #categoryPanelBody {
   padding: 0 !important;
 }
+
 #category_ul {
   list-style: none;
   font-size: 120%;
 }
+
 #category_ul a {
   color: #687e8e;
   width: 90%;
@@ -406,6 +411,7 @@ li.posts_li {
   text-indent: 25px;
   border-bottom: 1px #c3c3c3 dashed;
 }
+
 #category_ul a:hover {
   background: #fff;
 }
@@ -416,16 +422,19 @@ li.posts_li {
   border-radius: 0 !important;
   border-bottom: 0 !important;
 }
+
 #category_ul .all a:hover {
   color: #fff !important;
   background: #00a9ed;
 }
+
 #category_ul .end {
   border-bottom: 0 !important;
 }
 
 
 /*isotope - masonry*/
+
 .grid {
   margin: 0 auto;
 }
@@ -435,6 +444,7 @@ li.posts_li {
   display: block;
   clear: both;
 }
+
 .grid-item {
   float: left;
   width: 270px;
@@ -446,14 +456,17 @@ li.posts_li {
   /*margin: auto;*/
 }
 
+
 /*fancybox*/
 
 a.fancybox-prev span {
   left: -30px;
 }
+
 a.fancybox-next span {
   right: -30px;
 }
+
 .fancybox-nav span {
   visibility: visible;
   opacity: 0.7;
@@ -507,3 +520,69 @@ p.pigplan_paragraph::first-letter {
 p.pigplan_tab_paragraph {
   line-height: 200%;
 }
+
+
+/*Loading Spinner*/
+
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 400px;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+@-webkit-keyframes animatebottom {
+  from {
+    bottom: -100px;
+    opacity: 0
+  }
+  to {
+    bottom: 0px;
+    opacity: 1
+  }
+}
+@keyframes animatebottom {
+  from {
+    bottom: -100px;
+    opacity: 0
+  }
+  to {
+    bottom: 0;
+    opacity: 1
+  }
+}
+/*#chartbox {
+  display: none;
+}*/

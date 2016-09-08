@@ -287,4 +287,15 @@ Template.stats_chicken_age.onRendered(function () {
     drawPlot();
   });
 
+  // Loading Spinner
+  var wait;
+  function loadingSpin() {
+    wait = setTimeout(showPage, 1000);
+  }
+  loadingSpin();
+  function showPage() {
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("chart-box").style.display = "block";
+  }
+
 });

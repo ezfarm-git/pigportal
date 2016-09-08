@@ -1,180 +1,37 @@
 <template name="main">
-
   <div class="row">
-
     <!-- 메인페이지 좌측 칼럼 -->
     <div class="col-sm-8 post_left">
-
-      <div class="row">
-
-        <div class="col-sm-8 post_focus">
-          <div class="card-header">
-            <h5 class="sec_title">양돈 포커스
-              <span>
-                <a href="/focus/total/1">
-                  <img src="/images_main/more.gif" alt="더보기" />
-                </a>
-              </span>
-            </h5>
-          </div>
-          {{#each latestFocus}}
-            <a href="/focus_post/{{_id}}" class="underline-none">
-              <div class="card">
-                <div class="post_img">
-                  {{#with FS.GetFile "Images" image}}
-                    <img src="{{this.url store='images'}}" alt="" class="card-img-top hover-opacity" style="width:100%; max-height:340px; object-fit: cover;">
-                  {{/with}}
-                  <h4 class="card-title">{{title}}</h4>
-                </div>
-                <div class="card-block">
-                  <p class="card-text latest-post-summary hover-color">{{truncate summary 180}}</p>
-                </div>
-              </div>
-            </a>
-          {{/each}}
-        </div>
-
-        <hr class="ba" style="border-width:2px; border-color:#49708d; margin-bottom: 10px;">
-
-        <div class="col-sm-4 post_out">
-          <div class="card">
-            <div class="card-header">
-              <h5 class="sec_title">최신 외부 기사
-                <span>
-                  <a href="/news/total/1">
-                    <img src="/images_main/more.gif" alt="더보기" />
-                  </a>
-                </span>
-              </h5>
-            </div>
-            <div class="card-block">
-              <ul>
-                {{#each mainNews}}
-                  <li>
-                    <a href="{{url}}" target="_blank" class="underline-none main-post-summary hover-color">{{truncate title 100}}</a>
-                    <span class="postdate">{{prettyDate date}}</span>
-                  </li>
-                {{/each}}
-              </ul>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <hr style="border-width:2px; border-color:#49708d; margin-bottom: 10px;">
-
-      {{#each mainFocus}}
-        <a href="/focus_post/{{_id}}" class="underline-none">
-          <div class="main-post-container-outer">
-            <div class="main-post-image-container">
-              {{#with FS.GetFile "Images" image}}
-                <img src="{{this.url store='images'}}" alt="" class="main-post-image hover-opacity">
-              {{/with}}
-            </div>
-            <div class="main-post-container">
-              <div class="main-post-title">
-                &nbsp;{{title}}
-                <span class="text-muted small">양돈 포커스</span>
-              </div>
-              <div class="main-post-summary hover-color">
-                {{truncate summary 120}}
-              </div>
-            </div>
-          </div>
-        </a>
-        <hr class="main_post_list">
-      {{/each}}
-
-      {{#each mainCorps}}
-        <a href="/corps_post/{{_id}}" class="underline-none">
-          <div class="main-post-container-outer">
-            <div class="main-post-image-container">
-              {{#with FS.GetFile "Images" image}}
-                <img src="{{this.url store='images'}}" alt="" class="main-post-image hover-opacity">
-              {{/with}}
-            </div>
-            <div class="main-post-container">
-              <div class="main-post-title">
-                &nbsp;{{title}}
-                <span class="text-muted small">기업 소식</span>
-              </div>
-              <div class="main-post-summary hover-color">
-                {{truncate summary 120}}
-              </div>
-            </div>
-          </div>
-        </a>
-        <hr>
-      {{/each}}
-
-      {{#each mainCase}}
-        <a href="/case_post/{{_id}}" class="underline-none">
-          <div class="main-post-container-outer">
-            <div class="main-post-image-container">
-              {{#with FS.GetFile "Images" image}}
-                <img src="{{this.url store='images'}}" alt="" class="main-post-image hover-opacity">
-              {{/with}}
-            </div>
-            <div class="main-post-container">
-              <div class="main-post-title">
-                &nbsp;{{title}}
-                <span class="text-muted small">피그플랜 활용사례</span>
-              </div>
-              <div class="main-post-summary hover-color">
-                {{truncate summary 120}}
-              </div>
-            </div>
-          </div>
-        </a>
-        <hr>
-      {{/each}}
-
-    </div>
-
-    <!-- 메인페이지 우측 칼럼 -->
-    <div class="col-sm-4 post_right">
-
-      <!-- 카드뉴스 -->
-      <h5 class="sec_title">카드 뉴스
+      <h5 class="sec_title">주간 생산 지표
         <span>
-          <a href="/cardnews/1">
+          <a href="/data/product">
             <img src="/images_main/more.gif" alt="더보기" />
           </a>
         </span>
       </h5>
-      <div class="card">
-        {{#with mainCardNews}}
-          <div class="post_img">
-            {{#with images.[0]}}
-              {{#with FS.GetFile "Images" this}}
-                <a href="{{this.url store='images'}}" class="fancyboxLauncher card-img-top">
-                  <img src="{{this.url store='images'}}" alt="" width="100%" height=240 style="object-fit: cover;">
-                </a>
-              {{/with}}
-            {{/with}}
-            {{#each images}}
-              {{#with FS.GetFile "Images" this}}
-                <a href="{{this.url store='images'}}" rel="gallery" title="{{../../title}}, {{../../summary}}" class="fancybox" style="display:none;">
-                  <img src="{{this.url store='images'}}">
-                </a>
-              {{/with}}
-            {{/each}}
-            <h4 class="card-title">{{truncate title 40}}</h4>
-          </div>
-          <div class="card-block">
-            <p class="card-text">{{truncate summary 160}}</p>
-          </div>
-        {{/with}}
-      </div>
-
+      {{> product_main}}
+      <hr style="border-width:2px; border-color:#49708d; margin-bottom: 10px;">
+      <h5 class="sec_title">최신 외부 기사
+        <span>
+          <a href="/news/total/1">
+            <img src="/images_main/more.gif" alt="더보기" />
+          </a>
+        </span>
+      </h5>
+      <ul style="list-style-type:none;">
+        {{#each mainNews}}
+          <li style="padding: 5px 15px 5px 15px; margin-bottom:5px; background-color:#EDF5FB;">
+            <a href="{{url}}" target="_blank" class="underline-none hover-color">
+              <p style="color:#2F4F4F; font-size:130%; margin-bottom:0;">{{title}}</p>
+            </a>
+            <p style="color: #a4a4a4; margin-bottom:0;">{{prettyDate date}}</p>
+          </li>
+        {{/each}}
+      </ul>
       <hr style="border-width: 2px; border-color: #49708d; margin-bottom: 2px;">
-
-      <!-- 배너 -->
-      {{>banner}}
-
-      <hr style="border-width: 2px; border-color: #49708d; margin-bottom: 2px;">
-
+    </div>
+    <!-- 메인페이지 우측 칼럼 -->
+    <div class="col-sm-4 post_right">
       <!-- 최신 양돈 일정 -->
       <h5 class="sec_title">최신 양돈 일정
         <span>
@@ -187,51 +44,39 @@
         {{#each mainEvents}}
           <div class="list-group-item" style="padding-top:2px; padding-bottom:2px;">
             <h6 style="margin-bottom:2px;">{{title}}</h6>
-            <p class="text-muted" style="margin-bottom:5px; color: #728FA7">{{start}} {{#if end}}... {{end}} {{/if}}</p>
+            <p class="text-muted" style="margin-bottom:5px; color: #728FA7">{{start}}
+              {{#if end}}... {{end}} {{/if}}
+            </p>
           </div>
         {{/each}}
       </div>
-
       <hr style="border-width:2px; border-color: #49708d; margin-bottom: 2px;">
-
-      <!-- 인포그래픽 -->
-      <h5 class="sec_title">인포그래픽
+      <!-- 배너 -->
+      {{>banner}}
+      <hr style="border-width: 2px; border-color: #49708d; margin-bottom: 2px;">
+      <!-- 피그플랜 활용사례 -->
+      <h5 class="sec_title">피그플랜 활용사례
         <span>
-          <a href="/infographic/1">
+          <a href="/pigplan/case">
             <img src="/images_main/more.gif" alt="더보기" />
           </a>
         </span>
       </h5>
-      <div class="card">
-        {{#with mainInfographic}}
-          <div class="post_img">
-            {{#with FS.GetFile "Images" image}}
-              <a href="{{this.url store='images'}}" title="{{../title}}, {{../summary}}" class="fancybox card-img-top">
-                <img src="{{this.url store='images'}}" alt="" width="100%" height=240 style="object-fit: cover;">
-              </a>
-            {{/with}}
-            <h4 class="card-title">{{truncate title 40}}</h4>
+      {{#each mainCase}}
+        <a href="/case_post/{{_id}}" class="underline-none">
+          <div class="card">
+            <div class="post_img">
+              {{#with FS.GetFile "Images" image}}
+                <img src="{{this.url store='images'}}" alt="" class="card-img-top hover-opacity" style="width:100%; height:240px; object-fit: cover;">
+              {{/with}}
+              <h4 class="card-title">{{title}}</h4>
+            </div>
+            <div class="card-block">
+              <p class="card-text latest-post-summary hover-color">{{summary}}</p>
+            </div>
           </div>
-          <div class="card-block">
-            <p class="card-text">{{truncate summary 160}}</p>
-          </div>
-        {{/with}}
-      </div>
-
-      <hr style="border-width:2px; border-color: #49708d; margin-bottom: 2px;">
-
-      <!-- 오늘의 시황 -->
-      <h5 class="sec_title">오늘의 시황
-        <span>
-          <a href="/data/market">
-            <img src="/images_main/more.gif" alt="더보기" />
-          </a>
-        </span>
-      </h5>
-      {{>price_ticker}}
-
+        </a>
+      {{/each}}
     </div>
-
   </div>
-
 </template>

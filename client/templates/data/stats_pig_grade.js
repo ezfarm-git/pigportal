@@ -574,4 +574,15 @@ Template.stats_pig_grade.onRendered(function () {
     drawPlot2();
   });
 
+  // Loading Spinner
+  var wait;
+  function loadingSpin() {
+    wait = setTimeout(showPage, 2000);
+  }
+  loadingSpin();
+  function showPage() {
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("chart-box").style.display = "block";
+  }
+
 });

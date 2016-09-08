@@ -1,5 +1,5 @@
-﻿
-Template.product.onRendered(function () {
+
+Template.product_main.onRendered(function () {
 
   let d3 = Plotly.d3;
   let gd3 = d3.select('div[id="plot_1"]');

@@ -21,12 +21,12 @@ Router.route('/', function () {
     to: 'main'
   });
   this.wait(Meteor.subscribe('latestFocus'));
-  this.wait(Meteor.subscribe('mainFocus'));
+  // this.wait(Meteor.subscribe('mainFocus'));
   this.wait(Meteor.subscribe('mainNews'));
-  this.wait(Meteor.subscribe('mainCorps'));
+  // this.wait(Meteor.subscribe('mainCorps'));
   this.wait(Meteor.subscribe('mainCase'));
-  this.wait(Meteor.subscribe('mainCardNews'));
-  this.wait(Meteor.subscribe('mainInfographic'));
+  // this.wait(Meteor.subscribe('mainCardNews'));
+  // this.wait(Meteor.subscribe('mainInfographic'));
   this.wait(Meteor.subscribe('recentEvents'));
   this.wait(Meteor.subscribe('images'));
 }, {
@@ -208,81 +208,81 @@ Router.route('/news/:category/:page', function () {
 
 // Card News
 
-Router.route('/cardnews/:page', function () {
-  this.layout('layout_app');
-  this.render('banner', {
-    to: 'sidebar_left'
-  });
-  this.render('card_news', {
-    to: 'main'
-  });
-}, {
-  name: 'cardnews'
-});
+// Router.route('/cardnews/:page', function () {
+//   this.layout('layout_app');
+//   this.render('banner', {
+//     to: 'sidebar_left'
+//   });
+//   this.render('card_news', {
+//     to: 'main'
+//   });
+// }, {
+//   name: 'cardnews'
+// });
 
 // Corps
 
-Router.route('/corps/:page', function () {
-  this.layout('layout_app');
-  this.render('banner', {
-    to: 'sidebar_left'
-  });
-  this.render('corps', {
-    to: 'main'
-  });
-}, {
-  name: 'corps'
-});
-
-Router.route('/corps_post/:postId', function () {
-  this.layout('layout_app');
-  this.render('banner', {
-    to: 'sidebar_left'
-  });
-  this.render('corps_post', {
-    to: 'main',
-    data: {
-      postId: this.params.postId
-    }
-  });
-  this.wait(Meteor.subscribe('corpsPost', this.params.postId));
-}, {
-  name: 'corps_post'
-});
+// Router.route('/corps/:page', function () {
+//   this.layout('layout_app');
+//   this.render('banner', {
+//     to: 'sidebar_left'
+//   });
+//   this.render('corps', {
+//     to: 'main'
+//   });
+// }, {
+//   name: 'corps'
+// });
+//
+// Router.route('/corps_post/:postId', function () {
+//   this.layout('layout_app');
+//   this.render('banner', {
+//     to: 'sidebar_left'
+//   });
+//   this.render('corps_post', {
+//     to: 'main',
+//     data: {
+//       postId: this.params.postId
+//     }
+//   });
+//   this.wait(Meteor.subscribe('corpsPost', this.params.postId));
+// }, {
+//   name: 'corps_post'
+// });
 
 // Focus
 
-Router.route('/focus/:category/:page', function () {
-  this.layout('layout_app');
-  this.render('focus_category', {
-    to: 'sidebar_left'
-  });
-  this.render('focus', {
-    to: 'main',
-    data: {
-      categoryName: this.params.category
-    }
-  });
-}, {
-  name: 'focus'
-});
-
-Router.route('/focus_post/:postId', function () {
-  this.layout('layout_app');
-  this.render('focus_category', {
-    to: 'sidebar_left'
-  });
-  this.render('focus_post', {
-    to: 'main',
-    data: {
-      postId: this.params.postId
-    }
-  });
-  this.wait(Meteor.subscribe('focusPost', this.params.postId));
-  this.wait(Meteor.subscribe('files'));
-}, {
-  name: 'focus_post'
-});
+// Router.route('/focus/:category/:page', function () {
+//   this.layout('layout_app');
+//   this.render('focus_category', {
+//     to: 'sidebar_left'
+//   });
+//   this.render('focus', {
+//     to: 'main',
+//     data: {
+//       categoryName: this.params.category
+//     }
+//   });
+// }, {
+//   name: 'focus'
+// });
+//
+// Router.route('/focus_post/:postId', function () {
+//   this.layout('layout_app');
+//   this.render('focus_category', {
+//     to: 'sidebar_left'
+//   });
+//   this.render('focus_post', {
+//     to: 'main',
+//     data: {
+//       postId: this.params.postId
+//     }
+//   });
+//   this.wait(Meteor.subscribe('focusPost', this.params.postId));
+//   this.wait(Meteor.subscribe('files'));
+// }, {
+//   name: 'focus_post'
+// });
 
 // Favorites
 
@@ -321,21 +321,21 @@ Router.route('/favorites/:category', function () {
 
 // Infographic
 
-Router.route('/infographic/:page', function () {
-  this.layout('layout_app');
-  this.render('banner', {
-    to: 'sidebar_left'
-  });
-  this.render('infographic', {
-    to: 'main',
-    data: {
-      categoryName: this.params.category
-    }
-  });
-  this.wait(Meteor.subscribe('images'));
-}, {
-  name: 'infographic'
-});
+// Router.route('/infographic/:page', function () {
+//   this.layout('layout_app');
+//   this.render('banner', {
+//     to: 'sidebar_left'
+//   });
+//   this.render('infographic', {
+//     to: 'main',
+//     data: {
+//       categoryName: this.params.category
+//     }
+//   });
+//   this.wait(Meteor.subscribe('images'));
+// }, {
+//   name: 'infographic'
+// });
 
 // Events
 

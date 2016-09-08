@@ -7,8 +7,6 @@ Template.stats_pig_pops.onRendered(function () {
   let gd2 = g2.node();
   let g3 = d3.select('div[id="plot_3"]');
   let gd3 = g3.node();
-  // let g4 = d3.select('div[id="plot_4"]');
-  // let gd4 = g4.node();
 
   function unitK(x) {
     return Math.round(x / 1000);
@@ -27,9 +25,6 @@ Template.stats_pig_pops.onRendered(function () {
   // C_A 시도별
   // C_B 사육규모 00 (전체) 05 (1000) 10 (1000~5000)  15(5000~10000) 20 (10000)
   function drawPlot() {
-
-    Session.setPersistent('notComplete', true);
-    console.log(Session.get('notComplete'));
 
     let current_City = $('.citySelect option:selected').val();
     let txt = $('.citySelect option:selected').text();
@@ -266,8 +261,6 @@ Template.stats_pig_pops.onRendered(function () {
         Plotly.newPlot(gd3, data3, layout3);
       }
     });
-    Session.setPersistent('notComplete', false);
-    console.log(Session.get('notComplete'));
   }
 
   drawPlot();
@@ -282,10 +275,15 @@ Template.stats_pig_pops.onRendered(function () {
     drawPlot();
   });
 
-});
-
-Template.stats_pig_pops.helpers({
-  notComplete: function() {
-    return Session.get('notComplete');
+  // Loading Spinner
+  var wait;
+  function loadingSpin() {
+    wait = setTimeout(showPage, 1000);
   }
+  loadingSpin();
+  function showPage() {
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("chart-box").style.display = "block";
+  }
+
 });

@@ -17,7 +17,7 @@
 // 1401 삼호축산
 
 Template.price_ticker.onRendered(function () {
-  var today = moment(new Date()).format('YYYYMMDD');
+  var yesterday = moment(new Date()).add(-1, 'day').format('YYYYMMDD');
 
   let wantedProperties = [
     'c_0202Amt', 'c_0202Cnt', 'c_0302Amt', 'c_0302Cnt', 'c_0320Amt', 'c_0320Cnt',
@@ -27,7 +27,7 @@ Template.price_ticker.onRendered(function () {
     'c_1401Amt', 'c_1401Cnt', 'gradeNm', 'judgeSexNm', 'skinNm'
   ];
 
-  Meteor.call('market.get', today, today, 'Y', '025001', function (error, result) {
+  Meteor.call('market.get', yesterday, yesterday, 'Y', '025001', function (error, result) {
     if (error) {
       console.log(error);
     } else {
@@ -41,7 +41,7 @@ Template.price_ticker.onRendered(function () {
           }
         });
       }
-      Session.setPersistent('female_Y', female_Y);
+      Session.set('female_Y', female_Y);
     }
   });
 
@@ -72,7 +72,10 @@ Template.price_ticker.helpers({
   today: function () {
     return moment().format('YYYY-MM-DD');
   },
-  weekday: function () {
+  yesterday: function () {
+    return moment().add(-1, 'day').format('YYYY-MM-DD');
+  },
+  today_weekday: function () {
     let weekmap = {
       1: '월',
       2: '화',
@@ -83,5 +86,17 @@ Template.price_ticker.helpers({
       7: '일'
     };
     return weekmap[moment().weekday()];
+  },
+  yesterday_weekday: function () {
+    let weekmap = {
+      1: '월',
+      2: '화',
+      3: '수',
+      4: '목',
+      5: '금',
+      6: '토',
+      7: '일'
+    };
+    return weekmap[moment().add(-1, 'day').weekday()];
   }
 });

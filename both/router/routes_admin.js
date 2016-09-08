@@ -43,15 +43,15 @@ Router.route('/admin/news', function() {
 
 // Card News
 
-Router.route('/admin/cardnews', function() {
-    this.layout('layout_admin');
-    this.render('card_news_admin', {to: 'main'});
-    this.wait(Meteor.subscribe('cardNewsListAdmin'));
-    this.wait(Meteor.subscribe('images'));
-}, {
-    name: 'admin_cardnews',
-    trackPageView: false
-});
+// Router.route('/admin/cardnews', function() {
+//     this.layout('layout_admin');
+//     this.render('card_news_admin', {to: 'main'});
+//     this.wait(Meteor.subscribe('cardNewsListAdmin'));
+//     this.wait(Meteor.subscribe('images'));
+// }, {
+//     name: 'admin_cardnews',
+//     trackPageView: false
+// });
 
 
 // Events
@@ -68,29 +68,29 @@ Router.route('/admin/events', function() {
 
 // Corps
 
-Router.route('/admin/corps', function() {
-    this.layout('layout_admin');
-    this.render('corps_admin', {to: 'main'});
-    this.wait(Meteor.subscribe('corpsListAdmin'));
-    this.wait(Meteor.subscribe('images'));
-}, {
-    name: 'admin_corps',
-    trackPageView: false
-});
+// Router.route('/admin/corps', function() {
+//     this.layout('layout_admin');
+//     this.render('corps_admin', {to: 'main'});
+//     this.wait(Meteor.subscribe('corpsListAdmin'));
+//     this.wait(Meteor.subscribe('images'));
+// }, {
+//     name: 'admin_corps',
+//     trackPageView: false
+// });
 
 
 // Focus
 
-Router.route('/admin/focus', function() {
-    this.layout('layout_admin');
-    this.render('focus_admin', {to: 'main'});
-    this.wait(Meteor.subscribe('focusListAdmin'));
-    this.wait(Meteor.subscribe('images'));
-    this.wait(Meteor.subscribe('files'));
-}, {
-    name: 'admin_focus',
-    trackPageView: false
-});
+// Router.route('/admin/focus', function() {
+//     this.layout('layout_admin');
+//     this.render('focus_admin', {to: 'main'});
+//     this.wait(Meteor.subscribe('focusListAdmin'));
+//     this.wait(Meteor.subscribe('images'));
+//     this.wait(Meteor.subscribe('files'));
+// }, {
+//     name: 'admin_focus',
+//     trackPageView: false
+// });
 
 
 // Favorites
@@ -107,15 +107,15 @@ Router.route('/admin/favorites', function() {
 
 // Infographic
 
-Router.route('/admin/infographic', function() {
-    this.layout('layout_admin');
-    this.render('infographic_admin', {to: 'main'});
-    this.wait(Meteor.subscribe('infographicListAdmin'));
-    this.wait(Meteor.subscribe('images'));
-}, {
-    name: 'admin_infographic',
-    trackPageView: false
-});
+// Router.route('/admin/infographic', function() {
+//     this.layout('layout_admin');
+//     this.render('infographic_admin', {to: 'main'});
+//     this.wait(Meteor.subscribe('infographicListAdmin'));
+//     this.wait(Meteor.subscribe('images'));
+// }, {
+//     name: 'admin_infographic',
+//     trackPageView: false
+// });
 
 // Pigplan Case
 
