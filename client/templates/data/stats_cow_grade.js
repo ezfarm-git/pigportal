@@ -485,7 +485,7 @@ Template.stats_cow_grade.onRendered(function () {
   // Loading Spinner
   var wait;
   function loadingSpin() {
-    wait = setTimeout(showPage, 2000);
+    wait = setTimeout(showPage, 2500);
   }
   loadingSpin();
   function showPage() {

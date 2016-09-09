@@ -18,7 +18,27 @@
 
 Template.market.onRendered(function () {
 
-  var today = new Date();
+  let d3 = Plotly.d3;
+  let g1 = d3.select('div[id="market_plot1"]');
+  let gd = g1.node();
+  let g2 = d3.select('div[id="market_plot2"]');
+  let gd2 = g2.node();
+  let g3 = d3.select('div[id="market_plot3"]');
+  let gd3 = g3.node();
+  let g4 = d3.select('div[id="market_plot4"]');
+  let gd4 = g4.node();
+  let g5 = d3.select('div[id="market_plot5"]');
+  let gd5 = g5.node();
+  let g6 = d3.select('div[id="market_plot6"]');
+  let gd6 = g6.node();
+  let g7 = d3.select('div[id="market_plot7"]');
+  let gd7 = g7.node();
+
+  function unitK(x) {
+    return Math.floor(x / 10) + "." + (x % 10);
+  }
+
+  let today = new Date();
   document.getElementById("datepicker1").value = moment(today).add(-5, 'day').format('YYYY-MM-DD');
   document.getElementById("datepicker2").value = moment(today).format('YYYY-MM-DD');
 
@@ -53,9 +73,6 @@ Template.market.onRendered(function () {
       } else {
         var marketData = result;
 
-        function unitK(x) {
-          return Math.floor(x / 10) + "." + (x % 10);
-        }
         // 등급 : 1+ , 1 , 2 , 등외 , 등외제외 , 모돈 , 평균
         var xname = [];
         var trace_1plus_Amt = [],
@@ -697,28 +714,6 @@ Template.market.onRendered(function () {
             trace_avg_Cnt = [PNC.BK_Cnt, PNC.HS_Cnt, PNC.DDL_Cnt, PNC.NH_BC_Cnt, PNC.NH_YS_Cnt, PNC.YS_Cnt, PNC.NH_NG_Cnt, PNC.NH_KL_Cnt, PNC.KH_Cnt, PNC.JJ_Cnt, PNC.SH_Cnt, PNC.SS_Cnt, PNC.SHC_Cnt];
           }
         }
-
-        var d3 = Plotly.d3;
-        var g1 = d3.select('div[id="market_plot1"]');
-        var gd = g1.node();
-
-        var g2 = d3.select('div[id="market_plot2"]');
-        var gd2 = g2.node();
-
-        var g3 = d3.select('div[id="market_plot3"]');
-        var gd3 = g3.node();
-
-        var g4 = d3.select('div[id="market_plot4"]');
-        var gd4 = g4.node();
-
-        var g5 = d3.select('div[id="market_plot5"]');
-        var gd5 = g5.node();
-
-        var g6 = d3.select('div[id="market_plot6"]');
-        var gd6 = g6.node();
-
-        var g7 = d3.select('div[id="market_plot7"]');
-        var gd7 = g7.node();
 
         for (i = 0; i < 13; i++) {
           trace_1plus_Amt[i] = Number(trace_1plus_Amt[i]);

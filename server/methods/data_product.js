@@ -5,6 +5,11 @@ Meteor.methods({
         return JSON.parse(response.content);
     },
 
+    "INITIAL_POPS.get": function(pastY, curY) {
+        var response = HTTP.get('http://localhost:4100/pig-portal/initial-pops/' + pastY + '/' + curY);
+        return JSON.parse(response.content);
+    },
+
     "CURRENT_WEEK.get": function() {
         var response = HTTP.get('http://localhost:4100/pig-portal/currentweek');
         return JSON.parse(response.content)[0]['WEEK'];
