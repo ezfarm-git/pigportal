@@ -1,10 +1,11 @@
-
 Template.product_main.onRendered(function () {
 
   let d3 = Plotly.d3;
   let gd3 = d3.select('div[id="plot_1"]');
   let gd = gd3.node();
   let annotationElement = document.getElementById('annotation');
+  let pastInitElement = document.getElementById('past_initial');
+  let currentInitElement = document.getElementById('current_initial');
 
   let today = new Date();
   let currentYear = today.getFullYear();
@@ -12,6 +13,11 @@ Template.product_main.onRendered(function () {
 
   function stringToWeek(x) {
     return x + '주';
+  }
+
+  function comma(str) {
+    str = String(str);
+    return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
   }
 
   let txtMap = {
@@ -76,13 +82,13 @@ Template.product_main.onRendered(function () {
           }
         }
 
-        // for (i = 0; i < 1; i++) {
-        //   current_bCNT.pop();
-        //   current_gCNT.pop();
-        //   current_weaned.pop();
-        //   current_bRatio.pop();
-        //   current_dRatio.pop();
-        // }
+        for (i = 0; i < 1; i++) {
+          current_bCNT.pop();
+          current_gCNT.pop();
+          current_weaned.pop();
+          current_bRatio.pop();
+          current_dRatio.pop();
+        }
 
         var period = [];
         for (i = 0; i < 52; i++) {
@@ -229,8 +235,23 @@ Template.product_main.onRendered(function () {
     });
   }
 
+  function addInitialPops() {
+    Meteor.call('INITIAL_POPS.get', pastYear, currentYear, function (error, result) {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log(result);
+        let past_initial = result[0].VALUE;
+        let current_initial = result[1].VALUE;
+        pastInitElement.innerHTML += comma(past_initial);
+        currentInitElement.innerHTML += comma(current_initial);
+      }
+    })
+  }
+
   drawPlot();
   addAnnotation();
+  addInitialPops();
 
   window.onresize = function () {
     Plotly.Plots.resize(gd);
