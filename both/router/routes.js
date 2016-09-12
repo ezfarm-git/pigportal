@@ -193,10 +193,10 @@ Router.route('/bigdata/monthly', {
   template: 'bigdata_monthly',
   name: 'bigdata_monthly'
 });
-Router.route('/bigdata/points', {
+Router.route('/bigdata/scatter', {
   layoutTemplate: 'layout_full_width',
-  template: 'bigdata',
-  name: 'bigdata_points'
+  template: 'bigdata_scatter',
+  name: 'bigdata_scatter'
 });
 Router.route('/bigdata/data', {
   layoutTemplate: 'layout_full_width',
