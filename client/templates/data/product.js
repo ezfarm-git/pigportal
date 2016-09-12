@@ -76,13 +76,13 @@ Template.product.onRendered(function () {
           }
         }
 
-        // for (i = 0; i < 1; i++) {
-        //   current_bCNT.pop();
-        //   current_gCNT.pop();
-        //   current_weaned.pop();
-        //   current_bRatio.pop();
-        //   current_dRatio.pop();
-        // }
+        for (i = 0; i < 1; i++) {
+          current_bCNT.pop();
+          current_gCNT.pop();
+          current_weaned.pop();
+          current_bRatio.pop();
+          current_dRatio.pop();
+        }
 
         var period = [];
         for (i = 0; i < 52; i++) {

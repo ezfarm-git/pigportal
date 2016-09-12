@@ -183,14 +183,14 @@ Router.route('/data/disease', {
 
 // Data - Bigdata
 
-Router.route('/bigdata/anually', {
+Router.route('/bigdata/annually', {
   layoutTemplate: 'layout_full_width',
-  template: 'bigdata',
-  name: 'bigdata_anually'
+  template: 'bigdata_annually',
+  name: 'bigdata_annually'
 });
 Router.route('/bigdata/monthly', {
   layoutTemplate: 'layout_full_width',
-  template: 'bigdata',
+  template: 'bigdata_monthly',
   name: 'bigdata_monthly'
 });
 Router.route('/bigdata/points', {
