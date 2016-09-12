@@ -9,11 +9,11 @@
         <label class="radio-inline">
           <input type="radio" name="optradio" value="bCNT">분만복수&emsp;
         </label>
+      </span>&emsp;
+      <span style="white-space:nowrap;">
         <label class="radio-inline">
           <input type="radio" name="optradio" value="weaned">이유두수
         </label>
-      </span>&emsp;
-      <span style="white-space:nowrap;">
         <label class="radio-inline">
           <input type="radio" name="optradio" value="bRatio">분만율&emsp;
         </label>
@@ -27,20 +27,15 @@
   <hr>
 
   <div id="plot_1" style="width:100%;height:auto;"></div>
-  <p style="text-align:right; padding-right:14%; font-size:110%; margin-bottom:3px;">
-    <span id=annotation style="font-weight:bold;"></span>
-    <br>
-    <span style="color:#1f77b4;">■ 지난해</span>&nbsp;
-    <span style="color:#1f77b4;">(기초상시모돈
-      <span id=past_initial style=""></span>)</span>
-    <br>
-    <span style="color:#ff7f0e;">■ 올해</span>&nbsp;
-    <span style="color:#ff7f0e;">(기초상시모돈
-      <span id=current_initial style=""></span>)</span>
+  <p style="text-align:center; font-size:110%; font-weight:bold; margin-bottom:3px;">
+    <span style="color:#1f77b4; white-space:nowrap;">■ 지난해 (기초상시모돈
+      <span id=past_initial></span>)</span>&emsp;
+    <span style="color:#ff7f0e; white-space:nowrap;">■ 올해 (기초상시모돈
+      <span id=current_initial></span>)</span>
   </p>
-  <p style="text-align:right; padding-right:14%; font-size:105%;">
-    ※ 출처 : 피그플랜 이용 농장
-    <span style="white-space:nowrap;">125 곳의 자료</span>
+  <p style="text-align:center; font-size:105%; margin-left:10%; margin-right:10%;">
+    <span id=annotation style="white-space:nowrap; font-size:110%; font-weight:bold;"></span>&emsp;
+    <span style="white-space:nowrap; font-size:110%;">※ 출처 : 피그플랜 이용 농장 125 곳의 자료</span>
   </p>
 
 </template>
