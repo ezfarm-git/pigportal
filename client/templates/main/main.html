@@ -63,7 +63,7 @@
         </span>
       </h5>
       {{#each mainCase}}
-        <a href="/case_post/{{_id}}" class="underline-none hover-color">
+        <a href="/case_post/{{_id}}" class="underline-none">
           <div class="card">
             <div class="post_img">
               {{#with FS.GetFile "Images" image}}
@@ -72,7 +72,7 @@
               <h4 class="card-title">{{title}}</h4>
             </div>
             <div class="card-block">
-              <p class="card-text latest-post-summary">{{summary}}</p>
+              <p class="card-text underline-none" style="color:#2F4F4F">{{summary}}</p>
             </div>
           </div>
         </a>

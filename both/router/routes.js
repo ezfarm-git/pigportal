@@ -200,7 +200,7 @@ Router.route('/bigdata/scatter', {
 });
 Router.route('/bigdata/data', {
   layoutTemplate: 'layout_full_width',
-  template: 'bigdata',
+  template: 'bigdata_data',
   name: 'bigdata_data'
 });
 

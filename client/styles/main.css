@@ -383,6 +383,13 @@
   color: #003366;
 }
 
+/*.main-card-summary {
+  color: #2F4F4F;
+}
+.main-card-summary:hover {
+  color: #2D81C0;
+}*/
+
 .col-sm-8 .post_img {
   position: relative;
 }
