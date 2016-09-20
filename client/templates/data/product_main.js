@@ -90,6 +90,8 @@ Template.product_main.onRendered(function () {
           current_dRatio.pop();
         }
 
+        current_dRatio.pop();
+
         var period = [];
         for (i = 0; i < 52; i++) {
           period[i] = stringToWeek(week1[i]);

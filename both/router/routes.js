@@ -238,33 +238,33 @@ Router.route('/news/:category/:page', function () {
 
 // Corps
 
-// Router.route('/corps/:page', function () {
-//   this.layout('layout_app');
-//   this.render('banner', {
-//     to: 'sidebar_left'
-//   });
-//   this.render('corps', {
-//     to: 'main'
-//   });
-// }, {
-//   name: 'corps'
-// });
-//
-// Router.route('/corps_post/:postId', function () {
-//   this.layout('layout_app');
-//   this.render('banner', {
-//     to: 'sidebar_left'
-//   });
-//   this.render('corps_post', {
-//     to: 'main',
-//     data: {
-//       postId: this.params.postId
-//     }
-//   });
-//   this.wait(Meteor.subscribe('corpsPost', this.params.postId));
-// }, {
-//   name: 'corps_post'
-// });
+Router.route('/corps/:page', function () {
+  this.layout('layout_app');
+  this.render('banner', {
+    to: 'sidebar_left'
+  });
+  this.render('corps', {
+    to: 'main'
+  });
+}, {
+  name: 'corps'
+});
+
+Router.route('/corps_post/:postId', function () {
+  this.layout('layout_app');
+  this.render('banner', {
+    to: 'sidebar_left'
+  });
+  this.render('corps_post', {
+    to: 'main',
+    data: {
+      postId: this.params.postId
+    }
+  });
+  this.wait(Meteor.subscribe('corpsPost', this.params.postId));
+}, {
+  name: 'corps_post'
+});
 
 // Focus
 

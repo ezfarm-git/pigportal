@@ -5,8 +5,8 @@ Router.onBeforeAction(function() {
         this.next();
     }
 }, {
-    only: ['admin_main', 'admin_news', 'admin_cardnews', 'admin_events', 'admin_corps',
-           'admin_focus', 'admin_favorites', 'admin_infographic', 'admin_pigplan_case']
+    only: ['admin_main', 'admin_news', 'admin_events', 'admin_corps',
+           'admin_favorites', 'admin_pigplan_case']
 });
 
 // Admin main
@@ -68,15 +68,15 @@ Router.route('/admin/events', function() {
 
 // Corps
 
-// Router.route('/admin/corps', function() {
-//     this.layout('layout_admin');
-//     this.render('corps_admin', {to: 'main'});
-//     this.wait(Meteor.subscribe('corpsListAdmin'));
-//     this.wait(Meteor.subscribe('images'));
-// }, {
-//     name: 'admin_corps',
-//     trackPageView: false
-// });
+Router.route('/admin/corps', function() {
+    this.layout('layout_admin');
+    this.render('corps_admin', {to: 'main'});
+    this.wait(Meteor.subscribe('corpsListAdmin'));
+    this.wait(Meteor.subscribe('images'));
+}, {
+    name: 'admin_corps',
+    trackPageView: false
+});
 
 
 // Focus
@@ -119,7 +119,7 @@ Router.route('/admin/favorites', function() {
 
 // Pigplan Case
 
-Router.route('/admin/pigplan/case', function() {
+Router.route('/admin/case', function() {
     this.layout('layout_admin');
     this.render('case_admin', {to: 'main'});
     this.wait(Meteor.subscribe('caseListAdmin'));

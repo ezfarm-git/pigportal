@@ -1,4 +1,4 @@
-Template.header.onRendered(function () {
+// Template.header.onRendered(function () {
 
   // $('.menu').on('click', function () {
   //   $('.navbar-collapse').collapse('hide');
@@ -11,4 +11,5 @@ Template.header.onRendered(function () {
   //     $('.navbar').fadeOut('slow');
   //   }
   // });
-});
+  
+// });
