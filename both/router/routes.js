@@ -23,7 +23,7 @@ Router.route('/', function () {
   this.wait(Meteor.subscribe('latestFocus'));
   // this.wait(Meteor.subscribe('mainFocus'));
   this.wait(Meteor.subscribe('mainNews'));
-  // this.wait(Meteor.subscribe('mainCorps'));
+  this.wait(Meteor.subscribe('mainCorps'));
   this.wait(Meteor.subscribe('mainCase'));
   // this.wait(Meteor.subscribe('mainCardNews'));
   // this.wait(Meteor.subscribe('mainInfographic'));

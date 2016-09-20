@@ -18,9 +18,9 @@ Template.main.helpers({
     mainNews: function() {
         return News.find({}, {sort: {date: -1, title: 1}, limit: 20});
     },
-    // mainCorps: function() {
-    //     return Corps.find({}, {sort: {date: -1, title: 1}, limit: 4});
-    // },
+    mainCorps: function() {
+        return Corps.find({}, {sort: {date: -1, title: 1}, limit: 2});
+    },
     mainCase: function() {
         return Case.find({}, {sort: {date: -1}, limit: 2});
     },

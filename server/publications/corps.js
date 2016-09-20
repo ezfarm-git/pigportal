@@ -25,3 +25,7 @@ Meteor.publish("corpsList", function(skipCount) {
 Meteor.publish("corpsPost", function(postId) {
     return Corps.find({_id: postId});
 });
+
+Meteor.publish("mainCorps", function() {
+    return Corps.find({}, {sort: {date: -1, title: 1}, limit: 2});
+});
