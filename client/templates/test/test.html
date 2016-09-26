@@ -1,13 +1,29 @@
 <template name="test">
+  <style media="screen">
+    table, th, td {
+      text-align: center;
+    }
+  </style>
 
-  <div style="margin:0;">
 
-    <div id="loader"></div>
+  {{> loginButtons}}
+  {{username}}
+  {{curruntUser.username}}
 
-    <div style="display:none;" id="chartbox" class="animate-bottom">
-      <h2>Tada!</h2>
-      <p>Some text in my newly loaded page..</p>
+  {{#autoForm id="commentsForm" type="insert" collection="Comments"}}
+    <div class="form-group">
+      <span>{{> afQuickField name="author" id="author" readonly=ture value="{{username}}"}}</span>
+      <span>
+        {{> afQuickField name="content" id="content"}}
+      </span>
+
+      <span hidden>
+        {{> afQuickField name="category" id="category" value="annually"}}
+      </span>
+      <button type="submit" class="btn btn-primary submit-btn">저장</button>
     </div>
-  </div>
+  {{/autoForm}}
+
+  {{>reactiveTable settings=tableSetting}}
 
 </template>
