@@ -198,10 +198,10 @@ Router.route('/bigdata/scatter', {
   template: 'bigdata_scatter',
   name: 'bigdata_scatter'
 });
-Router.route('/bigdata/data', {
+Router.route('/bigdata/table', {
   layoutTemplate: 'layout_full_width',
-  template: 'bigdata_data',
-  name: 'bigdata_data'
+  template: 'bigdata_table',
+  name: 'bigdata_table'
 });
 
 

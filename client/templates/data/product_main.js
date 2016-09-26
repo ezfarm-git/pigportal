@@ -82,7 +82,7 @@ Template.product_main.onRendered(function () {
           }
         }
 
-        for (i = 0; i < 1; i++) {
+        for (i = 0; i < 2; i++) {
           current_bCNT.pop();
           current_gCNT.pop();
           current_weaned.pop();
