@@ -1,20 +1,20 @@
-Template.test.onCreated(function () {
+Template.comments_monthly.onCreated(function () {
   this.selectedDoc = new ReactiveVar("");
   this.formType = new ReactiveVar("insert");
   this.askPass = new ReactiveVar(false);
 });
 
-Template.test.onDestroyed(function () {
+Template.comments_monthly.onDestroyed(function () {
   document.getElementById('Form').reset();
   this.selectedDoc.set(null);
   this.formType.set(null);
   this.askPass.set(null);
 });
 
-Template.test.helpers({
+Template.comments_monthly.helpers({
   comments: function () {
     return Comments.find({
-      category: "annually"
+      category: "monthly"
     }, {
       sort: {
         date: -1
@@ -33,9 +33,14 @@ Template.test.helpers({
       fields: [{
         key: 'createdAt',
         label: '일자',
+        fn: function (value, object, key) {
+          const date = new Date(value);
+          const prettyDate = date.toLocaleDateString();
+          return prettyDate;
+        },
         sortOrder: 0,
         sortDirection: 'descending',
-        hidden: true
+        hidden: false
       }, {
         key: 'author',
         label: '작성자'
@@ -56,7 +61,7 @@ Template.test.helpers({
   }
 });
 
-Template.test.events({
+Template.comments_monthly.events({
   'click .reactive-table tbody tr': function (evt, tmpl) {
     evt.preventDefault();
     tmpl.selectedDoc.set(this._id);

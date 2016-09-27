@@ -7,3 +7,7 @@ Template.registerHelper("galleryHeight", function(array, height) {
     var h = height/len;
     return String(h) + "px";
 });
+
+Template.registerHelper("equals", function(v1, v2) {
+  return (v1 === v2);
+});

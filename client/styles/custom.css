@@ -590,9 +590,6 @@ p.pigplan_tab_paragraph {
 }
 
 
-div.or {
-  display: none;
-}
-.login-form {
+.at-sep, .at-input, .at-btn {
   display: none;
 }

@@ -1,18 +1,25 @@
-<template name="test">
+<template name="comments_disease">
   <style media="screen">
-    th.author,
-    td.author {
-      width: 20%;
+    table {
       text-align: center;
     }
-    th.content,
+    th {
+      display: none;
+    }
+    td.createdAt {
+      width: 20%;
+    }
+    td.author {
+      width: 20%;
+    }
     td.content {
-      width: 80%;
-      text-align: left;
+      width: 60%;
     }
   </style>
 
   {{>reactiveTable settings=tableSetting}}
+
+  <p class="text-success" style="font-size:110%;">코멘트를 남겨주세요.</p>
 
   {{#if equals formType 'insert'}}
     {{#unless askPass}}
@@ -23,7 +30,7 @@
 
           <span hidden>
             {{> afQuickField name="createdAt" id="createdAt"}}
-            {{> afQuickField name="category" id="category" value="annually"}}
+            {{> afQuickField name="category" id="category" value="disease"}}
           </span>
 
           <button type="submit" class="btn btn-primary submit-btn">코멘트 저장</button>&nbsp;&nbsp;
@@ -61,7 +68,7 @@
 
           <span hidden>
             {{> afQuickField name="createdAt" id="createdAt"}}
-            {{> afQuickField name="category" id="category" value="annually"}}
+            {{> afQuickField name="category" id="category" value="disease"}}
           </span>
 
           <button type="submit" class="btn btn-primary submit-btn">수정</button>&nbsp;&nbsp;

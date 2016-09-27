@@ -7,7 +7,7 @@ Router.configure({
 // Test
 Router.route('/test', function() {
     this.render('test');
-    this.wait(Meteor.subscribe('commentsList'));
+    this.wait(Meteor.subscribe('commentsListAnnually'));
 });
 
 Router.route('/test2', function () {
@@ -181,7 +181,10 @@ Router.route('/data/stats/chicken/age', {
 Router.route('/data/disease', {
   layoutTemplate: 'layout_full_width',
   template: 'disease',
-  name: 'data_disease'
+  name: 'data_disease',
+  waitOn: function() {
+    return Meteor.subscribe('commentsListDisease');
+  }
 });
 
 // Data - Bigdata
@@ -189,22 +192,34 @@ Router.route('/data/disease', {
 Router.route('/bigdata/annually', {
   layoutTemplate: 'layout_full_width',
   template: 'bigdata_annually',
-  name: 'bigdata_annually'
+  name: 'bigdata_annually',
+  waitOn: function() {
+    return Meteor.subscribe('commentsListAnnually');
+  }
 });
 Router.route('/bigdata/monthly', {
   layoutTemplate: 'layout_full_width',
   template: 'bigdata_monthly',
-  name: 'bigdata_monthly'
+  name: 'bigdata_monthly',
+  waitOn: function() {
+    return Meteor.subscribe('commentsListMonthly');
+  }
 });
 Router.route('/bigdata/scatter', {
   layoutTemplate: 'layout_full_width',
   template: 'bigdata_scatter',
-  name: 'bigdata_scatter'
+  name: 'bigdata_scatter',
+  waitOn: function() {
+    return Meteor.subscribe('commentsListScatter');
+  }
 });
 Router.route('/bigdata/table', {
   layoutTemplate: 'layout_full_width',
   template: 'bigdata_table',
-  name: 'bigdata_table'
+  name: 'bigdata_table',
+  waitOn: function() {
+    return Meteor.subscribe('commentsListTable');
+  }
 });
 
 

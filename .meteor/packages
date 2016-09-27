@@ -36,9 +36,12 @@ iron:layout
 
 
 # Auth
-accounts-ui
-accounts-facebook
-accounts-google
+# accounts-ui
+# service-configuration
+# useraccounts:bootstrap
+# softwarerero:accounts-t9n
+# accounts-facebook
+# accounts-google
 accounts-password@1.3.0
 alanning:roles
 
