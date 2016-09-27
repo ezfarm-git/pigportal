@@ -242,7 +242,6 @@
       if (error) {
         console.log(error);
       } else {
-        console.log(result);
         let past_initial = result[0].VALUE;
         let current_initial = result[1].VALUE;
         pastInitElement.innerHTML += comma(past_initial);

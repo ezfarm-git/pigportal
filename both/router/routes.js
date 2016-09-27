@@ -7,7 +7,6 @@ Router.configure({
 // Test
 Router.route('/test', function() {
     this.render('test');
-    this.wait(Meteor.subscribe('commentsListAnnually'));
 });
 
 Router.route('/test2', function () {
@@ -24,14 +23,6 @@ Router.route('/', function () {
   this.wait([Meteor.subscribe('latestFocus'), Meteor.subscribe('mainNews'),
              Meteor.subscribe('mainCorps'), Meteor.subscribe('mainCase'),
              Meteor.subscribe('recentEvents'), Meteor.subscribe('images')]);
-  // this.wait(Meteor.subscribe('mainFocus'));
-  // this.wait(Meteor.subscribe('mainNews'));
-  // this.wait(Meteor.subscribe('mainCorps'));
-  // this.wait(Meteor.subscribe('mainCase'));
-  // this.wait(Meteor.subscribe('mainCardNews'));
-  // this.wait(Meteor.subscribe('mainInfographic'));
-  // this.wait(Meteor.subscribe('recentEvents'));
-  // this.wait(Meteor.subscribe('images'));
 }, {
   name: 'main'
 });
