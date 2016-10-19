@@ -9,6 +9,5 @@ tar -zxvf pigportal.tar.gz
 cd bundle/programs/server && npm install
 npm uninstall fibers --save
 npm install fibers --save
-export PORT=3000 MONGO_URL=mongodb://pigportal:pig2016@localhost:27017/pigportal ROOT_URL=http://localhost METEOR_SETTINGS=$(cat /var/srv/pigportal/settings.json)
 cd ../..
 pm2 start /var/srv/pigportal/process.json

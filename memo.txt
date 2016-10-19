@@ -1,5 +1,7 @@
-heroku_304dc04f
-scd5v6q9vb6seekkbo4ggrf0hg
+# RSS
+축산경제 (http://www.chukkyung.co.kr/rss/)
+
+
 
 mongodump -h ds023064.mlab.com:23064 -d heroku_304dc04f -u heroku_304dc04f -p scd5v6q9vb6seekkbo4ggrf0hg -o
 
@@ -26,10 +28,8 @@ db.createUser(
 MONGO_URL : mongodb://pigportal:pig2016@210.92.91.212:27017/pigportal
 MONGODB_URI : mongodb://pigportal:pig2016@210.92.91.212:27017/pigportal
 
-MONGO_URL : mongodb://heroku_304dc04f:scd5v6q9vb6seekkbo4ggrf0hg@ds023064.mlab.com:23064/heroku_304dc04f
-MONGODB_URI : mongodb://heroku_304dc04f:scd5v6q9vb6seekkbo4ggrf0hg@ds023064.mlab.com:23064/heroku_304dc04f
 
-MONGO_URL=mongodb://localhost:27017/pigportal PORT=3000 ROOT_URL=http://localhost:3000 npm start
+
 
 
 export PORT=3000 MONGO_URL=mongodb://pigportal:pig2016@localhost:27017/pigportal ROOT_URL=http://localhost node main.js
