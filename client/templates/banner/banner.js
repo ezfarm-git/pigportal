@@ -5,13 +5,13 @@ Template.banner.onRendered(function() {
 	var sHtml = "";
 	var LinkNum = 0;
 	var	sLink = new Array(5)
-		sLink = ['http://www.intron.co.kr','http://www.bikr.co.kr']
+	sLink = ['http://www.bionote.co.kr','http://www.bikr.co.kr']
 	for (i=0;i<num ;i++)
 	{
 		RandomNum = Math.ceil(Math.random() * num);
 		if(sNum==RandomNum )
 		{
-			i--;			
+			i--;
 		}else{
 			sNum = RandomNum;
 			LinkNum = RandomNum - 1;
@@ -22,4 +22,3 @@ Template.banner.onRendered(function() {
 	}
 	$("#Banner_layer").html(sHtml);
 })
-	
