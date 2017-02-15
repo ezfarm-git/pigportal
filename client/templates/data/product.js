@@ -4,12 +4,19 @@
   let gd3 = d3.select('div[id="plot_1"]');
   let gd = gd3.node();
   let annotationElement = document.getElementById('annotation');
-  let pastInitElement = document.getElementById('past_initial');
+  let pastInitElement = document.getElementById('past_initial2');
+  let pastInitElement2 = document.getElementById('past_initial');
   let currentInitElement = document.getElementById('current_initial');
+
+// 추가
+  let pastInitYear2 = document.getElementById('pastY2');
+  let pastInitYear1 = document.getElementById('pastY1');
+  let currentInitYear = document.getElementById('curY');
 
   let today = new Date();
   let currentYear = today.getFullYear();
   let pastYear = currentYear - 1;
+  let pastYear2 = currentYear -2;
 
   function stringToWeek(x) {
     return x + '주';
@@ -29,11 +36,11 @@
   };
 
   function drawPlot() {
-    Meteor.call('TWO_YEARS.get', pastYear, currentYear, function (error, result) {
+    Meteor.call('THREE_YEARS.get',pastYear2, pastYear, currentYear, function (error, result) {
       if (error) {
         console.log(error);
       } else {
-        var twoYears = result;
+        var threeYears = result;
 
         var checked = $('input[name="optradio"]:checked').val();
         var txt = txtMap[checked];
@@ -41,7 +48,12 @@
         var week1 = [],
           week2 = [];
 
-        var past_gCNT = [],
+        var past_gCNT2 = [],
+          past_bCNT2 = [],
+          past_weaned2 = [],
+          past_bRatio2 = [],
+          past_dRatio2 = [],
+          past_gCNT = [],
           past_bCNT = [],
           past_weaned = [],
           past_bRatio = [],
@@ -52,32 +64,46 @@
           current_bRatio = [],
           current_dRatio = [];
 
-        for (var i = 0; i < twoYears.length; i++) {
-          if (twoYears[i].YEAR === pastYear.toString()) {
-            if (twoYears[i].GUBUN === 'G_CNT') {
-              past_gCNT.push(twoYears[i].VALUE);
-              week1.push(twoYears[i].WEEK);
-            } else if (twoYears[i].GUBUN === "B_CNT") {
-              past_bCNT.push(twoYears[i].VALUE);
-            } else if (twoYears[i].GUBUN === "EU_DUSU") {
-              past_weaned.push(twoYears[i].VALUE);
-            } else if (twoYears[i].GUBUN === "B_RATIO") {
-              past_bRatio.push(twoYears[i].VALUE);
-            } else if (twoYears[i].GUBUN === "PAESA") {
-              past_dRatio.push(twoYears[i].VALUE);
+        for (var i = 0; i < threeYears.length; i++) {
+          if (threeYears[i].YEAR === pastYear.toString()) {
+            if (threeYears[i].GUBUN === 'G_CNT') {
+              past_gCNT.push(threeYears[i].VALUE);
+              week1.push(threeYears[i].WEEK);
+            } else if (threeYears[i].GUBUN === "B_CNT") {
+              past_bCNT.push(threeYears[i].VALUE);
+            } else if (threeYears[i].GUBUN === "EU_DUSU") {
+              past_weaned.push(threeYears[i].VALUE);
+            } else if (threeYears[i].GUBUN === "B_RATIO") {
+              past_bRatio.push(threeYears[i].VALUE);
+            } else if (threeYears[i].GUBUN === "PAESA") {
+              past_dRatio.push(threeYears[i].VALUE);
             }
-          } else {
-            if (twoYears[i].GUBUN === "G_CNT") {
-              current_gCNT.push(twoYears[i].VALUE);
-              week2.push(twoYears[i].WEEK);
-            } else if (twoYears[i].GUBUN === "B_CNT") {
-              current_bCNT.push(twoYears[i].VALUE);
-            } else if (twoYears[i].GUBUN === "EU_DUSU") {
-              current_weaned.push(twoYears[i].VALUE);
-            } else if (twoYears[i].GUBUN === "B_RATIO") {
-              current_bRatio.push(twoYears[i].VALUE);
-            } else if (twoYears[i].GUBUN === "PAESA") {
-              current_dRatio.push(twoYears[i].VALUE);
+          }else if (threeYears[i].YEAR === pastYear2.toString()) {
+            if (threeYears[i].GUBUN === 'G_CNT') {
+              past_gCNT2.push(threeYears[i].VALUE);
+              // week1.push(threeYears[i].WEEK);
+            } else if (threeYears[i].GUBUN === "B_CNT") {
+              past_bCNT2.push(threeYears[i].VALUE);
+            } else if (threeYears[i].GUBUN === "EU_DUSU") {
+              past_weaned2.push(threeYears[i].VALUE);
+            } else if (threeYears[i].GUBUN === "B_RATIO") {
+              past_bRatio2.push(threeYears[i].VALUE);
+            } else if (threeYears[i].GUBUN === "PAESA") {
+              past_dRatio2.push(threeYears[i].VALUE);
+            }
+          }
+          else {
+            if (threeYears[i].GUBUN === "G_CNT") {
+              current_gCNT.push(threeYears[i].VALUE);
+              week2.push(threeYears[i].WEEK);
+            } else if (threeYears[i].GUBUN === "B_CNT") {
+              current_bCNT.push(threeYears[i].VALUE);
+            } else if (threeYears[i].GUBUN === "EU_DUSU") {
+              current_weaned.push(threeYears[i].VALUE);
+            } else if (threeYears[i].GUBUN === "B_RATIO") {
+              current_bRatio.push(threeYears[i].VALUE);
+            } else if (threeYears[i].GUBUN === "PAESA") {
+              current_dRatio.push(threeYears[i].VALUE);
             }
           }
         }
@@ -97,6 +123,60 @@
           period[i] = stringToWeek(week1[i]);
         }
 
+         var trace11 = {
+          x: period,
+          y: past_gCNT2,
+          connectgaps: true,
+          mode: 'lines+markers',
+          marker: {
+            size: 8,
+            opacity: 0.5
+          },
+          name: pastYear2 + "년 교배복수"
+        };
+        var trace12 = {
+          x: period,
+          y: past_bCNT2,
+          mode: 'lines+markers',
+          marker: {
+            size: 8,
+            opacity: 0.5
+          },
+          name: pastYear2 + "년 분만복수"
+        };
+        var trace13 = {
+          x: period,
+          y: past_weaned2,
+          rotation: 90,
+          mode: 'lines+markers',
+          marker: {
+            size: 8,
+            opacity: 0.5
+          },
+          name: pastYear2 + "년 이유두수"
+        };
+        var trace14 = {
+          x: period,
+          y: past_bRatio2,
+          rotation: 90,
+          mode: 'lines+markers',
+          marker: {
+            size: 8,
+            opacity: 0.5
+          },
+          name: pastYear2 + "년 분만율"
+        };
+        var trace15 = {
+          x: period,
+          y: past_dRatio2,
+          rotation: 90,
+          mode: 'lines+markers',
+          marker: {
+            size: 8,
+            opacity: 0.5
+          },
+          name: pastYear2 + "년 이유전 폐사율"
+        };
         var trace1 = {
           x: period,
           y: past_gCNT,
@@ -204,11 +284,11 @@
         };
 
         var dataMap = {
-          'gCNT': [trace1, trace6],
-          'bCNT': [trace2, trace7],
-          'weaned': [trace3, trace8],
-          'bRatio': [trace4, trace9],
-          'dRatio': [trace5, trace10]
+          'gCNT': [trace1, trace6, trace11],
+          'bCNT': [trace2, trace7 , trace12],
+          'weaned': [trace3, trace8, trace13],
+          'bRatio': [trace4, trace9 , trace14],
+          'dRatio': [trace5, trace10 , trace15]
         };
         var data = dataMap[checked];
 
@@ -238,12 +318,24 @@
   }
 
   function addInitialPops() {
-    Meteor.call('INITIAL_POPS.get', pastYear, currentYear, function (error, result) {
+    Meteor.call('INITIAL_POPS.get', pastYear2, pastYear, currentYear,  function (error, result) {
       if (error) {
         console.log(error);
       } else {
-        let past_initial = result[0].VALUE;
-        let current_initial = result[1].VALUE;
+
+        let pY2 = result[0].YEAR;
+        let pY1 = result[1].YEAR;
+        let cY = result[2].YEAR;
+
+        let past_initial2 = result[0].VALUE;
+        let past_initial = result[1].VALUE;
+        let current_initial = result[2].VALUE;
+
+        pastInitYear2.innerHTML = '■ ' + pY2 + ' ( 기초상시모돈';
+        pastInitYear1.innerHTML = '■ ' + pY1 + ' ( 기초상시모돈';
+        currentInitYear.innerHTML = '■' + cY + '( 기초상시모돈';
+
+        pastInitElement2.innerHTML += comma(past_initial2);
         pastInitElement.innerHTML += comma(past_initial);
         currentInitElement.innerHTML += comma(current_initial);
       }
