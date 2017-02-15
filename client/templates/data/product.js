@@ -8,7 +8,6 @@
   let pastInitElement2 = document.getElementById('past_initial');
   let currentInitElement = document.getElementById('current_initial');
 
-// 추가
   let pastInitYear2 = document.getElementById('pastY2');
   let pastInitYear1 = document.getElementById('pastY1');
   let currentInitYear = document.getElementById('curY');
@@ -46,7 +45,7 @@
         var txt = txtMap[checked];
 
         var week1 = [],
-          week2 = [];
+            week2 = [];
 
         var past_gCNT2 = [],
           past_bCNT2 = [],
@@ -81,7 +80,6 @@
           }else if (threeYears[i].YEAR === pastYear2.toString()) {
             if (threeYears[i].GUBUN === 'G_CNT') {
               past_gCNT2.push(threeYears[i].VALUE);
-              // week1.push(threeYears[i].WEEK);
             } else if (threeYears[i].GUBUN === "B_CNT") {
               past_bCNT2.push(threeYears[i].VALUE);
             } else if (threeYears[i].GUBUN === "EU_DUSU") {
@@ -333,7 +331,7 @@
 
         pastInitYear2.innerHTML = '■ ' + pY2 + ' ( 기초상시모돈';
         pastInitYear1.innerHTML = '■ ' + pY1 + ' ( 기초상시모돈';
-        currentInitYear.innerHTML = '■' + cY + '( 기초상시모돈';
+        currentInitYear.innerHTML = '■ ' + cY + '( 기초상시모돈';
 
         pastInitElement2.innerHTML += comma(past_initial2);
         pastInitElement.innerHTML += comma(past_initial);
