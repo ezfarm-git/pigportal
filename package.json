@@ -5,6 +5,10 @@
     "start": "meteor run"
   },
   "dependencies": {
-    "meteor-node-stubs": "~0.2.0"
+    "babyparse": "^0.4.6",
+    "highcharts": "^5.0.7",
+    "meteor-node-stubs": "~0.2.0",
+    "papaparse": "^4.1.4",
+    "window-popup": "^1.0.1"
   }
 }

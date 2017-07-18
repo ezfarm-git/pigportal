@@ -27,6 +27,15 @@ Router.route('/', function () {
   name: 'main'
 });
 
+// popup - Popup
+
+Router.route('/popup/popup', function () {
+  this.render('popup');
+});
+
+
+
+
 // Data - Product
 
 Router.route('/data/product', {
