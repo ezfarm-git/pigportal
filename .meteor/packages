@@ -94,3 +94,5 @@ peerlibrary:xml2js
 # Optimizer
 # appcache@1.0.11
 # shell-server
+harrison:papa-parse
+clinical:csv
